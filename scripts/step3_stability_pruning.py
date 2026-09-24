@@ -10,20 +10,20 @@ import pickle
 import time
 
 import os
-agg = pd.read_csv('/home/claude/olist_rfms_features.csv')
+agg = pd.read_csv('data/olist_rfms_features.csv')
 m = len(agg)
-CACHE = '/home/claude/closed_with_stability_cache.pkl'
+CACHE = 'results/closed_with_stability_cache.pkl'
 
 if os.path.exists(CACHE):
     closed = pd.read_pickle(CACHE)
     print('Loaded cached concepts+stability:', len(closed))
 else:
-    closed = pd.read_pickle('/home/claude/fuzzy_concepts_raw.pkl')
+    closed = pd.read_pickle('results/fuzzy_concepts_raw.pkl')
     print('Loaded concepts:', len(closed))
 
     dims = ['R', 'F', 'M', 'S']
     L = [0.3, 0.5, 0.7]
-    exec(open('/home/claude/step2_fuzzy_fca.py').read().split("# --- Step 7")[0])
+    exec(open('scripts/step2_fuzzy_fca.py').read().split("# --- Step 7")[0])
     attr_cols = [c for c in fuzzy_df.columns if c != 'customer_unique_id']
     mu_matrix = fuzzy_df[attr_cols].values
 
@@ -95,7 +95,7 @@ pruned = pruned.sort_values('n_customers_actual', ascending=False).reset_index(d
 print(f'\nSurviving concepts after iceberg pruning: {len(pruned)} (from {len(closed)})')
 print(pruned[['itemsets', 'support', 'n_customers_actual', 'stability_approx']].head(20))
 
-pruned.to_pickle('/home/claude/pruned_fuzzy_concepts.pkl')
+pruned.to_pickle('results/pruned_fuzzy_concepts.pkl')
 
 # --- Hasse diagram: covering relation among pruned concepts (subset relation on itemsets, no intermediate) ---
 t0 = time.time()
@@ -117,7 +117,7 @@ for i in range(n_c):
                 edges.append((j, i))  # parent -> child
 print(f'Hasse edges: {len(edges)} [{time.time()-t0:.1f}s]')
 
-with open('/home/claude/hasse_edges.pkl', 'wb') as f:
+with open('results/hasse_edges.pkl', 'wb') as f:
     pickle.dump({'edges': edges, 'concepts': pruned}, f)
 
-print('\nSaved pruned_fuzzy_concepts.pkl and hasse_edges.pkl')
+print('\nSaved results/pruned_fuzzy_concepts.pkl and results/hasse_edges.pkl')

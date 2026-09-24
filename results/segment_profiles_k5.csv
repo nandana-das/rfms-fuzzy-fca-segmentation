@@ -1,0 +1,6 @@
+cluster_k5,segment_name,Customer_Count,Mean_Recency_Days,Mean_Orders,Mean_Monetary_BRL,Mean_Review_Score,Repeat_Rate,Pct_Customers
+0,"Recent Champions (High R, High S)",31859,133.9,1.05,209.89,3.88,3.86%,34.13
+1,"Budget Satisfied (Low M, High S)",16677,274.2,1.0,51.28,5.0,0.44%,17.86
+2,"Economy Satisfied (Mid-Low M, High S)",10554,270.8,1.02,111.34,5.0,2.19%,11.3
+3,Mid-Tier Spenders (Moderate-High M),20121,234.3,1.04,179.27,3.74,4.3%,21.55
+4,Lapsing / Hibernating (Low R),14146,403.6,1.03,219.02,3.78,2.84%,15.15

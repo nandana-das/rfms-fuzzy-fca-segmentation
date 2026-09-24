@@ -10,7 +10,7 @@ import numpy as np
 from mlxtend.frequent_patterns import fpgrowth, association_rules
 from mlxtend.preprocessing import TransactionEncoder
 
-agg = pd.read_csv('/home/claude/olist_rfms_features.csv')
+agg = pd.read_csv('data/olist_rfms_features.csv')
 m = len(agg)
 print('Customers:', m)
 
@@ -102,7 +102,7 @@ min_support = 0.02  # initial; refined via elbow below
 freq = fpgrowth(bin_df, min_support=min_support, use_colnames=True, max_len=6)
 freq['n_customers'] = (freq['support'] * m).round().astype(int)
 print(f'Frequent itemsets (support>={min_support}): {len(freq)}  [{time.time()-t0:.1f}s]')
-freq.to_pickle('/home/claude/freq_itemsets_raw.pkl')
+freq.to_pickle('results/freq_itemsets_raw.pkl')
 
 # filter to CLOSED itemsets: itemset X is closed if no superset Y with SAME support exists.
 # group by support value first (closed check only needed within equal-support groups) -> avoids O(n^2) over all pairs
@@ -128,5 +128,5 @@ freq_sorted['is_closed'] = is_closed
 closed = freq_sorted[freq_sorted['is_closed']].reset_index(drop=True)
 print(f'Closed itemsets (= formal concepts): {len(closed)}  [{time.time()-t0:.1f}s]')
 
-closed.to_pickle('/home/claude/fuzzy_concepts_raw.pkl')
+closed.to_pickle('results/fuzzy_concepts_raw.pkl')
 print(closed[['itemsets', 'support', 'n_customers']].sort_values('n_customers', ascending=False).head(15))

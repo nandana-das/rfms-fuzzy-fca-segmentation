@@ -109,6 +109,6 @@ agg['s_score'] = dense_rank_score(agg['S'], invert=False)
 
 print(agg[['r_score', 'f_score', 'm_score', 's_score']].apply(pd.Series.value_counts).fillna(0))
 
-agg.to_csv('/home/claude/olist_rfms_features.csv', index=False)
-print('\nSaved: olist_rfms_features.csv')
+agg.to_csv('data/olist_rfms_features.csv', index=False)
+print('\nSaved: data/olist_rfms_features.csv')
 print(agg.head(10)[['customer_unique_id','R','n_orders','M','S','F_star','r_score','f_score','m_score','s_score']])
