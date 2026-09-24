@@ -1,0 +1,90 @@
+{
+  "input_rows": {
+    "orders": 99441,
+    "customers": 99441,
+    "items": 112650,
+    "payments": 103886,
+    "reviews": 99224
+  },
+  "reference_date": "2018-10-17T17:30:18",
+  "delivered_orders": 96478,
+  "delivered_missing_purchase_timestamp": 0,
+  "delivered_missing_customer_key": 0,
+  "payment_rows_dropped_null": 0,
+  "payment_rows_dropped_zero": 9,
+  "payment_rows_negative_retained": 0,
+  "delivered_orders_without_valid_payment": 1,
+  "delivered_orders_with_zero_net_payment": 0,
+  "eligible_paid_delivered_orders": 96477,
+  "eligible_orders_without_item_quantity": 0,
+  "customer_counts": {
+    "after_customer_key_mapping_before_payment_filter": 93358,
+    "after_delivered_and_payment_filters": 93357,
+    "distinct_order_scoped_customer_id_values_after_filters": 96477
+  },
+  "final_customer_count": 93357,
+  "median_satisfaction_imputation": 5.0,
+  "customers_with_imputed_satisfaction": 603,
+  "weights": {
+    "alpha": 0.0,
+    "beta": 1.0,
+    "gamma": 0.0
+  },
+  "weight_fit": {
+    "objective": "population Var(F*) / population Var(n_orders)",
+    "variance_ratio": 1.3147033693464931,
+    "simplex_step": 0.05,
+    "grid_points_evaluated": 231
+  },
+  "weight_fit_diagnostic_quintile_bins": {
+    "requested_bins": 5,
+    "f_star_effective_bins_after_duplicate_edge_collapse": 1,
+    "f_star_populations": [
+      93357
+    ],
+    "n_orders_effective_bins_after_duplicate_edge_collapse": 1,
+    "n_orders_populations": [
+      93357
+    ],
+    "note": "Diagnostic only; weights are selected solely by the specified variance-ratio objective. Duplicate quantile edges are collapsed, exposing where ordinary quintile scoring fails."
+  },
+  "dense_rank_diagnostics": {
+    "distinct_values": {
+      "recency_days": 93111,
+      "f_star": 52,
+      "monetary": 28260,
+      "satisfaction": 34
+    },
+    "score_populations": {
+      "r_score": {
+        "1": 18641,
+        "2": 18674,
+        "3": 18663,
+        "4": 18703,
+        "5": 18676
+      },
+      "f_score": {
+        "1": 93161,
+        "2": 131,
+        "3": 32,
+        "4": 21,
+        "5": 12
+      },
+      "m_score": {
+        "1": 35158,
+        "2": 25937,
+        "3": 16097,
+        "4": 9363,
+        "5": 6802
+      },
+      "s_score": {
+        "1": 8942,
+        "2": 2921,
+        "3": 7873,
+        "4": 18213,
+        "5": 55408
+      }
+    },
+    "f_score_1_share": 0.9979005323650074
+  }
+}
