@@ -6,10 +6,11 @@ Step 1-5 of Algorithm 2: Olist RFMS feature engineering
 - Compute composite F* (weighted engagement frequency)
 - Dense-rank fractional scoring (r,f,mu,s) in [1,5]
 """
+import os
 import pandas as pd
 import numpy as np
 
-DATA = 'olist_data/'
+DATA = 'data/olist_raw/' if os.path.exists('data/olist_raw') else 'olist_data/'
 
 orders = pd.read_csv(DATA + 'olist_orders_dataset.csv', parse_dates=[
     'order_purchase_timestamp', 'order_approved_at',

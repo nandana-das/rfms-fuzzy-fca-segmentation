@@ -31,3 +31,7 @@ Thumbs.db
 
 # Log files
 *.log
+
+# Raw datasets (keep local, exclude from git)
+data/olist_raw/
+olist_data/
