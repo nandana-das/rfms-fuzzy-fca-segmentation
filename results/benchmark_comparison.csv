@@ -1,0 +1,17 @@
+method,k,silhouette,davies_bouldin,preprocessing
+"Fuzzy-FCA (natural k, alpha-cut)",12,0.16559676342221025,5.946694118416779,none (standardized only)
+Fuzzy-FCA (k-matched),4,0.2591234357025412,2.219555155263171,"top-4 bands by size, argmax membership"
+Fuzzy-FCA (k-matched),5,0.24667651631197254,2.3918922593396763,"top-5 bands by size, argmax membership"
+Fuzzy-FCA (k-matched),6,0.2307306620575104,2.5920723178208305,"top-6 bands by size, argmax membership"
+K-means,4,0.349360673508935,0.995222871224983,"standardized (same space as FCA), full 93,357 customers"
+Hierarchical (Ward),4,0.3020670954511835,1.1445977862783192,"standardized, subsampled n=5000 (Ward is O(n^2), full scale infeasible)"
+K-means,5,0.38668067980697973,0.8391359835964977,"standardized (same space as FCA), full 93,357 customers"
+Hierarchical (Ward),5,0.3480072265298924,0.912190805691153,"standardized, subsampled n=5000 (Ward is O(n^2), full scale infeasible)"
+K-means,6,0.39168343547057866,0.8665719725980409,"standardized (same space as FCA), full 93,357 customers"
+Hierarchical (Ward),6,0.3507062889813549,0.9119824260800936,"standardized, subsampled n=5000 (Ward is O(n^2), full scale infeasible)"
+K-means (outlier-removed),4,0.3204049891440051,0.9451335665006946,"IQR+log+minmax (base-paper style), full 68001 retained customers"
+Hierarchical (outlier-removed),4,0.30929179157871994,0.9188492805723836,"IQR+log+minmax, subsampled n=5000"
+K-means (outlier-removed),5,0.3438141519083948,1.0525486273562592,"IQR+log+minmax (base-paper style), full 68001 retained customers"
+Hierarchical (outlier-removed),5,0.33215041798804135,1.0756723818495906,"IQR+log+minmax, subsampled n=5000"
+K-means (outlier-removed),6,0.3578786109746554,0.9942955231109143,"IQR+log+minmax (base-paper style), full 68001 retained customers"
+Hierarchical (outlier-removed),6,0.3370988149787373,1.0498421180772968,"IQR+log+minmax, subsampled n=5000"

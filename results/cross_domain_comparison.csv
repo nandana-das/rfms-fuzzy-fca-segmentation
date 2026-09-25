@@ -1,0 +1,2 @@
+dataset,n_customers,repeat_buyer_rate,n_raw_concepts,n_pruned_concepts,lattice_density_rho,mean_membership_count,n_top_level_bands,ari_fca_vs_kmeans,silhouette_fca,db_fca,silhouette_kmeans,db_kmeans
+Online Retail II,5878,0.7238856753997959,1064,115,0.032470703125,60.06566859476012,14,0.20209277470512446,-0.1713039235206309,13.21570146704197,0.5141508561730581,0.9230418879166794

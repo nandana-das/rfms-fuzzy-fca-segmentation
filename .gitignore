@@ -1,37 +1,5 @@
-# Virtual environments
+# Python environments and bytecode
 .venv/
 venv/
-ENV/
-env/
-
-# Python bytecode & cache
 __pycache__/
 *.py[cod]
-*$py.class
-*.pyd
-.pytest_cache/
-
-# Pickles and large intermediate results
-*.pkl
-results/*.pkl
-results/cache/
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# IDE configurations
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Log files
-*.log
-
-# Raw datasets (keep local, exclude from git)
-data/olist_raw/
-olist_data/

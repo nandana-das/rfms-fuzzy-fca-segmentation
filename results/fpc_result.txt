@@ -1,0 +1,3 @@
+Fuzzy Partition Coefficient (FCA hard-cut top-level concepts): 0.2370
+FCA outlier-branch customers retained: 93357 / 93357 (100%, no outlier removal needed)
+Baseline branch customers retained after IQR removal: 68001 / 93357 (72.84%)
