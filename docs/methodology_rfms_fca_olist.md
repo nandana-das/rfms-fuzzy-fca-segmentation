@@ -54,13 +54,11 @@ $$r_j = 6 - \left\lceil 5 \cdot \frac{\text{rank}(R_j)}{m}\right\rceil, \quad f_
 
 ### 2.3 Weight Fitting for $F^*$ (Fix A)
 
-Weights $(\alpha, \beta, \gamma)$ chosen to maximize between-group variance of $F^*_j$ subject to $\alpha,\beta,\gamma \geq 0$, $\alpha+\beta+\gamma=1$:
+Weights $(\alpha, \beta, \gamma)$ were chosen to maximize the between-group variance of $F_j^*$, subject to $\alpha,\beta,\gamma \geq 0$ and $\alpha+\beta+\gamma=1$:
 
-\[
-(\alpha^*, \beta^*, \gamma^*) = \arg\max_{\alpha,\beta,\gamma} \frac{\operatorname{Var}(F^*)}{\operatorname{Var}(n_j)}
-\]
+$(\alpha^*, \beta^*, \gamma^*) = \arg\max_{\alpha,\beta,\gamma} \frac{\operatorname{Var}(F_j^*)}{\operatorname{Var}(n_j)}$
 
-solved via grid search (step 0.05) over the simplex, cross-validated by checking resulting quintile-bin population balance (target: no bin >40% or <5% of $m$).
+The optimization was solved using a grid search with a step size of $0.05$ over the simplex, followed by cross-validation using the resulting quintile-bin population balance. The target was that no bin contain more than $40\%$ or less than $5\%$ of $m$.
 
 ## 3. Fuzzy Formal Concept Analysis (Core Methodological Contribution)
 
