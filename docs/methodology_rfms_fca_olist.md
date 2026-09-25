@@ -28,13 +28,13 @@ When $F$ is near-degenerate (>90% mass at $F=1$), quintile boundaries collapse �
 
 $$F_j^* = \alpha \cdot n_j + \beta \cdot \sum_{i=1}^{n_j} \log(1 + q_{ij}) + \gamma \cdot \mathbb{1}[\text{repeat}_j]$$
 
-where $n_j$ = order count, $q_{ij}$ = item quantity in order $i$, $\text{repeat}_j = \mathbb{1}[n_j > 1]$ is a binary repeat-buyer flag, and $\alpha, \beta, \gamma$ are weights fit via variance-maximization (see §2.3). This desparsifies F by injecting basket-size signal even for one-time buyers.
+where $n_j$ = order count, $q_{ij}$ = item quantity in order $i$, $\text{repeat}_j = \mathbb{1}[n_j > 1]$ is a binary repeat-buyer flag, and $\alpha, \beta, \gamma$ are weights fit via **five-band Shannon-entropy maximization** (see §2.3). This desparsifies F by injecting basket-size signal even for one-time buyers.
 
-**Fix B — Rank-based scoring instead of quintile scoring.** Replace hard quintile cut with a **dense rank fractional score**:
+**Fix B — Rank-based scoring instead of quintile scoring.** Replace hard quintile cut with a **dense-rank fractional score**:
 
-$$\text{score}(F_j) = \left\lceil 5 \cdot \frac{\text{rank}(F_j)}{m} \right\rceil$$
+$$\text{score}(F_j) = \left\lceil 5 \cdot \frac{\text{rank}_{dense}(F_j)}{K_F} \right\rceil$$
 
-using dense ranking (ties get same rank, no empty bins), which degrades gracefully under near-degenerate distributions — standard quintile fails here because `pandas.qcut`-style binning throws duplicate-edge errors or collapses bins; dense-rank scoring does not.
+where $K_F$ is the number of distinct values in $F$ (equivalently, the maximum dense rank). Using dense ranking gives tied values the same rank and avoids empty bins caused by quantile-edge collapse. The same rule is applied to each RFMS dimension; for a dimension $X$, $K_X$ denotes its number of distinct raw values.
 
 Both fixes are applied and compared (ablation) in Results.
 
@@ -48,17 +48,43 @@ $$\text{RFMS}_j = (R_j, F_j^*, M_j, S_j)$$
 
 ### 2.2 Scoring
 
-Each dimension independently scored 1–5 via dense-rank fractional scoring (§1.2 Fix B), with recency inverted (lower $R_j$ → higher score):
+Each dimension independently scored 1–5 via dense-rank fractional scoring (§1.2 Fix B), with recency inverted (lower $R_j$ → higher score). For any raw dimension $X_j$, let $r_j^{(X)}=\operatorname{rank}_{dense}(X_j)$ and $K_X=\max_j r_j^{(X)}$, i.e. the number of distinct raw values. Then
 
-$$r_j = 6 - \left\lceil 5 \cdot \frac{\text{rank}(R_j)}{m}\right\rceil, \quad f_j = \left\lceil 5 \cdot \frac{\text{rank}(F_j^*)}{m}\right\rceil, \quad \mu_j = \left\lceil 5 \cdot \frac{\text{rank}(M_j)}{m}\right\rceil, \quad s_j = \left\lceil 5 \cdot \frac{\text{rank}(S_j)}{m}\right\rceil$$
+$$\text{score}(X_j) = \left\lceil 5 \cdot \frac{r_j^{(X)}}{K_X} \right\rceil,$$
+
+with the recency score inverted:
+
+$$r_j = 6 - \left\lceil 5 \cdot \frac{\operatorname{rank}_{dense}(R_j)}{K_R}\right\rceil,$$
+
+$$f_j = \left\lceil 5 \cdot \frac{\operatorname{rank}_{dense}(F_j^*)}{K_{F^*}}\right\rceil, \quad \mu_j = \left\lceil 5 \cdot \frac{\operatorname{rank}_{dense}(M_j)}{K_M}\right\rceil, \quad s_j = \left\lceil 5 \cdot \frac{\operatorname{rank}_{dense}(S_j)}{K_S}\right\rceil.$$
+
+Here $K_X$ is **not** the total customer count $m$; it is the number of distinct raw values in the dimension. This distinction is necessary under dense ranking because the maximum dense rank equals the number of unique values.
 
 ### 2.3 Weight Fitting for $F^*$ (Fix A)
 
-Weights $(\alpha, \beta, \gamma)$ were chosen to maximize the between-group variance of $F_j^*$, subject to $\alpha,\beta,\gamma \geq 0$ and $\alpha+\beta+\gamma=1$:
+The composite purchase-intensity index is
 
-$(\alpha^*, \beta^*, \gamma^*) = \arg\max_{\alpha,\beta,\gamma} \frac{\operatorname{Var}(F_j^*)}{\operatorname{Var}(n_j)}$
+$$F_j^* = \alpha n_j + \beta \sum_{i=1}^{n_j}\log(1+q_{ij}) + \gamma\mathbb{1}[\mathrm{repeat}_j],$$
 
-The optimization was solved using a grid search with a step size of $0.05$ over the simplex, followed by cross-validation using the resulting quintile-bin population balance. The target was that no bin contain more than $40\%$ or less than $5\%$ of $m$.
+where $n_j$ is the customer's literal order count, $q_{ij}$ is the quantity associated with order $i$, and $\mathbb{1}[\mathrm{repeat}_j]$ indicates whether the customer made more than one order.
+
+The weights $(\alpha,\beta,\gamma)$ are selected by **maximizing the Shannon entropy of the resulting five-band score distribution**, subject to
+
+$$\alpha,\beta,\gamma \geq 0, \qquad \alpha+\beta+\gamma=1.$$
+
+For a candidate weight triplet, $F^*$ is computed for every customer and converted to a 1–5 dense-rank score. If $p_k$ denotes the proportion of customers assigned to score band $k$, the objective is
+
+$$H(F^*)=-\sum_{k=1}^{5}p_k\ln(p_k).$$
+
+The theoretical maximum is $\ln(5)$, achieved when the five score bands are perfectly balanced.
+
+The optimization is performed using an exhaustive grid search with step size 0.05 over the simplex. The selected weights are
+
+$$(\alpha^*,\beta^*,\gamma^*) = \arg\max_{\alpha,\beta,\gamma} H(F^*),$$
+
+subject to the simplex constraints above. The selected candidate is therefore the one that produces the most balanced five-band score distribution under the tested grid. This is an empirical band-balance criterion; it is not a claim that the resulting weights are universally optimal for purchase intensity.
+
+For the current Olist run, the selected weights are $\alpha=0.20$, $\beta=0.05$, and $\gamma=0.75$. The resulting entropy is reported relative to the theoretical maximum $\ln(5)$.
 
 ## 3. Fuzzy Formal Concept Analysis (Core Methodological Contribution)
 
@@ -70,7 +96,7 @@ Base paper uses **binary** FCA: each RFM(S) score band becomes a crisp binary at
 
 ### 3.2 Fuzzy Formal Context
 
-Define fuzzy formal context $\mathbb{K}_f := (G, M, L, \tilde{I})$ where://
+Define fuzzy formal context $\mathbb{K}_f := (G, M, L, \tilde{I})$ where:
 - $G = C$ (objects = customers)
 - $M = \{R_1..R_5, F_1..F_5, M_1..M_5, S_1..S_5\}$ (20 fuzzy attributes — 5 bands × 4 dimensions)
 - $L = [0,1]$ (membership lattice)
@@ -109,7 +135,7 @@ Output: Set of fuzzy formal concepts L_f
 7.     B_0 = next lectic fuzzy closure via fuzzy-NextClosure(B_0, ε)
 8. until B_0 = M (top reached)
 9. return L_f
-```//
+```
 
 Complexity: $O(|M|^2 \cdot |G| \cdot |L_f|)$ — same asymptotic order as crisp Next-Closure but with fuzzy membership evaluation cost per step; empirically bounded by discretizing $L$ into a finite fuzzy scale (e.g., 11 levels: 0, 0.1, ..., 1.0) to keep tractable, per Belohlavek & Vychodil (2005).
 
@@ -193,7 +219,3 @@ Output: Fuzzy concept lattice, hard-cluster benchmark results, cross-domain ARI
 4. First cross-domain validation of RFM-FCA segmentation (single-retailer vs multi-seller marketplace), with domain-invariant lattice metrics.
 5. First symmetric quantitative benchmark (Silhouette/DB/FPC) placing FCA-based segmentation on equal evaluative footing with K-means/hierarchical baselines.
 6. Methodological fix for frequency sparsity in marketplace data (composite $F^*$ + dense-rank scoring) — directly addresses a structural limitation of applying classical RFM to one-time-buyer-dominated platforms.
-
-## 8. Suggested Target Venues
-
-Expert Systems with Applications, Journal of Retailing and Consumer Services, Information Sciences, Knowledge-Based Systems — all precedented in base paper's own reference list, all publish FCA/clustering + marketing analytics work.
