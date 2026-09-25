@@ -28,7 +28,7 @@ When $F$ is near-degenerate (>90% mass at $F=1$), quintile boundaries collapse �
 
 $$F_j^* = \alpha \cdot n_j + \beta \cdot \sum_{i=1}^{n_j} \log(1 + q_{ij}) + \gamma \cdot \mathbb{1}[\text{repeat}_j]$$
 
-where $n_j$ = order count, $q_{ij}$ = item quantity in order $i$, $\text{repeat}_j = \mathbb{1}[n_j > 1]$ is a binary repeat-buyer flag, and $\alpha, \beta, \gamma$ are weights fit via variance-maximization (see §2.3). This desparsifies F by injecting basket-size signal even for one-time buyers.
+where $n_j$ = order count, $q_{ij}$ = item quantity in order $i$, $\text{repeat}_j = \mathbb{1}[n_j > 1]$ is a binary repeat-buyer flag, and $\alpha,\beta,\gamma$ are weights fit via variance-maximization (see §2.3). This desparsifies F by injecting basket-size signal even for one-time buyers.
 
 **Fix B — Rank-based scoring instead of quintile scoring.** Replace hard quintile cut with a **dense rank fractional score**:
 
@@ -54,9 +54,9 @@ $$r_j = 6 - \left\lceil 5 \cdot \frac{\text{rank}(R_j)}{m}\right\rceil, \quad f_
 
 ### 2.3 Weight Fitting for $F^*$ (Fix A)
 
-Weights $(\alpha, \beta, \gamma)$ chosen to maximize between-group variance of $F^*_j$ subject to $\alpha,\beta,\gamma \geq 0$, $\alpha+\beta+\gamma=1$:
+Weights $(\alpha,\beta,\gamma)$ chosen to maximize between-group variance of $F^*_j$ subject to $\alpha,\beta,\gamma \geq 0$, $\alpha+\beta+\gamma=1$:
 
-$$(\alpha^{*},\beta^{*},\gamma^{*}) = \arg\max_{\alpha,\beta,\gamma} \frac{\text{Var}(F^{*})}{\text{Var}(n_j)}$$
+$$ (\alpha^*,\beta^*,\gamma^*) = \arg\max_{\alpha,\beta,\gamma} \frac{\mathrm{Var}(F^*)}{\mathrm{Var}(n_j)} $$
 
 solved via grid search (step 0.05) over the simplex, cross-validated by checking resulting quintile-bin population balance (target: no bin >40% or <5% of $m$).
 
