@@ -309,3 +309,89 @@ a strong, unambiguous positive (100% of pruned concepts survive resampling); mem
 an honest mixed result (fuzziness is real for R/M, nearly absent for F/S). Only item 5 (a terminology
 pass across the eventual paper draft) remains open; items 1, 2, 3, 4, and 6 are resolved as of this
 revision.
+
+## 5. v4 improvements line (2026-09-26; full record in docs/fuzzy_improvements_retail2.md)
+
+Three methodological additions were designed, tested, and validated on both datasets after v3.
+Scripts: `scripts/concept_redundancy.py` (adopted stage), `scripts/fcm.py` (baseline),
+`scripts/fuzzy_improvements_retail2.py` / `scripts/fcm_baseline_retail2.py` /
+`scripts/olist_rfms_comparison.py` / `scripts/multisplit_validation.py` (experiments).
+
+### 5.1 Concept redundancy suppression (ADOPTED)
+
+Greedy extent-Jaccard pruning: order non-trivial concepts by support (desc), intent size (asc),
+stability proxy (desc); keep a concept iff its μ≥0.5-cut extent has Jaccard < 0.8 against every
+already-kept extent. Leakage contract: extents from training customers only under any train/test
+protocol.
+
+- **Retail II:** 445 → 95 concepts (4.7× compression) with zero predictive loss — spend R2 and
+  invoices R2 actually rise (0.3664/0.4952 vs 0.3647/0.4933 full). Near-duplicate pairs (extent
+  Jaccard ≥ 0.8) 3.3% → **0%**; mean concepts/customer at μ≥0.5: 41.3 → **4.1**. vs crisp: invoices
+  R2 delta **+0.0310** [+0.0130, +0.0494] — the only parsimonious arm clearing the +0.030
+  exploratory threshold. Dominates Kneedle pruning as a dimensionality reducer (95 features at
+  invoices R2 0.4952 vs Kneedle's 64 at 0.4739).
+- **Olist:** 633 → 627. The marketplace lattice is nearly redundancy-free; the stage is harmless
+  but not needed there. Cross-split replication: 374–383 concepts, suppression removes ≤6 on every
+  split.
+
+**Framing:** this upgrades the fair-comparison dedup finding (445 → 73 unique profiles at zero
+loss) into an adopted, interpretable pipeline stage. It also resolves the v3 tension where fuzzy's
+gains required a 15× larger feature set than crisp.
+
+### 5.2 Fuzzy C-Means baseline (improvement 4 — FCA structure wins)
+
+All prior benchmarks compared FCA against *hard* K-means/hierarchical, confounding representation
+with algorithm. Canonical FCM (m=2, k-means++ seeded) at matched k isolates the two:
+
+- **Retail II (k=30):** FCA-suppressed beats FCM soft significantly on spend R2 (−0.0381, CI
+  excludes zero) and invoices R2 (−0.0227); AUC delta −0.0088 spans zero. K-means one-hot loses on
+  all three. Decomposition: fuzziness itself adds ~+0.003 AUC (soft vs hardened FCM); the prototype
+  geometry costs ~−0.011 vs FCA.
+- **Validity/utility inversion:** FCM at natural k=5 has the cleanest partition geometry (FPC 0.740,
+  silhouette 0.524) but the worst holdout performance; FCA-suppressed has the worst hardened
+  geometry (silhouette −0.337) and the best prediction. Consistent with the v3 framing that FCA and
+  distance-based clustering encode different structural objectives.
+- **Olist:** replicates at matched k (FCM ≈ raw, far below fuzzy-FCA).
+
+**Claim enabled:** the value of the proposed method is the *lattice structure*, not fuzziness per se
+— previously untestable because no fuzzy baseline existed.
+
+### 5.3 Olist RFMS cross-domain check + stored-band label leak
+
+`scripts/olist_rfms_comparison.py` applies the adopted stage and the FCM baseline to the full
+4-dimension RFMS context, with a validation gate: bitset mining with the **stored Step-1 bands**
+reproduces the 1,369-concept lattice exactly (PASS). Re-deriving bands from raw values does not
+(float-tie shift: 1 F row, 776 M rows; lattice 1,369 → 1,374) — stored bands are the source of truth
+for full-population structure.
+
+**Stored-band label leak (found during 10-split validation, fixed before adoption):** the temporal
+obs cohort includes customers whose later order falls in the holdout window; stored bands are
+computed over ALL orders, so stored f_score≥2 practically announces the label (P(label=1 | f_score≥2)
+= 0.52 vs 0.00 for f_score=1) — a leaked fixed-split crisp arm scored AUC 0.9996. Re-deriving bands
+from pre-cutoff features only removes it. **Rule adopted: stored bands are used for full-population
+structure only; holdout features are always re-derived from pre-cutoff data.**
+
+### 5.4 Multi-split validation (10 random customer splits per dataset)
+
+All fixed-split results were conditional on one 70/30 seed. Re-running both holdouts over 10 seeds
+(seeds 1000–1009), customer-level splitting within the same observation windows:
+
+- **Retail II:** fuzzy-suppressed beats crisp on AUC in **10/10 splits** (mean delta +0.0089,
+  paired t p=2.3e-04) and raw RFM 10/10 (p=1.0e-04); spend R2 (+0.0161) and invoices R2 (+0.0332)
+  advantages replicate on every split.
+- **Olist (leak-fixed):** beats re-derived crisp **10/10** (mean delta +0.128 AUC, p=4.1e-08), raw
+  RFMS 10/10 (+0.083), FCM 10/10 (+0.064). Absolute levels are modest (AUC ~0.64) because Year-2
+  repurchase is a 2.6% rare event; the ordering fuzzy-FCA > FCM ≥ raw > crisp is split-robust.
+- **Cross-domain contrast:** fuzzy FCA's advantage over raw features is ~10× larger on the sparse
+  marketplace (+0.11 AUC) than on repeat-heavy Retail II (+0.01 AUC) — the method earns its keep
+  exactly where classical RFM breaks down.
+
+### 5.5 Updated outstanding work
+
+1. ~~Terminology pass~~ — now also covering v4 additions (suppression, FCM, label leak).
+2. Olist crisp-arm diagnosis: re-derived crisp RFMS-FCA collapses to chance AUC on the Olist
+   holdout while fuzzy FCA retains signal; the mechanism (concept coverage/geometry) is not yet
+   profiled — a likely reviewer question.
+3. Paper draft: v3 structure plus §5 material; all quantitative claims are now cross-split
+   validated except where explicitly noted (single-split artifacts remain in
+   results/fuzzy_improvements_retail2/ and results/fcm_baseline_retail2/).

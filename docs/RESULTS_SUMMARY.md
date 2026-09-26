@@ -432,3 +432,61 @@ rfms_project/
 │   └── RESULTS_SUMMARY.md                (this file)
 └── PROJECT_DOCUMENT.md                   (v3)
 ```
+
+## v4 additions — improvements line (2026-09-26; full record in docs/fuzzy_improvements_retail2.md)
+
+New scripts (each writes to its own results/ subdirectory; core Step 1-14 artifacts
+untouched): `scripts/concept_redundancy.py`, `scripts/fcm.py`,
+`scripts/fcm_baseline_retail2.py`, `scripts/fuzzy_improvements_retail2.py`,
+`scripts/olist_rfms_comparison.py`, `scripts/multisplit_validation.py`, plus the earlier
+`scripts/fair_comparison_retail2.py` and `scripts/step14_base_vs_fuzzy_retail2.py`.
+
+### Result directories
+```
+results/
+├── fair_comparison_retail2/    (controlled crisp-vs-fuzzy holdout, B=1000 paired bootstrap)
+├── retail2_base_vs_fuzzy/      (base-paper reconstruction + matched fuzzy arm)
+├── fuzzy_improvements_retail2/ (suppression experiment; incl. not-adopted-arm evidence)
+├── fcm_baseline_retail2/       (FCM vs FCA structure)
+├── olist_rfms_comparison/      (suppression + FCM on Olist; 1,369-concept validation gate)
+└── multisplit_validation/      (10-split robustness, both datasets)
+```
+
+### Headline findings (all cross-split validated where noted)
+
+**Redundancy suppression (adopted, `J_MAX=0.8`).** Retail II: 445 -> 95 concepts, zero
+predictive loss (test invoices R2 0.4952 vs 0.4933 full), near-duplicate pairs 3.3% -> 0%,
+mean concepts/customer 41.3 -> 4.1. vs crisp: invoices R2 delta +0.0310 [+0.0130, +0.0494],
+the only parsimonious arm clearing the +0.030 exploratory threshold. Olist: 633 -> 627 -
+the marketplace lattice is nearly redundancy-free, so the stage is harmless but not needed
+there.
+
+**FCM baseline (improvement 4).** At matched k=30 on Retail II: FCA-suppressed beats FCM
+soft significantly on spend R2 (delta -0.0381 vs FCA, CI excludes zero) and invoices R2;
+fuzziness itself contributes only ~+0.003 AUC (soft vs hardened FCM) while the prototype
+geometry costs ~-0.011 vs FCA. FCA's lattice structure, not fuzziness, carries the value.
+Replicates on Olist at matched k.
+
+**Olist RFMS cross-domain (temporal holdout, cutoff 2017-08-31).** Validation gate PASSED:
+bitset mining with the stored Step-1 bands reproduces the 1,369-concept lattice exactly.
+Re-deriving bands from raw values does NOT (float-tie shift: 1 F row, 776 M rows; lattice
+1,369 -> 1,374) - stored bands are the source of truth for full-population structure.
+Fixed-split holdout: fuzzy-suppressed (409 features) dominates raw RFMS (+0.111 AUC),
+crisp RFMS-FCA (+0.135), and FCM (+0.111).
+
+**Stored-band label leak (found in the Olist holdout, fixed before adoption).** The obs
+cohort includes customers whose later order falls in the holdout window; stored bands are
+computed over ALL orders, so stored f_score>=2 practically announces the label
+(P(label=1|f_score>=2)=0.52 vs 0.00 for f_score=1) - a leaked fixed-split crisp arm scored
+AUC 0.9996. Re-deriving bands from pre-cutoff features only removes it. Stored bands must
+never be attached to holdout features.
+
+**Multi-split validation (10 random customer splits per dataset).** Retail II: fuzzy-
+suppressed beats crisp on AUC in 10/10 splits (mean delta +0.0089, paired t p=2.3e-04)
+and raw RFM 10/10 (p=1.0e-04); spend R2 (+0.0161) and invoices R2 (+0.0332) advantages
+replicate on every split. Olist (leak-fixed): beats re-derived crisp 10/10 (mean delta
++0.128 AUC, p=4.1e-08), raw (10/10, +0.083), and FCM (10/10, +0.064). Absolute Olist
+levels are modest (AUC ~0.64) because Year-2 repurchase is a 2.6% rare event, but the
+ordering fuzzy-FCA > FCM >= raw > crisp is split-robust. Cross-domain: fuzzy FCA's
+advantage over raw features is ~10x larger on the sparse marketplace (+0.11 AUC) than on
+repeat-heavy Retail II (+0.01 AUC).
