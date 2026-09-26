@@ -1,0 +1,3 @@
+dataset,comparison,metric,mean_delta,t_stat,p_value,n_splits
+retail2,Fuzzy RFM-FCA (Suppressed) vs Crisp RFM-FCA,test_auc,0.008883532292623208,5.887487151924181,0.00023265457451404143,10
+olist,Fuzzy RFMS-FCA (Suppressed) vs Crisp RFMS-FCA,test_auc,0.1283412145582646,16.851697967884355,4.0891488354782174e-08,10
