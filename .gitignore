@@ -6,3 +6,6 @@ __pycache__/
 
 # Transient logs
 *.log
+
+# Tool state
+.freebuff/
