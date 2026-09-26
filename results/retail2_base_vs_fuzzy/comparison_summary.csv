@@ -1,0 +1,4 @@
+arm,RFM_definitions,scoring,context_attributes,raw_closed_concepts,concepts_support_gt_004,nontrivial_concepts_support_gt_004,kneedle_pruned_concepts,f_measure
+Published crisp RFM-FCA,R=days from last invoice to max InvoiceDate; F=distinct invoices; M=sum Quantity*UnitPrice,five equal-population quintiles; R reversed,15,205,55,54.0,not used in base paper,literal invoice count
+Matched project-style fuzzy RFM-FCA,"same R, literal F, and M values as baseline","project dense-rank scores; centroid piecewise memberships; L={0.3,0.5,0.7}",45,609,359,,59,literal invoice count
+Existing full project fuzzy RFM-F*,same R and M; F*=0.05*n_orders + 0.15*sum(log1p(line Quantity)) + 0.80*I(n_orders>1),existing Step 7 outputs; unchanged,45,1064,see existing full-pipeline concepts; not recomputed here,,115,F*; not directly matched to paper F

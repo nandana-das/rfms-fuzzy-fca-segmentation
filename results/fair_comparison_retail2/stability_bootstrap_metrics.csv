@@ -1,0 +1,4 @@
+metric,crisp_mean,crisp_std,fuzzy_mean,fuzzy_std,difference_fuzzy_minus_crisp,paired_t_statistic,paired_t_pvalue,wilcoxon_stat,wilcoxon_pvalue,inference_note
+Mean Resample Jaccard Stability,0.9603825166430208,0.008800054428584642,0.9021159811192537,0.019573467836924475,-0.05826653552376704,18.888271756876758,3.8764973166955844e-24,0.0,1.7763568394002505e-15,Descriptive comparison; pairwise resample comparisons are mutually dependent
+Full-Sample Intent Recurrence Rate,0.9757575757575756,0.019165319152535616,0.9593871866295264,0.01890123525486439,-0.016370389128049223,4.526734159908294,3.8357411628977166e-05,231.0,8.689641239120092e-05,Descriptive comparison; resamples share full-sample evaluation lattice
+Mean Concept Count across Resamples,32.62,0.6896375859826666,389.24,10.483434551710618,356.62,,,,,Descriptive concept count

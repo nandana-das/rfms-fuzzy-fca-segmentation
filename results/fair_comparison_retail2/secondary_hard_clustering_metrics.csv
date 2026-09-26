@@ -1,0 +1,3 @@
+evaluation_type,arm,n_clusters,silhouette_score,davies_bouldin_score,note
+Natural Hardening Rule,Crisp RFM-FCA (Unconstrained),4,0.147904461589349,2.2274191703420825,Cluster counts differ naturally (4 vs 9); unmatched comparison
+Natural Hardening Rule,Fuzzy RFM-FCA (Unconstrained),9,-0.3643854190070937,2.480495684194669,Cluster counts differ naturally (4 vs 9); unmatched comparison

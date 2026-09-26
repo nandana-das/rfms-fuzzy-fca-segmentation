@@ -1,0 +1,7 @@
+method,dimension,raw_unique_values,dense_rank_levels,score_1,score_2,score_3,score_4,score_5
+base-paper quintile,R,675,675,1175,1176,1175,1176,1176
+base-paper quintile,F,90,90,1176,1176,1175,1176,1175
+base-paper quintile,M,5777,5777,1176,1176,1175,1176,1175
+matched fuzzy dense-rank,R,675,675,464,533,893,769,3219
+matched fuzzy dense-rank,F,90,90,5524,256,59,21,18
+matched fuzzy dense-rank,M,5777,5777,1213,1180,1166,1161,1158

@@ -1,0 +1,4 @@
+arm,retained_nontrivial_concepts,unique_base_band_profiles,customer_coverage_any_mu,customer_coverage_mu_ge_05,mean_concepts_per_customer_at_05,pct_customers_in_multiple_concepts_at_05,mean_pairwise_concept_extent_jaccard,pct_near_duplicate_concept_pairs_ge_08
+Crisp RFM-FCA,32,32,1.0,1.0,5.313882272881933,1.0,0.0793436926137753,0.03024193548387097
+Fuzzy RFM-FCA,359,62,1.0,1.0,36.003062266076896,1.0,0.06777389347073269,0.047474747474747475
+Fuzzy RFM-FCA (Kneedle Secondary),29,9,0.9989792446410344,0.9950663490983328,10.980945899965976,0.9935352160598843,0.3263756076845247,0.2044334975369458

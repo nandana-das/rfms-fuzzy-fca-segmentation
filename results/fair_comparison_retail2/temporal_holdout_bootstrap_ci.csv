@@ -1,0 +1,10 @@
+comparison,metric,point_estimate,ci_lower_95,ci_upper_95,interval_type,spans_zero,exceeds_decision_threshold
+Fuzzy vs Crisp (Unpruned),Delta Out-of-Sample AUC,0.01620370370370361,0.007494241253188392,0.024209761374817198,"95% Paired Customer Bootstrap Interval (Conditional on Fixed Split & Models, B=1000)",False,False
+Fuzzy vs Crisp (Unpruned),Delta Out-of-Sample Spend R2,0.017139288284399923,0.0055649387928154385,0.029101429285967675,"95% Paired Customer Bootstrap Interval (Conditional on Fixed Split & Models, B=1000)",False,False
+Fuzzy vs Crisp (Unpruned),Delta Out-of-Sample Spend Spearman,0.012172046937352188,0.002277061662892491,0.021886305756832748,"95% Paired Customer Bootstrap Interval (Conditional on Fixed Split & Models, B=1000)",False,False
+Fuzzy vs Crisp (Unpruned),Delta Out-of-Sample Invoices R2,0.029054129803670947,0.011570982907815231,0.04678341746918089,"95% Paired Customer Bootstrap Interval (Conditional on Fixed Split & Models, B=1000)",False,False
+Fuzzy Deduplicated vs Crisp,Delta Out-of-Sample AUC (Dedup - Crisp),0.01460437710437712,0.0066594115873764015,0.0219005916338455,"95% Paired Customer Bootstrap Interval (Conditional on Fixed Split & Models, B=1000)",False,False
+Fuzzy Deduplicated vs Crisp,Delta Out-of-Sample Spend R2 (Dedup - Crisp),0.02079644217790033,0.008090255105972102,0.034012838021883526,"95% Paired Customer Bootstrap Interval (Conditional on Fixed Split & Models, B=1000)",False,False
+Fuzzy Deduplicated vs Crisp,Delta Out-of-Sample Invoices R2 (Dedup - Crisp),0.03191480901300092,0.014357443456222464,0.0503604224495351,"95% Paired Customer Bootstrap Interval (Conditional on Fixed Split & Models, B=1000)",False,True
+Fuzzy Multiplicity Effect (Full - Dedup),Delta Out-of-Sample AUC (Multiplicity Effect),0.0015993265993264894,-0.0012966163224933185,0.004310504728403372,"95% Paired Customer Bootstrap Interval (Conditional on Fixed Split & Models, B=1000)",True,False
+Fuzzy Kneedle vs Crisp,Delta Out-of-Sample AUC (Kneedle - Crisp),0.009384246505458549,0.0013817006621282188,0.01638241658013305,"95% Paired Customer Bootstrap Interval (Conditional on Fixed Split & Models, B=1000)",False,False

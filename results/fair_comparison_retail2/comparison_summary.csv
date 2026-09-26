@@ -1,0 +1,6 @@
+Arm,Score_Policy,Context_Attributes,Concepts_Support_gt_004,Nontrivial_Concepts,Test_Out_of_Sample_AUC,Test_Out_of_Sample_Spend_R2,Stability_Jaccard,Mean_Concepts_per_Customer,Decision_AUC_Threshold,Decision_R2_Threshold
+Paper Crisp RFM-FCA Reconstruction,Quintiles (CustomerID tie-break),15,55,54,N/A (Reproduction track),N/A,N/A,N/A,0.02,0.03
+Crisp RFM-FCA (Controlled),Dense Rank (Ties Preserved),15,33,32,0.7753379757167637,0.3475937982439956,0.9603825166430208,5.313882272881933,0.02,0.03
+Fuzzy RFM-FCA (Controlled),Dense Rank Centroids + L-scaling,45,359,359,0.7915416794204673,0.36473308652839553,0.9021159811192537,36.003062266076896,0.02,0.03
+Fuzzy RFM-FCA (Deduplicated Profiles),Dense Rank Centroids + L-scaling (Unique Base Profiles),45,62,62,0.7899423528211408,0.36839024042189594,Controlled profile multiplicity,Controlled profile multiplicity,0.02,0.03
+Fuzzy RFM-FCA (Kneedle Secondary),Dense Rank Centroids + L-scaling + Kneedle,45,29,29,0.7847222222222222,0.35627719550513715,Secondary analysis,10.980945899965976,0.02,0.03

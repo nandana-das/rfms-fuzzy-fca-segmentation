@@ -1,0 +1,32 @@
+intent,published_customers,reconstructed_customers,difference,exact_match,intent_recovered_as_concept
+M5,1176,1175,-1,False,True
+M4,1175,1176,1,False,True
+M3,1176,1175,-1,False,True
+M2,1175,1176,1,False,True
+M1,1176,1176,0,True,True
+F5,1180,1175,-5,False,True
+F5 & M5,845,899,54,False,True
+F5 & M4,257,254,-3,False,True
+F4 & M4,582,570,-12,False,True
+F4 & M3,247,320,73,False,True
+F3 & M3,579,477,-102,False,True
+F2 & M2,620,423,-197,False,True
+F2 & M1,287,411,124,False,True
+F1 & M1,775,673,-102,False,True
+R5 & M5,521,524,3,False,True
+R5 & M4,275,279,4,False,True
+R5 & F5,524,566,42,False,True
+R5 & F5 & M5,422,470,48,False,True
+R4 & M5,329,334,5,False,True
+R4 & M4,290,293,3,False,True
+R4 & M3,256,251,-5,False,True
+R4 & F5,350,336,-14,False,True
+R4 & F5 & M5,246,249,3,False,True
+R3 & M4,325,319,-6,False,True
+R3 & M3,266,262,-4,False,True
+R2 & M3,287,287,0,True,True
+R2 & M2,335,335,0,True,True
+R2 & M1,294,295,1,False,True
+R1 & M2,341,340,-1,False,True
+R1 & M1,517,516,-1,False,True
+R1 & F1 & M1,345,320,-25,False,True
