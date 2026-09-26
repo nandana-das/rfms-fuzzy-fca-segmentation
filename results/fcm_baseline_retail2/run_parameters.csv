@@ -1,0 +1,6 @@
+parameter,value
+FCM fuzzifier m,2.0
+matched_k (crisp concept count),30.0
+FCM natural k (WSS knee),5.0
+n_train,3018.0
+n_test,1294.0
