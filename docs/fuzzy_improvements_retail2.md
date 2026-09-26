@@ -156,3 +156,43 @@ containment check), not proven exactly.
   `run_parameters.csv`; no sensitivity sweep over J_MAX has been run yet.
 - Suppression quality order is unsupervised (support/intent size/stability); a
   downstream-utility-ordered variant (e.g., stability selection on train) is untested.
+
+
+## Appendix: Olist crisp-arm collapse diagnosis (2026-09-26)
+
+The 10-split validation shows the re-derived crisp RFMS-FCA arm collapsing to near-chance AUC
+on the Olist temporal holdout while fuzzy FCA retains strong signal (10/10 splits, mean delta
++0.128). This appendix profiles the mechanism on split seed 1000 so the collapse can be
+reported as a finding about the representation, not left as an unexplained artifact.
+
+**1. The observation cohort's F dimension is degenerate.** The obs cohort is built from
+pre-cutoff orders only, and on this split every customer has a single pre-cutoff order, so F*
+is the constant single-order value 0.20. Under dense-rank scoring a fully tied dimension maps
+every customer into one band — F5, with band support 1.000 — so the crisp context effectively
+loses a dimension.
+
+**2. Every surviving crisp concept is F5-embedded.** Because F5 is universal it appears in
+every closed itemset: all 44 crisp concepts at the support-0.04 cutoff are F5 conjunctions and
+no pure-R intent survives. The crisp lattice cannot express "recent single-order customer" as
+its own concept — recency information survives only bundled with the universal attribute.
+
+**3. The predictive R gradient lives below the band resolution.** Year-2 repurchase label rate
+by crisp R band is weak and non-monotone (1.9 / 1.7 / 2.6 / 2.9 / 3.0% across bands 1–5), but
+by raw-R decile it is clean and monotone (3.5% at R <= 16 days, falling to 1.3–1.9% at
+R > 161 days). Quintile banding destroys the sub-band gradient that carries the signal.
+
+**4. Fuzzy concepts encode raw R; crisp concepts do not.** 239/382 fuzzy features correlate
+with raw R (|r| > 0.1) versus 18/44 crisp features: fuzzy memberships interpolate R across
+band boundaries (partial membership in adjacent bands), preserving the sub-band gradient that
+crisp banding discards.
+
+**Decisive ablation (test AUC, split seed 1000):** raw R alone 0.5643; crisp concepts 0.5662;
+fuzzy concepts 0.6292; raw RFMS 0.5529. Fuzzy concepts beat every alternative — including the
+raw features they are built from — while crisp concepts add nothing over raw R alone.
+
+**Implication.** A concrete demonstration of the discrete-band research gap: where the target
+signal varies continuously below band resolution (sparse-marketplace recency), crisp FCA
+inherits the banding's information loss and its lattice collapses to near-chance, while fuzzy
+FCA's interpolation across band boundaries is exactly what preserves the signal. The crisp-arm
+collapse is a property of the domain-plus-representation pairing, not a pipeline bug — and it
+sharpens the paper's motivation for fuzzy FCA.

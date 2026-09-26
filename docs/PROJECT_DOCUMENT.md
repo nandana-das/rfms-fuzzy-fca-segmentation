@@ -389,9 +389,16 @@ All fixed-split results were conditional on one 70/30 seed. Re-running both hold
 ### 5.5 Updated outstanding work
 
 1. ~~Terminology pass~~ — now also covering v4 additions (suppression, FCM, label leak).
-2. Olist crisp-arm diagnosis: re-derived crisp RFMS-FCA collapses to chance AUC on the Olist
-   holdout while fuzzy FCA retains signal; the mechanism (concept coverage/geometry) is not yet
-   profiled — a likely reviewer question.
+2. ~~Olist crisp-arm diagnosis~~ **DONE (2026-09-26; appendix in docs/fuzzy_improvements_retail2.md).**
+   Mechanism profiled on split seed 1000: the obs cohort's F dimension is degenerate (constant
+   F*=0.20 → universal F5 band, support 1.000), so all 44 crisp concepts at the support-0.04
+   cutoff are F5-embedded conjunctions and no pure-R concept survives; the predictive R gradient
+   is sub-band (label rate by raw-R decile 3.5% → 1.3–1.9% vs weak/non-monotone 1.9–3.0% by
+   crisp band) and 239/382 fuzzy features correlate with raw R vs 18/44 crisp. Decisive ablation
+   (test AUC): fuzzy concepts 0.6292 > raw R 0.5643 ≈ crisp concepts 0.5662 > raw RFMS 0.5529.
+   Framed as a finding: fuzzy FCA interpolates across band boundaries, preserving sub-band
+   signal that crisp banding discards — the collapse is a domain-representation property, not
+   a pipeline bug.
 3. Paper draft: v3 structure plus §5 material; all quantitative claims are now cross-split
    validated except where explicitly noted (single-split artifacts remain in
    results/fuzzy_improvements_retail2/ and results/fcm_baseline_retail2/).
