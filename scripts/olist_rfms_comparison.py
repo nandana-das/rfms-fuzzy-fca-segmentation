@@ -60,7 +60,7 @@ from fair_comparison_retail2 import (
     piecewise_membership,
 )
 from fcm import FuzzyCMeans
-from project_paths import PROCESSED, RESULTS_DIR
+from project_paths import OLIST_RAW_DIR, PROCESSED, RESULTS_DIR
 
 OUT_DIR = RESULTS_DIR / "olist_rfms_comparison"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -251,12 +251,30 @@ def run_part_b(
     obs_first["M"] = obs_first["M_obs"]
     obs_first = obs_first[["CustomerID", "R", "F", "M"]]
 
-    # S: mean review up to cutoff - stored S is the customer-level mean over ALL orders;
-    # using it leaks post-cutoff review info only for the ~2% of obs customers with
-    # post-cutoff orders, and only through one of four dims. Flagged in run_parameters.
+    # S: strictly pre-cutoff reviews governed by customer answer timestamp
+    reviews = pd.read_csv(
+        OLIST_RAW_DIR / "olist_order_reviews_dataset.csv",
+        parse_dates=["review_creation_date", "review_answer_timestamp"],
+    )
+    review_tx = reviews.merge(
+        tx[["order_id", "CustomerID", "order_purchase_timestamp"]],
+        on="order_id",
+        how="inner",
+    )
+    pre_cutoff_reviews = review_tx[
+        (review_tx["order_purchase_timestamp"] <= CUTOFF_DATE)
+        & (review_tx["review_answer_timestamp"] <= CUTOFF_DATE)
+    ].copy()
+    s_pre = pre_cutoff_reviews.groupby("CustomerID")["review_score"].mean()
+
     obs_first = attach_stored_scores(obs_first, score_lookup)
-    s_map = rfm.set_index("CustomerID")["S"]
-    obs_first["S"] = obs_first["CustomerID"].map(s_map)
+    obs_first["S"] = obs_first["CustomerID"].map(s_pre).fillna(5.0)
+
+    # Re-align discrete s_score to reflect leakage-free S (Step 1 dense-rank cutoffs)
+    s_cutoffs = [1.875, 2.75, 3.775, 4.291666666666666]
+    obs_first["s_score"] = apply_dense_rank_cutoffs(
+        obs_first["S"].to_numpy(), s_cutoffs, invert=False
+    )
 
     # Outcomes strictly from post-cutoff orders
     hold_agg = (
@@ -441,8 +459,6 @@ def run_part_b(
 def load_olist_transactions() -> pd.DataFrame:
     """Per-order transaction rows from raw Olist (delivered, valid payment), reusing
     Step 1's filter conventions, for first-order dates and holdout outcomes."""
-    from project_paths import OLIST_RAW_DIR
-
     orders = pd.read_csv(
         OLIST_RAW_DIR / "olist_orders_dataset.csv",
         parse_dates=["order_purchase_timestamp"],
@@ -506,7 +522,7 @@ def main() -> None:
             {"parameter": "validation_passed", "value": part_a["validation_ok"]},
             {"parameter": "CUTOFF_DATE", "value": str(CUTOFF_DATE)},
             {"parameter": "F_star_weights", "value": "alpha=0.20, beta=0.05, gamma=0.75 (from Step 1)"},
-            {"parameter": "partB_obs_features", "value": "pre-cutoff orders only; F=0.20 (single-order F*), M/S = stored customer-level (S may include post-cutoff reviews for ~2% of obs cohort)"},
+            {"parameter": "partB_obs_features", "value": "pre-cutoff orders only; F=0.20 (single-order F*), M=pre-cutoff spend, S=leakage-free pre-cutoff reviews (review_answer_timestamp <= CUTOFF, median-imputed 5.0)"},
             {"parameter": "random_seed", "value": RANDOM_SEED},
         ]
     ).to_csv(OUT_DIR / "run_parameters.csv", index=False)

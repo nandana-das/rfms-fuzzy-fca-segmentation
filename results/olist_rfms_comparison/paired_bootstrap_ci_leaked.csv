@@ -1,0 +1,10 @@
+comparison,metric,point_estimate,ci_lower_95,ci_upper_95,spans_zero,exceeds_decision_threshold,interval_type
+Raw RFMS Baseline vs Fuzzy RFMS-FCA (Suppressed),Delta AUC,-0.1105779290195199,-0.16403811804210178,-0.050310000500882225,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Raw RFMS Baseline vs Fuzzy RFMS-FCA (Suppressed),Delta Spend R2,-0.08796840102850179,-0.12962934603743004,-0.047912489959778475,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Raw RFMS Baseline vs Fuzzy RFMS-FCA (Suppressed),Delta Invoices R2,-0.0901745065630819,-0.13381707992368655,-0.04897083938474697,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Crisp RFMS-FCA vs Fuzzy RFMS-FCA (Suppressed),Delta AUC,-0.13531438669106488,-0.1888123186094561,-0.07756286596519714,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Crisp RFMS-FCA vs Fuzzy RFMS-FCA (Suppressed),Delta Spend R2,-0.10831745158758066,-0.1499258715852967,-0.06883155296748443,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Crisp RFMS-FCA vs Fuzzy RFMS-FCA (Suppressed),Delta Invoices R2,-0.11156765417121306,-0.15445494479579772,-0.0693960152619065,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+FCM soft (matched k=76) vs Fuzzy RFMS-FCA (Suppressed),Delta AUC,-0.11122941402490283,-0.15422601550661855,-0.06433532688009885,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+FCM soft (matched k=76) vs Fuzzy RFMS-FCA (Suppressed),Delta Spend R2,-0.08945922687538554,-0.1311834849490358,-0.05034290327265541,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+FCM soft (matched k=76) vs Fuzzy RFMS-FCA (Suppressed),Delta Invoices R2,-0.09164900037638601,-0.1347823115827003,-0.05073924485504762,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)

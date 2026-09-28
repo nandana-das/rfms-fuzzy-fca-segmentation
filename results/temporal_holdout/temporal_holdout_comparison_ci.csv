@@ -1,0 +1,28 @@
+pipeline,arm,metric,point_estimate,ci_lower_95,ci_upper_95,spans_zero,exceeds_decision_threshold
+Arm A (Original - Full Period S),Raw RFMS Baseline,Delta AUC,-0.1093177572937789,-0.1633313836672416,-0.04887306549967445,False,False
+Arm A (Original - Full Period S),Raw RFMS Baseline,Delta Spend R2,-0.08796837619136721,-0.12962934516739152,-0.047912434369076225,False,False
+Arm A (Original - Full Period S),Raw RFMS Baseline,Delta Invoices R2,-0.09017454800594182,-0.13381707437432108,-0.048970808940478706,False,False
+Arm A (Original - Full Period S),Crisp RFMS-FCA,Delta AUC,-0.13405421496532388,-0.187214199821017,-0.07656729146883037,False,False
+Arm A (Original - Full Period S),Crisp RFMS-FCA,Delta Spend R2,-0.1083174276711707,-0.14992576541236297,-0.06883152735902165,False,False
+Arm A (Original - Full Period S),Crisp RFMS-FCA,Delta Invoices R2,-0.11156769672053157,-0.15445504296740295,-0.0693960397606796,False,False
+Arm A (Original - Full Period S),FCM soft (matched k=76),Delta AUC,-0.1099701933721624,-0.15299901552474207,-0.062432816451218294,False,False
+Arm A (Original - Full Period S),FCM soft (matched k=76),Delta Spend R2,-0.08945919990709439,-0.1311835715029061,-0.05034292292252444,False,False
+Arm A (Original - Full Period S),FCM soft (matched k=76),Delta Invoices R2,-0.09164904108400218,-0.13478241062942584,-0.050739268250023645,False,False
+Arm B (Leakage-Free - Answer Timestamp),Raw RFMS Baseline,Delta AUC,-0.006709820018945378,-0.039147036255185313,0.023054120293576272,True,False
+Arm B (Leakage-Free - Answer Timestamp),Raw RFMS Baseline,Delta Spend R2,-7.18747056012159e-05,-0.0012134220843603577,0.0011371324383220025,True,False
+Arm B (Leakage-Free - Answer Timestamp),Raw RFMS Baseline,Delta Invoices R2,-0.00013337633627108492,-0.0012229436606102124,0.0010537412335934859,True,False
+Arm B (Leakage-Free - Answer Timestamp),Crisp RFMS-FCA,Delta AUC,-0.037749038465196394,-0.08529861574345074,0.009022258813696624,True,False
+Arm B (Leakage-Free - Answer Timestamp),Crisp RFMS-FCA,Delta Spend R2,-1.8949027305918265,-2.2346147604659734,-1.6034023299547762,False,False
+Arm B (Leakage-Free - Answer Timestamp),Crisp RFMS-FCA,Delta Invoices R2,-1.9602588243215344,-2.4108573402880675,-1.59749553189596,False,False
+Arm B (Leakage-Free - Answer Timestamp),FCM soft (matched k=75),Delta AUC,-0.016845404985905144,-0.051994893069159984,0.02198679047354859,True,False
+Arm B (Leakage-Free - Answer Timestamp),FCM soft (matched k=75),Delta Spend R2,-0.0006536946459423376,-0.0021525350405285472,0.0008963846198100224,True,False
+Arm B (Leakage-Free - Answer Timestamp),FCM soft (matched k=75),Delta Invoices R2,-0.0009516668933373662,-0.0022915855094029743,0.0003925492042961468,True,False
+Arm C (Sensitivity - Creation Date),Raw RFMS Baseline,Delta AUC,-0.006732645770958667,-0.039473510293580635,0.023552126371259474,True,False
+Arm C (Sensitivity - Creation Date),Raw RFMS Baseline,Delta Spend R2,-8.074891927101202e-05,-0.0012493389388272408,0.0011273801864481567,True,False
+Arm C (Sensitivity - Creation Date),Raw RFMS Baseline,Delta Invoices R2,-0.00014587685177525067,-0.0012654726860382409,0.0010606021773577666,True,False
+Arm C (Sensitivity - Creation Date),Crisp RFMS-FCA,Delta AUC,-0.04083099052350858,-0.08841040758198167,0.005829330484972516,True,False
+Arm C (Sensitivity - Creation Date),Crisp RFMS-FCA,Delta Spend R2,-0.5864410783410684,-0.7063110435596964,-0.4931463834633106,False,False
+Arm C (Sensitivity - Creation Date),Crisp RFMS-FCA,Delta Invoices R2,-0.6467148064795034,-0.7984382622752819,-0.5241353013157196,False,False
+Arm C (Sensitivity - Creation Date),FCM soft (matched k=77),Delta AUC,-0.02701808179988663,-0.06570511959270489,0.015544995273953421,True,False
+Arm C (Sensitivity - Creation Date),FCM soft (matched k=77),Delta Spend R2,-0.0007376279494705207,-0.002201213299537613,0.0007993874033607765,True,False
+Arm C (Sensitivity - Creation Date),FCM soft (matched k=77),Delta Invoices R2,-0.0009875032267460115,-0.0022528002662607046,0.000359150778198474,True,False
