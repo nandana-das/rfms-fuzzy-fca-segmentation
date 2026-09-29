@@ -180,7 +180,6 @@ for pop_name, pop_df in populations.items():
 
 df_rep = pd.DataFrame(replication_rows)
 df_rep.to_csv(OUT_DIR / "base_paper_replication_results.csv", index=False)
-df_rep.to_csv(RESULTS_DIR / "base_paper_replication_results.csv", index=False)
 print(f"Saved: {OUT_DIR / 'base_paper_replication_results.csv'}")
 
 # Print summary for k=4, 5, 6
