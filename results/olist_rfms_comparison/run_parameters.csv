@@ -6,5 +6,5 @@ expected_lattice_count,1369
 validation_passed,True
 CUTOFF_DATE,2017-08-31 23:59:59
 F_star_weights,"alpha=0.20, beta=0.05, gamma=0.75 (from Step 1)"
-partB_obs_features,"pre-cutoff orders only; F=0.20 (single-order F*), M=pre-cutoff spend, S=leakage-free pre-cutoff reviews (review_answer_timestamp <= CUTOFF, median-imputed 5.0)"
+partB_obs_features,"pre-cutoff orders only; F=0.20 (single-order F*), M=pre-cutoff spend, S=leakage-free pre-cutoff reviews (review_answer_timestamp <= CUTOFF, median-imputed 5.0); score bands re-derived from train split"
 random_seed,42

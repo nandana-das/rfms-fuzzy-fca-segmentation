@@ -379,26 +379,28 @@ All fixed-split results were conditional on one 70/30 seed. Re-running both hold
 - **Retail II:** fuzzy-suppressed beats crisp on AUC in **10/10 splits** (mean delta +0.0089,
   paired t p=2.3e-04) and raw RFM 10/10 (p=1.0e-04); spend R2 (+0.0161) and invoices R2 (+0.0332)
   advantages replicate on every split.
-- **Olist (leak-fixed):** beats re-derived crisp **10/10** (mean delta +0.128 AUC, p=4.1e-08), raw
-  RFMS 10/10 (+0.083), FCM 10/10 (+0.064). Absolute levels are modest (AUC ~0.64) because Year-2
-  repurchase is a 2.6% rare event; the ordering fuzzy-FCA > FCM ≥ raw > crisp is split-robust.
-- **Cross-domain contrast:** fuzzy FCA's advantage over raw features is ~10× larger on the sparse
-  marketplace (+0.11 AUC) than on repeat-heavy Retail II (+0.01 AUC) — the method earns its keep
-  exactly where classical RFM breaks down.
+- **Olist (strictly leakage-free):** evaluated under strict pre-cutoff review filtering
+  (order_purchase_timestamp <= cutoff AND review_answer_timestamp <= cutoff) and train-derived
+  score bands: Fuzzy RFMS-FCA achieves mean AUC **0.5612 ± 0.0125**, significantly exceeding
+  re-derived Crisp RFMS-FCA (**0.5353 ± 0.0153**, mean delta **+0.0259**, paired t = 7.70,
+  p = 3.0e-05) and FCM soft (**0.5517 ± 0.0115**). However, unlike Retail II, Fuzzy RFMS-FCA
+  does not dominate raw features (Raw RFMS mean AUC **0.5587 ± 0.0107**; Raw beats Fuzzy in 4/10 splits).
+  Spend R² (0.0010 vs 0.0007) and Invoices R² (0.0011 vs 0.0009) remain close to zero across all arms.
+- **Cross-domain contrast:** On repeat-heavy Retail II, fuzzy concept features provide consistent
+  predictive lift (+0.009 AUC, +0.016 Spend R², +0.033 Invoices R²). On the sparse Olist marketplace
+  (97% single-order customers, 2.56% repurchase rate), predictive power is near baseline levels across
+  all representations once review leakage is eliminated.
 
 ### 5.5 Updated outstanding work
 
 1. ~~Terminology pass~~ — now also covering v4 additions (suppression, FCM, label leak).
 2. ~~Olist crisp-arm diagnosis~~ **DONE (2026-09-26; appendix in docs/fuzzy_improvements_retail2.md).**
    Mechanism profiled on split seed 1000: the obs cohort's F dimension is degenerate (constant
-   F*=0.20 → universal F5 band, support 1.000), so all 44 crisp concepts at the support-0.04
-   cutoff are F5-embedded conjunctions and no pure-R concept survives; the predictive R gradient
-   is sub-band (label rate by raw-R decile 3.5% → 1.3–1.9% vs weak/non-monotone 1.9–3.0% by
-   crisp band) and 239/382 fuzzy features correlate with raw R vs 18/44 crisp. Decisive ablation
-   (test AUC): fuzzy concepts 0.6292 > raw R 0.5643 ≈ crisp concepts 0.5662 > raw RFMS 0.5529.
-   Framed as a finding: fuzzy FCA interpolates across band boundaries, preserving sub-band
-   signal that crisp banding discards — the collapse is a domain-representation property, not
-   a pipeline bug.
+   F*=0.20 → universal F5 band, support 1.000), so all crisp concepts at the support-0.04
+   cutoff are F5-embedded conjunctions and no pure-R concept survives. The crisp context
+   loses discriminative resolution under hard banding (mean AUC 0.5353 across 10 splits), whereas
+   fuzzy FCA's piecewise-linear interpolation across band boundaries preserves continuous variation
+   (mean AUC 0.5612 across 10 splits, delta +0.0259, p=3.0e-05).
 3. Paper draft: v3 structure plus §5 material; all quantitative claims are now cross-split
    validated except where explicitly noted (single-split artifacts remain in
    results/fuzzy_improvements_retail2/ and results/fcm_baseline_retail2/).

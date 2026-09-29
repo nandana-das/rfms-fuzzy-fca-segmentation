@@ -335,7 +335,7 @@ comp_rows = [
         "Category": "New Experiments (Our Project)",
         "Metric / Parameter": "Predictive Holdout Validation",
         "Base Paper": "Not present (unsupervised clustering only)",
-        "Our Project": "Retail II: AUC 0.7915 vs 0.7753 (+0.0162); Olist: AUC 0.5639 vs 0.5572 (+0.0067)",
+        "Our Project": "Retail II: AUC 0.7915 vs 0.7753 (+0.0162); Olist: AUC 0.5548 vs 0.5572 (-0.0024); 10-Split Mean: 0.5612 vs 0.5587 (+0.0025)",
         "Directly Comparable?": "No (New Evaluation Framework)",
         "Explanation": "Base paper had zero predictive validation; our project introduced temporal holdout regression and classification.",
     },

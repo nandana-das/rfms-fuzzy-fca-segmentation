@@ -3,7 +3,7 @@ STEP 1: Data cleaning + RFMS feature engineering (methodology Sec 1-2)
 - Join orders<->customers via customer_unique_id (NOT customer_id)
 - Filter delivered orders, valid payments
 - Aggregate R, n_j, M, S per customer
-- Composite F* via variance-ratio grid search (Sec 2.3)
+- Composite purchase-intensity index F* via entropy-maximizing grid search (Sec 2.3)
 - Dense-rank fractional scoring 1-5 (Sec 1.2 Fix B)
 """
 import pandas as pd

@@ -471,8 +471,11 @@ Replicates on Olist at matched k.
 bitset mining with the stored Step-1 bands reproduces the 1,369-concept lattice exactly.
 Re-deriving bands from raw values does NOT (float-tie shift: 1 F row, 776 M rows; lattice
 1,369 -> 1,374) - stored bands are the source of truth for full-population structure.
-Fixed-split holdout: fuzzy-suppressed (409 features) dominates raw RFMS (+0.111 AUC),
-crisp RFMS-FCA (+0.135), and FCM (+0.111).
+Fixed-split holdout (strictly leakage-free): under strict pre-cutoff review filtering
+(answer timestamp <= cutoff) and train-derived bands, Fuzzy RFMS-FCA (331 features)
+achieves AUC 0.5548, spend R2 0.0004, invoices R2 0.0005, remaining statistically on par
+with Raw RFMS (AUC 0.5572, spend R2 0.0009; 95% bootstrap CI spans zero). Crisp RFMS-FCA
+collapses to AUC 0.5000 due to the degenerate F dimension in the single-order obs cohort.
 
 **Stored-band label leak (found in the Olist holdout, fixed before adoption).** The obs
 cohort includes customers whose later order falls in the holdout window; stored bands are
@@ -484,9 +487,11 @@ never be attached to holdout features.
 **Multi-split validation (10 random customer splits per dataset).** Retail II: fuzzy-
 suppressed beats crisp on AUC in 10/10 splits (mean delta +0.0089, paired t p=2.3e-04)
 and raw RFM 10/10 (p=1.0e-04); spend R2 (+0.0161) and invoices R2 (+0.0332) advantages
-replicate on every split. Olist (leak-fixed): beats re-derived crisp 10/10 (mean delta
-+0.128 AUC, p=4.1e-08), raw (10/10, +0.083), and FCM (10/10, +0.064). Absolute Olist
-levels are modest (AUC ~0.64) because Year-2 repurchase is a 2.6% rare event, but the
-ordering fuzzy-FCA > FCM >= raw > crisp is split-robust. Cross-domain: fuzzy FCA's
-advantage over raw features is ~10x larger on the sparse marketplace (+0.11 AUC) than on
-repeat-heavy Retail II (+0.01 AUC).
+replicate on every split. Olist (strictly leakage-free): Fuzzy RFMS-FCA achieves mean AUC
+0.5612 ± 0.0125, significantly outperforming re-derived crisp FCA (0.5353 ± 0.0153, mean
+delta +0.0259, paired t=7.70, p=3.0e-05) and FCM soft (0.5517 ± 0.0115). However, Fuzzy
+RFMS-FCA does not beat raw features on the sparse marketplace (Raw RFMS mean AUC 0.5587 ± 0.0107;
+Raw beats Fuzzy in 4/10 splits). Cross-domain: fuzzy FCA's predictive advantage is verified
+on the repeat-buyer retail domain (Retail II, +0.01 AUC, +0.016 spend R2), but collapses to
+near-baseline on the one-time-buyer marketplace (Olist), demonstrating that feature engineering
+cannot overcome structural frequency sparsity.

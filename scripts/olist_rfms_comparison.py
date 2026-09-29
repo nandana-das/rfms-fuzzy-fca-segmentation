@@ -267,14 +267,7 @@ def run_part_b(
     ].copy()
     s_pre = pre_cutoff_reviews.groupby("CustomerID")["review_score"].mean()
 
-    obs_first = attach_stored_scores(obs_first, score_lookup)
     obs_first["S"] = obs_first["CustomerID"].map(s_pre).fillna(5.0)
-
-    # Re-align discrete s_score to reflect leakage-free S (Step 1 dense-rank cutoffs)
-    s_cutoffs = [1.875, 2.75, 3.775, 4.291666666666666]
-    obs_first["s_score"] = apply_dense_rank_cutoffs(
-        obs_first["S"].to_numpy(), s_cutoffs, invert=False
-    )
 
     # Outcomes strictly from post-cutoff orders
     hold_agg = (
@@ -313,12 +306,16 @@ def run_part_b(
     y_tr_inv = train_df["future_invoices"].to_numpy()
     y_te_inv = test_df["future_invoices"].to_numpy()
 
-    # ---- Crisp RFMS-FCA control (stored Step-1 bands, not re-derived) ----
-    train_scored = train_df[["CustomerID", "R", "F", "M", "S"] + [f"{d}_score" for d in DIMS]]
-    crisp = mine_crisp_closed_concepts(train_scored, min_support=SUPPORT_CUTOFF, dims=DIMS)
-    X_tr_crisp = compute_customer_concept_memberships(
-        crisp, crisp_bands_from_scores(train_scored)
+    # ---- Crisp RFMS-FCA control (re-derived from pre-cutoff training features) ----
+    train_scored = dense_rank_scores(
+        train_df[["CustomerID", "R", "F", "M", "S"]], dims=DIMS
     )
+    crisp = mine_crisp_closed_concepts(train_scored, min_support=SUPPORT_CUTOFF, dims=DIMS)
+    crisp_bands_tr = pd.DataFrame(
+        {f"{d}{k}": (train_scored[f"{d}_score"] == k).astype(float)
+         for d in DIMS for k in range(1, 6)}
+    )
+    X_tr_crisp = compute_customer_concept_memberships(crisp, crisp_bands_tr)
     train_cutoffs = {
         d: extract_dense_rank_cutoffs(train_scored, d, invert=(d in INVERT_DIMS))
         for d in DIMS
@@ -522,7 +519,7 @@ def main() -> None:
             {"parameter": "validation_passed", "value": part_a["validation_ok"]},
             {"parameter": "CUTOFF_DATE", "value": str(CUTOFF_DATE)},
             {"parameter": "F_star_weights", "value": "alpha=0.20, beta=0.05, gamma=0.75 (from Step 1)"},
-            {"parameter": "partB_obs_features", "value": "pre-cutoff orders only; F=0.20 (single-order F*), M=pre-cutoff spend, S=leakage-free pre-cutoff reviews (review_answer_timestamp <= CUTOFF, median-imputed 5.0)"},
+            {"parameter": "partB_obs_features", "value": "pre-cutoff orders only; F=0.20 (single-order F*), M=pre-cutoff spend, S=leakage-free pre-cutoff reviews (review_answer_timestamp <= CUTOFF, median-imputed 5.0); score bands re-derived from train split"},
             {"parameter": "random_seed", "value": RANDOM_SEED},
         ]
     ).to_csv(OUT_DIR / "run_parameters.csv", index=False)

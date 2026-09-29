@@ -65,7 +65,7 @@ from olist_rfms_comparison import (
     load_olist_transactions,
     mine_fuzzy_closed_concepts_bitset,
 )
-from project_paths import PROCESSED, RESULTS_DIR
+from project_paths import OLIST_RAW_DIR, PROCESSED, RESULTS_DIR
 
 OUT_DIR = RESULTS_DIR / "multisplit_validation"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -217,10 +217,6 @@ def multisplit_olist(n_splits: int) -> pd.DataFrame:
     print(f"MULTI-SPLIT: OLIST RFMS (cutoff {CUTOFF_DATE.date()}, 70/30 customer split)")
     print("=" * 70)
     tx = load_olist_transactions()
-    df = pd.read_csv(PROCESSED + "olist_rfms_features.csv")
-    df = df.rename(columns={"customer_unique_id": "CustomerID", "F_star": "F"})
-    s_map = df.set_index("CustomerID")["S"]
-
     obs_tx = tx[tx["order_purchase_timestamp"] <= CUTOFF_DATE]
     hold_tx = tx[tx["order_purchase_timestamp"] > CUTOFF_DATE]
 
@@ -234,7 +230,23 @@ def multisplit_olist(n_splits: int) -> pd.DataFrame:
     obs_first["R"] = (obs_ref - obs_first["CustomerID"].map(last_obs)).dt.days.astype(int)
     obs_first["F"] = 0.20
     obs_first["M"] = obs_first["M_obs"]
-    obs_first["S"] = obs_first["CustomerID"].map(s_map)
+
+    # S: strictly pre-cutoff reviews governed by order purchase date and review answer timestamp
+    reviews = pd.read_csv(
+        OLIST_RAW_DIR / "olist_order_reviews_dataset.csv",
+        parse_dates=["review_creation_date", "review_answer_timestamp"],
+    )
+    review_tx = reviews.merge(
+        tx[["order_id", "CustomerID", "order_purchase_timestamp"]],
+        on="order_id",
+        how="inner",
+    )
+    pre_cutoff_reviews = review_tx[
+        (review_tx["order_purchase_timestamp"] <= CUTOFF_DATE)
+        & (review_tx["review_answer_timestamp"] <= CUTOFF_DATE)
+    ].copy()
+    s_pre = pre_cutoff_reviews.groupby("CustomerID")["review_score"].mean()
+    obs_first["S"] = obs_first["CustomerID"].map(s_pre).fillna(5.0)
 
     hold_agg = (
         hold_tx.groupby("CustomerID", sort=True)

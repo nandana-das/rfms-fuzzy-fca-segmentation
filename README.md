@@ -45,16 +45,21 @@ datasets and are documented in `docs/fuzzy_improvements_retail2.md`:
 2. **Fuzzy C-Means baseline** (`scripts/fcm.py`) — isolates fuzziness from
    lattice structure. FCA's structure, not fuzziness itself, carries the
    predictive value on both datasets.
-3. **Multi-split validation** (`scripts/multisplit_validation.py`) — the
-   adopted fuzzy-suppression arm beats crisp FCA and raw features on 10/10
-   random customer splits on both datasets (paired t-tests, Retail II AUC
-   delta +0.0089 p=2.3e-04; Olist AUC delta +0.128 p=4.1e-08 after removing a
-   stored-band label leak).
+3. **Multi-split validation** (`scripts/multisplit_validation.py`) — evaluated
+   over 10 random customer splits per dataset under strict leakage-free temporal
+   protocols. On Retail II, the adopted fuzzy-suppression arm beats crisp FCA on
+   AUC across 10/10 splits (mean delta +0.0089, paired t p=2.3e-04) and raw RFM on
+   10/10 splits. On the sparse Olist marketplace, eliminating post-cutoff review
+   leakage establishes a realistic baseline: Fuzzy RFMS-FCA achieves mean AUC
+   0.5612 ± 0.0125, significantly outperforming re-derived crisp FCA (0.5353 ± 0.0153,
+   mean delta +0.0259, p=3.0e-05), but remaining essentially on par with raw RFMS
+   (0.5587 ± 0.0107; raw beats fuzzy in 4/10 splits).
 
-Cross-domain finding: fuzzy FCA's advantage over baselines is much larger on
-the sparse Olist marketplace (AUC +0.11 over raw RFMS) than on the
-repeat-buyer-heavy Retail II (+0.01 over raw RFM) — the method earns its keep
-exactly where classical RFM breaks down.
+Cross-domain finding: While fuzzy FCA provides consistent, modest predictive gains
+on repeat-buyer retail data (Retail II), on sparse one-time-buyer marketplace data
+(Olist) predictive performance remains near baseline once review leakage is
+eliminated, demonstrating that representation engineering cannot override physical
+frequency sparsity.
 
 ## Environment setup (Windows PowerShell)
 
@@ -130,7 +135,10 @@ Step 1–14 artifacts.
 
 - `docs/PROJECT_DOCUMENT.md` — project methodology and findings.
 - `docs/RESULTS_SUMMARY.md` — results and diagnostics.
+- `docs/results_section.md` — publication-ready consolidated experimental results.
 - `docs/methodology_rfms_fca_olist.md` — RFMS/FCA methodology notes.
-- `docs/fuzzy_improvements_retail2.md` — improvements decision record
-  (suppression adoption, FCM baseline, cross-domain check, multi-split
-  validation).
+- `docs/fuzzy_improvements_retail2.md` — improvements decision record (suppression adoption, FCM baseline, cross-domain check, multi-split validation).
+- `docs/base_paper_methodology_audit.md` — detailed 25-point methodology audit against Rungruang et al. (2024).
+- `docs/contribution_audit.md` — systematic contribution classification and lineage analysis.
+- `docs/claim_audit.md` — claim-by-claim verification and publication-grade phrasing.
+- `docs/final_methodology_contribution_framing.md` — consolidated methodology and contribution framing.

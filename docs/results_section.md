@@ -144,24 +144,38 @@ The audit identified:
 
 The corrected protocol restricts Satisfaction information to reviews available by the cutoff, using review_answer_timestamp as the governing information-availability timestamp. A review-creation-date sensitivity analysis was also evaluated.
 
-The leakage-free Olist fuzzy RFMS-FCA predictive results are:
+The leakage-free Olist predictive results under strict pre-cutoff review filtering (review_answer_timestamp <= cutoff) and train-derived score bands are:
 
-| Model | AUC | Spend R² | Invoice R² |
-|---|---:|---:|---:|
-| Raw RFMS | 0.5572 | 0.0009 | 0.0010 |
-| Crisp RFMS-FCA | 0.5261 | -1.8939 | -1.9591 |
-| Fuzzy RFMS-FCA + suppression | 0.5639 | 0.0010 | 0.0011 |
-| FCM | 0.5471 | 0.0004 | 0.0002 |
+### Fixed-Split Holdout (70/30, Seed 42)
 
-The paired bootstrap comparison of leakage-free fuzzy RFMS-FCA against the raw RFMS baseline gives:
+| Model | Features | AUC | Spend R² | Invoice R² |
+|---|---:|---:|---:|---:|
+| Raw RFMS Baseline | 4 | 0.5572 | 0.0009 | 0.0010 |
+| Crisp RFMS-FCA | 44 | 0.5000 | -0.0003 | -0.0003 |
+| Fuzzy RFMS-FCA (Suppressed) | 331 | 0.5548 | 0.0004 | 0.0005 |
+| FCM soft (matched k=44) | 44 | 0.5426 | 0.0002 | 0.0003 |
 
-- AUC difference = -0.0067, 95% CI [-0.0391, 0.0231]
-- Spend R² difference = -0.0001, 95% CI [-0.0012, 0.0011]
-- Invoice R² difference = -0.0001, 95% CI [-0.0012, 0.0011]
+The paired bootstrap comparison (B=1,000) against Fuzzy RFMS-FCA (Suppressed) yields:
+- Raw RFMS Baseline vs Fuzzy: Delta AUC = +0.0024, 95% CI [-0.0341, +0.0379] (spans zero)
+- FCM soft vs Fuzzy: Delta AUC = -0.0122, 95% CI [-0.0493, +0.0236] (spans zero)
+- Crisp RFMS-FCA vs Fuzzy: Delta AUC = -0.0548, 95% CI [-0.0947, -0.0170]
 
-All intervals include zero.
+### Multi-Split Validation (10 Random Splits, Seeds 1000–1009)
 
-Therefore, the earlier Olist temporal result showing substantially stronger predictive performance should be removed from the final paper. Under the leakage-free protocol, no statistically significant predictive advantage over the raw baseline is established.
+| Dataset | Model | Mean Features | Mean AUC ± SD | Mean Spend R² ± SD | Mean Invoice R² ± SD | Wins vs Ref |
+|---|---|---:|---:|---:|---:|---:|
+| Retail II | Raw RFM Baseline | 3.0 | 0.7770 ± 0.0117 | 0.2179 ± 0.0103 | 0.3420 ± 0.0214 | 0 / 10 |
+| Retail II | Crisp RFM-FCA | 29.6 | 0.7768 ± 0.0121 | 0.3398 ± 0.0194 | 0.4418 ± 0.0145 | 0 / 10 |
+| Retail II | Fuzzy RFM-FCA (Suppressed) | 96.7 | 0.7857 ± 0.0121 | 0.3559 ± 0.0195 | 0.4750 ± 0.0138 | Ref |
+| Olist | Raw RFMS Baseline | 4.0 | 0.5587 ± 0.0107 | 0.0007 ± 0.0006 | 0.0009 ± 0.0006 | 4 / 10 |
+| Olist | Crisp RFMS-FCA | 44.7 | 0.5353 ± 0.0153 | 0.0005 ± 0.0005 | 0.0005 ± 0.0005 | 0 / 10 |
+| Olist | Fuzzy RFMS-FCA (Suppressed) | 339.7 | 0.5612 ± 0.0125 | 0.0010 ± 0.0005 | 0.0011 ± 0.0006 | Ref |
+| Olist | FCM soft (matched k) | 44.7 | 0.5517 ± 0.0115 | 0.0005 ± 0.0010 | 0.0004 ± 0.0012 | 1 / 10 |
+
+On Retail II, Fuzzy RFM-FCA significantly outperforms crisp FCA (mean delta +0.0089, paired t = 5.89, p = 2.3e-04) and raw RFM in 10/10 splits.
+On Olist, Fuzzy RFMS-FCA outperforms re-derived crisp FCA (mean delta +0.0259, paired t = 7.70, p = 3.0e-05) and FCM, but does not outperform the raw RFMS baseline (mean delta +0.0025; raw beats fuzzy in 4/10 splits).
+
+Therefore, the earlier Olist temporal result showing strong predictive superiority (AUC ~0.667 fixed split, ~0.635 multisplit) must be permanently retracted. Under the leakage-free protocol, predictive gains on Olist are near zero, consistent with the structural reality of a 97% single-order customer base.
 
 ## 10. Overall Findings
 

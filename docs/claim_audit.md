@@ -29,16 +29,17 @@ This audit checks all major claims across the repository, evaluates the supporti
 
 ---
 
-### Claim 2: "Fuzzy RFMS-FCA achieves superior out-of-sample predictive performance on Olist (AUC ≈ 0.667, R² ≈ 0.089)"
-- **Location:** Early project drafts; legacy temporal holdout reports (prior to Problem 3 audit).
-- **Available Evidence:** The Problem 3 temporal audit revealed that the early Olist temporal holdout suffered from review-score leakage (aggregating customer satisfaction scores over the entire multi-year period into the observation window). When evaluated with strict pre-cutoff satisfaction, the metrics collapsed to:
-  - AUC: $0.6659 \to \mathbf{0.5639}$ (Raw RFMS baseline = 0.5706; Difference = $-0.0067$, 95% CI $[-0.0391, +0.0231]$)
-  - Future Spend $R^2$: $0.0888 \to \mathbf{0.0010}$
-  - Future Invoice $R^2$: $0.0912 \to \mathbf{0.0011}$
-- **Supported?** **UNSUPPORTED (Retracted per Problem 3).**
-- **Problem:** Maintaining this claim would constitute scientific misconduct (disseminating results contaminated by temporal data leakage).
+### Claim 2: "Fuzzy RFMS-FCA achieves superior out-of-sample predictive performance on Olist (AUC ≈ 0.667 fixed-split, AUC ≈ 0.635 multi-split)"
+- **Location:** Early project drafts; legacy temporal holdout reports and multi-split validation reports (prior to leakage correction).
+- **Available Evidence:** The Problem 3 and temporal audits revealed that early Olist evaluations suffered from review-score leakage (aggregating customer satisfaction scores across post-cutoff orders) and stored full-period score band attachment. Under strictly leakage-free protocols (pre-cutoff review filtering and train-derived score bands), the metrics collapsed to:
+  - Fixed-Split (Seed 42): AUC $0.6659 \to \mathbf{0.5548}$ (Raw RFMS baseline = 0.5572; Difference = $-0.0024$, 95% bootstrap CI $[-0.0379, +0.0341]$ spans zero)
+  - Multi-Split (10 splits): Mean AUC $0.6351 \to \mathbf{0.5612 \pm 0.0125}$ (Raw RFMS baseline = $0.5587 \pm 0.0107$; Raw beats Fuzzy in 4/10 splits)
+  - Future Spend $R^2$: $0.0888 \to \mathbf{0.0004}$ (fixed split), $0.0010 \pm 0.0005$ (multi-split)
+  - Future Invoice $R^2$: $0.0912 \to \mathbf{0.0005}$ (fixed split), $0.0011 \pm 0.0006$ (multi-split)
+- **Supported?** **UNSUPPORTED (Retracted per leakage audit).**
+- **Problem:** Maintaining this claim would constitute scientific error (disseminating results contaminated by temporal review leakage).
 - **Safer Replacement Wording:**  
-  > *"When evaluated under a strictly leakage-free temporal holdout protocol on the sparse Olist marketplace (repeat buyer rate 2.56%), Fuzzy RFMS-FCA achieves an AUC of 0.5639 and near-zero spend R² (0.0010), exhibiting no statistically significant predictive advantage over raw RFMS baselines (95% bootstrap CI spans zero). Predictive gains are observed on the repeat-heavy Online Retail II cohort, but do not generalize to one-time-buyer marketplace domains."*
+  > *"When evaluated under strictly leakage-free temporal holdout and 10-split cross-validation protocols on the sparse Olist marketplace (repeat buyer rate 2.56%), Fuzzy RFMS-FCA achieves an AUC of 0.5548 (fixed split) and 0.5612 ± 0.0125 (multi-split), exhibiting no statistically significant predictive advantage over raw RFMS baselines (bootstrap CIs span zero; raw features beat fuzzy in 4 of 10 splits). Predictive gains are observed on the repeat-heavy Online Retail II cohort, but do not generalize to one-time-buyer marketplace domains."*
 
 ---
 
