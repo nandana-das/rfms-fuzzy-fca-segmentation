@@ -123,13 +123,13 @@ def suppress_redundant_concepts_sparse(
     order = np.flatnonzero(keep_mask0)
     order = order[np.lexsort((order, -supports[order]))]
 
-    bin_ext = (mu_matrix >= mu_cut).T  # shape: (n_concepts, n_customers)
+    bin_ext = (mu_matrix >= mu_cut).T.astype(np.int32)  # shape: (n_concepts, n_customers)
     kept: list[int] = []
-    kept_mat = np.empty((0, mu_matrix.shape[0]), dtype=bool)
+    kept_mat = np.empty((0, mu_matrix.shape[0]), dtype=np.int32)
     for idx in order:
         ext = bin_ext[idx]
         if kept_mat.shape[0]:
-            inter = kept_mat @ ext  # intersection sizes vs every kept concept
+            inter = kept_mat @ ext  # integer intersection sizes vs every kept concept
             cand = np.flatnonzero(inter > 0)
             redundant = False
             for row_i in cand:

@@ -1,0 +1,2 @@
+Dataset,Cohort,Min Support Threshold,Kneedle Support Threshold,Raw Crisp Concepts,Raw Fuzzy Concepts,Redundancy Suppressed Concepts (J_max=0.8),Concepts Removed by Suppression,Mean Concepts per Customer,Median Concepts per Customer,Mean Extent Size (mu > 0.5),Median Extent Size (mu > 0.5)
+Dunnhumby Complete Journey,Observation (n=2499),0.04,0.21288515406162464,38,502,123,379,56.96748112843377,61.59323616612795,236.8605577689243,220.0

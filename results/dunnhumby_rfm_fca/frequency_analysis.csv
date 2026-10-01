@@ -1,0 +1,2 @@
+Dataset / Representation,Total Customers,Pct F = min (One-time),Pct F >= 2,Pct F >= 3,Unique raw F values,F min value,F median value,F max value,F mean value,F std value,Distinct F values in lowest band (F1),Variance in lowest band (F1),F-score Shannon entropy (bits)
+Dunnhumby Complete Journey (Baskets per Household),2499,0.3201280512204882,99.6798719487795,99.35974389755903,365,1.0,67.0,1169.0,95.5874349739896,102.09098729103219,73,372.35580500668783,1.7112406415448118

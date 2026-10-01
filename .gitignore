@@ -9,3 +9,6 @@ __pycache__/
 
 # Tool state
 .freebuff/
+
+# Raw dataset (>100MB limit for GitHub)
+data/dunnhumby_raw/

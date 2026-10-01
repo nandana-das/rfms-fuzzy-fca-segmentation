@@ -1,0 +1,28 @@
+Parameter,Value
+Dataset Name,Dunnhumby Complete Journey
+Data File Path,D:\Nandana\MTECH\Semester 3\Projects\MP\rfms_fca_project\data\dunnhumby_raw\transaction_data.csv
+Observation Cutoff Day,620
+Holdout End Day,711
+Observation Duration,620 days (~88.6 weeks)
+Holdout Duration,91 days (13 weeks / 1 quarter)
+Frequency Definition,Distinct BASKET_ID values per household_key
+Monetary Definition,Sum of SALES_VALUE (NOT multiplied by QUANTITY)
+Recency Definition,Cutoff Day minus max transaction Day
+Score Methodology,"Dense rank (5 bands, R inverted, F/M increasing)"
+FCA Minimum Support,0.04
+L-Fuzzy Cutoffs,"(0.3, 0.5, 0.7)"
+Jaccard Redundancy Cutoff (J_max),0.8
+max_len,None (no artificial cap)
+Stability Proxy Note,Proxy only; NOT canonical Kuznetsov stability
+Kneedle Threshold Note,Kneedle-INSPIRED (normalised max-chord-distance); NOT canonical Kneedle
+Clustering Algorithms,"K-Means, Ward at k=4,5,6"
+FCM Fuzzifier (m),2.0
+Classification Model,"LogisticRegressionCV(Cs=10, cv=5, scoring=roc_auc)"
+Regression Models,"RidgeCV(alphas=logspace(-3,3,20), cv=5)"
+Fixed Split Seed,42
+Multi-split Seeds,1000 to 1009 (10 splits)
+Bootstrap Resamples,1000
+Satisfaction Dimension,EXCLUDED (RFM only; S not present anywhere)
+Olist,OUT OF SCOPE (not loaded or analyzed)
+FPC/Xie-Beni,Computed for FCM ONLY; not applied to FCA clusters
+FCA Hard Cluster Metrics,Silhouette and Davies-Bouldin only

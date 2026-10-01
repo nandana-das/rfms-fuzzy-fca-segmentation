@@ -1,0 +1,2 @@
+Dataset,Customers,Orders,Repeat rate,One-time buyer %,Unique R values,Unique F values,Unique M values,F-score distribution,R-score distribution,M-score distribution,F entropy (bits),Max theoretical entropy (5 bands)
+Dunnhumby Complete Journey,2499,238873,0.9967987194877951,0.3201280512204882,217,365,2495,"{1: 1337, 2: 694, 3: 268, 4: 118, 5: 82}","{1: 48, 2: 60, 3: 74, 4: 141, 5: 2176}","{1: 501, 2: 500, 3: 499, 4: 500, 5: 499}",1.7112406415448118,2.321928094887362
