@@ -41,11 +41,12 @@ In their concluding section, Rungruang et al. explicitly highlighted key limitat
 > *"we will modify and improve this model by representing RFM values in a non-binary formal context in future studies."*
 
 This repository directly executes that agenda while addressing foundational methodological gaps:
-1. **Continuous Fuzzy Memberships:** Eliminating hard quintile boundary discontinuities via centroid-based piecewise-linear membership functions with outer shoulder saturation.
-2. **Data-Driven Concept Reduction:** Replacing arbitrary manual support thresholds with Kneedle-inspired elbow detection on support and stability-proxy distributions.
-3. **Redundancy Suppression:** Resolving fuzzy concept proliferation via greedy extent-Jaccard suppression ($J_{\max} = 0.80$), reducing concept counts 4×–5× with zero loss of downstream predictive utility.
-4. **Principled Clustering Evaluation:** Benchmarking against canonical Fuzzy C-Means (FCM, $m=2.0$) and evaluating hard partitions via Top-$k$ Membership Hardening in the standardized raw RFM space, separating spatial compactness from lattice concept closure.
+1. **Continuous Fuzzy Memberships:** Fuzzy membership reduces the hard boundary discontinuities introduced by crisp quintile discretization, while explicitly acknowledging structural choices such as five behavioral bands, centroid construction, and $\mathcal{L}$-fuzzy threshold configuration.
+2. **Data-Driven Concept Reduction:** Closed fuzzy concepts are first generated subject to the minimum support criterion (0.04). The Kneedle-inspired normalized max-distance-from-chord heuristic then provides a data-driven secondary pruning criterion based on the observed support and stability-proxy distributions, complementing the candidate generation threshold.
+3. **Redundancy Suppression:** The greedy extent-Jaccard procedure mitigates concept proliferation by suppressing near-duplicate concepts under the specified $J_{\max} = 0.80$ criterion (compressing concept counts 4×–5×), while downstream predictive performance remains comparable to the unsuppressed representation under the evaluated protocol.
+4. **Principled Clustering Evaluation:** Benchmarking against canonical Fuzzy C-Means (FCM, $m=2.0$) and evaluating hard partitions via Top-$k$ Membership Hardening in the standardized raw RFM space, separating geometric spatial diagnostics from lattice concept closure.
 5. **Leakage-Free Temporal Prediction:** Establishing strict temporal cutoffs ($T_{\text{obs}} \to T_{\text{holdout}}$) where all transformations, cutoffs, and concepts are fit strictly on training folds.
+6. **Threshold Sensitivity & Robustness Analysis:** Evaluating the sensitivity of the fuzzy representation across conservative/permissive $(0.2, 0.5, 0.8)$, baseline $(0.3, 0.5, 0.7)$, and tight $(0.4, 0.5, 0.6)$ $\mathcal{L}$-fuzzy threshold tuples on Dunnhumby, confirming that the predictive relationship between fuzzy and crisp RFM-FCA remains consistent across the tested threshold configurations. Concept-space size changes substantially, while downstream predictive metrics vary comparatively modestly.
 
 ---
 
@@ -65,12 +66,12 @@ Phase 1: Feature Engineering & Preprocessing
 Phase 2: Centroid-Based Fuzzy Formal Context
  ├── Medians of score bands serve as band centroids c_1 < c_2 < c_3 < c_4 < c_5
  ├── Continuous piecewise-linear membership functions with outer shoulder saturation
- ├── L-fuzzy scaling at cut thresholds {0.3, 0.5, 0.7} -> multi-level binary context K_L
+ ├── L-fuzzy scaling at baseline cuts {0.3, 0.5, 0.7} (tested vs {0.2, 0.5, 0.8} & {0.4, 0.5, 0.6}) -> K_L
  └── Uncapped FP-growth closed frequent itemset mining (max_len=None, min_support=0.04)
        │
        ▼
 Phase 3: Concept Reduction & Redundancy Suppression
- ├── Kneedle-inspired elbow detection on support and object-profile stability proxy
+ ├── Kneedle-inspired normalized max-chord-distance secondary pruning on support & stability proxy
  ├── Greedy extent-Jaccard redundancy suppression (J_max = 0.80, alpha-cut core mu >= 0.5)
  └── Continuous Godel minimum t-norm concept membership matrix computation
        │
@@ -91,11 +92,12 @@ Phase 4: Multidimensional Benchmarking & Predictive Holdouts
 - **Repeat Rate:** **99.68%** (2,497 of 2,499 households made $\ge 2$ baskets; mean $F = 110.6$ baskets).
 - **Temporal Split:** Observation window = Days 1–620 ($N=2,499$); Future holdout = Days 621–711 (91 days).
 - **Outcomes:** Future repurchase rate = $98.08\%$; future spend mean = \$482.05; future baskets mean = $15.05$.
+- **Classification Ceiling Effect:** Because 98.08% of households repurchased during the 91-day holdout, repurchase classification exhibits a strong class-imbalance/ceiling effect. The fuzzy-versus-crisp AUC difference is therefore small and spans zero under the fixed-split bootstrap comparison. The clearer predictive gains occur in future monetary expenditure and transaction activity.
 
 ### 3.2 Concept Lattice & Pruning
 - **Raw Closed Concepts:** 502 fuzzy concepts (min support = 0.04, `max_len = None`).
-- **Kneedle-Inspired Thresholds:** Support threshold $= 0.2129$, Stability-proxy threshold $= 0.4285$.
-- **Redundancy Suppression ($J_{\max} = 0.80$):** Retains **123 concepts** (379 redundant concepts removed; 4.1× compression).
+- **Kneedle-Inspired Secondary Pruning:** Closed fuzzy concepts are first generated subject to the 0.04 minimum support criterion. The Kneedle-inspired normalized max-distance-from-chord heuristic then provides a data-driven secondary pruning criterion based on observed distributions, yielding support threshold $= 0.2129$ and stability-proxy threshold $= 0.4285$.
+- **Redundancy Suppression ($J_{\max} = 0.80$):** Retains **123 concepts** (379 redundant concepts removed; 4.1× compression). After suppression, downstream predictive performance remains comparable to the unsuppressed representation under the evaluated protocol.
 
 ### 3.3 10-Split Temporal Cross-Validation Performance (Seeds 1000–1009)
 
@@ -106,7 +108,9 @@ Phase 4: Multidimensional Benchmarking & Predictive Holdouts
 | **Fuzzy RFM-FCA (Suppressed)** | **114** | **$0.8605 \pm 0.0292$** | **$0.5028 \pm 0.0376$** | **$0.6045 \pm 0.0330$** |
 | **FCM Soft (matched $k$)** | 40 | $0.8379 \pm 0.0312$ | $0.4482 \pm 0.0338$ | $0.5520 \pm 0.0254$ |
 
-*Key Result:* On repeat-rich consumer transactions, Fuzzy RFM-FCA delivers substantial regression gains over raw RFM ($\Delta R^2_{\text{spend}} = +0.1364$, $\Delta R^2_{\text{inv}} = +0.1530$) while outperforming canonical FCM soft memberships ($\Delta R^2_{\text{spend}} = +0.0546$, $\Delta R^2_{\text{inv}} = +0.0525$).
+*Evaluation & Statistical Interpretation:*
+- **10-Split Temporal CV:** Demonstrates consistent performance across temporal windows (mean ± SD, 9/10 split wins for Spend $R^2$, 10/10 split wins for Invoice $R^2$). Paired split win-rates illustrate split consistency and are not a formal significance test on their own.
+- **Fixed-Split Paired Bootstrap ($B=1,000$):** Yields empirical $p < 0.001$ for Spend $R^2$ ($\Delta = +0.0267$, 95% CI $[0.0125, 0.0416]$) and Invoice $R^2$ ($\Delta = +0.0531$, 95% CI $[0.0377, 0.0684]$), whereas Repurchase AUC difference spans zero ($\Delta = -0.0065$, 95% CI $[-0.0202, 0.0063]$, $p = 0.330$) due to the repurchase ceiling effect.
 
 ### 3.4 Geometric Hard Clustering Benchmark (Standardized Raw RFM Space)
 
@@ -121,23 +125,48 @@ Phase 4: Multidimensional Benchmarking & Predictive Holdouts
 | **FCM (Canonical)** | Argmax Soft Membership | 5 | 0.3227 | 0.9233 |
 | **Fuzzy RFM-FCA** | Top-k Membership Hardening | 5 | -0.2099 | 2.5513 |
 
-*Clustering Interpretation:* Silhouette and Davies-Bouldin evaluate hyperspherical Euclidean distance minimization. FCA concepts optimize attribute-closure intent coverage; forcing overlapping multi-concept memberships into mutually exclusive hard clusters introduces boundary penalties.
+*Clustering Interpretation:* The negative silhouette values are consistent with the interpretation that forcing overlapping lattice concept memberships into mutually exclusive Euclidean partitions can impose substantial boundary penalties. Silhouette and Davies–Bouldin act as geometric diagnostics rather than proofs of clustering superiority; fuzzy FCA optimizes attribute-closure intent coverage rather than Euclidean spherical variance.
+
+### 3.5 Fuzzy Membership Threshold Sensitivity Analysis
+
+To verify that downstream predictive performance is not dependent on the baseline threshold configuration ($\mathcal{L} = \{0.3, 0.5, 0.7\}$), a dedicated one-factor sensitivity analysis was evaluated across three threshold configurations on Dunnhumby under the locked evaluation protocol (observation days 1–620, holdout days 621–711, 10 temporal splits with seeds 1000–1009, 70/30 stratified train/test split, support cutoff 0.04, $J_{\max} = 0.80$, $\mu_{\text{cut}} = 0.5$, train-only fitting).
+
+| Configuration | Full-Cohort Raw Concepts | Full-Cohort Suppressed ($k$) | Compression Ratio | Repurchase AUC (Mean ± SD) | $\Delta$ AUC vs Crisp | Spend $R^2$ (Mean ± SD) | $\Delta$ Spend $R^2$ vs Crisp | Invoice $R^2$ (Mean ± SD) | $\Delta$ Invoice $R^2$ vs Crisp |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Fixed Crisp Baseline** | 38 | 38 | 1.00× | $0.8541 \pm 0.0242$ | *0.0000* | $0.4800 \pm 0.0351$ | *0.0000* | $0.5548 \pm 0.0344$ | *0.0000* |
+| **(0.2, 0.5, 0.8)** *(Permissive)* | 652 | 265 | 2.46× (59.4%) | $0.8611 \pm 0.0299$ | **+0.0070** (6/10) | $0.5037 \pm 0.0387$ | **+0.0237** (9/10) | $0.6071 \pm 0.0313$ | **+0.0523** (10/10) |
+| **(0.3, 0.5, 0.7)** *(Baseline)* | 502 | 123 | 4.08× (75.5%) | $0.8605 \pm 0.0292$ | **+0.0064** (7/10) | $0.5028 \pm 0.0376$ | **+0.0228** (9/10) | $0.6045 \pm 0.0330$ | **+0.0497** (10/10) |
+| **(0.4, 0.5, 0.6)** *(Tight)* | 420 | 38 | 11.05× (91.0%) | $0.8673 \pm 0.0243$ | **+0.0132** (8/10) | $0.5090 \pm 0.0339$ | **+0.0290** (10/10) | $0.6079 \pm 0.0306$ | **+0.0531** (10/10) |
+
+*Paired Split Wins across 10 Splits:*
+- Repurchase AUC: 6/10 for (0.2, 0.5, 0.8); 7/10 for (0.3, 0.5, 0.7); 8/10 for (0.4, 0.5, 0.6).
+- Future Spend $R^2$: 9/10 for (0.2, 0.5, 0.8); 9/10 for (0.3, 0.5, 0.7); 10/10 for (0.4, 0.5, 0.6).
+- Future Invoice $R^2$: 10/10 for all three configurations.
+
+*Core Interpretation:*
+> The predictive relationship between fuzzy and crisp RFM-FCA remains consistent across the tested threshold configurations. Although the threshold tuple substantially changes the size and compression of the fuzzy concept space, downstream predictive performance varies comparatively modestly and remains consistently above the crisp RFM-FCA baseline across the tested configurations.
+
+- **Concept-space structure is sensitive to threshold choice:** Relaxing cuts expands candidate concepts (652 raw, 265 suppressed), while tightening contracts them (420 raw, 38 suppressed).
+- **Predictive utility is comparatively consistent:** Across all configurations, downstream spend $R^2$ ($0.5028$–$0.5090$) and invoice $R^2$ ($0.6045$–$0.6079$) remain consistently above the crisp baseline.
+- **Redundancy suppression is consistently effective:** Substantially compresses concept-space size in all configurations ($59.4\%$ to $91.0\%$ reduction).
+- **Non-tuning assurance:** Demonstrates that the fuzzy extension is not dependent on a single threshold configuration. Thresholds were not optimized post-hoc based on test set results.
+- **Visual Diagnostic & Full Report:** See [`results/fuzzy_membership_sensitivity/fig_predictive_sensitivity.png`](results/fuzzy_membership_sensitivity/fig_predictive_sensitivity.png) and [`results/fuzzy_membership_sensitivity/sensitivity_analysis_report.md`](results/fuzzy_membership_sensitivity/sensitivity_analysis_report.md).
 
 ---
 
 ## 4. Independent Validation: Online Retail II
 
 ### 4.1 Base Paper Replication
-- Cohort: 5,878 clean customers from the UK Online Retail II transaction dataset.
-- Intent Recovery: Recovered **all 31 published frequent concept intents** ($\text{support} > 0.04$) from Rungruang et al. (2024).
+- **Cohort:** 5,878 clean customers from the UK Online Retail II transaction dataset.
+- **Intent Recovery:** Our reconstruction recovered all 31 published frequent concept intents reported by Rungruang et al. However, exact customer counts matched for only 3 of the 31 concepts. The remaining discrepancies are consistent with the paper's unspecified tie-breaking procedure for customers sharing identical frequency values, particularly the 1,623 customers with $F = 1$. The omitted tie-breaking rule prevents uniquely determining the original allocation.
 
 ### 4.2 Concept Reduction & Predictive Holdout
 - **Uncapped Mining:** 1,064 closed concepts discovered (`max_len = None`).
-- **Redundancy Suppression ($J_{\max} = 0.80$):** Reduced 445 candidate concepts to **95 concepts** (4.7× compression; pairwise extent Jaccard $\ge 0.80$ dropped from $3.3\%$ to $0.0\%$).
+- **Redundancy Suppression ($J_{\max} = 0.80$):** Reduced 445 candidate concepts to **95 concepts** (4.7× compression; pairwise extent Jaccard $\ge 0.80$ dropped from $3.3\%$ to $0.0\%$). After suppression, downstream predictive performance remains comparable to the unsuppressed representation under the evaluated protocol.
 - **Predictive Performance (10 Splits):**
   - Raw RFM: AUC $0.7770 \pm 0.0117$, Spend $R^2$ $0.3476$, Invoice $R^2$ $0.4642$.
   - Crisp RFM-FCA: AUC $0.7768 \pm 0.0121$.
-  - Fuzzy RFM-FCA (Suppressed): AUC **$0.7857 \pm 0.0121$** ($p = 2.3 \times 10^{-4}$ vs crisp), Spend $R^2$ **$0.3664$**, Invoice $R^2$ **$0.4952$**.
+  - Fuzzy RFM-FCA (Suppressed): AUC **$0.7857 \pm 0.0121$** (paired t-test $p = 2.3 \times 10^{-4}$ vs crisp), Spend $R^2$ **$0.3664$**, Invoice $R^2$ **$0.4952$**.
 
 ---
 
@@ -154,6 +183,9 @@ Phase 4: Multidimensional Benchmarking & Predictive Holdouts
 | **Suppressed Concepts** | 123 (from 502) | 95 (from 445) |
 | **Predictive Lift (Spend $R^2$)** | **+0.1364** vs raw baseline | **+0.0188** vs raw baseline |
 | **Predictive Lift (Invoice $R^2$)** | **+0.1530** vs raw baseline | **+0.0310** vs raw baseline |
+| **Threshold Sensitivity** | Confirmed consistent across (0.2, 0.5, 0.8), (0.3, 0.5, 0.7), (0.4, 0.5, 0.6) | Locked baseline (0.3, 0.5, 0.7) |
+
+*Cross-Domain Interpretation:* The results provide evidence of cross-domain utility across two retail transaction datasets with different purchasing regimes. The larger regression gains observed on Dunnhumby suggest that transaction-dense purchasing histories may provide more information for fuzzy concept representations, although broader validation is required to establish this relationship.
 
 ---
 
@@ -203,12 +235,19 @@ Early exploratory experiments in this repository examined the **Olist Brazilian 
 │   │   ├── clustering_metrics.csv          # Standardized RFM clustering benchmarks
 │   │   ├── rfm_statistics.csv              # Full, observation, and holdout RFM statistics
 │   │   └── bootstrap_ci.csv                # Paired bootstrap confidence intervals
+│   ├── fuzzy_membership_sensitivity/       # Threshold sensitivity results (Methodology v4)
+│   │   ├── sensitivity_analysis_report.md  # Detailed sensitivity report
+│   │   ├── fig_predictive_sensitivity.png  # 3-panel predictive sensitivity visualization
+│   │   ├── fuzzy_membership_sensitivity_summary.csv # Mean metrics and paired deltas
+│   │   ├── fuzzy_membership_sensitivity_splits.csv  # 10-split granular evaluations
+│   │   └── fuzzy_membership_sensitivity_full_cohort.csv # Concept counts & compression
 │   ├── fair_comparison_retail2/            # Online Retail II validation results
 │   ├── ablation_rfm_crossdomain/           # Cross-domain RFM comparison
 │   └── ablation_fcm_hybrid_olist/          # Historical FCM-FCA hybrid study
 └── scripts/
     ├── dunnhumby_rfm_fca_validation.py     # Primary validation pipeline (Methodology v4)
     ├── fair_comparison_retail2.py          # Online Retail II validation script
+    ├── fuzzy_membership_sensitivity.py     # L-fuzzy threshold sensitivity evaluation
     ├── concept_redundancy.py               # Extent-Jaccard redundancy suppression module
     ├── fcm.py                              # Canonical Fuzzy C-Means implementation
     ├── replicate_base_paper.py             # Faithful replication of Rungruang et al. (2024)
@@ -244,13 +283,21 @@ python scripts/dunnhumby_rfm_fca_validation.py
 python scripts/fair_comparison_retail2.py
 ```
 
+### Reproducing Fuzzy Membership Threshold Sensitivity Analysis
+```bash
+python scripts/fuzzy_membership_sensitivity.py
+```
+
 ---
 
 ## 10. Documentation Index
 
 - [PROJECT_DOCUMENT.md](docs/PROJECT_DOCUMENT.md): Definitive technical project overview.
 - [RESULTS_SUMMARY.md](docs/RESULTS_SUMMARY.md): Consolidated empirical tables across Dunnhumby and Retail II.
+- [METHODOLOGY_V4.md](docs/METHODOLOGY_V4.md): Locked study design, mathematical definitions, and sensitivity protocol.
 - [final_methodology_contribution_framing.md](docs/final_methodology_contribution_framing.md): Defensible contributions and paper framing.
+- [results_section.md](docs/results_section.md): Empirical results section formatted for research manuscripts.
+- [sensitivity_analysis_report.md](results/fuzzy_membership_sensitivity/sensitivity_analysis_report.md): Fuzzy membership threshold sensitivity analysis report.
 - [audit_report.md](results/dunnhumby_rfm_fca/audit_report.md): Methodology v4 audit report (Status: PASS).
 - [base_paper_methodology_audit.md](docs/base_paper_methodology_audit.md): Replication of Rungruang et al. (2024).
 

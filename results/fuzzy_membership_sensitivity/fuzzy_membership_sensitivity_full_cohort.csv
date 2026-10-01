@@ -1,0 +1,4 @@
+threshold_configuration,label,min_support,j_max,raw_crisp_concepts,raw_fuzzy_concepts,suppressed_concepts,concepts_removed,compression_ratio_fold,compression_ratio_pct,mean_concepts_per_customer,median_concepts_per_customer,mean_extent_size,median_extent_size,kneedle_support_threshold,kneedle_stability_threshold,mining_time_sec,suppression_time_sec
+"(0.2, 0.5, 0.8)","(0.2, 0.5, 0.8)",0.04,0.8,38,652,265,387,2.460377358490566,59.355828220858896,4.361744697879152,4.0,41.132075471698116,0.0,0.21048419367747098,0.9411764705882353,0.57,0.73
+"(0.3, 0.5, 0.7)","(0.3, 0.5, 0.7) [Baseline]",0.04,0.8,38,502,123,379,4.08130081300813,75.4980079681275,4.308923569427771,4.0,87.54471544715447,0.0,0.21288515406162464,0.9416058394160584,0.48,0.3
+"(0.4, 0.5, 0.6)","(0.4, 0.5, 0.6)",0.04,0.8,38,420,38,382,11.052631578947368,90.95238095238095,4.243297318927571,4.0,279.05263157894734,133.5,0.22208883553421369,0.963855421686747,0.45,0.15
