@@ -1,0 +1,6 @@
+parameter,value
+J_MAX (extent-Jaccard redundancy threshold),0.8
+mu cut for extents,0.5
+SUPPORT_CUTOFF,0.04
+n_train,3018.0
+n_test,1294.0

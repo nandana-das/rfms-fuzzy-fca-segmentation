@@ -1,0 +1,7 @@
+comparison,metric,point_estimate,ci_lower_95,ci_upper_95,spans_zero,exceeds_decision_threshold,interval_type
+Fuzzy Baseline vs Crisp,Delta AUC,0.01620370370370361,0.007494241253188392,0.024209761374817198,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Fuzzy Baseline vs Crisp,Delta Spend R2,0.017139288284399923,0.0055649387928154385,0.029101429285967675,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Fuzzy Baseline vs Crisp,Delta Invoices R2,0.029054129803670947,0.011570982907815231,0.04678341746918089,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Fuzzy + Redundancy Suppression vs Crisp,Delta AUC,0.012165850423425995,0.003357314437134598,0.0202565458820514,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Fuzzy + Redundancy Suppression vs Crisp,Delta Spend R2,0.018853182142030467,0.006049256242749828,0.03175531033270724,False,False,95% Paired Customer Bootstrap (conditional on fixed split & models)
+Fuzzy + Redundancy Suppression vs Crisp,Delta Invoices R2,0.031023608993531182,0.013040831560332112,0.049371281512382084,False,True,95% Paired Customer Bootstrap (conditional on fixed split & models)

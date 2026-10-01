@@ -2,14 +2,14 @@ Dataset,Method,Hardening,k,Evaluation Space,n_features,Silhouette,Davies-Bouldin
 Dunnhumby Complete Journey,K-Means,Partition (k-means),4,Raw RFM (Standardized),3,0.4663271447030586,0.7944336377618761
 Dunnhumby Complete Journey,Ward (Agglomerative),Hierarchical (Ward),4,Raw RFM (Standardized),3,0.34616967218770084,0.8421279462024004
 Dunnhumby Complete Journey,FCM (Canonical),Argmax Soft Membership,4,Raw RFM (Standardized),3,0.420441050877825,0.7998335377855106
-Dunnhumby Complete Journey,Fuzzy RFM-FCA,Alpha-cut Top-4 Concepts,4,Raw RFM (Standardized),3,-0.08511725507666179,2.2278147989728563
+Dunnhumby Complete Journey,Fuzzy RFM-FCA,Top-k Membership Hardening,4,Raw RFM (Standardized),3,-0.08511725507666179,2.2278147989728563
 Dunnhumby Complete Journey,K-Means,Partition (k-means),5,Raw RFM (Standardized),3,0.4746946163742299,0.729979201662086
 Dunnhumby Complete Journey,Ward (Agglomerative),Hierarchical (Ward),5,Raw RFM (Standardized),3,0.357076517544361,0.8441465456280008
 Dunnhumby Complete Journey,FCM (Canonical),Argmax Soft Membership,5,Raw RFM (Standardized),3,0.32271873724162775,0.9232890699785165
-Dunnhumby Complete Journey,Fuzzy RFM-FCA,Alpha-cut Top-5 Concepts,5,Raw RFM (Standardized),3,-0.20990336590220812,2.5512855767120977
+Dunnhumby Complete Journey,Fuzzy RFM-FCA,Top-k Membership Hardening,5,Raw RFM (Standardized),3,-0.20990336590220812,2.5512855767120977
 Dunnhumby Complete Journey,K-Means,Partition (k-means),6,Raw RFM (Standardized),3,0.4602505964452054,0.7767591200525574
 Dunnhumby Complete Journey,Ward (Agglomerative),Hierarchical (Ward),6,Raw RFM (Standardized),3,0.38160885465689576,0.7642257651699743
 Dunnhumby Complete Journey,FCM (Canonical),Argmax Soft Membership,6,Raw RFM (Standardized),3,0.38798437958610454,0.826811149933668
-Dunnhumby Complete Journey,Fuzzy RFM-FCA,Alpha-cut Top-6 Concepts,6,Raw RFM (Standardized),3,-0.23574949394510492,3.325766096783338
+Dunnhumby Complete Journey,Fuzzy RFM-FCA,Top-k Membership Hardening,6,Raw RFM (Standardized),3,-0.23574949394510492,3.325766096783338
 Dunnhumby Complete Journey,Crisp RFM-FCA,Natural Hardening Rule,6,Raw RFM (Standardized),3,0.0008197259756365077,1.3502858794160841
 Dunnhumby Complete Journey,Fuzzy RFM-FCA,Natural Hardening Rule,12,Raw RFM (Standardized),3,-0.39989972016926895,3.5972215825762937

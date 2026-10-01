@@ -1,0 +1,13 @@
+parameter,value
+population,"Olist full population, n=93357"
+fuzzy_concepts_source,"results/pruned_fuzzy_concepts.pkl (Step 3 Kneedle output, loaded verbatim)"
+fuzzy_membership_rule,Godel-minimum t-norm over base score bands (compute_customer_concept_memberships)
+crisp_concepts,mined at support 0.04 on stored bands; identical Kneedle selection applied
+crisp_kneedle_stability_applied,True
+crisp_knees_support_stability,"(0.28524909755026406, 0.9962104740013668, True)"
+dimensionality_reduction,none (153 dims tractable for K-means/Ward)
+k_grid,"4, 5, 6 (Step-5 protocol)"
+silhouette_protocol,"sample_size=5000, random_state=42 (Step-5 protocol)"
+ward_protocol,"n=5000 fixed subsample, seed 42 (Ward is O(n^2))"
+raw_features,"StandardScaler on R, F*, M, S"
+random_seed,42

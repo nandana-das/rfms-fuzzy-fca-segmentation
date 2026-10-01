@@ -1,3 +1,0 @@
-Dataset,Total Customers,Raw Crisp Concepts,Raw Fuzzy Concepts,Suppressed Fuzzy Concepts (J_max=0.8),Concepts per Customer (Suppressed),Mean Extent Size (Suppressed),Median Extent Size (Suppressed)
-Retail II,5878,33,359,359,41.02298464240709,587.0222841225627,420.0
-Olist,93357,42,263,263,27.797139414150838,8462.631178707225,6763.0

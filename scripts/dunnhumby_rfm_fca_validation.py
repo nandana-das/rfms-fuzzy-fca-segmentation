@@ -12,9 +12,9 @@ M = sum(SALES_VALUE). SALES_VALUE is NOT multiplied by QUANTITY.
 No F* calculation, no entropy-based F-weighting.
 max_len = None (no artificial itemset-length cap).
 Stability is a proxy only; NOT canonical Kuznetsov stability.
-Kneedle threshold is Kneedle-INSPIRED (normalised max-chord-distance); NOT canonical Kneedle.
-Canonical FPC / Xie-Beni are computed for FCM only, never for alpha-cut FCA.
-FCA hard (alpha-cut) clusters use Silhouette / Davies-Bouldin only.
+Canonical FPC / Xie-Beni are computed for FCM only, never for FCA clusters.
+FCA hard clusters (Top-k Membership Hardening and Natural Hardening) use Silhouette / Davies-Bouldin only.
+Alpha-cut (alpha >= 0.5) is preserved for extent thresholding and redundancy suppression, distinct from Top-k Membership Hardening.
 Existing Retail II results are never modified or overwritten.
 All scalers, scoring cutoffs, fuzzy centroids, concept mining, suppression,
 FCM prototypes, and predictive models are fitted on TRAINING data only.
@@ -387,11 +387,18 @@ def run_full_population_fca(obs_rfm):
 # ==================================================================
 
 def run_clustering_benchmarks(obs_rfm, obs_scored, obs_fuzzy_mu, full_results):
-    """K-Means, Ward, FCM, and FCA alpha-cut hard clustering benchmarks.
+    """K-Means, Ward, FCM, and FCA hard clustering benchmarks.
 
     Evaluates geometric partition quality (Silhouette, Davies-Bouldin)
     in the agreed standardized raw RFM space (X_raw, shape N x 3).
     Canonical FCM metrics (FPC, Xie-Beni) computed for FCM ONLY.
+
+    TERMINOLOGY AND METHODOLOGY DISTINCTION:
+    - Alpha-cut: Threshold membership at alpha >= 0.5 to extract concept extents
+      or binary profiles (preserved in concept suppression and extent statistics).
+    - Top-k Membership Hardening: Select k concepts and assign each customer
+      to the concept with maximum membership via argmax over top-k fuzzy memberships.
+      This is distinct from an alpha-cut.
     """
     _pr("\n[STEP 5] Clustering benchmarks")
     scaler = StandardScaler()
@@ -453,7 +460,10 @@ def run_clustering_benchmarks(obs_rfm, obs_scored, obs_fuzzy_mu, full_results):
             "Silhouette": sil_fcm, "Davies-Bouldin": db_fcm,
         })
 
-        # 4. Fuzzy RFM-FCA Alpha-Cut (top-k non-trivial concepts by support, argmax hardening)
+        # 4. Fuzzy RFM-FCA Top-k Membership Hardening:
+        #    Select k concepts and assign each customer to the concept with maximum membership.
+        #    Note: This is Top-k Membership Hardening (argmax over top-k fuzzy memberships),
+        #    NOT an alpha-cut (which thresholds membership at alpha >= 0.5).
         nontriv = full_results["suppressed_concepts"][full_results["suppressed_concepts"]["intent_size"] > 0]
         top_k_idx = nontriv.index[:k]
         sub_mu = mu_supp[:, top_k_idx]
@@ -461,7 +471,7 @@ def run_clustering_benchmarks(obs_rfm, obs_scored, obs_fuzzy_mu, full_results):
         sil_fca_k = float(silhouette_score(X_raw, labels_fca_k, sample_size=min(2000, len(X_raw)), random_state=FIXED_SEED))
         db_fca_k = float(davies_bouldin_score(X_raw, labels_fca_k))
         records.append({
-            "Dataset": DATASET_NAME, "Method": "Fuzzy RFM-FCA", "Hardening": f"Alpha-cut Top-{k} Concepts",
+            "Dataset": DATASET_NAME, "Method": "Fuzzy RFM-FCA", "Hardening": "Top-k Membership Hardening",
             "k": k, "Evaluation Space": "Raw RFM (Standardized)", "n_features": 3,
             "Silhouette": sil_fca_k, "Davies-Bouldin": db_fca_k,
         })
@@ -920,7 +930,8 @@ def write_summary(audit, df_rfm_stats, df_dataset_stats, df_freq, concept_counts
         "- Stability metric is a **proxy** only — NOT canonical Kuznetsov stability.",
         "- Kneedle threshold is **Kneedle-inspired** (normalised max-chord-distance) — NOT canonical Kneedle.",
         "- **FPC/Xie-Beni** computed for canonical FCM **only** — not applied to FCA clusters.",
-        "- FCA hard (alpha-cut) clusters evaluated with Silhouette and Davies-Bouldin only.",
+        "- FCA hard clusters (Top-k Membership Hardening and Natural Hardening) evaluated with Silhouette and Davies-Bouldin only.",
+        "- Alpha-cut (alpha >= 0.5) is preserved for extent thresholding and redundancy suppression, distinct from Top-k Membership Hardening.",
         "- `max_len = None` — no artificial itemset length cap.",
         "",
         "## 1. Data Audit", "",

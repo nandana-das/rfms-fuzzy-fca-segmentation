@@ -1,0 +1,166 @@
+attribute,anchor,level,realized_support,status
+R1,0.04,0.9139260739260742,0.04009277667329357,ok
+R1,0.05,0.7662337662337663,0.05069582504970179,ok
+R1,0.06,0.5974025974025974,0.060304837640821736,ok
+R1,0.08,0.3246753246753247,0.08018555334658714,ok
+R1,0.1,0.11688311688311688,0.10205434062292909,ok
+R1,0.15,,,anchor out of reach (attribute support too small)
+R1,0.2,,,anchor out of reach (attribute support too small)
+R1,0.3,,,anchor out of reach (attribute support too small)
+R1,0.5,,,anchor out of reach (attribute support too small)
+R1,0.7,,,anchor out of reach (attribute support too small)
+R1,0.9,,,anchor out of reach (attribute support too small)
+R2,0.04,0.7566933693256847,0.04009277667329357,ok
+R2,0.05,0.7246376811594203,0.051358515573227306,ok
+R2,0.06,0.6368434586438261,0.05997349237905898,ok
+R2,0.08,0.5217391304347826,0.08151093439363817,ok
+R2,0.1,0.4025974025974026,0.10106030483764082,ok
+R2,0.15,0.08695652173913043,0.1517561298873426,ok
+R2,0.2,,,anchor out of reach (attribute support too small)
+R2,0.3,,,anchor out of reach (attribute support too small)
+R2,0.5,,,anchor out of reach (attribute support too small)
+R2,0.7,,,anchor out of reach (attribute support too small)
+R2,0.9,,,anchor out of reach (attribute support too small)
+R3,0.04,0.819357396360342,0.04009277667329357,ok
+R3,0.05,0.7681572545298747,0.050033134526176276,ok
+R3,0.06,0.6956521739130435,0.060304837640821736,ok
+R3,0.08,0.6097560975609756,0.08018555334658714,ok
+R3,0.1,0.5121951219512195,0.10072895957587806,ok
+R3,0.15,0.26086956521739135,0.15076209410205435,ok
+R3,0.2,0.07312476813016883,0.2001325381047051,ok
+R3,0.3,,,anchor out of reach (attribute support too small)
+R3,0.5,,,anchor out of reach (attribute support too small)
+R3,0.7,,,anchor out of reach (attribute support too small)
+R3,0.9,,,anchor out of reach (attribute support too small)
+R4,0.04,0.8732394366197183,0.04340622929092114,ok
+R4,0.05,0.8536585365853658,0.051027170311464545,ok
+R4,0.06,0.8292682926829268,0.06096752816434725,ok
+R4,0.08,0.7746478873239436,0.08548707753479125,ok
+R4,0.1,0.7195121951219512,0.10205434062292909,ok
+R4,0.15,0.6097560975609756,0.15076209410205435,ok
+R4,0.2,0.5070422535211268,0.20609675281643472,ok
+R4,0.3,0.3380281690140845,0.30251822398939693,ok
+R4,0.5,0.014079511972614266,0.5,ok
+R4,0.7,,,anchor out of reach (attribute support too small)
+R4,0.9,,,anchor out of reach (attribute support too small)
+R5,0.04,1.0,0.29854208084824385,ok
+R5,0.05,1.0,0.29854208084824385,ok
+R5,0.06,1.0,0.29854208084824385,ok
+R5,0.08,1.0,0.29854208084824385,ok
+R5,0.1,1.0,0.29854208084824385,ok
+R5,0.15,1.0,0.29854208084824385,ok
+R5,0.2,1.0,0.29854208084824385,ok
+R5,0.3,0.9859154929577465,0.3101391650099404,ok
+R5,0.5,0.5774647887323944,0.508283631544069,ok
+R5,0.7,,,anchor out of reach (attribute support too small)
+R5,0.9,,,anchor out of reach (attribute support too small)
+F1,0.04,1.0,0.5195493704440026,ok
+F1,0.05,1.0,0.5195493704440026,ok
+F1,0.06,1.0,0.5195493704440026,ok
+F1,0.08,1.0,0.5195493704440026,ok
+F1,0.1,1.0,0.5195493704440026,ok
+F1,0.15,1.0,0.5195493704440026,ok
+F1,0.2,1.0,0.5195493704440026,ok
+F1,0.3,1.0,0.5195493704440026,ok
+F1,0.5,1.0,0.5195493704440026,ok
+F1,0.7,0.8333333333333334,0.7282968853545394,ok
+F1,0.9,0.41666666666666663,0.9065606361829026,ok
+F2,0.04,0.75,0.04473161033797217,ok
+F2,0.05,0.6923076923076923,0.05069582504970179,ok
+F2,0.06,0.6666666666666666,0.06759443339960239,ok
+F2,0.08,0.5833333333333334,0.08813783962889331,ok
+F2,0.1,0.5,0.11829025844930417,ok
+F2,0.15,0.4166666666666667,0.1550695825049702,ok
+F2,0.2,0.31869172494172443,0.2001325381047051,ok
+F2,0.3,0.16666666666666666,0.3426110006626905,ok
+F2,0.5,,,anchor out of reach (attribute support too small)
+F2,0.7,,,anchor out of reach (attribute support too small)
+F2,0.9,,,anchor out of reach (attribute support too small)
+F3,0.04,,,anchor out of reach (attribute support too small)
+F3,0.05,,,anchor out of reach (attribute support too small)
+F3,0.06,,,anchor out of reach (attribute support too small)
+F3,0.08,,,anchor out of reach (attribute support too small)
+F3,0.1,,,anchor out of reach (attribute support too small)
+F3,0.15,,,anchor out of reach (attribute support too small)
+F3,0.2,,,anchor out of reach (attribute support too small)
+F3,0.3,,,anchor out of reach (attribute support too small)
+F3,0.5,,,anchor out of reach (attribute support too small)
+F3,0.7,,,anchor out of reach (attribute support too small)
+F3,0.9,,,anchor out of reach (attribute support too small)
+F4,0.04,,,anchor out of reach (attribute support too small)
+F4,0.05,,,anchor out of reach (attribute support too small)
+F4,0.06,,,anchor out of reach (attribute support too small)
+F4,0.08,,,anchor out of reach (attribute support too small)
+F4,0.1,,,anchor out of reach (attribute support too small)
+F4,0.15,,,anchor out of reach (attribute support too small)
+F4,0.2,,,anchor out of reach (attribute support too small)
+F4,0.3,,,anchor out of reach (attribute support too small)
+F4,0.5,,,anchor out of reach (attribute support too small)
+F4,0.7,,,anchor out of reach (attribute support too small)
+F4,0.9,,,anchor out of reach (attribute support too small)
+F5,0.04,,,anchor out of reach (attribute support too small)
+F5,0.05,,,anchor out of reach (attribute support too small)
+F5,0.06,,,anchor out of reach (attribute support too small)
+F5,0.08,,,anchor out of reach (attribute support too small)
+F5,0.1,,,anchor out of reach (attribute support too small)
+F5,0.15,,,anchor out of reach (attribute support too small)
+F5,0.2,,,anchor out of reach (attribute support too small)
+F5,0.3,,,anchor out of reach (attribute support too small)
+F5,0.5,,,anchor out of reach (attribute support too small)
+F5,0.7,,,anchor out of reach (attribute support too small)
+F5,0.9,,,anchor out of reach (attribute support too small)
+M1,0.04,1.0,0.10205434062292909,ok
+M1,0.05,1.0,0.10205434062292909,ok
+M1,0.06,1.0,0.10205434062292909,ok
+M1,0.08,1.0,0.10205434062292909,ok
+M1,0.1,1.0,0.10205434062292909,ok
+M1,0.15,0.7794867274564701,0.15009940357852883,ok
+M1,0.2,0.5357400796458284,0.2001325381047051,ok
+M1,0.3,0.033570734707121914,0.2998674618952949,ok
+M1,0.5,,,anchor out of reach (attribute support too small)
+M1,0.7,,,anchor out of reach (attribute support too small)
+M1,0.9,,,anchor out of reach (attribute support too small)
+M2,0.04,0.8977230304719829,0.04009277667329357,ok
+M2,0.05,0.8737521323223972,0.050033134526176276,ok
+M2,0.06,0.8518023296542021,0.05997349237905898,ok
+M2,0.08,0.8108268253158369,0.0798542080848244,ok
+M2,0.1,0.7686852442490199,0.10006626905235255,ok
+M2,0.15,0.6599368904120981,0.15009940357852883,ok
+M2,0.2,0.529281703573466,0.2001325381047051,ok
+M2,0.3,0.27674923351805514,0.2998674618952949,ok
+M2,0.5,,,anchor out of reach (attribute support too small)
+M2,0.7,,,anchor out of reach (attribute support too small)
+M2,0.9,,,anchor out of reach (attribute support too small)
+M3,0.04,0.9037568232099616,0.04009277667329357,ok
+M3,0.05,0.8803581014420531,0.050033134526176276,ok
+M3,0.06,0.8548426552560986,0.05997349237905898,ok
+M3,0.08,0.8043654663208947,0.0798542080848244,ok
+M3,0.1,0.7620538914007807,0.10006626905235255,ok
+M3,0.15,0.6473107857223631,0.15009940357852883,ok
+M3,0.2,0.5009055066925074,0.2001325381047051,ok
+M3,0.3,0.24545393045663086,0.2998674618952949,ok
+M3,0.5,,,anchor out of reach (attribute support too small)
+M3,0.7,,,anchor out of reach (attribute support too small)
+M3,0.9,,,anchor out of reach (attribute support too small)
+M4,0.04,0.9321215528138628,0.04009277667329357,ok
+M4,0.05,0.9073846145072666,0.050033134526176276,ok
+M4,0.06,0.8894685547219042,0.05997349237905898,ok
+M4,0.08,0.842182644669506,0.0798542080848244,ok
+M4,0.1,0.7953113351873884,0.10006626905235255,ok
+M4,0.15,0.6850190634320321,0.15009940357852883,ok
+M4,0.2,0.5605206134239864,0.2001325381047051,ok
+M4,0.3,0.26948100618733817,0.2998674618952949,ok
+M4,0.5,,,anchor out of reach (attribute support too small)
+M4,0.7,,,anchor out of reach (attribute support too small)
+M4,0.9,,,anchor out of reach (attribute support too small)
+M5,0.04,1.0,0.09907223326706428,ok
+M5,0.05,1.0,0.09907223326706428,ok
+M5,0.06,1.0,0.09907223326706428,ok
+M5,0.08,1.0,0.09907223326706428,ok
+M5,0.1,0.9940305788063901,0.10006626905235255,ok
+M5,0.15,0.5493158533914202,0.15009940357852883,ok
+M5,0.2,0.30625683386459607,0.2001325381047051,ok
+M5,0.3,,,anchor out of reach (attribute support too small)
+M5,0.5,,,anchor out of reach (attribute support too small)
+M5,0.7,,,anchor out of reach (attribute support too small)
+M5,0.9,,,anchor out of reach (attribute support too small)

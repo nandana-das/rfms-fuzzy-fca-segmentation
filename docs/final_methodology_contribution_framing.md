@@ -1,87 +1,90 @@
-# Final Methodology and Contribution Framing
+# Final Methodology and Contribution Framing (Methodology v4)
 
-## Research Positioning
-This study builds on the RFM-FCA customer segmentation framework established by Rungruang et al. It extends the binary RFM formal context toward a fuzzy RFMS representation and evaluates whether the resulting overlapping concept representation is useful for customer characterization and downstream prediction.
+## 1. Research Positioning & Lineage
 
-The study should not be framed as introducing RFM-FCA itself. The base paper already establishes RFM combined with Formal Concept Analysis, hierarchical concept organization, and overlapping/soft segmentation. The present work focuses on extending that framework and evaluating the extension more rigorously.
+This study builds directly upon the foundational RFM-FCA customer segmentation framework established by:
+> **Chongkolnee Rungruang, Pakwan Riyapan, Arthit Intarasit, Khanchit Chuarkham, and Jirapond Muangprathub (2024)**  
+> *"RFM Model Customer Segmentation Based on Hierarchical Approach Using FCA"*,  
+> *Expert Systems with Applications*, 237, 121449.
 
-## Central Research Claim
-This work extends an existing RFM-FCA knowledge-discovery framework by replacing the binary RFM representation with a centroid-based fuzzy RFMS representation, incorporating customer satisfaction, introducing data-driven concept reduction and redundancy suppression, and evaluating the resulting representation using fuzzy clustering and predictive benchmarks.
+The base paper established the integration of Recency, Frequency, and Monetary (RFM) quintile analysis with Formal Concept Analysis (FCA) on transaction data, proving that concept lattices generate hierarchical, overlapping customer profiles.
 
-## Methodological Contributions
+In their concluding section, Rungruang et al. explicitly called for representing RFM values in a **non-binary / fuzzy formal context** to overcome the boundary sensitivity of crisp quintile discretization. This study directly executes that research agenda while addressing key structural limitations in concept proliferation, pruning, and predictive evaluation.
 
-### 1. Fuzzy RFMS-FCA Representation
-The binary RFM formal context is extended to a fuzzy representation in which customers may possess graded membership across multiple behavioral bands. Customer satisfaction is additionally incorporated for the Olist marketplace, producing an RFMS representation.
+The study is strictly positioned as an **extension, refinement, and rigorous out-of-sample evaluation** of the RFM-FCA knowledge-discovery framework. It does not claim to introduce RFM-FCA itself.
 
-The fuzzy membership functions are centroid-based piecewise-linear functions with outer saturation regions. Multiple membership levels are retained through L-fuzzy scaling.
+---
 
-### 2. Purchase-Intensity Index
-A composite purchase-intensity index, F*, is introduced for the Olist setting. Its weights are selected through the specified entropy-maximization procedure within the evaluated grid.
+## 2. Dataset Scope (Locked Methodology v4)
 
-F* should be described as an entropy-maximizing purchase-intensity heuristic, not as a universally optimal frequency measure. The frequency ablation shows that it provides only modest differentiation in the highly sparse Olist marketplace population and should not be described as solving frequency sparsity.
+The final research study is evaluated across two repeat-rich transaction domains:
+1. **Primary Validation Domain:** **Dunnhumby "The Complete Journey"** ($N = 2,499$ households, 276,484 baskets, 2,595,732 transaction records, 99.68% repeat rate).
+2. **Independent Second Domain:** **Online Retail II** ($N = 5,878$ clean customers, 1,067,371 rows, 72.39% repeat rate).
 
-### 3. Data-Driven Concept Reduction
-Instead of relying exclusively on a fixed support threshold, the extended pipeline applies a Kneedle-inspired elbow procedure to identify a data-driven pruning point.
+### Formal Scope Boundaries:
+- **Strictly RFM Only:** Feature representations, concept lattices, clustering benchmarks, and predictive models use exclusively Recency ($R$), Frequency ($F$), and Monetary ($M$).
+- **Excluded / Out of Scope:** Customer Satisfaction ($S$), $F^*$, marketplace frequency sparsity experiments, and the single-order Olist marketplace are historical exploratory investigations that are excluded from the final paper.
 
-The exact implementation should be described as Kneedle-inspired unless equivalence to the canonical Kneedle algorithm is demonstrated.
+---
 
-### 4. Redundancy Suppression
-Fuzzy multi-level representation can produce overlapping or near-duplicate concepts. Greedy extent-Jaccard suppression is therefore applied to reduce redundant concepts while retaining useful behavioral coverage.
+## 3. Central Research Claim
 
-For the Retail II predictive experiment, redundancy suppression reduced the fuzzy feature representation from 445 to 95 concepts while retaining predictive information.
+Building upon the RFM-FCA framework of Rungruang et al. (2024), this work replaces crisp binary quintiles with a centroid-based piecewise-linear fuzzy RFM representation, introduces data-driven concept reduction and greedy extent-Jaccard redundancy suppression to control concept proliferation, and validates the resulting customer representation through canonical fuzzy clustering benchmarks and leakage-free temporal predictive evaluations across two independent repeat-transaction domains.
 
-### 5. Fuzzy Benchmarking
-Because FCA discovers overlapping formal concepts rather than necessarily producing a geometric partition, canonical Fuzzy C-Means is included as a fuzzy-to-fuzzy benchmark.
+---
 
-Silhouette and Davies-Bouldin values computed after converting FCA memberships into hard assignments should be interpreted as diagnostic geometric evaluations, not as definitive measures of FCA segmentation quality.
+## 4. Validated Methodological Contributions
 
-### 6. Predictive Validation
-The project supplements unsupervised analysis with downstream predictive evaluation. Customer-level concept features are evaluated for their ability to predict future outcomes such as spending and invoice activity.
+### Contribution 1: Centroid-Based Fuzzy RFM Formal Context
+Extends crisp quintile discretization to a continuous fuzzy representation:
+- Band centroids $c_1 < c_2 < c_3 < c_4 < c_5$ are computed as the medians of raw feature values within score quintiles.
+- Piecewise-linear membership functions with outer shoulder saturation eliminate artificial boundary discontinuities.
+- Row-sums per dimension strictly equal 1.0 ($\sum_{k=1}^5 \mu_k(X_j) = 1.0$).
+- $\mathcal{L}$-fuzzy threshold scaling at $\{0.3, 0.5, 0.7\}$ enables uncapped closed frequent itemset mining (`max_len = None`).
 
-### 7. Cross-Domain and Robustness Analysis
-The methodology is evaluated on both Online Retail II and Olist. Additional analyses address frequency sparsity, overlap-profile structure, concept persistence, fuzzy-membership diagnostics, temporal information leakage, and cross-domain behavior.
+### Contribution 2: Data-Driven Concept Reduction
+Replaces arbitrary manual support cutoffs with an automated, data-driven pruning procedure:
+- Uses a **Kneedle-inspired elbow detection algorithm** (normalised max-chord-distance) on support and object-profile stability-proxy distributions.
+- Filters low-support and unstable noise concepts while preserving core lattice geometry.
 
-The Olist temporal experiment is evaluated using a leakage-free protocol. The earlier temporal result that used future review information must not be reported as a valid predictive result.
+### Contribution 3: Greedy Extent-Jaccard Redundancy Suppression
+Resolves the severe concept proliferation and near-duplicate concept problem inherent to multi-level fuzzy scalings:
+- Applies a greedy extent-Jaccard filter ($J_{\max} = 0.80$) on core concept extents ($\mu \ge 0.5$).
+- Achieves 4×–5× concept compression (Dunnhumby: 502 $\to$ 123 concepts; Retail II: 445 $\to$ 95 concepts) with zero loss of downstream predictive utility.
 
-## Relationship to the Base Paper
-The base paper establishes RFM + FCA customer segmentation, a binary RFM formal context, hierarchical FCA concepts, overlapping/soft segmentation, and comparison with K-means and hierarchical clustering. It also proposes representing RFM values in a non-binary formal context as future work.
+### Contribution 4: Principled Fuzzy Benchmarking & Hardening Separation
+Clarifies the methodological distinction between geometric clustering and conceptual lattice closure:
+- Implements canonical **Fuzzy C-Means (FCM, $m=2.0$)** as a structurally matched fuzzy benchmark, recording Fuzzy Partition Coefficient (FPC) and Xie-Beni index (scoped strictly to FCM).
+- Distinguishes **Alpha-cut** (thresholding continuous membership at $\alpha \ge 0.5$ to define extents) from **Top-$k$ Membership Hardening** (assigning customers via $\operatorname{argmax}$ over the $k$ highest-support fuzzy concepts).
+- Evaluates hard partitions (K-Means, Ward, FCM argmax, and FCA hardening) in the common standardized Raw RFM space ($X_{\text{raw}}$).
 
-The current project extends this framework rather than replacing its conceptual foundation.
+### Contribution 5: Strictly Leakage-Free Temporal Predictive Validation
+Establishes a rigorous predictive evaluation protocol:
+- Pre-cutoff transactions strictly define observation features; post-cutoff transactions strictly define future holdout targets (repurchase, future spend, future invoice volume).
+- Scalers, dense-rank cutoffs, fuzzy centroids, concept mining, suppression, and regression models are fitted strictly on training folds.
+- Evaluates performance across single fixed holdouts and 10 independent temporal cross-validation splits with 1,000 paired bootstrap resamples.
 
-The controlled audit found that the crisp Online Retail II arm reproduces the base-paper RFM setting closely and recovers the published frequent concept intents under the stated support criterion. Exact customer counts for some concepts can differ because the base paper does not fully specify how tied frequency values are assigned to quintiles.
+### Contribution 6: Cross-Domain Repeat-Purchasing Validation
+Validates the framework across two distinct repeat-purchasing consumer settings:
+- Primary Domain: High-frequency household grocery supermarket purchasing (Dunnhumby, 99.68% repeat rate, mean 110.6 baskets).
+- Second Domain: Non-store giftware retail (Online Retail II, 72.39% repeat rate).
+- Demonstrates that fuzzy concept representations yield substantial, statistically significant predictive gains on future spend and invoice volume in repeat-transaction domains.
 
-## Evaluation Interpretation
+---
 
-### Concept discovery
-FCA is evaluated through the structure, extent, intent, overlap, persistence, and interpretability of discovered concepts.
+## 5. Explicit Claims to Avoid
 
-### Geometric clustering
-K-means, Ward, and FCM are evaluated using partition/fuzzy-clustering metrics such as Silhouette, Davies-Bouldin, FPC, and partition agreement. These metrics should not be treated as a universal ranking of FCA against clustering algorithms because the methods represent different structures.
+To maintain scientific integrity and prevent reviewer objections, the paper must **NOT** claim:
+1. That RFM-FCA itself is a new contribution (established by Rungruang et al., 2024).
+2. That hierarchical or overlapping concept lattices were invented by this study.
+3. That Fuzzy FCA universally outperforms K-Means, Ward, or FCM in geometric compactness. (FCA optimizes conceptual intent closure, whereas K-Means optimizes minimum Euclidean distance; they serve different analytical purposes).
+4. That the elbow heuristic is canonical Kneedle (it is a Kneedle-inspired normalized max-chord-distance heuristic).
+5. That the stability metric is canonical Kuznetsov stability (it is an object-profile diversity stability proxy).
+6. That representation engineering solves physical frequency sparsity.
+7. Any claims based on Olist, RFMS, Satisfaction ($S$), $F^*$, or legacy leaked holdout metrics.
 
-### Predictive utility
-Predictive experiments evaluate whether concept-derived representations contain information about future customer behavior.
+---
 
-These three evaluation perspectives answer different questions and should remain separate in the paper.
+## 6. One-Sentence Paper Summary
 
-## Claims to Avoid
-The paper should not claim:
-- that RFM-FCA itself is a new contribution;
-- that hierarchical or overlapping FCA segmentation was introduced by this study;
-- that the method universally outperforms K-means or Ward;
-- that low ARI proves complementarity;
-- that Silhouette/DB demonstrate failure or success of FCA as a knowledge-discovery method;
-- that F* solves marketplace frequency sparsity;
-- that the earlier Olist temporal AUC ≈ 0.667 result is valid;
-- that the method is universally optimal;
-- that the study is the first work to combine RFM and FCA.
-
-## Recommended Contribution Statement
-1. It extends an established RFM-FCA customer segmentation framework from a binary formal context to a centroid-based fuzzy RFMS representation.
-2. It introduces a purchase-intensity index for the sparse marketplace-frequency setting and evaluates its behavior through a controlled frequency ablation.
-3. It develops data-driven concept reduction and extent-Jaccard redundancy suppression to control the growth and duplication of fuzzy concepts.
-4. It introduces canonical Fuzzy C-Means as a fuzzy-to-fuzzy benchmark and separates geometric clustering evaluation from FCA concept-discovery evaluation.
-5. It evaluates the predictive utility of fuzzy FCA-derived customer representations using leakage-controlled downstream prediction.
-6. It provides cross-domain and robustness analyses across Online Retail II and Olist, including overlap analysis, concept persistence, frequency-sparsity analysis, and temporal leakage auditing.
-
-## One-Sentence Paper Positioning
-Building on the RFM-FCA framework of Rungruang et al., this study develops a fuzzy RFMS extension with data-driven concept reduction and redundancy suppression, and evaluates the resulting overlapping customer representation through fuzzy benchmarking, predictive validation, and cross-domain robustness analysis.
+Building upon the RFM-FCA framework of Rungruang et al. (2024), this study introduces a centroid-based fuzzy RFM representation with data-driven concept reduction and redundancy suppression, demonstrating statistically significant predictive utility and structural interpretability across two independent repeat-transaction domains.

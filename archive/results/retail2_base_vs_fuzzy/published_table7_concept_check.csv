@@ -1,0 +1,32 @@
+intent,published_customers,reproduced_customers,difference_reproduced_minus_published,reproduced_as_exact_closed_intent
+M5,1176,1175,-1,True
+M4,1175,1176,1,True
+M3,1176,1175,-1,True
+M2,1175,1176,1,True
+M1,1176,1176,0,True
+F5,1180,1175,-5,True
+F5 & M5,845,899,54,True
+F5 & M4,257,254,-3,True
+F4 & M4,582,570,-12,True
+F4 & M3,247,320,73,True
+F3 & M3,579,477,-102,True
+F2 & M2,620,423,-197,True
+F2 & M1,287,411,124,True
+F1 & M1,775,673,-102,True
+R5 & M5,521,524,3,True
+R5 & M4,275,279,4,True
+R5 & F5,524,566,42,True
+R5 & F5 & M5,422,470,48,True
+R4 & M5,329,334,5,True
+R4 & M4,290,293,3,True
+R4 & M3,256,251,-5,True
+R4 & F5,350,336,-14,True
+R4 & F5 & M5,246,249,3,True
+R3 & M4,325,319,-6,True
+R3 & M3,266,262,-4,True
+R2 & M3,287,287,0,True
+R2 & M2,335,335,0,True
+R2 & M1,294,295,1,True
+R1 & M2,341,340,-1,True
+R1 & M1,517,516,-1,True
+R1 & F1 & M1,345,320,-25,True

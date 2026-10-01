@@ -322,7 +322,7 @@ Cross-checking [`summary.md`](file:///d:/Nandana/MTECH/Semester%203/Projects/MP/
   1. K-Means directly on `X_raw` ($k \in \{4, 5, 6\}$).
   2. Ward directly on `X_raw` ($k \in \{4, 5, 6\}$).
   3. Canonical FCM directly on `X_raw` ($k \in \{4, 5, 6\}$) with Silhouette/DB on argmax hard assignments, plus canonical FPC and Xie-Beni recorded.
-  4. Fuzzy RFM-FCA Alpha-Cut hard partitions on top-$k$ concepts ($k \in \{4, 5, 6\}$) evaluated in `X_raw`.
+  4. Fuzzy RFM-FCA Top-k Membership Hardening on top-$k$ concepts ($k \in \{4, 5, 6\}$) evaluated in `X_raw` (argmax over top-$k$ memberships, properly distinguished from alpha-cut thresholding at $\alpha \ge 0.5$).
   5. Crisp and Fuzzy Natural Hardening partitions (`assign_hard_clusters`) evaluated in `X_raw`.
 - **Whether Results Changed:** Updated `results/dunnhumby_rfm_fca/clustering_metrics.csv` and `fig_clustering_metrics.png`. Predictive results remained 100% untouched.
 - **Files Affected:** `scripts/dunnhumby_rfm_fca_validation.py`, `results/dunnhumby_rfm_fca/clustering_metrics.csv`, `results/dunnhumby_rfm_fca/fig_clustering_metrics.png`, `results/dunnhumby_rfm_fca/summary.md`.
@@ -334,6 +334,15 @@ Cross-checking [`summary.md`](file:///d:/Nandana/MTECH/Semester%203/Projects/MP/
 - **Whether Results Changed:** No numerical values changed; display completeness restored.
 - **Files Affected:** `scripts/dunnhumby_rfm_fca_validation.py`, `results/dunnhumby_rfm_fca/summary.md`.
 - **Verification Performed:** Verified that all percentiles, means, and standard deviations for full, observation, and holdout cohorts appear in `summary.md`.
+
+### Correction 5: FCA Clustering Terminology Correction (Top-k Membership Hardening vs Alpha-Cut)
+- **Original Issue:** The $k$-matched FCA clustering benchmark was labeled as "Alpha-cut Top-k Concepts", but the procedure actually selects the top-$k$ non-trivial concepts and assigns each customer via argmax over continuous fuzzy memberships. This is argmax hardening, not an alpha-cut.
+- **Exact Change:** Renamed the procedure to "Top-k Membership Hardening" in `scripts/dunnhumby_rfm_fca_validation.py`, `results/dunnhumby_rfm_fca/clustering_metrics.csv`, and `results/dunnhumby_rfm_fca/summary.md`. Made the distinction explicit in code comments and docstrings:
+  - **Alpha-cut:** Threshold membership at $\alpha \ge 0.5$ (used in concept extent definition and redundancy suppression).
+  - **Top-k Membership Hardening:** Select $k$ concepts and assign each customer to the concept with maximum membership via argmax.
+- **Whether Results Changed:** Numerical Silhouette and Davies-Bouldin metrics remain 100% identical. Only the labeling and methodology notes were updated.
+- **Files Affected:** `scripts/dunnhumby_rfm_fca_validation.py`, `results/dunnhumby_rfm_fca/clustering_metrics.csv`, `results/dunnhumby_rfm_fca/summary.md`, `results/dunnhumby_rfm_fca/audit_report.md`.
+- **Verification Performed:** Verified CSV headers and values match exactly, scripts parse cleanly, and genuine alpha-cut analyses elsewhere in the repository remain preserved.
 
 ---
 

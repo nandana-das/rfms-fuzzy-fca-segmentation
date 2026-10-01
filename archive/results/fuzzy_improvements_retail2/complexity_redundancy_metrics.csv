@@ -1,0 +1,4 @@
+arm,retained_nontrivial_concepts,mean_concepts_per_customer_at_05,mean_pairwise_concept_extent_jaccard,pct_near_duplicate_pairs_ge_08
+Crisp RFM-FCA,29,5.205102717031147,0.08788859727700411,0.034482758620689655
+Fuzzy RFM-FCA (Baseline),445,41.3336646785951,0.06915545096690434,0.03333333333333333
+Fuzzy RFM-FCA (Redundancy-Suppressed),95,4.125911199469847,0.0062041067283160065,0.0

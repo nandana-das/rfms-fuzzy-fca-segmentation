@@ -1,0 +1,49 @@
+variant,method,k,silhouette,davies_bouldin,feature_space
+A,"Fuzzy-FCA (natural k, alpha-cut)",12,0.598723943071399,3.7979629293562263,"Standardized score space (r, f, m, s)"
+A,Fuzzy-FCA (k-matched),4,0.6091818711706297,1.8027225661258368,"Standardized score space (r, f, m, s)"
+A,K-means,4,0.3515343545650686,0.9704276943461277,"Standardized score space (r, f, m, s)"
+A,Hierarchical (Ward),4,0.2970092952725115,1.1146535041166943,"Standardized score space (r, f, m, s), n=5000"
+A,"K-means (clean, IQR-removed)",4,0.31419702702302404,0.9450514510196247,IQR+log+minmax (n=73437)
+A,"Hierarchical (clean, IQR-removed)",4,0.3315203270264732,1.1968151223176964,IQR+log+minmax (n=5000)
+A,Fuzzy-FCA (k-matched),5,0.6089132036303637,1.8010885592124892,"Standardized score space (r, f, m, s)"
+A,K-means,5,0.38880495956389216,0.820144991181493,"Standardized score space (r, f, m, s)"
+A,Hierarchical (Ward),5,0.3297401992080351,0.913527517330927,"Standardized score space (r, f, m, s), n=5000"
+A,"K-means (clean, IQR-removed)",5,0.33737116274676915,1.0541149660112654,IQR+log+minmax (n=73437)
+A,"Hierarchical (clean, IQR-removed)",5,0.31071876163513396,1.1556068603609193,IQR+log+minmax (n=5000)
+A,Fuzzy-FCA (k-matched),6,0.6100212592838786,2.124560778156677,"Standardized score space (r, f, m, s)"
+A,K-means,6,0.39385841226905965,0.8508235950953544,"Standardized score space (r, f, m, s)"
+A,Hierarchical (Ward),6,0.2767143219770379,0.9375374192442482,"Standardized score space (r, f, m, s), n=5000"
+A,"K-means (clean, IQR-removed)",6,0.3581996056262746,0.9949477529012031,IQR+log+minmax (n=73437)
+A,"Hierarchical (clean, IQR-removed)",6,0.31979009658136376,1.0737881066589652,IQR+log+minmax (n=5000)
+B,"Fuzzy-FCA (natural k, alpha-cut)",12,0.16559676342221025,5.946694118416779,"Standardized score space (r, f, m, s)"
+B,Fuzzy-FCA (k-matched),4,0.2591234357025412,2.219555155263171,"Standardized score space (r, f, m, s)"
+B,K-means,4,0.349360673508935,0.995222871224983,"Standardized score space (r, f, m, s)"
+B,Hierarchical (Ward),4,0.2937678710995613,1.1382918485396794,"Standardized score space (r, f, m, s), n=5000"
+B,"K-means (clean, IQR-removed)",4,0.3204049891440051,0.9451335665006946,IQR+log+minmax (n=68001)
+B,"Hierarchical (clean, IQR-removed)",4,0.34941461664730966,1.167956391913799,IQR+log+minmax (n=5000)
+B,Fuzzy-FCA (k-matched),5,0.24667651631197254,2.3918922593396763,"Standardized score space (r, f, m, s)"
+B,K-means,5,0.38668067980697973,0.8391359835964977,"Standardized score space (r, f, m, s)"
+B,Hierarchical (Ward),5,0.3263933013274821,0.9300399593734797,"Standardized score space (r, f, m, s), n=5000"
+B,"K-means (clean, IQR-removed)",5,0.3438141519083948,1.0525486273562592,IQR+log+minmax (n=68001)
+B,"Hierarchical (clean, IQR-removed)",5,0.29819742681442685,1.107970253573117,IQR+log+minmax (n=5000)
+B,Fuzzy-FCA (k-matched),6,0.2307306620575104,2.5920723178208305,"Standardized score space (r, f, m, s)"
+B,K-means,6,0.39168343547057866,0.8665719725980409,"Standardized score space (r, f, m, s)"
+B,Hierarchical (Ward),6,0.2733319205709331,0.9512977876130422,"Standardized score space (r, f, m, s), n=5000"
+B,"K-means (clean, IQR-removed)",6,0.3578786109746554,0.9942955231109143,IQR+log+minmax (n=68001)
+B,"Hierarchical (clean, IQR-removed)",6,0.3069655683897511,1.0484951631241743,IQR+log+minmax (n=5000)
+C,"Fuzzy-FCA (natural k, alpha-cut)",11,-0.06940246211595878,4.46484431998568,"Standardized score space (r, f, m, s)"
+C,Fuzzy-FCA (k-matched),4,-0.06683508038580493,3.3463409994170794,"Standardized score space (r, f, m, s)"
+C,K-means,4,0.3375215431074153,0.9337610515652286,"Standardized score space (r, f, m, s)"
+C,Hierarchical (Ward),4,0.32928263953699277,1.0633717940795928,"Standardized score space (r, f, m, s), n=5000"
+C,"K-means (clean, IQR-removed)",4,0.3204049891440051,0.9451335665006946,IQR+log+minmax (n=68001)
+C,"Hierarchical (clean, IQR-removed)",4,0.34941461664730966,1.167956391913799,IQR+log+minmax (n=5000)
+C,Fuzzy-FCA (k-matched),5,-0.07204703468502328,3.01463210194825,"Standardized score space (r, f, m, s)"
+C,K-means,5,0.3776852158877595,0.800873399220985,"Standardized score space (r, f, m, s)"
+C,Hierarchical (Ward),5,0.3311949868495262,0.9142896299349884,"Standardized score space (r, f, m, s), n=5000"
+C,"K-means (clean, IQR-removed)",5,0.3438141519083948,1.0525486273562592,IQR+log+minmax (n=68001)
+C,"Hierarchical (clean, IQR-removed)",5,0.29819742681442685,1.107970253573117,IQR+log+minmax (n=5000)
+C,Fuzzy-FCA (k-matched),6,-0.06815238155134778,3.892486001517364,"Standardized score space (r, f, m, s)"
+C,K-means,6,0.37148151255994755,0.9141061925075751,"Standardized score space (r, f, m, s)"
+C,Hierarchical (Ward),6,0.33170727979312237,0.7187158939929551,"Standardized score space (r, f, m, s), n=5000"
+C,"K-means (clean, IQR-removed)",6,0.3578786109746554,0.9942955231109143,IQR+log+minmax (n=68001)
+C,"Hierarchical (clean, IQR-removed)",6,0.3069655683897511,1.0484951631241743,IQR+log+minmax (n=5000)
