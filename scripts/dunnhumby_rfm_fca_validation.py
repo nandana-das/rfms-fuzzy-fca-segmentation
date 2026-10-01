@@ -14,7 +14,7 @@ max_len = None (no artificial itemset-length cap).
 Stability is a proxy only; NOT canonical Kuznetsov stability.
 Kneedle threshold is Kneedle-INSPIRED (normalised max-chord-distance); NOT canonical Kneedle.
 Canonical FPC / Xie-Beni are computed for FCM only, never for alpha-cut FCA.
-FCA hard (alpha-cut) clusters use Silhouette / Davies-Bouldin only.
+FCA-derived hard partitions use Silhouette / Davies-Bouldin only. The k-matched benchmark uses top-k concept membership hardening; the separate alpha-cut analysis uses alpha=0.5.
 Existing Retail II results are never modified or overwritten.
 All scalers, scoring cutoffs, fuzzy centroids, concept mining, suppression,
 FCM prototypes, and predictive models are fitted on TRAINING data only.
@@ -453,7 +453,7 @@ def run_clustering_benchmarks(obs_rfm, obs_scored, obs_fuzzy_mu, full_results):
             "Silhouette": sil_fcm, "Davies-Bouldin": db_fcm,
         })
 
-        # 4. Fuzzy RFM-FCA Alpha-Cut (top-k non-trivial concepts by support, argmax hardening)
+        # 4. Fuzzy RFM-FCA Top-k Membership Hardening (top-k non-trivial concepts by support, argmax assignment)
         nontriv = full_results["suppressed_concepts"][full_results["suppressed_concepts"]["intent_size"] > 0]
         top_k_idx = nontriv.index[:k]
         sub_mu = mu_supp[:, top_k_idx]
@@ -461,7 +461,7 @@ def run_clustering_benchmarks(obs_rfm, obs_scored, obs_fuzzy_mu, full_results):
         sil_fca_k = float(silhouette_score(X_raw, labels_fca_k, sample_size=min(2000, len(X_raw)), random_state=FIXED_SEED))
         db_fca_k = float(davies_bouldin_score(X_raw, labels_fca_k))
         records.append({
-            "Dataset": DATASET_NAME, "Method": "Fuzzy RFM-FCA", "Hardening": f"Alpha-cut Top-{k} Concepts",
+            "Dataset": DATASET_NAME, "Method": "Fuzzy RFM-FCA", "Hardening": f"Top-{k} Membership Hardening",
             "k": k, "Evaluation Space": "Raw RFM (Standardized)", "n_features": 3,
             "Silhouette": sil_fca_k, "Davies-Bouldin": db_fca_k,
         })
