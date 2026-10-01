@@ -12,6 +12,7 @@ M = sum(SALES_VALUE). SALES_VALUE is NOT multiplied by QUANTITY.
 No F* calculation, no entropy-based F-weighting.
 max_len = None (no artificial itemset-length cap).
 Stability is a proxy only; NOT canonical Kuznetsov stability.
+Kneedle threshold is Kneedle-INSPIRED (normalised max-chord-distance); NOT canonical Kneedle.
 Canonical FPC / Xie-Beni are computed for FCM only, never for FCA clusters.
 FCA hard clusters (Top-k Membership Hardening and Natural Hardening) use Silhouette / Davies-Bouldin only.
 Alpha-cut (alpha >= 0.5) is preserved for extent thresholding and redundancy suppression, distinct from Top-k Membership Hardening.
