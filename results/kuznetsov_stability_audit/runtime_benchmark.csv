@@ -1,0 +1,5 @@
+dataset,stage,n_concepts,n_exact,n_failed_or_bounded,reconstruction_time_s,stability_time_s,mean_time_ms,median_time_ms,max_time_ms,peak_tracemalloc_mb,peak_rss_mb,max_memo_states,max_lower_neighbors
+Dunnhumby Observation (Days 1-620),stability_computation,502,502,0,7.566,2.546,5.071,0.963,13.315,1.51,,550,12
+UK Online Retail II (Full Cohort),stability_computation,359,359,0,7.182,12.498,34.813,1.068,9.195,2.77,,296,10
+TOTAL (both datasets),stability_computation,861,861,0,14.748,15.044,,,,,,,
+VERIFICATION (toys+random+MC),verification,,,,,20.058,,,,,,,
