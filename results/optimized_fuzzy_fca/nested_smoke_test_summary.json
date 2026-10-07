@@ -1,0 +1,55 @@
+{
+  "experiment": "nested_optimization_smoke_test",
+  "protocol": "nested_optimization",
+  "stage": 1,
+  "dataset": "Dunnhumby Complete Journey",
+  "outer_seed": 42,
+  "inner_seed": 123,
+  "n_configs": 12,
+  "n_pareto": 12,
+  "selected_config_id": 6,
+  "baseline_config_id": 1,
+  "inner_validation": {
+    "train_size": 1224,
+    "val_size": 525,
+    "repurchase_rate_train": 0.9313725490196079,
+    "repurchase_rate_val": 0.9314285714285714
+  },
+  "outer_test": {
+    "test_size": 750,
+    "repurchase_rate": 0.932
+  },
+  "selected_config_inner_metrics": {
+    "roc_auc": 0.854606907521018,
+    "pr_auc": 0.9845918965104219,
+    "spend_r2": 0.470460118473945,
+    "invoice_r2": 0.6211442956924036,
+    "n_final_concepts": 100
+  },
+  "selected_config_outer_metrics": {
+    "roc_auc": 0.8633201492327975,
+    "pr_auc": 0.984410915745252,
+    "spend_r2": 0.4869025791354207,
+    "invoice_r2": 0.6143576374385854,
+    "n_final_concepts": 93
+  },
+  "baseline_outer_metrics": {
+    "roc_auc": 0.862899380066762,
+    "pr_auc": 0.9848954925333817,
+    "spend_r2": 0.5152254538564129,
+    "invoice_r2": 0.6188327718720246,
+    "n_final_concepts": 114
+  },
+  "fixed_params": {
+    "min_support": 0.04,
+    "L_thresholds": [
+      0.3,
+      0.5,
+      0.7
+    ],
+    "J_max": 0.8,
+    "mu_cut": 0.5
+  },
+  "leakage_free": true,
+  "runtime_total_s": 79.79875135421753
+}
