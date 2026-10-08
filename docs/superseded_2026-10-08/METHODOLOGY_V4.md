@@ -1,3 +1,5 @@
+> **SUPERSEDED (2026-10-08).** Historical copy of `docs/METHODOLOGY_V4.md` as last committed (git HEAD 8a420e2), before the audit. It reports dense-rank scoring, an untransformed Raw RFM baseline, an incorrect 98.08% repurchase rate and "temporal CV" labels. Do not cite. Current documents: `README.md`, `docs/RESULTS_SUMMARY.md`; errata: `docs/AUDIT_ERRATA.md`.
+
 # Methodology v4 — Final RFM-FCA Study
 
 ## 1. Study design

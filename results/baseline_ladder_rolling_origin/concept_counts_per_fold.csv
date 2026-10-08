@@ -1,0 +1,201 @@
+dataset,origin,fold,arm,n_candidates,n_features,n_distinct_columns,n_empty_core,n_after_stability
+Dunnhumby,day 347,0,crisp_rfm_fca,55,55,55,0,
+Dunnhumby,day 347,0,fuzzy_rfm_fca,493,91,91,0,
+Dunnhumby,day 347,0,fuzzy_rfm_fca_denserank,508,26,26,0,
+Dunnhumby,day 347,0,kuznetsov_fca,493,29,29,0,83.0
+Dunnhumby,day 347,1,crisp_rfm_fca,54,54,54,0,
+Dunnhumby,day 347,1,fuzzy_rfm_fca,426,87,87,0,
+Dunnhumby,day 347,1,fuzzy_rfm_fca_denserank,500,28,28,0,
+Dunnhumby,day 347,1,kuznetsov_fca,426,29,29,0,67.0
+Dunnhumby,day 347,2,crisp_rfm_fca,55,55,55,0,
+Dunnhumby,day 347,2,fuzzy_rfm_fca,502,95,95,0,
+Dunnhumby,day 347,2,fuzzy_rfm_fca_denserank,500,30,30,0,
+Dunnhumby,day 347,2,kuznetsov_fca,502,32,32,0,81.0
+Dunnhumby,day 347,3,crisp_rfm_fca,53,53,53,0,
+Dunnhumby,day 347,3,fuzzy_rfm_fca,429,88,88,0,
+Dunnhumby,day 347,3,fuzzy_rfm_fca_denserank,493,26,26,0,
+Dunnhumby,day 347,3,kuznetsov_fca,429,29,29,0,67.0
+Dunnhumby,day 347,4,crisp_rfm_fca,55,55,55,0,
+Dunnhumby,day 347,4,fuzzy_rfm_fca,484,89,89,0,
+Dunnhumby,day 347,4,fuzzy_rfm_fca_denserank,486,28,28,0,
+Dunnhumby,day 347,4,kuznetsov_fca,484,29,29,0,76.0
+Dunnhumby,day 438,0,crisp_rfm_fca,52,52,52,0,
+Dunnhumby,day 438,0,fuzzy_rfm_fca,509,93,93,0,
+Dunnhumby,day 438,0,fuzzy_rfm_fca_denserank,504,32,32,0,
+Dunnhumby,day 438,0,kuznetsov_fca,509,32,32,0,85.0
+Dunnhumby,day 438,1,crisp_rfm_fca,55,55,55,0,
+Dunnhumby,day 438,1,fuzzy_rfm_fca,501,91,91,0,
+Dunnhumby,day 438,1,fuzzy_rfm_fca_denserank,500,36,36,0,
+Dunnhumby,day 438,1,kuznetsov_fca,501,30,30,0,80.0
+Dunnhumby,day 438,2,crisp_rfm_fca,52,52,52,0,
+Dunnhumby,day 438,2,fuzzy_rfm_fca,438,97,97,0,
+Dunnhumby,day 438,2,fuzzy_rfm_fca_denserank,487,30,30,0,
+Dunnhumby,day 438,2,kuznetsov_fca,438,32,32,0,69.0
+Dunnhumby,day 438,3,crisp_rfm_fca,53,53,53,0,
+Dunnhumby,day 438,3,fuzzy_rfm_fca,432,93,93,0,
+Dunnhumby,day 438,3,fuzzy_rfm_fca_denserank,482,26,26,0,
+Dunnhumby,day 438,3,kuznetsov_fca,432,28,28,0,66.0
+Dunnhumby,day 438,4,crisp_rfm_fca,52,52,52,0,
+Dunnhumby,day 438,4,fuzzy_rfm_fca,447,95,95,0,
+Dunnhumby,day 438,4,fuzzy_rfm_fca_denserank,488,30,30,0,
+Dunnhumby,day 438,4,kuznetsov_fca,447,32,32,0,68.0
+Dunnhumby,day 529,0,crisp_rfm_fca,53,53,53,0,
+Dunnhumby,day 529,0,fuzzy_rfm_fca,479,88,88,0,
+Dunnhumby,day 529,0,fuzzy_rfm_fca_denserank,485,33,33,0,
+Dunnhumby,day 529,0,kuznetsov_fca,479,32,32,0,81.0
+Dunnhumby,day 529,1,crisp_rfm_fca,53,53,53,0,
+Dunnhumby,day 529,1,fuzzy_rfm_fca,484,88,88,0,
+Dunnhumby,day 529,1,fuzzy_rfm_fca_denserank,518,40,40,0,
+Dunnhumby,day 529,1,kuznetsov_fca,484,29,29,0,81.0
+Dunnhumby,day 529,2,crisp_rfm_fca,55,55,55,0,
+Dunnhumby,day 529,2,fuzzy_rfm_fca,494,92,92,0,
+Dunnhumby,day 529,2,fuzzy_rfm_fca_denserank,510,39,39,0,
+Dunnhumby,day 529,2,kuznetsov_fca,494,34,34,0,89.0
+Dunnhumby,day 529,3,crisp_rfm_fca,56,56,56,0,
+Dunnhumby,day 529,3,fuzzy_rfm_fca,498,90,90,0,
+Dunnhumby,day 529,3,fuzzy_rfm_fca_denserank,511,33,33,0,
+Dunnhumby,day 529,3,kuznetsov_fca,498,31,31,0,80.0
+Dunnhumby,day 529,4,crisp_rfm_fca,54,54,54,0,
+Dunnhumby,day 529,4,fuzzy_rfm_fca,502,89,89,0,
+Dunnhumby,day 529,4,fuzzy_rfm_fca_denserank,490,33,33,0,
+Dunnhumby,day 529,4,kuznetsov_fca,502,33,33,0,87.0
+Dunnhumby,day 620,0,crisp_rfm_fca,55,55,55,0,
+Dunnhumby,day 620,0,fuzzy_rfm_fca,494,89,89,0,
+Dunnhumby,day 620,0,fuzzy_rfm_fca_denserank,524,37,37,0,
+Dunnhumby,day 620,0,kuznetsov_fca,494,25,25,0,68.0
+Dunnhumby,day 620,1,crisp_rfm_fca,54,54,54,0,
+Dunnhumby,day 620,1,fuzzy_rfm_fca,494,96,96,0,
+Dunnhumby,day 620,1,fuzzy_rfm_fca_denserank,517,41,41,0,
+Dunnhumby,day 620,1,kuznetsov_fca,494,30,30,0,71.0
+Dunnhumby,day 620,2,crisp_rfm_fca,55,55,55,0,
+Dunnhumby,day 620,2,fuzzy_rfm_fca,499,94,94,0,
+Dunnhumby,day 620,2,fuzzy_rfm_fca_denserank,521,40,40,0,
+Dunnhumby,day 620,2,kuznetsov_fca,499,33,33,0,76.0
+Dunnhumby,day 620,3,crisp_rfm_fca,55,55,55,0,
+Dunnhumby,day 620,3,fuzzy_rfm_fca,497,96,96,0,
+Dunnhumby,day 620,3,fuzzy_rfm_fca_denserank,500,45,45,0,
+Dunnhumby,day 620,3,kuznetsov_fca,497,31,31,0,69.0
+Dunnhumby,day 620,4,crisp_rfm_fca,56,56,56,0,
+Dunnhumby,day 620,4,fuzzy_rfm_fca,493,91,91,0,
+Dunnhumby,day 620,4,fuzzy_rfm_fca_denserank,520,37,37,0,
+Dunnhumby,day 620,4,kuznetsov_fca,493,28,28,0,72.0
+Online Retail II,2010-09-10,0,crisp_rfm_fca,48,48,48,0,
+Online Retail II,2010-09-10,0,fuzzy_rfm_fca,269,68,68,0,
+Online Retail II,2010-09-10,0,fuzzy_rfm_fca_denserank,417,46,46,0,
+Online Retail II,2010-09-10,0,kuznetsov_fca,269,37,37,0,86.0
+Online Retail II,2010-09-10,1,crisp_rfm_fca,49,49,49,0,
+Online Retail II,2010-09-10,1,fuzzy_rfm_fca,271,68,68,0,
+Online Retail II,2010-09-10,1,fuzzy_rfm_fca_denserank,459,49,49,0,
+Online Retail II,2010-09-10,1,kuznetsov_fca,271,32,32,0,81.0
+Online Retail II,2010-09-10,2,crisp_rfm_fca,49,49,49,0,
+Online Retail II,2010-09-10,2,fuzzy_rfm_fca,269,67,67,0,
+Online Retail II,2010-09-10,2,fuzzy_rfm_fca_denserank,442,43,43,0,
+Online Retail II,2010-09-10,2,kuznetsov_fca,269,36,36,0,84.0
+Online Retail II,2010-09-10,3,crisp_rfm_fca,49,49,49,0,
+Online Retail II,2010-09-10,3,fuzzy_rfm_fca,274,70,70,0,
+Online Retail II,2010-09-10,3,fuzzy_rfm_fca_denserank,476,51,51,0,
+Online Retail II,2010-09-10,3,kuznetsov_fca,274,38,38,0,85.0
+Online Retail II,2010-09-10,4,crisp_rfm_fca,49,49,49,0,
+Online Retail II,2010-09-10,4,fuzzy_rfm_fca,269,67,67,0,
+Online Retail II,2010-09-10,4,fuzzy_rfm_fca_denserank,413,38,38,0,
+Online Retail II,2010-09-10,4,kuznetsov_fca,269,34,34,0,83.0
+Online Retail II,2010-12-10,0,crisp_rfm_fca,48,48,48,0,
+Online Retail II,2010-12-10,0,fuzzy_rfm_fca,321,76,76,0,
+Online Retail II,2010-12-10,0,fuzzy_rfm_fca_denserank,430,37,37,0,
+Online Retail II,2010-12-10,0,kuznetsov_fca,321,53,53,0,132.0
+Online Retail II,2010-12-10,1,crisp_rfm_fca,48,48,48,0,
+Online Retail II,2010-12-10,1,fuzzy_rfm_fca,327,81,81,0,
+Online Retail II,2010-12-10,1,fuzzy_rfm_fca_denserank,453,40,40,0,
+Online Retail II,2010-12-10,1,kuznetsov_fca,327,50,50,0,132.0
+Online Retail II,2010-12-10,2,crisp_rfm_fca,49,49,49,0,
+Online Retail II,2010-12-10,2,fuzzy_rfm_fca,334,78,78,0,
+Online Retail II,2010-12-10,2,fuzzy_rfm_fca_denserank,426,36,36,0,
+Online Retail II,2010-12-10,2,kuznetsov_fca,334,53,53,0,138.0
+Online Retail II,2010-12-10,3,crisp_rfm_fca,50,50,50,0,
+Online Retail II,2010-12-10,3,fuzzy_rfm_fca,323,76,76,0,
+Online Retail II,2010-12-10,3,fuzzy_rfm_fca_denserank,454,36,36,0,
+Online Retail II,2010-12-10,3,kuznetsov_fca,323,54,54,0,135.0
+Online Retail II,2010-12-10,4,crisp_rfm_fca,48,48,48,0,
+Online Retail II,2010-12-10,4,fuzzy_rfm_fca,328,78,78,0,
+Online Retail II,2010-12-10,4,fuzzy_rfm_fca_denserank,404,39,39,0,
+Online Retail II,2010-12-10,4,kuznetsov_fca,328,51,51,0,136.0
+Online Retail II,2011-03-11,0,crisp_rfm_fca,49,49,49,0,
+Online Retail II,2011-03-11,0,fuzzy_rfm_fca,340,77,77,0,
+Online Retail II,2011-03-11,0,fuzzy_rfm_fca_denserank,405,45,45,0,
+Online Retail II,2011-03-11,0,kuznetsov_fca,340,54,54,0,158.0
+Online Retail II,2011-03-11,1,crisp_rfm_fca,49,49,49,0,
+Online Retail II,2011-03-11,1,fuzzy_rfm_fca,341,80,80,0,
+Online Retail II,2011-03-11,1,fuzzy_rfm_fca_denserank,402,46,46,0,
+Online Retail II,2011-03-11,1,kuznetsov_fca,341,53,53,0,151.0
+Online Retail II,2011-03-11,2,crisp_rfm_fca,49,49,49,0,
+Online Retail II,2011-03-11,2,fuzzy_rfm_fca,341,80,80,0,
+Online Retail II,2011-03-11,2,fuzzy_rfm_fca_denserank,399,48,48,0,
+Online Retail II,2011-03-11,2,kuznetsov_fca,341,52,52,0,152.0
+Online Retail II,2011-03-11,3,crisp_rfm_fca,48,48,48,0,
+Online Retail II,2011-03-11,3,fuzzy_rfm_fca,352,80,80,0,
+Online Retail II,2011-03-11,3,fuzzy_rfm_fca_denserank,388,43,43,0,
+Online Retail II,2011-03-11,3,kuznetsov_fca,352,57,57,0,152.0
+Online Retail II,2011-03-11,4,crisp_rfm_fca,48,48,48,0,
+Online Retail II,2011-03-11,4,fuzzy_rfm_fca,340,78,78,0,
+Online Retail II,2011-03-11,4,fuzzy_rfm_fca_denserank,388,46,46,0,
+Online Retail II,2011-03-11,4,kuznetsov_fca,340,54,54,0,153.0
+Online Retail II,2011-06-10,0,crisp_rfm_fca,48,48,48,0,
+Online Retail II,2011-06-10,0,fuzzy_rfm_fca,368,82,82,0,
+Online Retail II,2011-06-10,0,fuzzy_rfm_fca_denserank,414,37,37,0,
+Online Retail II,2011-06-10,0,kuznetsov_fca,368,62,62,0,187.0
+Online Retail II,2011-06-10,1,crisp_rfm_fca,47,47,47,0,
+Online Retail II,2011-06-10,1,fuzzy_rfm_fca,336,76,76,0,
+Online Retail II,2011-06-10,1,fuzzy_rfm_fca_denserank,400,36,36,0,
+Online Retail II,2011-06-10,1,kuznetsov_fca,336,59,59,0,153.0
+Online Retail II,2011-06-10,2,crisp_rfm_fca,48,48,48,0,
+Online Retail II,2011-06-10,2,fuzzy_rfm_fca,370,82,82,0,
+Online Retail II,2011-06-10,2,fuzzy_rfm_fca_denserank,429,40,40,0,
+Online Retail II,2011-06-10,2,kuznetsov_fca,370,60,60,0,188.0
+Online Retail II,2011-06-10,3,crisp_rfm_fca,45,45,45,0,
+Online Retail II,2011-06-10,3,fuzzy_rfm_fca,375,85,85,0,
+Online Retail II,2011-06-10,3,fuzzy_rfm_fca_denserank,414,36,36,0,
+Online Retail II,2011-06-10,3,kuznetsov_fca,375,59,59,0,195.0
+Online Retail II,2011-06-10,4,crisp_rfm_fca,48,48,48,0,
+Online Retail II,2011-06-10,4,fuzzy_rfm_fca,370,80,80,0,
+Online Retail II,2011-06-10,4,fuzzy_rfm_fca_denserank,410,34,34,0,
+Online Retail II,2011-06-10,4,kuznetsov_fca,370,59,59,0,185.0
+Online Retail II,2011-09-09,0,crisp_rfm_fca,51,51,51,0,
+Online Retail II,2011-09-09,0,fuzzy_rfm_fca,379,80,80,0,
+Online Retail II,2011-09-09,0,fuzzy_rfm_fca_denserank,418,40,40,0,
+Online Retail II,2011-09-09,0,kuznetsov_fca,379,57,57,0,185.0
+Online Retail II,2011-09-09,1,crisp_rfm_fca,51,51,51,0,
+Online Retail II,2011-09-09,1,fuzzy_rfm_fca,375,77,77,0,
+Online Retail II,2011-09-09,1,fuzzy_rfm_fca_denserank,436,39,39,0,
+Online Retail II,2011-09-09,1,kuznetsov_fca,375,56,56,0,192.0
+Online Retail II,2011-09-09,2,crisp_rfm_fca,49,49,49,0,
+Online Retail II,2011-09-09,2,fuzzy_rfm_fca,376,78,78,0,
+Online Retail II,2011-09-09,2,fuzzy_rfm_fca_denserank,434,44,44,0,
+Online Retail II,2011-09-09,2,kuznetsov_fca,376,58,58,0,187.0
+Online Retail II,2011-09-09,3,crisp_rfm_fca,50,50,50,0,
+Online Retail II,2011-09-09,3,fuzzy_rfm_fca,364,73,73,0,
+Online Retail II,2011-09-09,3,fuzzy_rfm_fca_denserank,432,39,39,0,
+Online Retail II,2011-09-09,3,kuznetsov_fca,364,55,55,0,177.0
+Online Retail II,2011-09-09,4,crisp_rfm_fca,51,51,51,0,
+Online Retail II,2011-09-09,4,fuzzy_rfm_fca,375,75,75,0,
+Online Retail II,2011-09-09,4,fuzzy_rfm_fca_denserank,423,35,35,0,
+Online Retail II,2011-09-09,4,kuznetsov_fca,375,55,55,0,174.0
+Online Retail II,"2010-12-09 (primary, 365d)",0,crisp_rfm_fca,53,53,53,0,
+Online Retail II,"2010-12-09 (primary, 365d)",0,fuzzy_rfm_fca,328,78,78,0,
+Online Retail II,"2010-12-09 (primary, 365d)",0,fuzzy_rfm_fca_denserank,441,37,37,0,
+Online Retail II,"2010-12-09 (primary, 365d)",0,kuznetsov_fca,328,53,53,0,137.0
+Online Retail II,"2010-12-09 (primary, 365d)",1,crisp_rfm_fca,48,48,48,0,
+Online Retail II,"2010-12-09 (primary, 365d)",1,fuzzy_rfm_fca,330,78,78,0,
+Online Retail II,"2010-12-09 (primary, 365d)",1,fuzzy_rfm_fca_denserank,459,39,39,0,
+Online Retail II,"2010-12-09 (primary, 365d)",1,kuznetsov_fca,330,55,55,0,140.0
+Online Retail II,"2010-12-09 (primary, 365d)",2,crisp_rfm_fca,48,48,48,0,
+Online Retail II,"2010-12-09 (primary, 365d)",2,fuzzy_rfm_fca,331,77,77,0,
+Online Retail II,"2010-12-09 (primary, 365d)",2,fuzzy_rfm_fca_denserank,447,39,39,0,
+Online Retail II,"2010-12-09 (primary, 365d)",2,kuznetsov_fca,331,54,54,0,132.0
+Online Retail II,"2010-12-09 (primary, 365d)",3,crisp_rfm_fca,50,50,50,0,
+Online Retail II,"2010-12-09 (primary, 365d)",3,fuzzy_rfm_fca,331,80,80,0,
+Online Retail II,"2010-12-09 (primary, 365d)",3,fuzzy_rfm_fca_denserank,401,33,33,0,
+Online Retail II,"2010-12-09 (primary, 365d)",3,kuznetsov_fca,331,53,53,0,134.0
+Online Retail II,"2010-12-09 (primary, 365d)",4,crisp_rfm_fca,51,51,51,0,
+Online Retail II,"2010-12-09 (primary, 365d)",4,fuzzy_rfm_fca,331,79,79,0,
+Online Retail II,"2010-12-09 (primary, 365d)",4,fuzzy_rfm_fca_denserank,453,38,38,0,
+Online Retail II,"2010-12-09 (primary, 365d)",4,kuznetsov_fca,331,55,55,0,138.0

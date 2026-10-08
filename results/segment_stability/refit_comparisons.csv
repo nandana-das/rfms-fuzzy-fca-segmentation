@@ -1,0 +1,13 @@
+dataset,comparison,measure,delta,interval_low,interval_high,origins_positive
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,core_jaccard,-0.005422627699800106,-0.0202953523695625,0.004249628141054069,1/4
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,fuzzy_jaccard,-0.037805258382728725,-0.0573972630259169,-0.021053074091312646,0/4
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,concept_recurrence,-0.02589979707816014,-0.04337716566397073,-0.0048318887796410265,0/4
+Dunnhumby,kuznetsov_fca - crisp_rfm_fca,core_jaccard,-0.14063327142374496,-0.15674798781942925,-0.12410711548254769,0/4
+Dunnhumby,kuznetsov_fca - crisp_rfm_fca,fuzzy_jaccard,-0.18283596846828276,-0.20207275584998072,-0.16250231312487526,0/4
+Dunnhumby,kuznetsov_fca - crisp_rfm_fca,concept_recurrence,-0.33126709227979456,-0.3655986838142899,-0.2968114123563915,0/4
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,core_jaccard,0.004463524479419467,-0.002268162271223625,0.016143922015565196,2/5
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,fuzzy_jaccard,-0.015424667508707355,-0.02448529605661489,-0.0027438734629269784,0/5
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,concept_recurrence,-0.012724674109077311,-0.02573890692300787,0.0033627117563288004,1/5
+Online Retail II,kuznetsov_fca - crisp_rfm_fca,core_jaccard,-0.06527570679980647,-0.07392634678199222,-0.051249300208576834,0/5
+Online Retail II,kuznetsov_fca - crisp_rfm_fca,fuzzy_jaccard,-0.09056354099967331,-0.09874162415145435,-0.07376514975462042,0/5
+Online Retail II,kuznetsov_fca - crisp_rfm_fca,concept_recurrence,-0.1766001333210981,-0.19604596262169582,-0.154764029952964,0/5

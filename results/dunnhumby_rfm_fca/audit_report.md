@@ -1,5 +1,7 @@
 # Dunnhumby RFM-FCA Methodology v4 Audit
 
+> **HISTORICAL (2026-10-08 audit).** Not part of the final evidence. This report predates the audit and uses superseded choices (dense-rank scoring; untransformed Raw RFM baseline; 10 random customer splits at a single cutoff; legacy suppression that kept empty-core concepts). Current evidence: `results/final_evidence/EVIDENCE_TABLES.md`; see `docs/AUDIT_ERRATA.md`.
+
 ## 1. Overall Status
 
 **PASS** *(Updated from PASS WITH ISSUES following Section 12 corrections)*

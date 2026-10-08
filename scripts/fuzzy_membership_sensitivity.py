@@ -69,6 +69,56 @@ from fair_comparison_retail2 import (
 )
 from concept_redundancy import suppress_redundant_concepts
 
+
+# ------------------------------------------------------------------
+# Internal fuzzy membership primitives (shared by Stage-1 / Stage-2)
+# These are intentionally not part of the public sensitivity-analysis API;
+# they are imported by the optimized fuzzy FCA scripts via the private names
+# _band_centroids_generic and _piecewise_membership_generic.
+# ------------------------------------------------------------------
+
+def _band_centroids_generic(raw: np.ndarray, score: np.ndarray, n_levels: int) -> np.ndarray:
+    """Median centroid per score band (1..n_levels).
+
+    Generalizes fair_comparison_retail2.band_centroids (median, empty band -> global
+    median) to an arbitrary number of levels; for n_levels=5 the two are identical.
+    """
+    centroids = []
+    for k in range(1, n_levels + 1):
+        vals = raw[score == k]
+        centroids.append(np.median(vals) if len(vals) else np.median(raw))
+    return np.array(centroids, dtype=float)
+
+
+def _piecewise_membership_generic(raw: np.ndarray, centroids: np.ndarray) -> np.ndarray:
+    """Centroid-based piecewise-linear membership with outer shoulders.
+
+    Generalizes fair_comparison_retail2.piecewise_membership to an arbitrary number of
+    sorted centroids; for 5 centroids the two are identical. Each value has nonzero
+    membership in at most two adjacent levels and memberships sum to 1.
+    """
+    x = np.asarray(raw, dtype=float)
+    c = np.asarray(centroids, dtype=float)
+    n_levels = len(c)
+    mu = np.zeros((len(x), n_levels), dtype=float)
+    if n_levels == 1:
+        mu[:, 0] = 1.0
+        return mu
+    below = x <= c[0]
+    above = x >= c[-1]
+    mu[below, 0] = 1.0
+    mu[above, n_levels - 1] = 1.0
+    mid = ~below & ~above
+    xm = x[mid]
+    idx = np.clip(np.searchsorted(c, xm, side="right") - 1, 0, n_levels - 2)
+    left, right = c[idx], c[idx + 1]
+    denom = np.where(right - left == 0, 1e-9, right - left)
+    frac_right = (xm - left) / denom
+    rows = np.where(mid)[0]
+    mu[rows, idx] = 1 - frac_right
+    mu[rows, idx + 1] = frac_right
+    return mu
+
 # ------------------------------------------------------------------
 # Output and Data Paths
 # ------------------------------------------------------------------

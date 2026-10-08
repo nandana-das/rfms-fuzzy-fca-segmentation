@@ -1,5 +1,7 @@
 # Statistical Comparison: Canonical Kneedle vs. Existing Fuzzy-FCA Pipeline
 
+> **HISTORICAL (2026-10-08 audit).** Not part of the final evidence. This report predates the audit and uses superseded choices (dense-rank scoring; Kneedle pruning, excluded; Monte Carlo sign-flip p-values below the exact floor). Current evidence: `results/final_evidence/EVIDENCE_TABLES.md`; see `docs/AUDIT_ERRATA.md`.
+
 **Context:** Controlled paired comparison of Canonical Kneedle (`kneed.KneeLocator`, $S \in \{0.1, 0.5, 1.0, 2.0\}$) against the existing baseline pipeline (`Candidate Concepts -> Extent Jaccard Suppression`).  
 **Data Source:** `results/canonical_kneedle_experiment/canonical_kneedle_experiment_splits.csv`  
 **Evaluation Sample:** Exactly the 10 repeated holdout splits (`split_seed` in $1000..1009$, $N=10$). Fixed seed 42 is excluded from this primary paired comparison.  

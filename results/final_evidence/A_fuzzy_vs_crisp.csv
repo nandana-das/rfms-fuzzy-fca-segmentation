@@ -1,0 +1,7 @@
+dataset,metric,delta,95% CI,p (Holm),origins favourable,verdict
+Online Retail II,ROC AUC,0.005591813236789,"[+0.0036, +0.0075]",0.0135,5/5,"favourable, every origin"
+Online Retail II,Spend R²,0.0138718920936703,"[+0.0111, +0.0165]",0.0135,5/5,"favourable, every origin"
+Online Retail II,Invoice R²,0.0272802190844979,"[+0.0232, +0.0316]",0.0135,5/5,"favourable, every origin"
+Dunnhumby,ROC AUC,0.0210425375524384,"[+0.0152, +0.0271]",0.0135,4/4,"favourable, every origin"
+Dunnhumby,Spend R²,0.0269511203189001,"[+0.0217, +0.0324]",0.0135,4/4,"favourable, every origin"
+Dunnhumby,Invoice R²,0.0213432073346105,"[+0.0174, +0.0255]",0.0135,4/4,"favourable, every origin"

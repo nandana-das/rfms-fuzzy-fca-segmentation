@@ -1,0 +1,31 @@
+reference,dataset,metric,delta,95% CI,p (Holm),origins favourable,verdict
+Raw RFM (standardized),Online Retail II,ROC AUC,0.002691248075773,"[+0.0001, +0.0052]",0.3959999999999999,4/5,no significant difference
+Raw RFM (standardized),Online Retail II,Spend R²,0.1009156427992421,"[+0.0906, +0.1122]",0.0135,5/5,"favourable, every origin"
+Raw RFM (standardized),Online Retail II,Invoice R²,0.0418007472498022,"[+0.0262, +0.0584]",0.0135,5/5,"favourable, every origin"
+Raw RFM (standardized),Dunnhumby,ROC AUC,0.0077316150622168,"[-0.0008, +0.0158]",0.7000000000000001,3/4,no significant difference
+Raw RFM (standardized),Dunnhumby,Spend R²,0.1014681228749966,"[+0.0890, +0.1133]",0.0135,4/4,"favourable, every origin"
+Raw RFM (standardized),Dunnhumby,Invoice R²,0.1141132714408292,"[+0.1027, +0.1247]",0.0135,4/4,"favourable, every origin"
+Log RFM,Online Retail II,ROC AUC,-0.0010358267762252,"[-0.0032, +0.0011]",1.0,3/5,no significant difference
+Log RFM,Online Retail II,Spend R²,0.014605911599034,"[+0.0103, +0.0186]",0.0135,5/5,"favourable, every origin"
+Log RFM,Online Retail II,Invoice R²,0.0034814685187458,"[-0.0031, +0.0102]",1.0,4/5,no significant difference
+Log RFM,Dunnhumby,ROC AUC,-0.0017782676990273,"[-0.0073, +0.0042]",1.0,2/4,no significant difference
+Log RFM,Dunnhumby,Spend R²,0.0186895721094407,"[+0.0110, +0.0265]",0.0135,4/4,"favourable, every origin"
+Log RFM,Dunnhumby,Invoice R²,0.0161096757572601,"[+0.0100, +0.0223]",0.0135,4/4,"favourable, every origin"
+Spline on log RFM,Online Retail II,ROC AUC,-0.0006483275387603,"[-0.0027, +0.0014]",1.0,4/5,no significant difference
+Spline on log RFM,Online Retail II,Spend R²,0.0016826518820958,"[-0.0013, +0.0048]",1.0,4/5,no significant difference
+Spline on log RFM,Online Retail II,Invoice R²,-0.0317523246091477,"[-0.0404, -0.0231]",0.0135,0/5,unfavourable
+Spline on log RFM,Dunnhumby,ROC AUC,-0.0050395753842441,"[-0.0088, -0.0013]",0.096,0/4,no significant difference
+Spline on log RFM,Dunnhumby,Spend R²,-0.0059785610877677,"[-0.0102, -0.0016]",0.126,1/4,no significant difference
+Spline on log RFM,Dunnhumby,Invoice R²,-0.0030346121848297,"[-0.0071, +0.0009]",1.0,1/4,no significant difference
+Gradient boosting on raw RFM (untuned),Online Retail II,ROC AUC,0.0066274665014468,"[+0.0037, +0.0097]",0.0135,4/5,favourable
+Gradient boosting on raw RFM (untuned),Online Retail II,Spend R²,0.0172903980342659,"[+0.0128, +0.0218]",0.0135,5/5,"favourable, every origin"
+Gradient boosting on raw RFM (untuned),Online Retail II,Invoice R²,-0.0155497507582119,"[-0.0241, -0.0069]",0.0135,0/5,unfavourable
+Gradient boosting on raw RFM (untuned),Dunnhumby,ROC AUC,0.0090092580708189,"[+0.0026, +0.0155]",0.105,4/4,no significant difference
+Gradient boosting on raw RFM (untuned),Dunnhumby,Spend R²,0.0319962822117238,"[+0.0233, +0.0418]",0.0135,4/4,"favourable, every origin"
+Gradient boosting on raw RFM (untuned),Dunnhumby,Invoice R²,0.0165592787231579,"[+0.0111, +0.0222]",0.0135,4/4,"favourable, every origin"
+Fuzzy bands (no FCA),Online Retail II,ROC AUC,0.0106832343578718,"[+0.0078, +0.0137]",0.0135,5/5,"favourable, every origin"
+Fuzzy bands (no FCA),Online Retail II,Spend R²,0.0078767414019033,"[+0.0055, +0.0104]",0.0135,5/5,"favourable, every origin"
+Fuzzy bands (no FCA),Online Retail II,Invoice R²,0.0190256704744462,"[+0.0152, +0.0228]",0.0135,5/5,"favourable, every origin"
+Fuzzy bands (no FCA),Dunnhumby,ROC AUC,-0.0032353338295361,"[-0.0071, +0.0005]",0.756,0/4,no significant difference
+Fuzzy bands (no FCA),Dunnhumby,Spend R²,-0.0009221061000684,"[-0.0040, +0.0022]",1.0,2/4,no significant difference
+Fuzzy bands (no FCA),Dunnhumby,Invoice R²,0.0056247104332048,"[+0.0021, +0.0090]",0.034,4/4,"favourable, every origin"

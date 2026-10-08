@@ -1,5 +1,7 @@
 # Canonical Kuznetsov Intensional Stability - Audit Report
 
+> **Note (2026-10-08 audit).** The exact stability computation documented here was verified correct. The Kuznetsov filter is nevertheless **excluded from the final method**: it gives no consistent predictive benefit, it is the least stable arm, and its threshold acts as an absolute customer-count rule that depends on training-set size. These files are kept as ablation evidence; see `docs/AUDIT_ERRATA.md` §7.
+
 Generated: 2026-10-06 16:32:40 | script: `scripts/kuznetsov_stability_prototype.py`
 | branch: experiment/canonical-kneedle-full | total wall time: 51.1s
 

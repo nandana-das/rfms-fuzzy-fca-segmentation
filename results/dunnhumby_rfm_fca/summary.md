@@ -1,5 +1,7 @@
 # Dunnhumby Complete Journey: RFM-FCA Cross-Domain Validation
 
+> **HISTORICAL (2026-10-08 audit).** Not part of the final evidence. This report predates the audit and uses superseded choices (dense-rank scoring; untransformed Raw RFM baseline; 10 random customer splits at a single cutoff; legacy suppression that kept empty-core concepts). Current evidence: `results/final_evidence/EVIDENCE_TABLES.md`; see `docs/AUDIT_ERRATA.md`.
+
 ## Executive Summary
 
 Rigorous evaluation of the **Fuzzy RFM-FCA framework** on **Dunnhumby 'The Complete Journey'** as the second primary validation domain alongside Online Retail II.

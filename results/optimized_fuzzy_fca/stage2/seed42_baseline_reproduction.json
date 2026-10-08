@@ -1,0 +1,20 @@
+{
+  "train_size": 1749,
+  "test_size": 750,
+  "baseline_auc": 0.862899380066762,
+  "baseline_spend_r2": 0.5152254538564129,
+  "baseline_invoice_r2": 0.6188327718720246,
+  "baseline_n_candidates": 514,
+  "baseline_n_final_concepts": 114,
+  "kuz_ctx_n_objects": 1749,
+  "kuz_ctx_n_attributes": 45,
+  "kuz_ctx_n_exact": 514,
+  "kuz_ctx_n_failed": 0,
+  "kuz_ctx_stability_time_s": 1.0199452999986534,
+  "kuz_valid_stability": 514,
+  "kuz_failed_stability": 0,
+  "kuz_after_stability_at_loss_le_1": 514,
+  "kuz_final_at_loss_le_1": 114,
+  "existing_fuzzy_final": 114,
+  "loss_le_1_difference_final_vs_existing_fuzzy": 0
+}

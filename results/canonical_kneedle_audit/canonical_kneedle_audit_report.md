@@ -1,5 +1,7 @@
 # Canonical Kneedle Audit
 
+> **HISTORICAL (2026-10-08 audit).** Not part of the final evidence. This report predates the audit and uses superseded choices (dense-rank scoring; Kneedle pruning, which is excluded from the final method). Current evidence: `results/final_evidence/EVIDENCE_TABLES.md`; see `docs/AUDIT_ERRATA.md`.
+
 This audit compares canonical `kneed.KneeLocator` with the project's Kneedle-inspired normalized max-distance-from-chord heuristic.
 
 Canonical Kneedle is evaluated only on the support-versus-concept-rank curve. The stability-proxy distribution is reported descriptively and is not used as a second Kneedle pruning curve.

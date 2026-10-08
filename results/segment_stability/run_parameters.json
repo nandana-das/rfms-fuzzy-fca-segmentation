@@ -1,0 +1,39 @@
+{
+  "arms": [
+    "crisp_rfm_fca",
+    "fuzzy_rfm_fca",
+    "kuznetsov_fca"
+  ],
+  "comparisons": [
+    "fuzzy_rfm_fca - crisp_rfm_fca",
+    "kuznetsov_fca - crisp_rfm_fca"
+  ],
+  "primary_measure": "core_jaccard",
+  "n_subsamples": 30,
+  "subsample_frac": 0.8,
+  "subsample_seed": 2026,
+  "boot_n": 2000,
+  "boot_seed": 777,
+  "stable_rank_tol": 0.05,
+  "min_support": 0.04,
+  "l_thresholds": [
+    0.3,
+    0.5,
+    0.7
+  ],
+  "j_max": 0.8,
+  "mu_cut": 0.5,
+  "kuznetsov_loss_threshold": 5.4e-20,
+  "scoring": "tie-preserving quintiles",
+  "origins": [
+    "Dunnhumby | day 347",
+    "Dunnhumby | day 438",
+    "Dunnhumby | day 529",
+    "Dunnhumby | day 620",
+    "Online Retail II | 2010-09-10",
+    "Online Retail II | 2010-12-10",
+    "Online Retail II | 2011-03-11",
+    "Online Retail II | 2011-06-10",
+    "Online Retail II | 2011-09-09"
+  ]
+}

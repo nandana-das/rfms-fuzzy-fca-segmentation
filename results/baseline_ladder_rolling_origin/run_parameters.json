@@ -1,0 +1,57 @@
+{
+  "dims": [
+    "R",
+    "F",
+    "M"
+  ],
+  "horizon_days": 91,
+  "n_folds": 5,
+  "cv_seed": 0,
+  "boot_n": 2000,
+  "boot_seed": 12345,
+  "min_support": 0.04,
+  "l_thresholds": [
+    0.3,
+    0.5,
+    0.7
+  ],
+  "j_max": 0.8,
+  "mu_cut": 0.5,
+  "kuznetsov_loss_threshold": 5.4e-20,
+  "logreg": "LogisticRegressionCV(Cs=10, cv=5, roc_auc, lbfgs, max_iter=2000)",
+  "ridge": "RidgeCV(alphas=logspace(-3,3,20), cv=5)",
+  "gbm": {
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20
+  },
+  "dunnhumby_origins_day": [
+    347,
+    438,
+    529,
+    620
+  ],
+  "retail2_origins": [
+    "2010-09-10 23:59:59",
+    "2010-12-10 23:59:59",
+    "2011-03-11 23:59:59",
+    "2011-06-10 23:59:59",
+    "2011-09-09 23:59:59"
+  ],
+  "retail2_primary": {
+    "cutoff": "2010-12-09 23:59:59",
+    "holdout_end": "2011-12-09 23:59:59"
+  },
+  "comparisons": [
+    "fuzzy_rfm_fca - raw_std",
+    "fuzzy_rfm_fca - log_rfm",
+    "fuzzy_rfm_fca - spline_log_rfm",
+    "fuzzy_rfm_fca - gbm_raw_rfm",
+    "fuzzy_rfm_fca - crisp_rfm_fca",
+    "fuzzy_rfm_fca - fuzzy_bands",
+    "fuzzy_rfm_fca - fuzzy_rfm_fca_denserank",
+    "kuznetsov_fca - fuzzy_rfm_fca",
+    "kuznetsov_fca - spline_log_rfm"
+  ]
+}

@@ -1,0 +1,19 @@
+dataset,comparison,measure,delta,interval_low,interval_high,origins_positive
+Dunnhumby,fuzzy_rfm_fca_matched - crisp_rfm_fca,core_jaccard,-0.009347297299935014,-0.022381244487404927,-0.0015289001431188986,0/4
+Dunnhumby,fuzzy_rfm_fca_matched - crisp_rfm_fca,fuzzy_jaccard,-0.026940100706896845,-0.044260759953247374,-0.011501882763957385,0/4
+Dunnhumby,fuzzy_rfm_fca_matched - crisp_rfm_fca,concept_recurrence,-0.011023351648351647,-0.027444742757242742,0.0018689123376623214,1/4
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,core_jaccard,-0.005422627699800106,-0.0202953523695625,0.004249628141054069,1/4
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,fuzzy_jaccard,-0.03780525838272873,-0.0573972630259169,-0.021053074091312608,0/4
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,concept_recurrence,-0.02589979707816014,-0.04337716566397073,-0.0048318887796410265,0/4
+Dunnhumby,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,core_jaccard,-0.003924669600134909,-0.011898223017907774,0.004018142983090676,1/4
+Dunnhumby,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,fuzzy_jaccard,0.010865157675831889,0.001828061124706803,0.02015069051841669,4/4
+Dunnhumby,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,concept_recurrence,0.014876445429808498,-0.002521459025512737,0.02769360487992522,4/4
+Online Retail II,fuzzy_rfm_fca_matched - crisp_rfm_fca,core_jaccard,0.001117897058647852,-0.006692142540157343,0.010617166667822517,3/5
+Online Retail II,fuzzy_rfm_fca_matched - crisp_rfm_fca,fuzzy_jaccard,-0.01563297888779622,-0.026109998685509103,-0.0027214420591457596,0/5
+Online Retail II,fuzzy_rfm_fca_matched - crisp_rfm_fca,concept_recurrence,-0.013314090316977853,-0.023102912867274564,-0.0019617220292372415,0/5
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,core_jaccard,0.004463524479419467,-0.002268162271223625,0.016143922015565196,2/5
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,fuzzy_jaccard,-0.015424667508707354,-0.02448529605661489,-0.0027438734629269784,0/5
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,concept_recurrence,-0.012724674109077311,-0.02573890692300787,0.0033627117563288004,1/5
+Online Retail II,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,core_jaccard,-0.003345627420771614,-0.011387183944384354,0.00354213412946191,1/5
+Online Retail II,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,fuzzy_jaccard,-0.000208311379088862,-0.006392149582061294,0.00878324705586803,3/5
+Online Retail II,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,concept_recurrence,-0.0005894162079005431,-0.012989184333903198,0.01453736364612264,2/5

@@ -133,14 +133,62 @@ def paper_quintile_scores(rfm: pd.DataFrame) -> pd.DataFrame:
         scored[f"{dim}_score"] = scores
     return scored
 
-def dense_rank_scores(rfm: pd.DataFrame, dims: tuple = DIMENSIONS) -> pd.DataFrame:
-    """Controlled scoring: dense rank preserving tied raw values."""
+def dense_rank_scores(
+    rfm: pd.DataFrame,
+    dims: tuple = DIMENSIONS,
+    n_levels: int | dict[str, int] = 5,
+) -> pd.DataFrame:
+    """Controlled scoring: dense rank preserving tied raw values.
+
+    n_levels may be an int (same for every dim) or a {dim: levels} mapping.
+    The default of 5 reproduces the original scoring exactly.
+    """
     scored = rfm.copy()
     for dim in dims:
+        n = n_levels[dim] if isinstance(n_levels, dict) else int(n_levels)
         dense = scored[dim].rank(method="dense")
-        values = np.ceil(5 * dense / dense.max()).astype(int).clip(1, 5)
+        values = np.ceil(n * dense / dense.max()).astype(int).clip(1, n)
         if dim == "R":
-            values = 6 - values
+            values = (n + 1) - values
+        scored[f"{dim}_score"] = values.astype(np.int8)
+    return scored
+
+
+def fit_quantile_cutoffs(
+    rfm: pd.DataFrame, dims: tuple = DIMENSIONS, n_levels: int = 5
+) -> dict[str, np.ndarray]:
+    """Interior quantile cutpoints (k/n_levels, k=1..n_levels-1) per dimension.
+
+    Fit on training customers only; apply to any customers with quantile_scores.
+    Raises if two cutpoints coincide (a mass point spanning a whole band would
+    leave that band empty), so a degenerate band can never pass silently.
+    """
+    probs = np.arange(1, n_levels) / n_levels
+    cutoffs = {}
+    for dim in dims:
+        cut = np.quantile(rfm[dim].to_numpy(dtype=float), probs)
+        if np.any(np.diff(cut) <= 0):
+            raise ValueError(f"Quantile cutpoints for {dim} are not strictly increasing: {cut}")
+        cutoffs[dim] = cut
+    return cutoffs
+
+
+def quantile_scores(
+    rfm: pd.DataFrame, cutoffs: dict[str, np.ndarray], dims: tuple = DIMENSIONS
+) -> pd.DataFrame:
+    """Tie-preserving quantile scoring: band k holds values in (c_{k-1}, c_k].
+
+    Identical raw values always share a band, so bands are only approximately
+    equal-sized where the data has mass points (e.g. many customers with F = 1).
+    R is inverted (most recent = highest score), as in the base paper.
+    """
+    scored = rfm.copy()
+    for dim in dims:
+        cut = cutoffs[dim]
+        n_levels = len(cut) + 1
+        values = 1 + np.searchsorted(cut, scored[dim].to_numpy(dtype=float), side="left")
+        if dim == "R":
+            values = (n_levels + 1) - values
         scored[f"{dim}_score"] = values.astype(np.int8)
     return scored
 

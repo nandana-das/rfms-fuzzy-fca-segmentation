@@ -1,5 +1,7 @@
 # Canonical Kneedle Full Experiment: Cross-Domain Evaluation Report
 
+> **HISTORICAL (2026-10-08 audit).** Not part of the final evidence. This report predates the audit and uses superseded choices (dense-rank scoring; Kneedle pruning, excluded; 10 random customer splits at a single cutoff). Current evidence: `results/final_evidence/EVIDENCE_TABLES.md`; see `docs/AUDIT_ERRATA.md`.
+
 **Algorithm Evaluation:** Canonical Kneedle (`kneed.KneeLocator`, Satopaa et al., 2011) vs. Existing Fuzzy-FCA Pipeline vs. Crisp RFM-FCA Baseline  
 **Pipeline Structure:** `Candidate Fuzzy Concepts -> Canonical Kneedle Support Knee -> Extent-Level Jaccard Suppression (Jmax=0.80, mu_cut=0.50) -> Leakage-Free Predictive Models`  
 **Sensitivity Parameters:** $S \in \{0.1, 0.5, 1.0, 2.0\}$ (Pre-specified; no parameter tuning based on test results)  

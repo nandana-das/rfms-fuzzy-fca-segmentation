@@ -359,7 +359,7 @@ def build_representation_on_outer_train(
 
     # 1. Dense rank scoring on train_outer
     train_cust = train_outer[["CustomerID", "R", "F", "M"]].copy()
-    train_scored = dense_rank_scores(train_cust, dims=DIMS)
+    train_scored = dense_rank_scores(train_cust, dims=DIMS, n_levels=n_levels)
 
     # 2. Build generalized fuzzy memberships on train_outer
     train_fuzzy_mu, train_centroids, _ = generalized_fuzzy_memberships(

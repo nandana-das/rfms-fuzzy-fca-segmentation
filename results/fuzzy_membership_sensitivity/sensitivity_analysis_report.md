@@ -1,5 +1,7 @@
 # Sensitivity Analysis: L-Fuzzy Membership Threshold Tuples
 
+> **HISTORICAL (2026-10-08 audit).** Not part of the final evidence. This report predates the audit and uses superseded choices (dense-rank scoring; 10 random customer splits at a single cutoff; legacy suppression; not re-run). Current evidence: `results/final_evidence/EVIDENCE_TABLES.md`; see `docs/AUDIT_ERRATA.md`.
+
 ## Executive Summary & Framing
 
 > **IMPORTANT METHODOLOGICAL NOTICE:**

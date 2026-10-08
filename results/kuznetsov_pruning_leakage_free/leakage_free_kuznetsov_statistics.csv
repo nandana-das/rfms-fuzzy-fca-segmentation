@@ -1,0 +1,21 @@
+dataset,comparison,metric,mean_diff,std_diff,bootstrap_ci_lower,bootstrap_ci_upper,bootstrap_spans_zero,permutation_p_value,permutation_significant,n_splits,n_boot,n_perm,bootstrap_seed,permutation_seed
+Dunnhumby Complete Journey,loss<=1.0e0 vs baseline (existing fuzzy pipeline),auc,0.0,0.0,0.0,0.0,True,1.0,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=1.0e0 vs baseline (existing fuzzy pipeline),spend_r2,0.0,0.0,0.0,0.0,True,1.0,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=1.0e0 vs baseline (existing fuzzy pipeline),invoice_r2,0.0,0.0,0.0,0.0,True,1.0,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=1.0e0 vs baseline (existing fuzzy pipeline),n_final_concepts,0.0,0.0,0.0,0.0,True,1.0,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=1.5e-05 vs baseline (existing fuzzy pipeline),auc,0.007144660439282968,0.01099389861065966,0.0012477208336838853,0.013976479003618581,False,0.0497,True,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=1.5e-05 vs baseline (existing fuzzy pipeline),spend_r2,0.007706369368437693,0.013967463250601879,0.0012946894586693526,0.016676253236681978,False,0.0329,True,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=1.5e-05 vs baseline (existing fuzzy pipeline),invoice_r2,0.0027441594646570146,0.005200118669058189,-0.00017596163919458312,0.005811217514655769,True,0.1269,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=1.5e-05 vs baseline (existing fuzzy pipeline),n_final_concepts,-64.1,10.805862606320083,-70.4,-58.097500000000004,False,0.0015,True,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=3.9e-03 vs baseline (existing fuzzy pipeline),auc,0.0055779965777441156,0.010126774698561904,0.00048514684843887075,0.012001528794636626,False,0.0719,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=3.9e-03 vs baseline (existing fuzzy pipeline),spend_r2,0.006226272368549468,0.012391637462485198,0.0010290437970082926,0.014299405217377737,False,0.0309,True,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=3.9e-03 vs baseline (existing fuzzy pipeline),invoice_r2,0.002290595299134479,0.004248764034219657,1.2209148108202946e-06,0.004816661847299285,False,0.1085,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=3.9e-03 vs baseline (existing fuzzy pipeline),n_final_concepts,-45.8,6.214677966091423,-49.402499999999996,-42.2,False,0.0015,True,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=5.4e-20 vs baseline (existing fuzzy pipeline),auc,0.009662262616062123,0.00789686634602945,0.00490985020617686,0.014401210412634204,False,0.0052,True,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=5.4e-20 vs baseline (existing fuzzy pipeline),spend_r2,0.01173542241746015,0.01027211615848046,0.00655774872309312,0.018273544276328248,False,0.0037,True,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=5.4e-20 vs baseline (existing fuzzy pipeline),invoice_r2,0.002233991685275716,0.006939641385819147,-0.0021623185468599066,0.006235105221053417,True,0.3112,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=5.4e-20 vs baseline (existing fuzzy pipeline),n_final_concepts,-93.6,13.631662489301231,-101.30499999999999,-86.0,False,0.0015,True,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=6.2e-02 vs baseline (existing fuzzy pipeline),auc,0.0030435636343235538,0.007435138021645858,-0.0007467951415186971,0.007997629667031334,True,0.2507,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=6.2e-02 vs baseline (existing fuzzy pipeline),spend_r2,0.004463615490133232,0.013945240458887294,-0.0006151005700907445,0.013537514099975107,True,0.451,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=6.2e-02 vs baseline (existing fuzzy pipeline),invoice_r2,0.002284274141541298,0.004749844023963343,0.00010292450993379389,0.005379901569808155,False,0.1089,False,10,1000,10000,42,42
+Dunnhumby Complete Journey,loss<=6.2e-02 vs baseline (existing fuzzy pipeline),n_final_concepts,-23.8,5.692099788303083,-27.5,-20.497500000000002,False,0.0015,True,10,1000,10000,42,42

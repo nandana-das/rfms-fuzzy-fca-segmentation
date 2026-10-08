@@ -1,5 +1,7 @@
 # Smoke Test Report: Optimized Fuzzy FCA Experiment (Stage 1)
 
+> **HISTORICAL (2026-10-08 audit).** Not part of the final evidence. This report predates the audit and uses superseded choices (Stage 1/2 optimization smoke tests; dense-rank scoring and the 5-band scoring defect; optimization is excluded from the final method). Current evidence: `results/final_evidence/EVIDENCE_TABLES.md`; see `docs/AUDIT_ERRATA.md`.
+
 **Date:** 2026-10-08  
 **Script:** `scripts/optimized_fuzzy_fca_smoke_test.py`  
 **Branch:** `experiment/optimized-fuzzy-fca`

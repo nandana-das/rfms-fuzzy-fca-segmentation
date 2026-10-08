@@ -1,0 +1,17 @@
+dataset,comparison,subset,measure,delta,ci_low,ci_high,p_boot,pairs_positive,p_holm
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,all,core_jaccard,-0.03464013156052655,-0.03963305071175531,-0.029220250451264602,0.0005,0/3,0.004
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,all,fuzzy_jaccard,-0.043313050462952175,-0.0483800192373755,-0.0383077971409246,0.0005,0/3,0.004
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,stable,core_jaccard,-0.0015555961074133668,-0.018014448935291118,0.014772262687111673,0.837,1/3,0.837
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,stable,fuzzy_jaccard,-0.04044325914429977,-0.05363595208064226,-0.026972904791488686,0.0005,0/3,0.004
+Dunnhumby,kuznetsov_fca - crisp_rfm_fca,all,core_jaccard,-0.008450454113287986,-0.013482317288544376,-0.003084206586856452,0.002,0/3,0.004
+Dunnhumby,kuznetsov_fca - crisp_rfm_fca,all,fuzzy_jaccard,-0.018997626390739486,-0.024405800238632692,-0.013572581768997833,0.0005,0/3,0.004
+Dunnhumby,kuznetsov_fca - crisp_rfm_fca,stable,core_jaccard,-0.1044615973594617,-0.12094762466424024,-0.08780112389261237,0.0005,0/3,0.004
+Dunnhumby,kuznetsov_fca - crisp_rfm_fca,stable,fuzzy_jaccard,-0.13582692837253807,-0.1509623821258775,-0.12125289355898172,0.0005,0/3,0.004
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,all,core_jaccard,-0.02012924378150613,-0.023600565452989754,-0.016593539072315547,0.0005,0/4,0.004
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,all,fuzzy_jaccard,-0.03136864264736179,-0.034481881084517774,-0.02822958975066444,0.0005,0/4,0.004
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,stable,core_jaccard,0.020364751736676706,0.012477331058491256,0.028724992344211133,0.0005,4/4,0.004
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,stable,fuzzy_jaccard,-0.011849542235728872,-0.020148615032410166,-0.0034183331642496395,0.003,1/4,0.004
+Online Retail II,kuznetsov_fca - crisp_rfm_fca,all,core_jaccard,-0.0325029386292683,-0.03612593370138196,-0.029007336351527784,0.0005,0/4,0.004
+Online Retail II,kuznetsov_fca - crisp_rfm_fca,all,fuzzy_jaccard,-0.04219958438297536,-0.04554957541772553,-0.038824686666838706,0.0005,0/4,0.004
+Online Retail II,kuznetsov_fca - crisp_rfm_fca,stable,core_jaccard,-0.06757544431172846,-0.07740291613373738,-0.057851618250153766,0.0005,0/4,0.004
+Online Retail II,kuznetsov_fca - crisp_rfm_fca,stable,fuzzy_jaccard,-0.09451537552172457,-0.10395221249873736,-0.08520064163389322,0.0005,0/4,0.004

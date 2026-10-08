@@ -1,5 +1,7 @@
 # Fair Comparison of Crisp RFM-FCA and Fuzzy RFM-FCA on Online Retail II
 
+> **HISTORICAL (2026-10-08 audit).** Not part of the final evidence. This report predates the audit and uses superseded choices (dense-rank scoring for the predictive arms; untransformed Raw RFM baseline. Exception: `published_table7_reconstruction.csv`, the 31/31 base-paper intent recovery, is retained in the final evidence). Current evidence: `results/final_evidence/EVIDENCE_TABLES.md`; see `docs/AUDIT_ERRATA.md`.
+
 **Author / Project:** Antigravity Pair-Programming Assistant  
 **Target Repository:** `rfms_fca_project`  
 **Dataset:** UCI Online Retail II (2009-12-01 to 2011-12-09)  

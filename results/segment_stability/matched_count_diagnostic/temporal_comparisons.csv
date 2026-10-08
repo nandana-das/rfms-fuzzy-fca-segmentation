@@ -1,0 +1,25 @@
+dataset,comparison,subset,measure,delta,ci_low,ci_high,p_boot,pairs_positive,p_holm
+Dunnhumby,fuzzy_rfm_fca_matched - crisp_rfm_fca,all,core_jaccard,0.00273233527702336,-0.0020179884670228822,0.007935502361332333,0.286,3/3,1.0
+Dunnhumby,fuzzy_rfm_fca_matched - crisp_rfm_fca,all,fuzzy_jaccard,-7.444364464890645e-05,-0.005088332189129321,0.005021847579062829,0.957,1/3,1.0
+Dunnhumby,fuzzy_rfm_fca_matched - crisp_rfm_fca,stable,core_jaccard,-0.008108767472716124,-0.023997510296406885,0.007457441907744585,0.318,0/3,1.0
+Dunnhumby,fuzzy_rfm_fca_matched - crisp_rfm_fca,stable,fuzzy_jaccard,-0.035080494281910846,-0.0479305815232645,-0.022057214901981932,0.0005,0/3,0.006
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,all,core_jaccard,-0.03464013156052655,-0.03963305071175531,-0.029220250451264602,0.0005,0/3,0.006
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,all,fuzzy_jaccard,-0.04331305046295212,-0.04838001923737553,-0.0383077971409246,0.0005,0/3,0.006
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,stable,core_jaccard,-0.0015555961074133668,-0.018014448935291118,0.014772262687111673,0.837,1/3,1.0
+Dunnhumby,fuzzy_rfm_fca - crisp_rfm_fca,stable,fuzzy_jaccard,-0.04044325914429977,-0.05363595208064226,-0.026972904791488686,0.0005,0/3,0.006
+Dunnhumby,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,all,core_jaccard,0.03737246683754991,0.03589102225172397,0.03886144142859364,0.0005,3/3,0.006
+Dunnhumby,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,all,fuzzy_jaccard,0.043238606818303216,0.04230102183542994,0.044271117342598046,0.0005,3/3,0.006
+Dunnhumby,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,stable,core_jaccard,-0.006553171365302757,-0.010581928336152478,-0.002397815062192036,0.002,0/3,0.01
+Dunnhumby,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,stable,fuzzy_jaccard,0.005362764862388921,0.0027446253323624714,0.007936792691961339,0.0005,2/3,0.006
+Online Retail II,fuzzy_rfm_fca_matched - crisp_rfm_fca,all,core_jaccard,0.0027653716490892155,-0.0005598442995771735,0.006011279315459577,0.111,3/4,0.222
+Online Retail II,fuzzy_rfm_fca_matched - crisp_rfm_fca,all,fuzzy_jaccard,-0.007054452264274355,-0.010021201681621801,-0.003973087715443823,0.0005,1/4,0.006
+Online Retail II,fuzzy_rfm_fca_matched - crisp_rfm_fca,stable,core_jaccard,0.015317122092835367,0.007036285030353239,0.02343556654007512,0.0005,3/4,0.006
+Online Retail II,fuzzy_rfm_fca_matched - crisp_rfm_fca,stable,fuzzy_jaccard,-0.013496085961499454,-0.02205484834927405,-0.005094773080346222,0.001,1/4,0.006
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,all,core_jaccard,-0.02012924378150613,-0.023600565452989754,-0.016593539072315547,0.0005,0/4,0.006
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,all,fuzzy_jaccard,-0.03136864264736179,-0.034481881084517774,-0.028229589750664467,0.0005,0/4,0.006
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,stable,core_jaccard,0.020364751736676706,0.012477331058491256,0.028724992344211133,0.0005,4/4,0.006
+Online Retail II,fuzzy_rfm_fca - crisp_rfm_fca,stable,fuzzy_jaccard,-0.011849542235728844,-0.020148615032410198,-0.0034183331642496395,0.003,1/4,0.012
+Online Retail II,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,all,core_jaccard,0.022894615430595344,0.021639874210121438,0.024047876489757827,0.0005,4/4,0.006
+Online Retail II,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,all,fuzzy_jaccard,0.024314190383087436,0.023392906141432468,0.025191328325584766,0.0005,4/4,0.006
+Online Retail II,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,stable,core_jaccard,-0.005047629643841339,-0.008335769442628049,-0.0018355789834180079,0.003,2/4,0.012
+Online Retail II,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,stable,fuzzy_jaccard,-0.0016465437257706106,-0.003799199872540463,0.00046381720529570345,0.124,2/4,0.222

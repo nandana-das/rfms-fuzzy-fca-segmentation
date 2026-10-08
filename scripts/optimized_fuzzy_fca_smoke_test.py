@@ -298,7 +298,7 @@ def evaluate_config_on_split(
 
     # 1. Dense rank scoring on train_outer
     train_cust = train_outer[["CustomerID", "R", "F", "M"]].copy()
-    train_scored = dense_rank_scores(train_cust, dims=DIMS)
+    train_scored = dense_rank_scores(train_cust, dims=DIMS, n_levels=n_levels)
 
     # 2. Extract cutoffs from train_outer (for test projection)
     train_cutoffs = {

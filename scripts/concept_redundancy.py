@@ -8,6 +8,9 @@ fixed 70/30 temporal holdout, paired bootstrap CIs excluding zero for both R2
 deltas vs crisp). Near-duplicate concept pairs (extent Jaccard >= 0.8) drop to
 0% and mean concepts-per-customer at mu >= 0.5 falls from 41.3 to 4.1.
 
+The figures above come from the pre-audit legacy run (dense-rank scoring, before
+``drop_empty_core`` existed) and are historical; see docs/AUDIT_ERRATA.md.
+
 Leakage contract: pass a membership matrix computed from TRAINING customers
 only when used inside a holdout protocol - the selection must not see test
 extents. The suppressor never looks at outcomes; it is purely structural, but
@@ -27,6 +30,7 @@ def suppress_redundant_concepts(
     mu_matrix: np.ndarray,
     j_max: float = J_MAX_DEFAULT,
     mu_cut: float = 0.5,
+    drop_empty_core: bool = True,
 ) -> pd.DataFrame:
     """Greedily keep concepts in quality order; drop any whose >=mu_cut-cut extent
     overlaps an already-kept concept at Jaccard >= j_max.
@@ -45,6 +49,12 @@ def suppress_redundant_concepts(
         considered redundant.
     mu_cut:
         Membership cut used to binarize extents.
+    drop_empty_core:
+        Drop concepts whose ``>= mu_cut`` extent is empty. Such concepts have no
+        core customers (e.g. two adjacent bands of one dimension, whose Goedel-min
+        membership never exceeds 0.5) and the Jaccard test can never suppress them,
+        so before this flag existed they -- and their exact duplicates -- were always
+        kept. ``False`` reproduces that legacy behaviour.
 
     Returns
     -------
@@ -81,6 +91,8 @@ def suppress_redundant_concepts(
 
     for idx in order:
         ext = bin_extents[:, idx]
+        if drop_empty_core and not ext.any():
+            continue
         redundant = False
         for kept_ext in kept_extents:
             inter = np.logical_and(ext, kept_ext).sum()
@@ -105,6 +117,7 @@ def suppress_redundant_concepts_sparse(
     mu_matrix: np.ndarray,
     j_max: float = J_MAX_DEFAULT,
     mu_cut: float = 0.5,
+    drop_empty_core: bool = True,
 ) -> pd.DataFrame:
     """Numpy-backed suppression for large populations (e.g. Olist n=93,357).
 
@@ -128,6 +141,8 @@ def suppress_redundant_concepts_sparse(
     kept_mat = np.empty((0, mu_matrix.shape[0]), dtype=np.int32)
     for idx in order:
         ext = bin_ext[idx]
+        if drop_empty_core and not ext.any():
+            continue
         if kept_mat.shape[0]:
             inter = kept_mat @ ext  # integer intersection sizes vs every kept concept
             cand = np.flatnonzero(inter > 0)

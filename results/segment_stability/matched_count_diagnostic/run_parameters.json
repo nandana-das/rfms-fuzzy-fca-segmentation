@@ -1,0 +1,16 @@
+{
+  "matching_rule": "K = crisp retained-concept count on the same customers; fuzzy truncated to its top-K by (support desc, intent_size asc, stability_proxy desc, row order)",
+  "arms": [
+    "crisp_rfm_fca",
+    "fuzzy_rfm_fca",
+    "fuzzy_rfm_fca_matched"
+  ],
+  "comparisons": [
+    "fuzzy_rfm_fca_matched - crisp_rfm_fca",
+    "fuzzy_rfm_fca - crisp_rfm_fca",
+    "fuzzy_rfm_fca_matched - fuzzy_rfm_fca"
+  ],
+  "primary_measure": "core_jaccard",
+  "verdict_target": "temporal / all customers / core_jaccard",
+  "reuses": "scripts/segment_stability.py study_a / study_b unchanged"
+}
