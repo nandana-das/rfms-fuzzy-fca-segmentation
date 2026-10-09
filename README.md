@@ -6,11 +6,12 @@
 
 This repository extends the crisp RFM-FCA customer segmentation of **Rungruang et al. (2024)** to a **fuzzy (non-binary) RFM formal context**, the extension the base paper proposed as future work. It evaluates the extension out of sample against the crisp original and strong non-FCA RFM baselines, and tests whether it gives more stable segments.
 
-**Status (2026-10-08):** the methodology and evidence are frozen after an internal audit; defects, changes and superseded results are listed in [docs/AUDIT_ERRATA.md](docs/AUDIT_ERRATA.md). The pre-audit version of this README is kept in [docs/superseded_2026-10-08/README.md](docs/superseded_2026-10-08/README.md) and must not be cited.
+**Status (2026-10-09):** the v1 methodology and evidence are frozen after an internal audit; defects, changes and superseded results are listed in [docs/AUDIT_ERRATA.md](docs/AUDIT_ERRATA.md). An exploratory hybrid (v2), a confirmation on a third dataset (CDNOW) and limitation follow-ups were added afterwards, each under its own label. **Every manuscript claim must trace to a row of [docs/PAPER_EVIDENCE_MAP.md](docs/PAPER_EVIDENCE_MAP.md)**, which is generated from the result CSVs and checked by `scripts/validate_paper_evidence_map.py`. The pre-audit version of this README is kept in [docs/superseded_2026-10-08/README.md](docs/superseded_2026-10-08/README.md) and must not be cited.
 
-Scope: **RFM only**, on two datasets:
+Scope: **RFM only**, on three retail datasets:
 - **Online Retail II**, the base paper's dataset;
-- **Dunnhumby "The Complete Journey"**, used as a reproduction.
+- **Dunnhumby "The Complete Journey"**, used as a reproduction;
+- **CDNOW** (Fader & Hardie), used as a confirmation dataset under an analysis plan committed before its analysis.
 
 ## Research question and findings
 
@@ -18,9 +19,9 @@ Scope: **RFM only**, on two datasets:
 
 | Hypothesis | Status | Evidence |
 |---|---|---|
-| H1: fuzzy RFM-FCA improves prediction over crisp RFM-FCA | **Supported** | Under the rolling-origin evaluation, the pooled improvement over crisp RFM-FCA is statistically significant on AUC, Spend R² and Invoice R² in both datasets (paired bootstrap, Holm p = 0.014). Descriptively, the difference is also positive at every individual origin (4/4 Dunnhumby, 5/5 Retail II); these origin counts are not a significance test |
+| H1: fuzzy RFM-FCA improves prediction over crisp RFM-FCA | **Supported** | Under the rolling-origin evaluation, the pooled improvement over crisp RFM-FCA is statistically significant on AUC, Spend R² and Invoice R² in both datasets (paired bootstrap, Holm p = 0.014). Descriptively, the difference is also positive at every individual origin (4/4 Dunnhumby, 5/5 Retail II); these origin counts are not a significance test. Replicated on CDNOW (confirmatory). Under a stricter robustness re-analysis it holds on both regression targets on all three datasets and on AUC on Online Retail II and Dunnhumby; the CDNOW AUC gain is no longer significant |
 | H2: fuzzy RFM-FCA achieves predictive performance comparable to strong nonlinear non-FCA RFM baselines | **Inconclusive** | Five of six comparisons with the spline-on-log-RFM baseline were not significantly different, but equivalence was not formally established (no equivalence margin was pre-specified), and Retail II Invoice R² was significantly worse by 0.032 |
-| H3: fuzzy RFM-FCA improves segment stability over crisp RFM-FCA | **Not supported** | No significant difference under refitting; less stable under quarterly re-segmentation (−0.035 Dunnhumby, −0.020 Retail II). At matched concept count the temporal gap is no longer significant (+0.003 on both), which supports a "concept count and/or concept size" explanation, not concept count alone as the cause |
+| H3: fuzzy RFM-FCA improves segment stability over crisp RFM-FCA | **Not supported** | No significant difference under refitting; less stable under quarterly re-segmentation (−0.035 Dunnhumby, −0.020 Retail II). At matched concept count the temporal gap is no longer significant (+0.003 on both), which supports a "concept count and/or concept size" explanation, not concept count alone as the cause. On CDNOW (follow-up) fuzzy is also less stable quarter to quarter, and matching the concept count does **not** remove the gap there; H3 is not supported on any of the three datasets |
 
 ### Predictive headline: fuzzy vs the base-paper method
 
@@ -39,13 +40,49 @@ What these results do and do not show:
 - Fuzzy RFM-FCA consistently beats the base paper's crisp method.
 - It does **not** beat a strong nonlinear RFM model.
 - It is **not** more stable.
-- Interpretability was not measured.
+- Interpretability was not measured directly; outcome-free structural proxies are mixed (see the follow-ups below).
 
 Full tables: [docs/RESULTS_SUMMARY.md](docs/RESULTS_SUMMARY.md).
 
 ## Version 2 (post hoc, exploratory)
 
-On branch `experiment/v2-hybrid-fuzzy-fca`, a hybrid representation (fuzzy concept memberships plus log R/F/M) was evaluated as an **exploratory, post hoc** study using a written analysis plan (`docs/V2_HYBRID_ANALYSIS_PLAN.md`; Git history does not establish that the plan preceded the run). On Online Retail II it significantly beats both v1 and the spline baseline on all three metrics, though only narrowly beats the spline (exact estimates: +0.0032 AUC, +0.0055 Spend R², +0.0045 Invoice R²). On Dunnhumby it is not significantly different from the spline. Because it was designed after seeing v1 and evaluated on the same data, it is exploratory and does not replace the frozen v1 results. See [docs/V2_HYBRID_RESULTS.md](docs/V2_HYBRID_RESULTS.md). Its segments are identical to v1's (log features enter only the downstream model; verified on all 586 stability fits), so its segment stability is v1's: no stability improvement ([docs/V2_STABILITY_RESULTS.md](docs/V2_STABILITY_RESULTS.md)).
+On branch `experiment/v2-hybrid-fuzzy-fca`, a hybrid representation (fuzzy concept memberships plus log R/F/M) was evaluated as an **exploratory, post hoc** study using a written analysis plan (`docs/V2_HYBRID_ANALYSIS_PLAN.md`; Git history does not establish that the plan preceded the run). Because it was designed after seeing v1 and evaluated on the same data, it does not replace the frozen v1 results. See [docs/V2_HYBRID_RESULTS.md](docs/V2_HYBRID_RESULTS.md).
+
+Its advantage over the spline-on-log-RFM baseline is **dataset-dependent**:
+- **Online Retail II:** significant on all three metrics in the exploratory analysis (+0.0032 AUC, +0.0055 Spend R², +0.0045 Invoice R²), but only Spend R² remains significant under the robustness re-analysis.
+- **Dunnhumby:** not significantly different from the spline.
+- **CDNOW:** significant on all three metrics under the committed confirmation plan, and robust under re-analysis.
+
+Its segments are identical to v1's (log features enter only the downstream model; verified on all 586 stability fits), so its segment stability is v1's: no stability improvement ([docs/V2_STABILITY_RESULTS.md](docs/V2_STABILITY_RESULTS.md)).
+
+## CDNOW confirmation
+
+On branch `experiment/cdnow-confirmation`, v1 and the v2 hybrid were evaluated once on CDNOW (three rolling origins, 91-day holdouts) under [docs/CDNOW_CONFIRMATION_PLAN.md](docs/CDNOW_CONFIRMATION_PLAN.md), committed before any CDNOW analysis code. One planned extension merges coinciding or empty quintile bands, because more than half of CDNOW customers bought on only one day. H1 replicates; v1 is significantly below the spline on both regression targets; the hybrid beats the spline on all three metrics by small margins. An independent verification reproduced every committed value (59/59 checks). See [docs/CDNOW_CONFIRMATION_RESULTS.md](docs/CDNOW_CONFIRMATION_RESULTS.md).
+
+## Limitation follow-ups
+
+On branch `experiment/limitations-quick-wins`, under [docs/QUICK_WINS_PLAN.md](docs/QUICK_WINS_PLAN.md) (committed before its code); results in [docs/QUICK_WINS_RESULTS.md](docs/QUICK_WINS_RESULTS.md):
+- **CDNOW segment stability:** no refit difference; fuzzy less stable quarter to quarter; the matched-count explanation does not carry over to CDNOW.
+- **Inference robustness:** the four key comparisons re-assessed with 5 CV fold seeds and a customer-clustered bootstrap across origins. Of 36 dataset-metric results, 5 are no longer significant (Online Retail II hybrid vs spline on AUC and Invoice R², Online Retail II hybrid vs v1 on AUC, CDNOW H1 AUC, CDNOW fuzzy vs spline AUC); none changes sign. Report these metric by metric, with the exact estimates in the evidence map.
+- **Interpretability proxies (descriptive):** fuzzy retains more concepts and, on two datasets, has longer intents and higher core load, but lower overlap and no larger C80. No claim of greater (or lesser) interpretability follows.
+
+## In progress
+
+- **LRFM extension** (branch `experiment/lrfm-extension`): adds Length (days between first and last purchase) to RFM, with every baseline also receiving it. Only the analysis plan exists (`docs/LRFM_EXTENSION_PLAN.md` on that branch); results will be exploratory.
+
+## Branches
+
+| Branch | Role |
+|---|---|
+| `main` | Latest consolidated state (this README) |
+| `experiment/optimized-fuzzy-fca` | Frozen v1 primary study |
+| `experiment/v2-hybrid-fuzzy-fca` | Exploratory hybrid (v2) |
+| `experiment/cdnow-confirmation` | CDNOW confirmation and its verification |
+| `experiment/limitations-quick-wins` | Limitation follow-ups and the paper evidence map |
+| `experiment/lrfm-extension` | LRFM extension (in progress) |
+| Tags `archive/canonical-kneedle-draft`, `archive/canonical-kneedle-full`, `archive/rfm-only-final` | Historical branches (superseded Kneedle/Kuznetsov work, pre-audit RFM-only cleanup), kept as tags for the audit trail |
+
+The experiment branches form one linear history; each result is cited to the commit that produced it (see the evidence map).
 
 ## Final method
 
@@ -94,9 +131,58 @@ python scripts/final_evidence_tables.py
 python scripts/base_paper_comparison.py
 ```
 
+Exploratory hybrid (v2), CDNOW confirmation and follow-ups:
+
+```bash
+python scripts/v2_hybrid_ladder.py
+```
+
+```bash
+python scripts/cdnow_confirmation.py
+```
+
+```bash
+python scripts/verify_cdnow_confirmation.py
+```
+
+```bash
+python scripts/qw_cdnow_stability.py
+```
+
+```bash
+python scripts/qw_inference_robustness.py --dataset retail2
+```
+
+```bash
+python scripts/qw_inference_robustness.py --dataset dunnhumby
+```
+
+```bash
+python scripts/qw_inference_robustness.py --dataset cdnow
+```
+
+```bash
+python scripts/qw_inference_robustness.py --aggregate
+```
+
+```bash
+python scripts/qw_interpretability_proxies.py
+```
+
+Regenerate and check the evidence map:
+
+```bash
+python scripts/build_paper_evidence_map.py
+```
+
+```bash
+python scripts/validate_paper_evidence_map.py
+```
+
 Data:
 - Dunnhumby: `data/dunnhumby_raw/transaction_data.csv`;
-- Online Retail II: `data/raw_retail2/online_retail_09_10.csv` and `online_retail_10_11.csv`.
+- Online Retail II: `data/raw_retail2/online_retail_09_10.csv` and `online_retail_10_11.csv`;
+- CDNOW: `data/cdnow_raw/CDNOW_master.txt`, downloaded from http://brucehardie.com/datasets/ (not redistributed; git-ignored; source and SHA-256 in the CDNOW plan).
 
 ## Repository map (final evidence)
 
@@ -110,7 +196,9 @@ Data:
 | `scripts/matched_count_stability_diagnostic.py` | Matched-count diagnostic → `results/segment_stability/matched_count_diagnostic/` |
 | `scripts/final_evidence_tables.py` | Frozen evidence tables → `results/final_evidence/` |
 | `scripts/base_paper_comparison.py` | Base-paper method vs fuzzy → `results/base_paper_comparison/` |
-| `docs/` | Methodology, results, framing, errata; `docs/superseded_2026-10-08/` holds the pre-audit documents |
+| `scripts/v2_hybrid_ladder.py`, `scripts/cdnow_confirmation.py`, `scripts/qw_*.py` | v2 hybrid, CDNOW confirmation and limitation follow-ups → `results/v2_hybrid/`, `results/cdnow_confirmation/`, `results/qw_*/` |
+| `scripts/build_paper_evidence_map.py`, `scripts/validate_paper_evidence_map.py` | Generate and validate `docs/PAPER_EVIDENCE_MAP.md` (read-only with respect to results) |
+| `docs/` | Methodology, plans, results, framing, errata, evidence map; `docs/superseded_2026-10-08/` holds the pre-audit documents |
 
 All other scripts and result folders are historical or ablation material. They are listed in [docs/AUDIT_ERRATA.md](docs/AUDIT_ERRATA.md) §3 and carry banners where their conclusions are invalid or superseded. The Olist / RFMS / Satisfaction / F\* work in `archive/` is out of scope.
 

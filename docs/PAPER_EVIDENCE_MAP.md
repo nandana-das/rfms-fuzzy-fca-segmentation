@@ -14,7 +14,7 @@ python scripts/build_paper_evidence_map.py
 - **Significance is not strength.** "Significant" means Holm-adjusted p < 0.05 within the stated correction family. An adjusted p equal to the family **floor** (smallest attainable value = family size / B, B = 2000) indicates significance at that floor, not a large effect. Effect sizes (Δ) and intervals carry magnitude.
 - **Not significant is not equivalence.** No equivalence margins were pre-specified.
 - **Descriptive counts are not tests.** "Origins/pairs Δ>0" is descriptive only.
-- **Each claim is cited to the commit that generated its evidence**, not to the latest commit containing it. The experiment branches form one linear history (v1 → v2 → CDNOW → limitation follow-ups); do not merge them automatically.
+- **Each claim is cited to the commit that generated its evidence**, not to the latest commit containing it. The experiment branches form one linear history (v1 → v2 → CDNOW → limitation follow-ups); on 2026-10-09 `main` was fast-forwarded to it, without changing any commit.
 - **Robustness rows (`QWB-*`) do not replace committed results.** They re-assess the key comparisons with 5 CV fold seeds and a customer-clustered bootstrap. Report them metric by metric next to the committed rows; never summarize them only as a count.
 - **Generalizability differs by status:**
   - frozen v1: 2 datasets, 4–5 overlapping origins;
@@ -221,7 +221,7 @@ Means over origins; outcome-free structural proxies, not measures of human inter
 
 ## 2. Artifact provenance
 
-"Originating commit" is the oldest commit that touched the artifact; any later commits are listed under "Modified after origin". "Originating branch" is the first branch in lineage order (`main` → v1 → v2 → CDNOW → limitation follow-ups) whose history contains that commit; later branches contain it by linear history.
+"Originating commit" is the oldest commit that touched the artifact; any later commits are listed under "Modified after origin". "Originating branch" is the first branch in lineage order (`main` → v1 → v2 → CDNOW → limitation follow-ups) whose history contains that commit, with `main` meaning its tip before the 2026-10-09 consolidation (`44653e1`); later branches contain it by linear history.
 
 | Key | Artifact | Content | Originating commit | Originating branch | Status | Modified after origin |
 |---|---|---|---|---|---|---|

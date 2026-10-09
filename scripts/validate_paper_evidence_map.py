@@ -168,7 +168,9 @@ def validate(t: str) -> tuple[list, dict]:
     for _, r in prov.iterrows():
         path = r.Artifact.strip("`"); commit = r["Originating commit"].split("`")[1]
         commits = subprocess.run(["git", "log", "--format=%h", "--", path], capture_output=True, text=True).stdout.split()
-        branch = next(b for b in lineage if subprocess.run(["git", "merge-base", "--is-ancestor", commits[-1], b]).returncode == 0)
+        # "main" = its tip before the 2026-10-09 fast-forward consolidation (it now contains every commit)
+        ref = {"main": "44653e1"}
+        branch = next(b for b in lineage if subprocess.run(["git", "merge-base", "--is-ancestor", commits[-1], ref.get(b, b)]).returncode == 0)
         later = "no" if len(commits) == 1 else None
         if not (os.path.exists(path) and commits[-1] == commit and r["Originating branch"].strip("`") == branch
                 and r["Modified after origin"] == later):
