@@ -109,3 +109,17 @@ If the run fails for an implementation reason, the fix and the reason will be do
 - Script: `scripts/cdnow_confirmation.py`
 - Results: `results/cdnow_confirmation/`
 - Write-up: `docs/CDNOW_CONFIRMATION_RESULTS.md`
+
+## Addendum A1 (2026-10-09, before re-running): implementation fix after a failed first run
+
+**What happened.** The first run of `scripts/cdnow_confirmation.py` stopped with an error in the first training fold of the first origin, before any model was evaluated. The error was the extension's own guard: "F: score bands are not contiguous". No comparison, metric or model output was produced. The only outcome-related quantity printed was that origin's cohort repurchase rate (0.1789), which comes from a generic logging line.
+
+**Cause.** Quintile cutpoints are computed with linear interpolation, as in the frozen code. For the discrete count F, a training fold can get a cutpoint strictly between two observed values (e.g. 1.6), leaving a band with no training customers. §4 merged only *coinciding* cutpoints, which does not cover this case.
+
+**Fix (same principle as §4: no empty levels).** After merging coinciding cutpoints, any band empty on the training data is merged into the next band by deleting its upper cutpoint (for the top band, its lower cutpoint). This is repeated until every band is populated.
+
+**Verified before re-running.**
+- The fix changes nothing in any of the 60 Dunnhumby and Online Retail II training fits (identical cutpoints to the frozen code).
+- All 18 CDNOW training fits (3 origins × full cohort + 5 folds) now produce contiguous levels. On the full cohorts F gets 4 levels (cutpoints 1, 2, 3); R and M keep 5.
+
+**Not changed.** All other settings, arms, comparisons and decision rules are as in §2–§6. The fix was determined by the failure mode alone; no results were seen.
