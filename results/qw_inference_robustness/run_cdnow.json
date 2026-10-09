@@ -1,0 +1,20 @@
+{
+  "plan": "docs/QUICK_WINS_PLAN.md Part B",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "B": 10000,
+  "boot_seed": 20261009,
+  "origins": [
+    "1997-09-30",
+    "1997-12-31",
+    "1998-03-31"
+  ],
+  "union_customers": 23502,
+  "seed0_reproduction_max_abs_diff": 6.106226635438361e-16,
+  "runtime_min": 46.2
+}

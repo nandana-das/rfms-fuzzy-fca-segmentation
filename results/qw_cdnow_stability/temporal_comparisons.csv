@@ -1,0 +1,13 @@
+dataset,comparison,subset,measure,delta,ci_low,ci_high,p_boot,pairs_positive,p_holm
+CDNOW,fuzzy_rfm_fca - crisp_rfm_fca,all,core_jaccard,-0.03698470383314506,-0.03992988445172468,-0.0341711298429964,0.0005,1/2,0.006
+CDNOW,fuzzy_rfm_fca - crisp_rfm_fca,all,fuzzy_jaccard,-0.08011575511361146,-0.08246123705681616,-0.07778050739659503,0.0005,0/2,0.006
+CDNOW,fuzzy_rfm_fca - crisp_rfm_fca,stable,core_jaccard,-0.038814551382036155,-0.042340026033315374,-0.035143862170457174,0.0005,1/2,0.006
+CDNOW,fuzzy_rfm_fca - crisp_rfm_fca,stable,fuzzy_jaccard,-0.09664420511751443,-0.09955618417165246,-0.09350044804653161,0.0005,0/2,0.006
+CDNOW,fuzzy_rfm_fca_matched - crisp_rfm_fca,all,core_jaccard,-0.03696515925323951,-0.03979211412880934,-0.034280692287131445,0.0005,1/2,0.006
+CDNOW,fuzzy_rfm_fca_matched - crisp_rfm_fca,all,fuzzy_jaccard,-0.07867381918466759,-0.08095249641436575,-0.07638780904921941,0.0005,0/2,0.006
+CDNOW,fuzzy_rfm_fca_matched - crisp_rfm_fca,stable,core_jaccard,-0.038905209149136366,-0.042352809992836624,-0.0352827034304801,0.0005,1/2,0.006
+CDNOW,fuzzy_rfm_fca_matched - crisp_rfm_fca,stable,fuzzy_jaccard,-0.09333532449795534,-0.09616985767901265,-0.09015807176238581,0.0005,0/2,0.006
+CDNOW,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,all,core_jaccard,1.9544579905550474e-05,-0.00046644378622273246,0.0005010953172416174,0.953,1/2,1.0
+CDNOW,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,all,fuzzy_jaccard,0.0014419359289438716,0.0011284483925896622,0.0017325668940600069,0.0005,2/2,0.006
+CDNOW,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,stable,core_jaccard,-9.065776710021067e-05,-0.0006766593731985876,0.0004678330136095486,0.756,1/2,1.0
+CDNOW,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,stable,fuzzy_jaccard,0.0033088806195590847,0.002931817372897222,0.0036840692605052444,0.0005,2/2,0.006

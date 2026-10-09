@@ -1,0 +1,10 @@
+dataset,comparison,measure,delta,interval_low,interval_high,origins_positive
+CDNOW,fuzzy_rfm_fca - crisp_rfm_fca,core_jaccard,0.0066366786972121014,-0.002645489787390616,0.017817103940872776,3/3
+CDNOW,fuzzy_rfm_fca - crisp_rfm_fca,fuzzy_jaccard,-0.014529484047161274,-0.03129849196890626,0.0039382323212998425,0/3
+CDNOW,fuzzy_rfm_fca - crisp_rfm_fca,concept_recurrence,-0.012627922108514801,-0.027732904734073638,0.0020344942184939456,0/3
+CDNOW,fuzzy_rfm_fca_matched - crisp_rfm_fca,core_jaccard,-0.00011027099645684413,-0.008759627492123922,0.008857212031199201,1/3
+CDNOW,fuzzy_rfm_fca_matched - crisp_rfm_fca,fuzzy_jaccard,-0.018654777694041787,-0.03731234954280767,-0.0013275767938355657,0/3
+CDNOW,fuzzy_rfm_fca_matched - crisp_rfm_fca,concept_recurrence,-0.025154684095860576,-0.03977450980392158,-0.006630718954248374,0/3
+CDNOW,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,core_jaccard,-0.0067469496936689455,-0.01349071856092445,-0.0009606834900340838,0/3
+CDNOW,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,fuzzy_jaccard,-0.004125293646880512,-0.013160690478959434,0.0035580612651233945,0/3
+CDNOW,fuzzy_rfm_fca_matched - fuzzy_rfm_fca,concept_recurrence,-0.012526761987345774,-0.026050960146380798,0.007810048780860459,0/3

@@ -1,0 +1,26 @@
+{
+  "plan": "docs/QUICK_WINS_PLAN.md Part A",
+  "origins": [
+    "1997-09-30",
+    "1997-12-31",
+    "1998-03-31"
+  ],
+  "arms": [
+    "crisp_rfm_fca",
+    "fuzzy_rfm_fca",
+    "fuzzy_rfm_fca_matched"
+  ],
+  "comparisons": [
+    "fuzzy_rfm_fca - crisp_rfm_fca",
+    "fuzzy_rfm_fca_matched - crisp_rfm_fca",
+    "fuzzy_rfm_fca_matched - fuzzy_rfm_fca"
+  ],
+  "n_subsamples": 30,
+  "subsample_frac": 0.8,
+  "subsample_seed": 2026,
+  "boot_n": 2000,
+  "boot_seed": 777,
+  "stable_rank_tol": 0.05,
+  "extension": "CDNOW tie/empty-band merging (docs/CDNOW_CONFIRMATION_PLAN.md \u00a74, A1)",
+  "verdict": "H3 replicates as not supported on CDNOW"
+}
