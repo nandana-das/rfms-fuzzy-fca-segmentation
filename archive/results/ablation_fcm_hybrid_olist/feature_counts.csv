@@ -1,7 +1,0 @@
-arm,total_features,raw_features,fcm_features,fca_features,train_samples,test_samples
-A: Raw RFMS,4,4,0,0,15164,6500
-B: Fuzzy-FCA,331,0,0,331,15164,6500
-C: FCM,44,0,44,0,15164,6500
-D: Raw + FCM,48,4,44,0,15164,6500
-E: Raw + Fuzzy-FCA,335,4,0,331,15164,6500
-F: Hybrid (Raw + FCM + FCA),379,4,44,331,15164,6500

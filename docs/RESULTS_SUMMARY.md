@@ -129,4 +129,4 @@ Superseded or invalidated results are kept and bannered in their folders:
 - Kneedle;
 - the Olist/RFMS work.
 
-See `AUDIT_ERRATA.md` §3 and the `superseded_dense_rank_scoring/` subfolder of the ladder results.
+See `AUDIT_ERRATA.md` §3 and the `superseded_dense_rank_scoring/` subfolder of the ladder results (removed 2026-10-09; available at tag `archive/pre-cleanup-2026-10-09`).

@@ -182,3 +182,15 @@ Following the pre-stated asymmetry, the attribution is to "concept count and/or 
 ## 8. Remaining author actions
 
 - Review the final package, then commit the untracked scripts and results so the paper is reproducible from version control.
+
+## 9. Removal of invalidated and out-of-scope material (2026-10-09)
+
+At the author's request, the following were removed from the working tree. Nothing in the final evidence, the exploratory v2 study, the CDNOW confirmation or the limitation follow-ups depends on them, and every file remains available at tag `archive/pre-cleanup-2026-10-09`.
+
+- Stage 1/2 optimization: `scripts/optimized_fuzzy_fca_*.py` and `results/optimized_fuzzy_fca/` (invalid, §3).
+- Canonical Kneedle: `scripts/canonical_kneedle_*.py` and `results/canonical_kneedle_*/`.
+- Early Kuznetsov experiments: `scripts/kuznetsov_pruning_experiment.py`, `scripts/kuznetsov_stability_prototype.py`, `scripts/kuznetsov_pruning_retail2_leakage_free.py`, `results/kuznetsov_pruning_experiment/`, `results/kuznetsov_stability_audit/`, `results/kuznetsov_pruning_*leakage_free/` (caveated, §3). `scripts/kuznetsov_pruning_leakage_free.py` is kept because the frozen pipeline imports its stability function; the Kuznetsov ablation of the final evidence is in `results/final_evidence/`.
+- Four-way comparison: `scripts/four_way_method_comparison.py` and `results/four_way_method_comparison/` (caveated, §3).
+- Dense-rank run: `results/baseline_ladder_rolling_origin/superseded_dense_rank_scoring/` (superseded, §4).
+- `archive/`: the out-of-scope Olist / RFMS / Satisfaction / F* work, including a copy of the base paper PDF.
+- `kneed` was dropped from `requirements.txt`; only the removed Kneedle scripts used it.
