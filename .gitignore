@@ -12,3 +12,6 @@ __pycache__/
 
 # Raw dataset (>100MB limit for GitHub)
 data/dunnhumby_raw/
+
+# CDNOW raw data (licence not stated; obtain from brucehardie.com, see docs/CDNOW_CONFIRMATION_PLAN.md)
+data/cdnow_raw/
