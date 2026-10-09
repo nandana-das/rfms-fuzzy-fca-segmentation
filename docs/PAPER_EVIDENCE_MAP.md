@@ -1,6 +1,6 @@
 # Paper evidence map (control document for manuscript preparation)
 
-**Generated document; do not edit by hand.** Branch: `experiment/limitations-quick-wins`.
+**Generated document; do not edit by hand.** Generated on `main`.
 
 **How this file is produced.** Every number below is read programmatically from the committed CSVs listed in §2. Every originating commit, date and branch is read from Git history. The generator, `scripts/build_paper_evidence_map.py`, fits no models, runs no experiments and writes only this file. To change anything, edit the generator and regenerate, or cite the CSV directly in the manuscript.
 
@@ -221,7 +221,7 @@ Means over origins; outcome-free structural proxies, not measures of human inter
 
 ## 2. Artifact provenance
 
-"Originating commit" is the oldest commit that touched the artifact; any later commits are listed under "Modified after origin". "Originating branch" is the first branch in lineage order (`main` → v1 → v2 → CDNOW → limitation follow-ups) whose history contains that commit, with `main` meaning its tip before the 2026-10-09 consolidation (`44653e1`); later branches contain it by linear history.
+"Originating commit" is the oldest commit that touched the artifact; any later commits are listed under "Modified after origin". "Originating branch" is the first branch in lineage order (`main` → v1 → v2 → CDNOW → limitation follow-ups) whose history contains that commit, with `main` meaning its tip before the 2026-10-09 consolidation (`44653e1`); later branches contain it by linear history. The experiment branches were later replaced by tags at their final commits (`evidence/v1-frozen`, `evidence/v2-hybrid`, `evidence/cdnow-confirmation`, `evidence/limitations-quick-wins`).
 
 | Key | Artifact | Content | Originating commit | Originating branch | Status | Modified after origin |
 |---|---|---|---|---|---|---|

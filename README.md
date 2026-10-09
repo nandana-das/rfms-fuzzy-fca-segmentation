@@ -46,7 +46,7 @@ Full tables: [docs/RESULTS_SUMMARY.md](docs/RESULTS_SUMMARY.md).
 
 ## Version 2 (post hoc, exploratory)
 
-On branch `experiment/v2-hybrid-fuzzy-fca`, a hybrid representation (fuzzy concept memberships plus log R/F/M) was evaluated as an **exploratory, post hoc** study using a written analysis plan (`docs/V2_HYBRID_ANALYSIS_PLAN.md`; Git history does not establish that the plan preceded the run). Because it was designed after seeing v1 and evaluated on the same data, it does not replace the frozen v1 results. See [docs/V2_HYBRID_RESULTS.md](docs/V2_HYBRID_RESULTS.md).
+On the former branch `experiment/v2-hybrid-fuzzy-fca` (tag `evidence/v2-hybrid`), a hybrid representation (fuzzy concept memberships plus log R/F/M) was evaluated as an **exploratory, post hoc** study using a written analysis plan (`docs/V2_HYBRID_ANALYSIS_PLAN.md`; Git history does not establish that the plan preceded the run). Because it was designed after seeing v1 and evaluated on the same data, it does not replace the frozen v1 results. See [docs/V2_HYBRID_RESULTS.md](docs/V2_HYBRID_RESULTS.md).
 
 Its advantage over the spline-on-log-RFM baseline is **dataset-dependent**:
 - **Online Retail II:** significant on all three metrics in the exploratory analysis (+0.0032 AUC, +0.0055 Spend R², +0.0045 Invoice R²), but only Spend R² remains significant under the robustness re-analysis.
@@ -57,11 +57,11 @@ Its segments are identical to v1's (log features enter only the downstream model
 
 ## CDNOW confirmation
 
-On branch `experiment/cdnow-confirmation`, v1 and the v2 hybrid were evaluated once on CDNOW (three rolling origins, 91-day holdouts) under [docs/CDNOW_CONFIRMATION_PLAN.md](docs/CDNOW_CONFIRMATION_PLAN.md), committed before any CDNOW analysis code. One planned extension merges coinciding or empty quintile bands, because more than half of CDNOW customers bought on only one day. H1 replicates; v1 is significantly below the spline on both regression targets; the hybrid beats the spline on all three metrics by small margins. An independent verification reproduced every committed value (59/59 checks). See [docs/CDNOW_CONFIRMATION_RESULTS.md](docs/CDNOW_CONFIRMATION_RESULTS.md).
+On the former branch `experiment/cdnow-confirmation` (tag `evidence/cdnow-confirmation`), v1 and the v2 hybrid were evaluated once on CDNOW (three rolling origins, 91-day holdouts) under [docs/CDNOW_CONFIRMATION_PLAN.md](docs/CDNOW_CONFIRMATION_PLAN.md), committed before any CDNOW analysis code. One planned extension merges coinciding or empty quintile bands, because more than half of CDNOW customers bought on only one day. H1 replicates; v1 is significantly below the spline on both regression targets; the hybrid beats the spline on all three metrics by small margins. An independent verification reproduced every committed value (59/59 checks). See [docs/CDNOW_CONFIRMATION_RESULTS.md](docs/CDNOW_CONFIRMATION_RESULTS.md).
 
 ## Limitation follow-ups
 
-On branch `experiment/limitations-quick-wins`, under [docs/QUICK_WINS_PLAN.md](docs/QUICK_WINS_PLAN.md) (committed before its code); results in [docs/QUICK_WINS_RESULTS.md](docs/QUICK_WINS_RESULTS.md):
+On the former branch `experiment/limitations-quick-wins` (tag `evidence/limitations-quick-wins`), under [docs/QUICK_WINS_PLAN.md](docs/QUICK_WINS_PLAN.md) (committed before its code); results in [docs/QUICK_WINS_RESULTS.md](docs/QUICK_WINS_RESULTS.md):
 - **CDNOW segment stability:** no refit difference; fuzzy less stable quarter to quarter; the matched-count explanation does not carry over to CDNOW.
 - **Inference robustness:** the four key comparisons re-assessed with 5 CV fold seeds and a customer-clustered bootstrap across origins. Of 36 dataset-metric results, 5 are no longer significant (Online Retail II hybrid vs spline on AUC and Invoice R², Online Retail II hybrid vs v1 on AUC, CDNOW H1 AUC, CDNOW fuzzy vs spline AUC); none changes sign. Report these metric by metric, with the exact estimates in the evidence map.
 - **Interpretability proxies (descriptive):** fuzzy retains more concepts and, on two datasets, has longer intents and higher core load, but lower overlap and no larger C80. No claim of greater (or lesser) interpretability follows.
@@ -70,19 +70,20 @@ On branch `experiment/limitations-quick-wins`, under [docs/QUICK_WINS_PLAN.md](d
 
 - **LRFM extension** (branch `experiment/lrfm-extension`): adds Length (days between first and last purchase) to RFM, with every baseline also receiving it. Only the analysis plan exists (`docs/LRFM_EXTENSION_PLAN.md` on that branch); results will be exploratory.
 
-## Branches
+## Branches and tags
 
-| Branch | Role |
+| Branch or tag | Role |
 |---|---|
 | `main` | Latest consolidated state (this README) |
-| `experiment/optimized-fuzzy-fca` | Frozen v1 primary study |
-| `experiment/v2-hybrid-fuzzy-fca` | Exploratory hybrid (v2) |
-| `experiment/cdnow-confirmation` | CDNOW confirmation and its verification |
-| `experiment/limitations-quick-wins` | Limitation follow-ups and the paper evidence map |
-| `experiment/lrfm-extension` | LRFM extension (in progress) |
+| Tag `evidence/v1-frozen` | Frozen v1 primary study (former branch `experiment/optimized-fuzzy-fca`) |
+| Tag `evidence/v2-hybrid` | Exploratory hybrid (v2) (former branch `experiment/v2-hybrid-fuzzy-fca`) |
+| Tag `evidence/cdnow-confirmation` | CDNOW confirmation and its verification (former branch `experiment/cdnow-confirmation`) |
+| Tag `evidence/limitations-quick-wins` | Limitation follow-ups and the paper evidence map (former branch `experiment/limitations-quick-wins`) |
+| Branch `experiment/lrfm-extension` | LRFM extension (in progress) |
 | Tags `archive/canonical-kneedle-draft`, `archive/canonical-kneedle-full`, `archive/rfm-only-final` | Historical branches (superseded Kneedle/Kuznetsov work, pre-audit RFM-only cleanup), kept as tags for the audit trail |
+| Tag `archive/pre-cleanup-2026-10-09` | State before the invalidated experiments and `archive/` were removed (AUDIT_ERRATA §9) |
 
-The experiment branches form one linear history; each result is cited to the commit that produced it (see the evidence map).
+The experiment branches formed one linear history, now fully contained in `main`; each was replaced by a tag at its final commit. Each result is cited to the commit that produced it (see the evidence map).
 
 ## Final method
 

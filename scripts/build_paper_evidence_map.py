@@ -28,9 +28,14 @@ R = ROOT / "results"
 LINEAGE = ["main", "experiment/optimized-fuzzy-fca", "experiment/v2-hybrid-fuzzy-fca", "experiment/cdnow-confirmation",
            "experiment/limitations-quick-wins"]
 # `main` was fast-forwarded to the experiment chain on 2026-10-09, so it now contains every commit.
-# For provenance, "main" means its tip before that consolidation.
+# For provenance, "main" means its tip before that consolidation. The experiment branches were
+# then replaced by tags at their final commits; branch names stay as labels, resolved via REF.
 MAIN_BEFORE_CONSOLIDATION = "44653e1"
-REF = {"main": MAIN_BEFORE_CONSOLIDATION}
+REF = {"main": MAIN_BEFORE_CONSOLIDATION,
+       "experiment/optimized-fuzzy-fca": "evidence/v1-frozen",
+       "experiment/v2-hybrid-fuzzy-fca": "evidence/v2-hybrid",
+       "experiment/cdnow-confirmation": "evidence/cdnow-confirmation",
+       "experiment/limitations-quick-wins": "evidence/limitations-quick-wins"}
 B = 2000  # bootstrap resamples used by every family
 
 # ---------------- provenance (originating commit = the only commit touching each artifact) ----------------
@@ -258,7 +263,7 @@ prov = pd.DataFrame([{"Key": v["key"], "Artifact": f"`{v['path']}`", "Content": 
 ids = lambda prefix: ", ".join(list(pred[pred.ID.str.startswith(prefix)].ID) + list(rob[rob.ID.str.startswith(prefix)].ID) + list(stab[stab.ID.str.startswith(prefix)].ID))
 doc = f"""# Paper evidence map (control document for manuscript preparation)
 
-**Generated document; do not edit by hand.** Branch: `experiment/limitations-quick-wins`.
+**Generated document; do not edit by hand.** Generated on `main`.
 
 **How this file is produced.** Every number below is read programmatically from the committed CSVs listed in §2. Every originating commit, date and branch is read from Git history. The generator, `scripts/build_paper_evidence_map.py`, fits no models, runs no experiments and writes only this file. To change anything, edit the generator and regenerate, or cite the CSV directly in the manuscript.
 
@@ -319,7 +324,7 @@ Means over origins; outcome-free structural proxies, not measures of human inter
 
 ## 2. Artifact provenance
 
-"Originating commit" is the oldest commit that touched the artifact; any later commits are listed under "Modified after origin". "Originating branch" is the first branch in lineage order (`main` → v1 → v2 → CDNOW → limitation follow-ups) whose history contains that commit, with `main` meaning its tip before the 2026-10-09 consolidation (`{MAIN_BEFORE_CONSOLIDATION}`); later branches contain it by linear history.
+"Originating commit" is the oldest commit that touched the artifact; any later commits are listed under "Modified after origin". "Originating branch" is the first branch in lineage order (`main` → v1 → v2 → CDNOW → limitation follow-ups) whose history contains that commit, with `main` meaning its tip before the 2026-10-09 consolidation (`{MAIN_BEFORE_CONSOLIDATION}`); later branches contain it by linear history. The experiment branches were later replaced by tags at their final commits (`evidence/v1-frozen`, `evidence/v2-hybrid`, `evidence/cdnow-confirmation`, `evidence/limitations-quick-wins`).
 
 {md(prov)}
 
