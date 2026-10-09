@@ -1,0 +1,587 @@
+study,dataset,origin,fit,arm,k_v1,k_v2,max_abs_diff,columns_identical,core_profiles_identical
+A refit,Dunnhumby,day 347,full,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 347,full,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 0,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 0,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 1,fuzzy,87,87,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 1,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 2,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 2,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 3,fuzzy,86,86,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 3,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 4,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 4,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 5,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 5,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 6,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 6,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 7,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 7,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 8,fuzzy,99,99,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 8,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 9,fuzzy,88,88,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 9,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 10,fuzzy,81,81,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 10,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 11,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 11,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 12,fuzzy,87,87,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 12,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 13,fuzzy,88,88,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 13,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 14,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 14,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 15,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 15,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 16,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 16,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 17,fuzzy,86,86,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 17,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 18,fuzzy,87,87,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 18,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 19,fuzzy,86,86,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 19,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 20,fuzzy,97,97,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 20,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 21,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 21,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 22,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 22,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 23,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 23,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 24,fuzzy,85,85,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 24,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 25,fuzzy,88,88,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 25,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 26,fuzzy,96,96,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 26,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 27,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 27,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 28,fuzzy,84,84,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 28,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 29,fuzzy,88,88,0.0,True,True
+A refit,Dunnhumby,day 347,subsample 29,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 438,full,fuzzy,93,93,0.0,True,True
+A refit,Dunnhumby,day 438,full,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 0,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 0,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 1,fuzzy,93,93,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 1,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 2,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 2,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 3,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 3,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 4,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 4,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 5,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 5,crisp,51,51,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 6,fuzzy,96,96,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 6,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 7,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 7,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 8,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 8,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 9,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 9,crisp,51,51,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 10,fuzzy,99,99,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 10,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 11,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 11,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 12,fuzzy,98,98,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 12,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 13,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 13,crisp,51,51,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 14,fuzzy,96,96,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 14,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 15,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 15,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 16,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 16,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 17,fuzzy,98,98,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 17,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 18,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 18,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 19,fuzzy,97,97,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 19,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 20,fuzzy,96,96,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 20,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 21,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 21,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 22,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 22,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 23,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 23,crisp,51,51,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 24,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 24,crisp,51,51,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 25,fuzzy,99,99,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 25,crisp,51,51,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 26,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 26,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 27,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 27,crisp,51,51,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 28,fuzzy,93,93,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 28,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 29,fuzzy,87,87,0.0,True,True
+A refit,Dunnhumby,day 438,subsample 29,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 529,full,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 529,full,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 0,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 0,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 1,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 1,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 2,fuzzy,97,97,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 2,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 3,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 3,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 4,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 4,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 5,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 5,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 6,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 6,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 7,fuzzy,97,97,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 7,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 8,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 8,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 9,fuzzy,88,88,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 9,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 10,fuzzy,93,93,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 10,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 11,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 11,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 12,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 12,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 13,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 13,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 14,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 14,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 15,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 15,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 16,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 16,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 17,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 17,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 18,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 18,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 19,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 19,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 20,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 20,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 21,fuzzy,93,93,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 21,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 22,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 22,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 23,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 23,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 24,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 24,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 25,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 25,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 26,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 26,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 27,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 27,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 28,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 28,crisp,53,53,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 29,fuzzy,84,84,0.0,True,True
+A refit,Dunnhumby,day 529,subsample 29,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 620,full,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 620,full,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 0,fuzzy,93,93,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 0,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 1,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 1,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 2,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 2,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 3,fuzzy,88,88,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 3,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 4,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 4,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 5,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 5,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 6,fuzzy,93,93,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 6,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 7,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 7,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 8,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 8,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 9,fuzzy,97,97,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 9,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 10,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 10,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 11,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 11,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 12,fuzzy,93,93,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 12,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 13,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 13,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 14,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 14,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 15,fuzzy,97,97,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 15,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 16,fuzzy,95,95,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 16,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 17,fuzzy,88,88,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 17,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 18,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 18,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 19,fuzzy,91,91,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 19,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 20,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 20,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 21,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 21,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 22,fuzzy,92,92,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 22,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 23,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 23,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 24,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 24,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 25,fuzzy,89,89,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 25,crisp,54,54,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 26,fuzzy,96,96,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 26,crisp,52,52,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 27,fuzzy,90,90,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 27,crisp,55,55,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 28,fuzzy,94,94,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 28,crisp,56,56,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 29,fuzzy,88,88,0.0,True,True
+A refit,Dunnhumby,day 620,subsample 29,crisp,55,55,0.0,True,True
+A refit,Online Retail II,2010-09-10,full,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,full,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 0,fuzzy,66,66,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 0,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 1,fuzzy,70,70,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 1,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 2,fuzzy,66,66,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 2,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 3,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 3,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 4,fuzzy,65,65,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 4,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 5,fuzzy,68,68,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 5,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 6,fuzzy,68,68,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 6,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 7,fuzzy,66,66,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 7,crisp,46,46,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 8,fuzzy,68,68,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 8,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 9,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 9,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 10,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 10,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 11,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 11,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 12,fuzzy,64,64,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 12,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 13,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 13,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 14,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 14,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 15,fuzzy,69,69,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 15,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 16,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 16,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 17,fuzzy,65,65,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 17,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 18,fuzzy,71,71,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 18,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 19,fuzzy,65,65,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 19,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 20,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 20,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 21,fuzzy,65,65,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 21,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 22,fuzzy,66,66,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 22,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 23,fuzzy,64,64,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 23,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 24,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 24,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 25,fuzzy,68,68,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 25,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 26,fuzzy,70,70,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 26,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 27,fuzzy,67,67,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 27,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 28,fuzzy,66,66,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 28,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 29,fuzzy,68,68,0.0,True,True
+A refit,Online Retail II,2010-09-10,subsample 29,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-12-10,full,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2010-12-10,full,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 0,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 0,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 1,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 1,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 2,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 2,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 3,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 3,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 4,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 4,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 5,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 5,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 6,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 6,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 7,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 7,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 8,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 8,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 9,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 9,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 10,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 10,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 11,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 11,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 12,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 12,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 13,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 13,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 14,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 14,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 15,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 15,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 16,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 16,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 17,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 17,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 18,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 18,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 19,fuzzy,75,75,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 19,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 20,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 20,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 21,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 21,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 22,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 22,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 23,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 23,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 24,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 24,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 25,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 25,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 26,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 26,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 27,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 27,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 28,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 28,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 29,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2010-12-10,subsample 29,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2011-03-11,full,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-03-11,full,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 0,fuzzy,75,75,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 0,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 1,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 1,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 2,fuzzy,82,82,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 2,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 3,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 3,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 4,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 4,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 5,fuzzy,84,84,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 5,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 6,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 6,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 7,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 7,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 8,fuzzy,81,81,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 8,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 9,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 9,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 10,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 10,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 11,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 11,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 12,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 12,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 13,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 13,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 14,fuzzy,82,82,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 14,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 15,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 15,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 16,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 16,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 17,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 17,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 18,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 18,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 19,fuzzy,81,81,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 19,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 20,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 20,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 21,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 21,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 22,fuzzy,75,75,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 22,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 23,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 23,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 24,fuzzy,84,84,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 24,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 25,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 25,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 26,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 26,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 27,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 27,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 28,fuzzy,75,75,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 28,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 29,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-03-11,subsample 29,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-06-10,full,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-06-10,full,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 0,fuzzy,84,84,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 0,crisp,46,46,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 1,fuzzy,81,81,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 1,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 2,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 2,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 3,fuzzy,74,74,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 3,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 4,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 4,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 5,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 5,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 6,fuzzy,81,81,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 6,crisp,46,46,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 7,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 7,crisp,46,46,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 8,fuzzy,81,81,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 8,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 9,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 9,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 10,fuzzy,84,84,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 10,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 11,fuzzy,83,83,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 11,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 12,fuzzy,82,82,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 12,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 13,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 13,crisp,45,45,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 14,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 14,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 15,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 15,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 16,fuzzy,84,84,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 16,crisp,46,46,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 17,fuzzy,83,83,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 17,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 18,fuzzy,81,81,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 18,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 19,fuzzy,81,81,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 19,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 20,fuzzy,82,82,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 20,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 21,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 21,crisp,47,47,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 22,fuzzy,84,84,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 22,crisp,46,46,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 23,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 23,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 24,fuzzy,81,81,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 24,crisp,46,46,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 25,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 25,crisp,46,46,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 26,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 26,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 27,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 27,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 28,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 28,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 29,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-06-10,subsample 29,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-09-09,full,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-09-09,full,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 0,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 0,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 1,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 1,crisp,52,52,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 2,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 2,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 3,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 3,crisp,53,53,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 4,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 4,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 5,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 5,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 6,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 6,crisp,52,52,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 7,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 7,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 8,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 8,crisp,52,52,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 9,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 9,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 10,fuzzy,78,78,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 10,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 11,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 11,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 12,fuzzy,80,80,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 12,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 13,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 13,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 14,fuzzy,75,75,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 14,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 15,fuzzy,75,75,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 15,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 16,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 16,crisp,52,52,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 17,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 17,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 18,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 18,crisp,49,49,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 19,fuzzy,71,71,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 19,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 20,fuzzy,82,82,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 20,crisp,52,52,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 21,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 21,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 22,fuzzy,75,75,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 22,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 23,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 23,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 24,fuzzy,79,79,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 24,crisp,48,48,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 25,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 25,crisp,52,52,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 26,fuzzy,75,75,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 26,crisp,51,51,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 27,fuzzy,76,76,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 27,crisp,50,50,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 28,fuzzy,77,77,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 28,crisp,52,52,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 29,fuzzy,73,73,0.0,True,True
+A refit,Online Retail II,2011-09-09,subsample 29,crisp,49,49,0.0,True,True
+B temporal,Dunnhumby,day 347 -> day 438,t1,fuzzy,94,94,0.0,True,True
+B temporal,Dunnhumby,day 347 -> day 438,t1,crisp,56,56,0.0,True,True
+B temporal,Dunnhumby,day 347 -> day 438,t2,fuzzy,93,93,0.0,True,True
+B temporal,Dunnhumby,day 347 -> day 438,t2,crisp,52,52,0.0,True,True
+B temporal,Dunnhumby,day 438 -> day 529,t1,fuzzy,93,93,0.0,True,True
+B temporal,Dunnhumby,day 438 -> day 529,t1,crisp,52,52,0.0,True,True
+B temporal,Dunnhumby,day 438 -> day 529,t2,fuzzy,90,90,0.0,True,True
+B temporal,Dunnhumby,day 438 -> day 529,t2,crisp,55,55,0.0,True,True
+B temporal,Dunnhumby,day 529 -> day 620,t1,fuzzy,90,90,0.0,True,True
+B temporal,Dunnhumby,day 529 -> day 620,t1,crisp,55,55,0.0,True,True
+B temporal,Dunnhumby,day 529 -> day 620,t2,fuzzy,91,91,0.0,True,True
+B temporal,Dunnhumby,day 529 -> day 620,t2,crisp,55,55,0.0,True,True
+B temporal,Online Retail II,2010-09-10 -> 2010-12-10,t1,fuzzy,67,67,0.0,True,True
+B temporal,Online Retail II,2010-09-10 -> 2010-12-10,t1,crisp,49,49,0.0,True,True
+B temporal,Online Retail II,2010-09-10 -> 2010-12-10,t2,fuzzy,77,77,0.0,True,True
+B temporal,Online Retail II,2010-09-10 -> 2010-12-10,t2,crisp,49,49,0.0,True,True
+B temporal,Online Retail II,2010-12-10 -> 2011-03-11,t1,fuzzy,77,77,0.0,True,True
+B temporal,Online Retail II,2010-12-10 -> 2011-03-11,t1,crisp,49,49,0.0,True,True
+B temporal,Online Retail II,2010-12-10 -> 2011-03-11,t2,fuzzy,77,77,0.0,True,True
+B temporal,Online Retail II,2010-12-10 -> 2011-03-11,t2,crisp,48,48,0.0,True,True
+B temporal,Online Retail II,2011-03-11 -> 2011-06-10,t1,fuzzy,77,77,0.0,True,True
+B temporal,Online Retail II,2011-03-11 -> 2011-06-10,t1,crisp,48,48,0.0,True,True
+B temporal,Online Retail II,2011-03-11 -> 2011-06-10,t2,fuzzy,80,80,0.0,True,True
+B temporal,Online Retail II,2011-03-11 -> 2011-06-10,t2,crisp,47,47,0.0,True,True
+B temporal,Online Retail II,2011-06-10 -> 2011-09-09,t1,fuzzy,80,80,0.0,True,True
+B temporal,Online Retail II,2011-06-10 -> 2011-09-09,t1,crisp,47,47,0.0,True,True
+B temporal,Online Retail II,2011-06-10 -> 2011-09-09,t2,fuzzy,78,78,0.0,True,True
+B temporal,Online Retail II,2011-06-10 -> 2011-09-09,t2,crisp,50,50,0.0,True,True

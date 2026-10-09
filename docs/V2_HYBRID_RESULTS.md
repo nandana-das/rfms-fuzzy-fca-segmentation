@@ -87,4 +87,4 @@ Paired customer-level bootstrap (B = 2000) pooled over rolling origins; Holm adj
   - The evidence is therefore consistent with the concepts acting mainly as a nonlinear (and interpretable) encoding of RFM, rather than as an independent source of predictive value.
 - **Fuzzy vs crisp.** In P3 the hybrid with fuzzy concepts beats the hybrid with crisp concepts on the regression targets in both datasets, consistent with v1's H1.
 - **Post hoc caveat.** The margins over the spline (+0.0032 to +0.0055 on Online Retail II) are of the same order as the optimism a post hoc design can introduce. v2 should be reported as an exploratory follow-up needing confirmation on new data.
-- **Scope.** The structural stability of the hybrid was not evaluated, and no v1 hypothesis status changes.
+- **Scope.** The hybrid's segments are identical to v1's, so its segment stability equals v1's (see `docs/V2_STABILITY_RESULTS.md`); prediction stability was not evaluated. No v1 hypothesis status changes.

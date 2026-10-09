@@ -1,0 +1,9 @@
+study,dataset,arm,fits,concept_count_match,columns_identical,core_profiles_identical,max_abs_diff,k_min,k_max
+A refit,Dunnhumby,crisp,124,124,124,124,0.0,51,56
+A refit,Dunnhumby,fuzzy,124,124,124,124,0.0,81,99
+A refit,Online Retail II,crisp,155,155,155,155,0.0,45,53
+A refit,Online Retail II,fuzzy,155,155,155,155,0.0,64,84
+B temporal,Dunnhumby,crisp,6,6,6,6,0.0,52,56
+B temporal,Dunnhumby,fuzzy,6,6,6,6,0.0,90,94
+B temporal,Online Retail II,crisp,8,8,8,8,0.0,47,50
+B temporal,Online Retail II,fuzzy,8,8,8,8,0.0,67,80
