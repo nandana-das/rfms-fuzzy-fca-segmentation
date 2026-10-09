@@ -80,7 +80,7 @@ On branch `experiment/limitations-quick-wins`, under [docs/QUICK_WINS_PLAN.md](d
 | `experiment/cdnow-confirmation` | CDNOW confirmation and its verification |
 | `experiment/limitations-quick-wins` | Limitation follow-ups and the paper evidence map |
 | `experiment/lrfm-extension` | LRFM extension (in progress) |
-| `experiment/canonical-kneedle*`, `cleanup/rfm-only-final` | Historical; superseded work kept for the audit trail |
+| Tags `archive/canonical-kneedle-draft`, `archive/canonical-kneedle-full`, `archive/rfm-only-final` | Historical branches (superseded Kneedle/Kuznetsov work, pre-audit RFM-only cleanup), kept as tags for the audit trail |
 
 The experiment branches form one linear history; each result is cited to the commit that produced it (see the evidence map).
 
