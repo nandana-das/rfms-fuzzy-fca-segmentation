@@ -43,6 +43,10 @@ What these results do and do not show:
 
 Full tables: [docs/RESULTS_SUMMARY.md](docs/RESULTS_SUMMARY.md).
 
+## Version 2 (post hoc, exploratory)
+
+On branch `experiment/v2-hybrid-fuzzy-fca`, a hybrid representation (fuzzy concept memberships plus log R/F/M) was evaluated as an **exploratory, post hoc** study using a written analysis plan (`docs/V2_HYBRID_ANALYSIS_PLAN.md`; Git history does not establish that the plan preceded the run). On Online Retail II it significantly beats both v1 and the spline baseline on all three metrics, though only narrowly beats the spline (exact estimates: +0.0032 AUC, +0.0055 Spend R², +0.0045 Invoice R²). On Dunnhumby it is not significantly different from the spline. Because it was designed after seeing v1 and evaluated on the same data, it is exploratory and does not replace the frozen v1 results. See [docs/V2_HYBRID_RESULTS.md](docs/V2_HYBRID_RESULTS.md).
+
 ## Final method
 
 Full specification: [docs/METHODOLOGY_FINAL.md](docs/METHODOLOGY_FINAL.md).
