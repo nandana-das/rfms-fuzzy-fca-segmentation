@@ -1,0 +1,7 @@
+finding,rule,outcome
+v1 H1 (fuzzy > crisp RFM-FCA),C1 significantly positive on all 3 metrics,replicates
+v1 H2 (fuzzy vs spline),C2 per metric (non-significant is not equivalence),auc: significantly higher; spend_r2: significantly lower; invoice_r2: significantly lower
+v2 beats spline,C3 per metric (non-significant is not equivalence),auc: significantly higher; spend_r2: significantly higher; invoice_r2: significantly higher
+v2 improves on v1,"C4 significantly positive, none significantly negative","confirmed on: spend_r2, invoice_r2"
+v2 concepts add beyond linear log RFM,C6 significantly positive (per metric),"supported on: spend_r2, invoice_r2"
+fuzzification helps within the hybrid,C5 significantly positive (per metric),"supported on: auc, spend_r2, invoice_r2"
