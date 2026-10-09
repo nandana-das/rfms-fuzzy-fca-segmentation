@@ -115,7 +115,7 @@ These are kept in the repository as ablation or negative evidence:
 | Component | Reason for exclusion | Evidence |
 |---|---|---|
 | Kuznetsov stability filter | No demonstrated predictive benefit; the least stable arm on every stability measure; its threshold (loss ≤ 5.4e-20) is below float64 resolution and acts as an absolute customer-count rule that shifts with training-set size; the threshold was originally chosen on evaluation seeds | `results/final_evidence/`, `results/segment_stability/`, `AUDIT_ERRATA.md` §3, §6 |
-| Kneedle-inspired pruning | Not applied in the evaluated pipeline; heuristic, not canonical Kneedle | `results/canonical_kneedle_*` (historical) |
+| Kneedle-inspired pruning | Not applied in the evaluated pipeline; heuristic, not canonical Kneedle | `results/canonical_kneedle_*` (historical; removed 2026-10-09, see tag `archive/pre-cleanup-2026-10-09`) |
 | Stage 1 / Stage 2 optimization (granularity, selection thresholds) | Hyperparameter tuning, invalidated by implementation defects; not re-run by decision | `AUDIT_ERRATA.md` §1, §3 |
 | Dense-rank scoring | Degenerate band occupancy | `AUDIT_ERRATA.md` §4 |
 | L-threshold sensitivity study, KMeans/Ward/FCM silhouette benchmark, four-way comparison | Run under dense-rank scoring and the misspecified raw baseline; not re-run; not part of the hypotheses | historical result folders (bannered) |

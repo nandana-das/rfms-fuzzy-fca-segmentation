@@ -97,7 +97,7 @@ Transactions -> R, F, M at the observation cutoff
   -> greedy redundancy suppression (drop empty cores; core-extent Jaccard >= 0.80 at mu >= 0.5)
 ```
 
-**Excluded from the final method** (code and results kept as ablation or historical evidence):
+**Excluded from the final method** (the Kuznetsov ablation is kept in `results/final_evidence/`; the other code and results were removed on 2026-10-09 and remain available at tag `archive/pre-cleanup-2026-10-09`):
 - **Kuznetsov stability filter:** no consistent predictive benefit; least stable arm; threshold depends on training-set size.
 - **Kneedle pruning.**
 - **Stage 1/2 hyperparameter optimization:** invalidated by bugs and not re-run.
@@ -200,7 +200,7 @@ Data:
 | `scripts/build_paper_evidence_map.py`, `scripts/validate_paper_evidence_map.py` | Generate and validate `docs/PAPER_EVIDENCE_MAP.md` (read-only with respect to results) |
 | `docs/` | Methodology, plans, results, framing, errata, evidence map; `docs/superseded_2026-10-08/` holds the pre-audit documents |
 
-All other scripts and result folders are historical or ablation material. They are listed in [docs/AUDIT_ERRATA.md](docs/AUDIT_ERRATA.md) §3 and carry banners where their conclusions are invalid or superseded. The Olist / RFMS / Satisfaction / F\* work in `archive/` is out of scope.
+The few remaining scripts and result folders not listed above are historical material that kept code still depends on (e.g. `kuznetsov_pruning_leakage_free.py` supplies the stability function, `dunnhumby_rfm_fca_validation.py` produced `results/dunnhumby_rfm_fca/`). Invalidated experiments (Stage 1/2 optimization, canonical Kneedle, early Kuznetsov, four-way comparison, dense-rank results; see [docs/AUDIT_ERRATA.md](docs/AUDIT_ERRATA.md) §3 and §9) and the out-of-scope Olist / RFMS / Satisfaction / F\* work formerly in `archive/` were removed on 2026-10-09; they remain available at tag `archive/pre-cleanup-2026-10-09`.
 
 ## Citation
 

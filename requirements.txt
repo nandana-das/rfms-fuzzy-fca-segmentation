@@ -4,7 +4,6 @@ cycler==0.12.1
 fonttools==4.66.0
 joblib==1.6.0
 kiwisolver==1.5.1
-kneed==0.8.5
 matplotlib==3.11.2
 mlxtend==0.25.0
 narwhals==2.26.0
