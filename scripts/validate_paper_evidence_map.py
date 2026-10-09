@@ -47,7 +47,8 @@ def validate(t: str) -> tuple[list, dict]:
         return pd.DataFrame([[c.strip() for c in l.strip("|").split("|")] for l in ls[2:]], columns=hdr)
 
     num = lambda s: float(s.replace("+", ""))
-    pred, stab = table("### 1b.", "### 1c."), table("### 1c.", "## 2.")
+    pred, stab = table("### 1b.", "### 1c."), table("### 1c.", "### 1d.")
+    rob, interp = table("### 1d.", "### 1e."), table("### 1e.", "## 2.")
     lad = pd.read_csv("results/baseline_ladder_rolling_origin/paired_comparisons.csv"); lad = lad[lad.scope == "POOLED"]
     v2 = pd.read_csv("results/v2_hybrid/paired_comparisons.csv"); v2 = v2[v2.scope == "POOLED"]
     cd = pd.read_csv("results/cdnow_confirmation/comparisons.csv")
@@ -87,16 +88,19 @@ def validate(t: str) -> tuple[list, dict]:
     sa = pd.read_csv("results/segment_stability/refit_comparisons.csv"); sb = pd.read_csv("results/segment_stability/temporal_comparisons.csv")
     ma = pd.read_csv("results/segment_stability/matched_count_diagnostic/refit_comparisons.csv")
     mb = pd.read_csv("results/segment_stability/matched_count_diagnostic/temporal_comparisons.csv")
+    qa = pd.read_csv("results/qw_cdnow_stability/refit_comparisons.csv")
+    qt = pd.read_csv("results/qw_cdnow_stability/temporal_comparisons.csv")
     for _, r in stab.iterrows():
         a_lab, rest = r["Claim (data-derived wording)"].split(" vs ", 1); b_lab, _ = rest.rsplit(": ", 1)
         comp = f"{lab_rev[a_lab]} - {lab_rev[b_lab]}"
-        matched = "-MA-" in r.ID or "-MB-" in r.ID; refit = r.ID.startswith(("STAB-A", "STAB-MA"))
+        matched = "-MA-" in r.ID or "-MB-" in r.ID; refit = r.ID.startswith(("STAB-A", "STAB-MA", "QWA-A"))
         ds = r.Dataset.split(" (")[0]
+        quick = r.ID.startswith("QWA")
         if refit:
-            q = (ma if matched else sa); q = q[(q.dataset == ds) & (q.comparison == comp) & (q.measure == "core_jaccard")]
+            q = qa if quick else (ma if matched else sa); q = q[(q.dataset == ds) & (q.comparison == comp) & (q.measure == "core_jaccard")]
             lo_c, hi_c, p, fam = q.iloc[0].interval_low, q.iloc[0].interval_high, None, None
         else:
-            sub = "all" if "all customers" in r.Dataset else "stable"; src = (mb if matched else sb)
+            sub = "all" if "all customers" in r.Dataset else "stable"; src = qt if quick else (mb if matched else sb)
             q = src[(src.dataset == ds) & (src.comparison == comp) & (src.measure == "core_jaccard") & (src.subset == sub)]
             lo_c, hi_c, p = q.iloc[0].ci_low, q.iloc[0].ci_high, q.iloc[0].p_holm
             fam = len(src[src.dataset == ds]) / 2000
@@ -109,17 +113,57 @@ def validate(t: str) -> tuple[list, dict]:
         if not all(ok):
             problems.append(("stab", r.ID, ok))
 
+    # 2b. inference-robustness rows (plan 67976b4, Part B)
+    qb = pd.read_csv("results/qw_inference_robustness/robustness_vs_committed.csv")
+    dsmap = {"Online Retail II": "retail2", "Dunnhumby": "dunnhumby", "CDNOW": "cdnow"}
+    for _, r in rob.iterrows():
+        a_lab, rest = r["Claim (data-derived wording)"].split(" vs ", 1); b_lab, word = rest.rsplit(": ", 1)
+        q = qb[(qb.dataset == dsmap[r.Dataset]) & (qb.comparison == f"{lab_rev[a_lab]} - {lab_rev[b_lab]}") & (qb.metric == inv[r.Metric])]
+        if len(q) != 1:
+            problems.append(("rob lookup", r.ID)); continue
+        q = q.iloc[0]
+        fam = len(qb[qb.dataset == q.dataset]) / 50_000
+        exp_word = ("significantly higher" if q.p_holm < 0.05 and q.delta_mean_over_seeds > 0 else
+                    "significantly lower" if q.p_holm < 0.05 else "not significantly different")
+        lo, hi = [num(x) for x in r.Interval.strip("[]").split(", ")]
+        smin, smax = [num(x) for x in r["Range over seeds"].split(" to ")]
+        cd_, cp_ = r["Committed Δ (Holm p)"].split(" (")
+        tests = {"rob_delta": abs(num(r["Δ (mean over seeds)"]) - q.delta_mean_over_seeds) <= 5e-5,
+                 "rob_ci": abs(lo - q.ci_low) <= 5e-5 and abs(hi - q.ci_high) <= 5e-5,
+                 "rob_seed_range": abs(smin - q.delta_min_seed) <= 5e-5 and abs(smax - q.delta_max_seed) <= 5e-5,
+                 "rob_p": abs(float(r["Adj. p (Holm)"]) - q.p_holm) <= 5e-6, "rob_floor": abs(float(r.Floor) - fam) < 1e-9,
+                 "rob_sig": r.Significant == ("yes" if q.p_holm < 0.05 else "no"), "rob_word": word == exp_word,
+                 "rob_verdict": r["Verdict vs committed"] == q.verdict,
+                 "rob_committed": abs(num(cd_) - q.committed_delta) <= 5e-5 and abs(float(cp_.rstrip(")")) - q.committed_p_holm) <= 5e-5,
+                 "rob_weakened_note": ("Weakened:" in r.Qualification) == q.verdict.startswith("weakened")}
+        for k, ok in tests.items():
+            counts[k] = counts.get(k, 0) + 1
+            if not ok:
+                problems.append(("rob", r.ID, k))
+    # 2c. interpretability proxies (descriptive)
+    qc = pd.read_csv("results/qw_interpretability/summary.csv")
+    for _, r in interp.iterrows():
+        arm = "crisp_rfm_fca" if r.Arm.startswith("crisp") else "fuzzy_rfm_fca"
+        q = qc[(qc.dataset == r.Dataset) & (qc.arm == arm)].iloc[0]
+        ok = [abs(float(r["K retained (range)"].split(" ")[0]) - q.K_mean) <= 0.05, abs(float(r.Coverage) - q.coverage_mean) <= 5e-4,
+              abs(float(r.C80) - q.C80_mean) <= 5e-3, abs(float(r["Intent length"]) - q.intent_length_mean) <= 5e-3,
+              abs(float(r["Core load"]) - q.core_load_mean) <= 5e-3, abs(float(r.Overlap) - q.overlap_mean) <= 5e-4]
+        counts["interp"] = counts.get("interp", 0) + 1
+        if not all(ok):
+            problems.append(("interp", r.Dataset, r.Arm, ok))
+
     # 3. evidence-row references
-    all_ids = list(pred.ID) + list(stab.ID)
+    all_ids = list(pred.ID) + list(stab.ID) + list(rob.ID)
     if len(all_ids) != len(set(all_ids)):
         problems.append(("duplicate IDs",))
-    cited = set(re.findall(r"\b(?:V1|V2|CD)-[A-Z0-9]+-[A-Za-z0-9_\-]+", t.split("### 1b.")[0] + t[t.index("## 3."):]))
+    cited = set(re.findall(r"\b(?:V1|V2|CD|QWB|QWA)-[A-Za-z0-9]+-[A-Za-z0-9_\-]+", t.split("### 1b.")[0] + t[t.index("## 3."):]))
     missing = sorted(c for c in cited if c not in all_ids)
     if missing:
         problems.append(("cited IDs missing", missing))
 
     # 4. provenance (commit = oldest commit touching path; branch = first in lineage containing it; later commits)
-    lineage = ["main", "experiment/optimized-fuzzy-fca", "experiment/v2-hybrid-fuzzy-fca", "experiment/cdnow-confirmation"]
+    lineage = ["main", "experiment/optimized-fuzzy-fca", "experiment/v2-hybrid-fuzzy-fca", "experiment/cdnow-confirmation",
+               "experiment/limitations-quick-wins"]
     prov = table("## 2.", "Further plans")
     for _, r in prov.iterrows():
         path = r.Artifact.strip("`"); commit = r["Originating commit"].split("`")[1]
@@ -142,7 +186,11 @@ def validate(t: str) -> tuple[list, dict]:
         "H2 corrected": "significantly lower on Invoice R² on Online Retail II, and on Spend and Invoice R² on CDNOW; on CDNOW it is significantly higher on AUC",
         "X1 corrected": "on all three metrics on Online Retail II (exploratory), on Spend and Invoice R² on CDNOW (confirmatory), and on Invoice R² only on Dunnhumby (exploratory)",
         "N1 isolated Kuznetsov result": "One pooled comparison is significant (Online Retail II AUC, at the floor, positive at only 1 of 5 origins)",
-        "X2 dataset-specific": "Online Retail II (exploratory) and CDNOW (confirmatory), but not significantly on Dunnhumby",
+        "X2 dataset-specific and narrowed": "on Online Retail II significant on all three metrics in the exploratory analysis but only on Spend R² under the robustness re-analysis; not significant on Dunnhumby",
+        "H3 three datasets": "does not improve segment stability over crisp RFM-FCA, on any of the three datasets",
+        "CDNOW matched count": "on CDNOW matching the concept count does not remove the gap",
+        "interpretability descriptive": "not measures of human interpretability. No claim that fuzzy RFM-FCA is more (or less) interpretable follows",
+        "robustness not a count": "never summarize them only as a count",
         "X2 never pooled": "Never pool the three datasets into one superiority claim",
         "narrative separate per dataset": "Hybrid vs spline, reported separately per dataset; never pooled",
     }
@@ -154,6 +202,7 @@ def validate(t: str) -> tuple[list, dict]:
         problems.append(("equivalence table",))
 
     counts["rows"] = (len(pred), len(stab), len(prov), len(cited), len(paths), len(required))
+    counts["extra"] = (len(rob), len(interp))
     return problems, counts
 
 
@@ -162,9 +211,11 @@ def main() -> int:
     text = MAP.read_text(encoding="utf-8")
     problems, counts = validate(text)
     n_pred, n_stab, n_prov, n_cited, n_paths, n_req = counts["rows"]
-    n_fields = sum(v for k, v in counts.items() if k not in ("stability", "rows"))
+    n_fields = sum(v for k, v in counts.items() if k not in ("stability", "rows", "extra", "interp") and not k.startswith("rob_"))
+    n_rob_fields = sum(v for k, v in counts.items() if k.startswith("rob_"))
     print(f"predictive rows {n_pred} ({n_fields} field checks), stability rows {n_stab}, provenance {n_prov}, "
-          f"cited IDs {n_cited}, paths {n_paths}, required-wording checks {n_req}")
+          f"cited IDs {n_cited}, paths {n_paths}, required-wording checks {n_req}, robustness rows {counts['extra'][0]} "
+          f"({n_rob_fields} field checks), interpretability rows {counts['extra'][1]}")
     print("DISCREPANCIES:", problems if problems else 0)
     status = 1 if problems else 0
     if "--self-test" in sys.argv:
