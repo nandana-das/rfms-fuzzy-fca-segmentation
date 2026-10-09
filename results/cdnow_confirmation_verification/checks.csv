@@ -1,0 +1,60 @@
+section,check,logic,expected,observed,pass
+inputs,CDNOW_master.zip SHA-256 matches plan,independent,94081977a983e80dff8edfa58c83a97db33ec2bdd553151987f0dd2f63aaff49,94081977a983e80dff8edfa58c83a97db33ec2bdd553151987f0dd2f63aaff49,True
+plan,planned comparison table equals code,independent,"[('C1', 'fuzzy_rfm_fca', 'crisp_rfm_fca'), ('C2', 'fuzzy_rfm_fca', 'spline_log_rfm'), ('C3', 'hybrid_fuzzy_fca', 'spline_log_rfm'), ('C4', 'hybrid_fuzzy_fca', 'fuzzy_rfm_fca'), ('C5', 'hybrid_fuzzy_fca', 'hybrid_crisp_fca'), ('C6', 'hybrid_fuzzy_fca', 'log_rfm'), ('C7', 'hybrid_fuzzy_fca', 'crisp_rfm_fca')]","[('C1', 'fuzzy_rfm_fca', 'crisp_rfm_fca'), ('C2', 'fuzzy_rfm_fca', 'spline_log_rfm'), ('C3', 'hybrid_fuzzy_fca', 'spline_log_rfm'), ('C4', 'hybrid_fuzzy_fca', 'fuzzy_rfm_fca'), ('C5', 'hybrid_fuzzy_fca', 'hybrid_crisp_fca'), ('C6', 'hybrid_fuzzy_fca', 'log_rfm'), ('C7', 'hybrid_fuzzy_fca', 'crisp_rfm_fca')]",True
+plan,planned arms equal code arms,independent,"['raw_std', 'log_rfm', 'spline_log_rfm', 'crisp_rfm_fca', 'fuzzy_rfm_fca', 'hybrid_crisp_fca', 'hybrid_fuzzy_fca']","['raw_std', 'log_rfm', 'spline_log_rfm', 'crisp_rfm_fca', 'fuzzy_rfm_fca', 'hybrid_crisp_fca', 'hybrid_fuzzy_fca']",True
+plan,committed comparisons are exactly the planned pairs,independent,"[('C1', 'fuzzy_rfm_fca - crisp_rfm_fca'), ('C2', 'fuzzy_rfm_fca - spline_log_rfm'), ('C3', 'hybrid_fuzzy_fca - spline_log_rfm'), ('C4', 'hybrid_fuzzy_fca - fuzzy_rfm_fca'), ('C5', 'hybrid_fuzzy_fca - hybrid_crisp_fca'), ('C6', 'hybrid_fuzzy_fca - log_rfm'), ('C7', 'hybrid_fuzzy_fca - crisp_rfm_fca')]","[('C1', 'fuzzy_rfm_fca - crisp_rfm_fca'), ('C2', 'fuzzy_rfm_fca - spline_log_rfm'), ('C3', 'hybrid_fuzzy_fca - spline_log_rfm'), ('C4', 'hybrid_fuzzy_fca - fuzzy_rfm_fca'), ('C5', 'hybrid_fuzzy_fca - hybrid_crisp_fca'), ('C6', 'hybrid_fuzzy_fca - log_rfm'), ('C7', 'hybrid_fuzzy_fca - crisp_rfm_fca')]",True
+plan,committed comparison family size,independent,21,21,True
+plan,frozen settings in run_parameters.json,independent,"{'min_support': 0.04, 'l_thresholds': [0.3, 0.5, 0.7], 'j_max': 0.8, 'mu_cut': 0.5, 'n_folds': 5, 'cv_seed': 0, 'boot_n': 2000, 'boot_seed': 12345}","{'min_support': 0.04, 'l_thresholds': [0.3, 0.5, 0.7], 'j_max': 0.8, 'mu_cut': 0.5, 'n_folds': 5, 'cv_seed': 0, 'boot_n': 2000, 'boot_seed': 12345}",True
+plan,origins and horizon,independent,"(['1997-09-30', '1997-12-31', '1998-03-31'], 91)","(['1997-09-30', '1997-12-31', '1998-03-31'], 91)",True
+data,raw records,independent,69659,69659,True
+data,raw customers,independent,23570,23570,True
+data,records removed (dollars <= 0),independent,80,80,True
+cohort,1997-09-30: same customer set as pipeline,independent,23500,23500,True
+cohort,1997-09-30: R identical,independent,0,0.0,True
+cohort,1997-09-30: F identical,independent,0,0.0,True
+cohort,1997-09-30: future_invoices identical,independent,0,0.0,True
+cohort,1997-09-30: repurchased identical,independent,0,0.0,True
+cohort,1997-09-30: M equal (float summation tolerance 1e-9),independent,< 1e-9,1.1368683772161603e-13,True
+cohort,1997-09-30: future_spend equal (float summation tolerance 1e-9),independent,< 1e-9,1.1368683772161603e-13,True
+cohort,1997-09-30: n and repurchase rate vs committed CSV,independent,"(23500, 0.178851)","(23500, 0.178851)",True
+dates,1997-09-30: observation ends on cutoff,independent,1997-09-30,1997-09-30,True
+dates,"1997-09-30: holdout is (cutoff, cutoff+91d]",independent,1997-10-01..1997-12-30,1997-10-01..1997-12-30,True
+cohort,1997-12-31: same customer set as pipeline,independent,23502,23502,True
+cohort,1997-12-31: R identical,independent,0,0.0,True
+cohort,1997-12-31: F identical,independent,0,0.0,True
+cohort,1997-12-31: future_invoices identical,independent,0,0.0,True
+cohort,1997-12-31: repurchased identical,independent,0,0.0,True
+cohort,1997-12-31: M equal (float summation tolerance 1e-9),independent,< 1e-9,4.547473508864641e-13,True
+cohort,1997-12-31: future_spend equal (float summation tolerance 1e-9),independent,< 1e-9,1.1368683772161603e-13,True
+cohort,1997-12-31: n and repurchase rate vs committed CSV,independent,"(23502, 0.163007)","(23502, 0.163007)",True
+dates,1997-12-31: observation ends on cutoff,independent,1997-12-31,1997-12-31,True
+dates,"1997-12-31: holdout is (cutoff, cutoff+91d]",independent,1998-01-01..1998-04-01,1998-01-01..1998-04-01,True
+cohort,1998-03-31: same customer set as pipeline,independent,23502,23502,True
+cohort,1998-03-31: R identical,independent,0,0.0,True
+cohort,1998-03-31: F identical,independent,0,0.0,True
+cohort,1998-03-31: future_invoices identical,independent,0,0.0,True
+cohort,1998-03-31: repurchased identical,independent,0,0.0,True
+cohort,1998-03-31: M equal (float summation tolerance 1e-9),independent,< 1e-9,4.547473508864641e-13,True
+cohort,1998-03-31: future_spend equal (float summation tolerance 1e-9),independent,< 1e-9,1.1368683772161603e-13,True
+cohort,1998-03-31: n and repurchase rate vs committed CSV,independent,"(23502, 0.141137)","(23502, 0.141137)",True
+dates,1998-03-31: observation ends on cutoff,independent,1998-03-31,1998-03-31,True
+dates,"1998-03-31: holdout is (cutoff, cutoff+91d]",independent,1998-04-01..1998-06-30,1998-04-01..1998-06-30,True
+folds,1997-09-30: all 7 arms (incl. spline and hybrid) train on one identical customer set per fold,"reused pipeline, independent logging",1 train set and 1 seed per fold,"{'sets': [1, 1, 1, 1, 1], 'seeds': [1, 1, 1, 1, 1]}",True
+folds,1997-09-30: every customer predicted out-of-fold exactly once per arm,independent,True,True,True
+folds,1997-09-30: test folds partition the cohort,independent,23500,23500,True
+folds,1997-12-31: all 7 arms (incl. spline and hybrid) train on one identical customer set per fold,"reused pipeline, independent logging",1 train set and 1 seed per fold,"{'sets': [1, 1, 1, 1, 1], 'seeds': [1, 1, 1, 1, 1]}",True
+folds,1997-12-31: every customer predicted out-of-fold exactly once per arm,independent,True,True,True
+folds,1997-12-31: test folds partition the cohort,independent,23502,23502,True
+folds,1998-03-31: all 7 arms (incl. spline and hybrid) train on one identical customer set per fold,"reused pipeline, independent logging",1 train set and 1 seed per fold,"{'sets': [1, 1, 1, 1, 1], 'seeds': [1, 1, 1, 1, 1]}",True
+folds,1998-03-31: every customer predicted out-of-fold exactly once per arm,independent,True,True,True
+folds,1998-03-31: test folds partition the cohort,independent,23502,23502,True
+metrics,63 per-origin point metrics reproduced (sklearn) vs committed CSV,independent,<= 1e-09,2.220446049250313e-16,True
+statistics,63 per-origin deltas and 95% percentile intervals vs committed CSV,independent,<= 1e-09,4.111294638065033e-16,True
+statistics,pooled comparisons matched,independent,21,21,True
+statistics,pooled delta (Holm family = 21 planned tests),independent,<= 1e-09,1.6132928326584306e-16,True
+statistics,pooled ci_low (Holm family = 21 planned tests),independent,<= 1e-09,2.888314587501384e-16,True
+statistics,pooled ci_high (Holm family = 21 planned tests),independent,<= 1e-09,9.71445146547012e-17,True
+statistics,pooled p_boot (Holm family = 21 planned tests),independent,<= 1e-09,0.0,True
+statistics,pooled p_holm (Holm family = 21 planned tests),independent,<= 1e-09,0.0,True
+statistics,minimum bootstrap p equals 1/B floor,independent,0.0005,0.0005,True
+statistics,minimum Holm p equals 21/B floor,independent,0.0105,0.0105,True
