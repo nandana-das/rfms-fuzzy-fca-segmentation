@@ -1,0 +1,62 @@
+dataset,origin,dimension,band,n,levels
+Dunnhumby,day 347,L,1,508,5
+Dunnhumby,day 347,L,2,508,5
+Dunnhumby,day 347,L,3,488,5
+Dunnhumby,day 347,L,4,496,5
+Dunnhumby,day 347,L,5,497,5
+Dunnhumby,day 438,L,1,509,5
+Dunnhumby,day 438,L,2,496,5
+Dunnhumby,day 438,L,3,505,5
+Dunnhumby,day 438,L,4,493,5
+Dunnhumby,day 438,L,5,495,5
+Dunnhumby,day 529,L,1,510,5
+Dunnhumby,day 529,L,2,516,5
+Dunnhumby,day 529,L,3,483,5
+Dunnhumby,day 529,L,4,496,5
+Dunnhumby,day 529,L,5,493,5
+Dunnhumby,day 620,L,1,502,5
+Dunnhumby,day 620,L,2,520,5
+Dunnhumby,day 620,L,3,487,5
+Dunnhumby,day 620,L,4,498,5
+Dunnhumby,day 620,L,5,492,5
+Online Retail II,2010-09-10,L,1,1359,4
+Online Retail II,2010-09-10,L,2,668,4
+Online Retail II,2010-09-10,L,3,682,4
+Online Retail II,2010-09-10,L,4,668,4
+Online Retail II,2010-12-10,L,1,1494,5
+Online Retail II,2010-12-10,L,2,237,5
+Online Retail II,2010-12-10,L,3,863,5
+Online Retail II,2010-12-10,L,4,862,5
+Online Retail II,2010-12-10,L,5,858,5
+Online Retail II,2011-03-11,L,1,1597,5
+Online Retail II,2011-03-11,L,2,249,5
+Online Retail II,2011-03-11,L,3,918,5
+Online Retail II,2011-03-11,L,4,921,5
+Online Retail II,2011-03-11,L,5,921,5
+Online Retail II,2011-06-10,L,1,1628,5
+Online Retail II,2011-06-10,L,2,370,5
+Online Retail II,2011-06-10,L,3,992,5
+Online Retail II,2011-06-10,L,4,993,5
+Online Retail II,2011-06-10,L,5,993,5
+Online Retail II,2011-09-09,L,1,1660,5
+Online Retail II,2011-09-09,L,2,455,5
+Online Retail II,2011-09-09,L,3,1055,5
+Online Retail II,2011-09-09,L,4,1059,5
+Online Retail II,2011-09-09,L,5,1052,5
+Online Retail II,"2010-12-09 (primary, 365d)",L,1,1497,5
+Online Retail II,"2010-12-09 (primary, 365d)",L,2,236,5
+Online Retail II,"2010-12-09 (primary, 365d)",L,3,855,5
+Online Retail II,"2010-12-09 (primary, 365d)",L,4,865,5
+Online Retail II,"2010-12-09 (primary, 365d)",L,5,859,5
+CDNOW,1997-09-30,L,1,14051,4
+CDNOW,1997-09-30,L,2,87,4
+CDNOW,1997-09-30,L,3,4696,4
+CDNOW,1997-09-30,L,4,4666,4
+CDNOW,1997-12-31,L,1,13015,4
+CDNOW,1997-12-31,L,2,1109,4
+CDNOW,1997-12-31,L,3,4677,4
+CDNOW,1997-12-31,L,4,4701,4
+CDNOW,1998-03-31,L,1,12361,4
+CDNOW,1998-03-31,L,2,1762,4
+CDNOW,1998-03-31,L,3,4688,4
+CDNOW,1998-03-31,L,4,4691,4
