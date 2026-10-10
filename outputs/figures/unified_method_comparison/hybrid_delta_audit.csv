@@ -1,0 +1,10 @@
+dataset,metric,computed_hybrid_minus_fuzzy,saved_delta,saved_95ci,saved_p_holm,source_file,verification_status
+Online Retail II,auc,0.003799937283965771,0.0037999372839658,"[0.00241509410316, 0.00531767433095]",0.0045,results/rfm_tail_information/paired_comparisons.csv,confirmed
+Online Retail II,spend_r2,0.003850148786773089,0.003850148786773,"[0.00211707191043, 0.00557731987004]",0.0045,results/rfm_tail_information/paired_comparisons.csv,confirmed
+Online Retail II,invoice_r2,0.03624198394489264,0.0362419839448926,"[0.0294271096574, 0.0431508762386]",0.0045,results/rfm_tail_information/paired_comparisons.csv,confirmed
+Dunnhumby,auc,0.003964153590222952,0.0039641535902229,"[0.000572381535266, 0.00759050098986]",0.132,results/rfm_tail_information/paired_comparisons.csv,confirmed
+Dunnhumby,spend_r2,0.003758052711830495,0.0037580527118304,"[0.000292203361975, 0.00716972395658]",0.155,results/rfm_tail_information/paired_comparisons.csv,confirmed
+Dunnhumby,invoice_r2,0.0054626503449486385,0.0054626503449486,"[0.00315516616864, 0.00781505985232]",0.0045,results/rfm_tail_information/paired_comparisons.csv,confirmed
+CDNOW,auc,0.0006097900140622503,0.0006097900140622,"[-0.00034976703923, 0.00151963280228]",0.193,results/cdnow_confirmation/comparisons.csv,confirmed
+CDNOW,spend_r2,0.013955239319331847,0.0139552393193318,"[0.0116444294093, 0.0163556238584]",0.0105,results/cdnow_confirmation/comparisons.csv,confirmed
+CDNOW,invoice_r2,0.03568702583970562,0.0356870258397055,"[0.0301392882155, 0.0411220449832]",0.0105,results/cdnow_confirmation/comparisons.csv,confirmed

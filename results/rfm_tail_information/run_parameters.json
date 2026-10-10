@@ -1,0 +1,40 @@
+{
+  "exploratory": true,
+  "arms": [
+    "fuzzy_rfm_fca",
+    "tail_augmented_fuzzy_rfm_fca",
+    "spline_log_rfm"
+  ],
+  "comparisons": [
+    [
+      "tail_augmented_fuzzy_rfm_fca",
+      "fuzzy_rfm_fca"
+    ],
+    [
+      "tail_augmented_fuzzy_rfm_fca",
+      "spline_log_rfm"
+    ],
+    [
+      "fuzzy_rfm_fca",
+      "spline_log_rfm"
+    ]
+  ],
+  "boot_n": 2000,
+  "boot_seed": 12345,
+  "n_folds": 5,
+  "cv_seed": 0,
+  "source": "baseline_ladder_rolling_origin.py",
+  "smoke": false,
+  "cohorts": [
+    "Dunnhumby | day 347",
+    "Dunnhumby | day 438",
+    "Dunnhumby | day 529",
+    "Dunnhumby | day 620",
+    "Online Retail II | 2010-09-10",
+    "Online Retail II | 2010-12-10",
+    "Online Retail II | 2011-03-11",
+    "Online Retail II | 2011-06-10",
+    "Online Retail II | 2011-09-09",
+    "Online Retail II | 2010-12-09 (primary, 365d)"
+  ]
+}

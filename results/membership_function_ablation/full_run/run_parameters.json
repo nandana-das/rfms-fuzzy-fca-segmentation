@@ -1,0 +1,40 @@
+{
+  "methods": {
+    "M0": "Frozen piecewise-linear shoulders",
+    "M1": "Normalized Gaussian",
+    "M2": "Normalized generalized bell",
+    "M3": "Log-coordinate Gaussian"
+  },
+  "dims": [
+    "R",
+    "F",
+    "M"
+  ],
+  "thresholds": [
+    0.3,
+    0.5,
+    0.7
+  ],
+  "min_support": 0.04,
+  "j_max": 0.8,
+  "mu_cut": 0.5,
+  "n_folds": 5,
+  "cv_seed": 0,
+  "bootstrap_n": 2000,
+  "smoke": false,
+  "selected_cohorts": [
+    "Dunnhumby | day 347",
+    "Dunnhumby | day 438",
+    "Dunnhumby | day 529",
+    "Dunnhumby | day 620",
+    "Online Retail II | 2010-09-10",
+    "Online Retail II | 2010-12-10",
+    "Online Retail II | 2011-03-11",
+    "Online Retail II | 2011-06-10",
+    "Online Retail II | 2011-09-09",
+    "Online Retail II | 2010-12-09 (primary, 365d)"
+  ],
+  "width_rule": "half adjacent spacing; interior half mean spacing; zero gaps use median positive gap; floor=1e-12*max(1,max|center|)",
+  "bell_shape_b": 2.0,
+  "outputs_are_isolated": true
+}

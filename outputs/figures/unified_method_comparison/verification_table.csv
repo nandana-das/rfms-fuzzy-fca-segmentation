@@ -1,0 +1,37 @@
+dataset,method,metric,value,source_file,evaluation_split,verification_status
+Online Retail II,Raw RFM,auc,0.7771611230928233,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Raw RFM,spend_r2,0.21046857282482795,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Raw RFM,invoice_r2,0.3318643942553172,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Crisp RFM-FCA,auc,0.7742605579318071,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Crisp RFM-FCA,spend_r2,0.29751232353039975,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Crisp RFM-FCA,invoice_r2,0.3463849224206216,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Baseline Fuzzy RFM-FCA,auc,0.7798523711685963,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Baseline Fuzzy RFM-FCA,spend_r2,0.3113842156240701,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Baseline Fuzzy RFM-FCA,invoice_r2,0.37366514150511954,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Hybrid Fuzzy RFM-FCA,auc,0.7836523084525621,results/rfm_tail_information/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Hybrid Fuzzy RFM-FCA,spend_r2,0.3152343644108432,results/rfm_tail_information/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Online Retail II,Hybrid Fuzzy RFM-FCA,invoice_r2,0.4099071254500122,results/rfm_tail_information/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Raw RFM,auc,0.8822169109621605,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Raw RFM,spend_r2,0.4367196786200539,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Raw RFM,invoice_r2,0.5085510231065398,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Crisp RFM-FCA,auc,0.8689059884719389,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Crisp RFM-FCA,spend_r2,0.5112366811761504,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Crisp RFM-FCA,invoice_r2,0.6013210872127586,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Baseline Fuzzy RFM-FCA,auc,0.8899485260243772,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Baseline Fuzzy RFM-FCA,spend_r2,0.5381878014950505,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Baseline Fuzzy RFM-FCA,invoice_r2,0.622664294547369,results/baseline_ladder_rolling_origin/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Hybrid Fuzzy RFM-FCA,auc,0.8939126796146002,results/rfm_tail_information/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Hybrid Fuzzy RFM-FCA,spend_r2,0.541945854206881,results/rfm_tail_information/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+Dunnhumby,Hybrid Fuzzy RFM-FCA,invoice_r2,0.6281269448923177,results/rfm_tail_information/per_origin_metrics.csv,pooled=True 91-day rolling origins,verified
+CDNOW,Raw RFM,auc,0.8021048964162114,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Raw RFM,spend_r2,0.2500697262545369,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Raw RFM,invoice_r2,0.29341112625525473,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Crisp RFM-FCA,auc,0.8004609077541703,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Crisp RFM-FCA,spend_r2,0.24167245740968993,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Crisp RFM-FCA,invoice_r2,0.24752903136212612,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Baseline Fuzzy RFM-FCA,auc,0.8064212476215368,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Baseline Fuzzy RFM-FCA,spend_r2,0.26136095755579686,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Baseline Fuzzy RFM-FCA,invoice_r2,0.27468842135701094,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Hybrid Fuzzy RFM-FCA,auc,0.807031037635599,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Hybrid Fuzzy RFM-FCA,spend_r2,0.2753161968751287,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
+CDNOW,Hybrid Fuzzy RFM-FCA,invoice_r2,0.31037544719671656,results/cdnow_confirmation/per_origin_metrics.csv,mean over three chronological 91-day origins,verified
