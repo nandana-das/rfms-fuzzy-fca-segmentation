@@ -1,0 +1,47 @@
+{
+  "execution_timestamp": "2026-10-10T12:48:34.419606+00:00",
+  "python_version": "3.11.9",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "random_seed": 0,
+  "n_folds": 5,
+  "arms": [
+    "M0",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "arm_configs": {
+    "M0": {
+      "membership": "m0_piecewise_linear",
+      "tnorm": "godel_min",
+      "description": "Frozen baseline fuzzy RFM-FCA (piecewise-linear + G\u00f6del-min)"
+    },
+    "M1": {
+      "membership": "lar_pw",
+      "tnorm": "godel_min",
+      "description": "Tail-sensitive LAR-PW (F, M) + frozen R + G\u00f6del-min"
+    },
+    "M2": {
+      "membership": "m0_piecewise_linear",
+      "tnorm": "product",
+      "description": "Frozen M0 memberships + Algebraic Product t-norm"
+    },
+    "M3": {
+      "membership": "lar_pw",
+      "tnorm": "product",
+      "description": "Tail-sensitive LAR-PW + Algebraic Product t-norm"
+    }
+  },
+  "evaluated_datasets": [
+    "Dunnhumby",
+    "Online Retail II"
+  ],
+  "total_origins_evaluated": 9,
+  "total_cohort_evaluations": 36,
+  "m0_parity_tolerance": 1e-12,
+  "m0_max_abs_difference": 8.326672684688674e-17,
+  "m0_all_parity_passed": true,
+  "total_degenerate_folds": 0,
+  "cdnow_status": "Deferred (no existing 5-level frozen M0 baseline in baseline_ladder_rolling_origin)",
+  "total_runtime_seconds": 353.5
+}

@@ -1,0 +1,181 @@
+dataset,origin,fold,n_train,n_test,arm,membership_type,tnorm,membership_dims,context_dims,degenerate_error,n_candidates,n_features,n_distinct_columns,n_empty_core
+Dunnhumby,day 347,0,1997,500,M0,m0_piecewise_linear,godel_min,15,45,,493,91,91,0
+Dunnhumby,day 347,0,1997,500,M2,m0_piecewise_linear,product,15,45,,493,91,91,5
+Dunnhumby,day 347,0,1997,500,M1,lar_pw,godel_min,15,45,,603,92,92,0
+Dunnhumby,day 347,0,1997,500,M3,lar_pw,product,15,45,,603,92,92,3
+Dunnhumby,day 347,1,1997,500,M0,m0_piecewise_linear,godel_min,15,45,,426,87,87,0
+Dunnhumby,day 347,1,1997,500,M2,m0_piecewise_linear,product,15,45,,426,87,87,7
+Dunnhumby,day 347,1,1997,500,M1,lar_pw,godel_min,15,45,,497,93,93,0
+Dunnhumby,day 347,1,1997,500,M3,lar_pw,product,15,45,,497,93,93,9
+Dunnhumby,day 347,2,1998,499,M0,m0_piecewise_linear,godel_min,15,45,,502,95,95,0
+Dunnhumby,day 347,2,1998,499,M2,m0_piecewise_linear,product,15,45,,502,95,95,9
+Dunnhumby,day 347,2,1998,499,M1,lar_pw,godel_min,15,45,,603,91,91,0
+Dunnhumby,day 347,2,1998,499,M3,lar_pw,product,15,45,,603,91,91,2
+Dunnhumby,day 347,3,1998,499,M0,m0_piecewise_linear,godel_min,15,45,,429,88,88,0
+Dunnhumby,day 347,3,1998,499,M2,m0_piecewise_linear,product,15,45,,429,88,88,8
+Dunnhumby,day 347,3,1998,499,M1,lar_pw,godel_min,15,45,,510,94,94,0
+Dunnhumby,day 347,3,1998,499,M3,lar_pw,product,15,45,,510,94,94,9
+Dunnhumby,day 347,4,1998,499,M0,m0_piecewise_linear,godel_min,15,45,,484,89,89,0
+Dunnhumby,day 347,4,1998,499,M2,m0_piecewise_linear,product,15,45,,484,89,89,3
+Dunnhumby,day 347,4,1998,499,M1,lar_pw,godel_min,15,45,,604,89,89,0
+Dunnhumby,day 347,4,1998,499,M3,lar_pw,product,15,45,,604,89,89,2
+Dunnhumby,day 438,0,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,509,93,93,0
+Dunnhumby,day 438,0,1998,500,M2,m0_piecewise_linear,product,15,45,,509,93,93,5
+Dunnhumby,day 438,0,1998,500,M1,lar_pw,godel_min,15,45,,613,95,95,0
+Dunnhumby,day 438,0,1998,500,M3,lar_pw,product,15,45,,613,95,95,3
+Dunnhumby,day 438,1,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,501,91,91,0
+Dunnhumby,day 438,1,1998,500,M2,m0_piecewise_linear,product,15,45,,501,91,91,3
+Dunnhumby,day 438,1,1998,500,M1,lar_pw,godel_min,15,45,,600,93,93,0
+Dunnhumby,day 438,1,1998,500,M3,lar_pw,product,15,45,,600,93,93,1
+Dunnhumby,day 438,2,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,438,97,97,0
+Dunnhumby,day 438,2,1998,500,M2,m0_piecewise_linear,product,15,45,,438,97,97,12
+Dunnhumby,day 438,2,1998,500,M1,lar_pw,godel_min,15,45,,497,95,95,0
+Dunnhumby,day 438,2,1998,500,M3,lar_pw,product,15,45,,497,95,95,9
+Dunnhumby,day 438,3,1999,499,M0,m0_piecewise_linear,godel_min,15,45,,432,93,93,0
+Dunnhumby,day 438,3,1999,499,M2,m0_piecewise_linear,product,15,45,,432,93,93,10
+Dunnhumby,day 438,3,1999,499,M1,lar_pw,godel_min,15,45,,503,98,98,0
+Dunnhumby,day 438,3,1999,499,M3,lar_pw,product,15,45,,503,98,98,10
+Dunnhumby,day 438,4,1999,499,M0,m0_piecewise_linear,godel_min,15,45,,447,95,95,0
+Dunnhumby,day 438,4,1999,499,M2,m0_piecewise_linear,product,15,45,,447,95,95,14
+Dunnhumby,day 438,4,1999,499,M1,lar_pw,godel_min,15,45,,509,96,96,0
+Dunnhumby,day 438,4,1999,499,M3,lar_pw,product,15,45,,509,96,96,10
+Dunnhumby,day 529,0,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,479,88,88,0
+Dunnhumby,day 529,0,1998,500,M2,m0_piecewise_linear,product,15,45,,479,88,88,2
+Dunnhumby,day 529,0,1998,500,M1,lar_pw,godel_min,15,45,,573,89,89,0
+Dunnhumby,day 529,0,1998,500,M3,lar_pw,product,15,45,,573,89,89,1
+Dunnhumby,day 529,1,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,484,88,88,0
+Dunnhumby,day 529,1,1998,500,M2,m0_piecewise_linear,product,15,45,,484,88,88,1
+Dunnhumby,day 529,1,1998,500,M1,lar_pw,godel_min,15,45,,595,96,96,0
+Dunnhumby,day 529,1,1998,500,M3,lar_pw,product,15,45,,595,96,96,2
+Dunnhumby,day 529,2,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,494,92,92,0
+Dunnhumby,day 529,2,1998,500,M2,m0_piecewise_linear,product,15,45,,494,92,92,6
+Dunnhumby,day 529,2,1998,500,M1,lar_pw,godel_min,15,45,,591,98,98,0
+Dunnhumby,day 529,2,1998,500,M3,lar_pw,product,15,45,,591,98,98,9
+Dunnhumby,day 529,3,1999,499,M0,m0_piecewise_linear,godel_min,15,45,,498,90,90,0
+Dunnhumby,day 529,3,1999,499,M2,m0_piecewise_linear,product,15,45,,498,90,90,2
+Dunnhumby,day 529,3,1999,499,M1,lar_pw,godel_min,15,45,,590,92,92,0
+Dunnhumby,day 529,3,1999,499,M3,lar_pw,product,15,45,,590,92,92,2
+Dunnhumby,day 529,4,1999,499,M0,m0_piecewise_linear,godel_min,15,45,,502,89,89,0
+Dunnhumby,day 529,4,1999,499,M2,m0_piecewise_linear,product,15,45,,502,89,89,1
+Dunnhumby,day 529,4,1999,499,M1,lar_pw,godel_min,15,45,,597,91,91,0
+Dunnhumby,day 529,4,1999,499,M3,lar_pw,product,15,45,,597,91,91,3
+Dunnhumby,day 620,0,1999,500,M0,m0_piecewise_linear,godel_min,15,45,,494,89,89,0
+Dunnhumby,day 620,0,1999,500,M2,m0_piecewise_linear,product,15,45,,494,89,89,3
+Dunnhumby,day 620,0,1999,500,M1,lar_pw,godel_min,15,45,,589,90,90,0
+Dunnhumby,day 620,0,1999,500,M3,lar_pw,product,15,45,,589,90,90,3
+Dunnhumby,day 620,1,1999,500,M0,m0_piecewise_linear,godel_min,15,45,,494,96,96,0
+Dunnhumby,day 620,1,1999,500,M2,m0_piecewise_linear,product,15,45,,494,96,96,10
+Dunnhumby,day 620,1,1999,500,M1,lar_pw,godel_min,15,45,,602,90,90,0
+Dunnhumby,day 620,1,1999,500,M3,lar_pw,product,15,45,,602,90,90,4
+Dunnhumby,day 620,2,1999,500,M0,m0_piecewise_linear,godel_min,15,45,,499,94,94,0
+Dunnhumby,day 620,2,1999,500,M2,m0_piecewise_linear,product,15,45,,499,94,94,8
+Dunnhumby,day 620,2,1999,500,M1,lar_pw,godel_min,15,45,,595,87,87,0
+Dunnhumby,day 620,2,1999,500,M3,lar_pw,product,15,45,,595,87,87,2
+Dunnhumby,day 620,3,1999,500,M0,m0_piecewise_linear,godel_min,15,45,,497,96,96,0
+Dunnhumby,day 620,3,1999,500,M2,m0_piecewise_linear,product,15,45,,497,96,96,9
+Dunnhumby,day 620,3,1999,500,M1,lar_pw,godel_min,15,45,,591,88,88,0
+Dunnhumby,day 620,3,1999,500,M3,lar_pw,product,15,45,,591,88,88,3
+Dunnhumby,day 620,4,2000,499,M0,m0_piecewise_linear,godel_min,15,45,,493,91,91,0
+Dunnhumby,day 620,4,2000,499,M2,m0_piecewise_linear,product,15,45,,493,91,91,4
+Dunnhumby,day 620,4,2000,499,M1,lar_pw,godel_min,15,45,,589,88,88,0
+Dunnhumby,day 620,4,2000,499,M3,lar_pw,product,15,45,,589,88,88,2
+Online Retail II,2010-09-10,0,2701,676,M0,m0_piecewise_linear,godel_min,15,45,,269,68,68,0
+Online Retail II,2010-09-10,0,2701,676,M2,m0_piecewise_linear,product,15,45,,269,68,68,3
+Online Retail II,2010-09-10,0,2701,676,M1,lar_pw,godel_min,15,45,,377,73,73,0
+Online Retail II,2010-09-10,0,2701,676,M3,lar_pw,product,15,45,,377,73,73,5
+Online Retail II,2010-09-10,1,2701,676,M0,m0_piecewise_linear,godel_min,15,45,,271,68,68,0
+Online Retail II,2010-09-10,1,2701,676,M2,m0_piecewise_linear,product,15,45,,271,68,68,1
+Online Retail II,2010-09-10,1,2701,676,M1,lar_pw,godel_min,15,45,,392,72,72,0
+Online Retail II,2010-09-10,1,2701,676,M3,lar_pw,product,15,45,,392,72,72,2
+Online Retail II,2010-09-10,2,2702,675,M0,m0_piecewise_linear,godel_min,15,45,,269,67,67,0
+Online Retail II,2010-09-10,2,2702,675,M2,m0_piecewise_linear,product,15,45,,269,67,67,3
+Online Retail II,2010-09-10,2,2702,675,M1,lar_pw,godel_min,15,45,,382,73,73,0
+Online Retail II,2010-09-10,2,2702,675,M3,lar_pw,product,15,45,,382,73,73,5
+Online Retail II,2010-09-10,3,2702,675,M0,m0_piecewise_linear,godel_min,15,45,,274,70,70,0
+Online Retail II,2010-09-10,3,2702,675,M2,m0_piecewise_linear,product,15,45,,274,70,70,5
+Online Retail II,2010-09-10,3,2702,675,M1,lar_pw,godel_min,15,45,,394,79,79,0
+Online Retail II,2010-09-10,3,2702,675,M3,lar_pw,product,15,45,,394,79,79,9
+Online Retail II,2010-09-10,4,2702,675,M0,m0_piecewise_linear,godel_min,15,45,,269,67,67,0
+Online Retail II,2010-09-10,4,2702,675,M2,m0_piecewise_linear,product,15,45,,269,67,67,3
+Online Retail II,2010-09-10,4,2702,675,M1,lar_pw,godel_min,15,45,,394,74,74,0
+Online Retail II,2010-09-10,4,2702,675,M3,lar_pw,product,15,45,,394,74,74,5
+Online Retail II,2010-12-10,0,3451,863,M0,m0_piecewise_linear,godel_min,15,45,,321,76,76,0
+Online Retail II,2010-12-10,0,3451,863,M2,m0_piecewise_linear,product,15,45,,321,76,76,4
+Online Retail II,2010-12-10,0,3451,863,M1,lar_pw,godel_min,15,45,,404,78,78,0
+Online Retail II,2010-12-10,0,3451,863,M3,lar_pw,product,15,45,,404,78,78,3
+Online Retail II,2010-12-10,1,3451,863,M0,m0_piecewise_linear,godel_min,15,45,,327,81,81,0
+Online Retail II,2010-12-10,1,3451,863,M2,m0_piecewise_linear,product,15,45,,327,81,81,5
+Online Retail II,2010-12-10,1,3451,863,M1,lar_pw,godel_min,15,45,,410,81,81,0
+Online Retail II,2010-12-10,1,3451,863,M3,lar_pw,product,15,45,,410,81,81,6
+Online Retail II,2010-12-10,2,3451,863,M0,m0_piecewise_linear,godel_min,15,45,,334,78,78,0
+Online Retail II,2010-12-10,2,3451,863,M2,m0_piecewise_linear,product,15,45,,334,78,78,6
+Online Retail II,2010-12-10,2,3451,863,M1,lar_pw,godel_min,15,45,,414,83,83,0
+Online Retail II,2010-12-10,2,3451,863,M3,lar_pw,product,15,45,,414,83,83,8
+Online Retail II,2010-12-10,3,3451,863,M0,m0_piecewise_linear,godel_min,15,45,,323,76,76,0
+Online Retail II,2010-12-10,3,3451,863,M2,m0_piecewise_linear,product,15,45,,323,76,76,4
+Online Retail II,2010-12-10,3,3451,863,M1,lar_pw,godel_min,15,45,,410,78,78,0
+Online Retail II,2010-12-10,3,3451,863,M3,lar_pw,product,15,45,,410,78,78,4
+Online Retail II,2010-12-10,4,3452,862,M0,m0_piecewise_linear,godel_min,15,45,,328,78,78,0
+Online Retail II,2010-12-10,4,3452,862,M2,m0_piecewise_linear,product,15,45,,328,78,78,4
+Online Retail II,2010-12-10,4,3452,862,M1,lar_pw,godel_min,15,45,,410,79,79,0
+Online Retail II,2010-12-10,4,3452,862,M3,lar_pw,product,15,45,,410,79,79,4
+Online Retail II,2011-03-11,0,3684,922,M0,m0_piecewise_linear,godel_min,15,45,,340,77,77,0
+Online Retail II,2011-03-11,0,3684,922,M2,m0_piecewise_linear,product,15,45,,340,77,77,3
+Online Retail II,2011-03-11,0,3684,922,M1,lar_pw,godel_min,15,45,,429,78,78,0
+Online Retail II,2011-03-11,0,3684,922,M3,lar_pw,product,15,45,,429,78,78,3
+Online Retail II,2011-03-11,1,3685,921,M0,m0_piecewise_linear,godel_min,15,45,,341,80,80,0
+Online Retail II,2011-03-11,1,3685,921,M2,m0_piecewise_linear,product,15,45,,341,80,80,5
+Online Retail II,2011-03-11,1,3685,921,M1,lar_pw,godel_min,15,45,,434,82,82,0
+Online Retail II,2011-03-11,1,3685,921,M3,lar_pw,product,15,45,,434,82,82,5
+Online Retail II,2011-03-11,2,3685,921,M0,m0_piecewise_linear,godel_min,15,45,,341,80,80,0
+Online Retail II,2011-03-11,2,3685,921,M2,m0_piecewise_linear,product,15,45,,341,80,80,7
+Online Retail II,2011-03-11,2,3685,921,M1,lar_pw,godel_min,15,45,,425,84,84,0
+Online Retail II,2011-03-11,2,3685,921,M3,lar_pw,product,15,45,,425,84,84,9
+Online Retail II,2011-03-11,3,3685,921,M0,m0_piecewise_linear,godel_min,15,45,,352,80,80,0
+Online Retail II,2011-03-11,3,3685,921,M2,m0_piecewise_linear,product,15,45,,352,80,80,8
+Online Retail II,2011-03-11,3,3685,921,M1,lar_pw,godel_min,15,45,,428,82,82,0
+Online Retail II,2011-03-11,3,3685,921,M3,lar_pw,product,15,45,,428,82,82,8
+Online Retail II,2011-03-11,4,3685,921,M0,m0_piecewise_linear,godel_min,15,45,,340,78,78,0
+Online Retail II,2011-03-11,4,3685,921,M2,m0_piecewise_linear,product,15,45,,340,78,78,4
+Online Retail II,2011-03-11,4,3685,921,M1,lar_pw,godel_min,15,45,,429,81,81,0
+Online Retail II,2011-03-11,4,3685,921,M3,lar_pw,product,15,45,,429,81,81,6
+Online Retail II,2011-06-10,0,3980,996,M0,m0_piecewise_linear,godel_min,15,45,,368,82,82,0
+Online Retail II,2011-06-10,0,3980,996,M2,m0_piecewise_linear,product,15,45,,368,82,82,7
+Online Retail II,2011-06-10,0,3980,996,M1,lar_pw,godel_min,15,45,,439,80,80,0
+Online Retail II,2011-06-10,0,3980,996,M3,lar_pw,product,15,45,,439,80,80,8
+Online Retail II,2011-06-10,1,3981,995,M0,m0_piecewise_linear,godel_min,15,45,,336,76,76,0
+Online Retail II,2011-06-10,1,3981,995,M2,m0_piecewise_linear,product,15,45,,336,76,76,4
+Online Retail II,2011-06-10,1,3981,995,M1,lar_pw,godel_min,15,45,,450,81,81,0
+Online Retail II,2011-06-10,1,3981,995,M3,lar_pw,product,15,45,,450,81,81,6
+Online Retail II,2011-06-10,2,3981,995,M0,m0_piecewise_linear,godel_min,15,45,,370,82,82,0
+Online Retail II,2011-06-10,2,3981,995,M2,m0_piecewise_linear,product,15,45,,370,82,82,6
+Online Retail II,2011-06-10,2,3981,995,M1,lar_pw,godel_min,15,45,,436,76,76,0
+Online Retail II,2011-06-10,2,3981,995,M3,lar_pw,product,15,45,,436,76,76,5
+Online Retail II,2011-06-10,3,3981,995,M0,m0_piecewise_linear,godel_min,15,45,,375,85,85,0
+Online Retail II,2011-06-10,3,3981,995,M2,m0_piecewise_linear,product,15,45,,375,85,85,7
+Online Retail II,2011-06-10,3,3981,995,M1,lar_pw,godel_min,15,45,,441,79,79,0
+Online Retail II,2011-06-10,3,3981,995,M3,lar_pw,product,15,45,,441,79,79,5
+Online Retail II,2011-06-10,4,3981,995,M0,m0_piecewise_linear,godel_min,15,45,,370,80,80,0
+Online Retail II,2011-06-10,4,3981,995,M2,m0_piecewise_linear,product,15,45,,370,80,80,4
+Online Retail II,2011-06-10,4,3981,995,M1,lar_pw,godel_min,15,45,,442,75,75,0
+Online Retail II,2011-06-10,4,3981,995,M3,lar_pw,product,15,45,,442,75,75,2
+Online Retail II,2011-09-09,0,4224,1057,M0,m0_piecewise_linear,godel_min,15,45,,379,80,80,0
+Online Retail II,2011-09-09,0,4224,1057,M2,m0_piecewise_linear,product,15,45,,379,80,80,6
+Online Retail II,2011-09-09,0,4224,1057,M1,lar_pw,godel_min,15,45,,447,77,77,0
+Online Retail II,2011-09-09,0,4224,1057,M3,lar_pw,product,15,45,,447,77,77,7
+Online Retail II,2011-09-09,1,4225,1056,M0,m0_piecewise_linear,godel_min,15,45,,375,77,77,0
+Online Retail II,2011-09-09,1,4225,1056,M2,m0_piecewise_linear,product,15,45,,375,77,77,4
+Online Retail II,2011-09-09,1,4225,1056,M1,lar_pw,godel_min,15,45,,446,73,73,0
+Online Retail II,2011-09-09,1,4225,1056,M3,lar_pw,product,15,45,,446,73,73,3
+Online Retail II,2011-09-09,2,4225,1056,M0,m0_piecewise_linear,godel_min,15,45,,376,78,78,0
+Online Retail II,2011-09-09,2,4225,1056,M2,m0_piecewise_linear,product,15,45,,376,78,78,6
+Online Retail II,2011-09-09,2,4225,1056,M1,lar_pw,godel_min,15,45,,453,80,80,0
+Online Retail II,2011-09-09,2,4225,1056,M3,lar_pw,product,15,45,,453,80,80,11
+Online Retail II,2011-09-09,3,4225,1056,M0,m0_piecewise_linear,godel_min,15,45,,364,73,73,0
+Online Retail II,2011-09-09,3,4225,1056,M2,m0_piecewise_linear,product,15,45,,364,73,73,3
+Online Retail II,2011-09-09,3,4225,1056,M1,lar_pw,godel_min,15,45,,435,70,70,0
+Online Retail II,2011-09-09,3,4225,1056,M3,lar_pw,product,15,45,,435,70,70,2
+Online Retail II,2011-09-09,4,4225,1056,M0,m0_piecewise_linear,godel_min,15,45,,375,75,75,0
+Online Retail II,2011-09-09,4,4225,1056,M2,m0_piecewise_linear,product,15,45,,375,75,75,3
+Online Retail II,2011-09-09,4,4225,1056,M1,lar_pw,godel_min,15,45,,448,70,70,0
+Online Retail II,2011-09-09,4,4225,1056,M3,lar_pw,product,15,45,,448,70,70,2
