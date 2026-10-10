@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "record_type": "provenance_and_naming_reconciliation",
+  "canonical_method_name": "M1-LAR-PW",
+  "historical_internal_identifier": "M1",
+  "historical_membership_type": "lar_pw",
+  "historical_to_canonical_mapping": {
+    "M1": "M1-LAR-PW"
+  },
+  "source_directory": "results/fuzzy_tnorm_tail_ablation",
+  "source_files": [
+    "execution_log_discrepancy_audit.csv",
+    "fold_diagnostics.csv",
+    "m0_parity_verification.csv",
+    "m0_reproduction/REPRODUCTION_REPORT.md",
+    "m0_reproduction/metrics_verification.csv",
+    "m0_reproduction/smoke_reproduction_metrics.csv",
+    "multi_origin_metrics.csv",
+    "MULTI_ORIGIN_REPORT_original.md",
+    "MULTI_ORIGIN_REPORT.md",
+    "run_manifest.json",
+    "STAGE5_RESULTS_INTERPRETATION_pre_final.md",
+    "STAGE5_RESULTS_INTERPRETATION_pre_revision.md",
+    "STAGE5_RESULTS_INTERPRETATION.md",
+    "stats_dump.txt",
+    "tail_diagnostics.csv",
+    "smoke/ablation_smoke_metrics.csv",
+    "smoke/fold_diagnostics.csv",
+    "smoke/m0_parity_verification.csv",
+    "smoke/SMOKE_TEST_REPORT.md",
+    "smoke/tail_diagnostics.csv"
+  ],
+  "source_run_metadata": {
+    "execution_timestamp": "2026-10-10T12:48:34.419606+00:00",
+    "python_version": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "random_seed": 0,
+    "n_folds": 5,
+    "evaluated_datasets": ["Dunnhumby", "Online Retail II"],
+    "total_origins_evaluated": 9,
+    "total_cohort_evaluations": 36,
+    "m0_parity_tolerance": 1e-12,
+    "m0_max_abs_difference": 8.326672684688674e-17,
+    "m0_all_parity_passed": true,
+    "total_degenerate_folds": 0,
+    "cdnow_status": "Deferred"
+  },
+  "provenance": {
+    "execution_commit": null,
+    "execution_branch": null,
+    "artifact_inclusion_commit": "ec9f3f388a8948ab230171702238c265a56aa2f6",
+    "artifact_inclusion_branch": "main",
+    "execution_commit_or_branch_available_in_original_manifest": false
+  },
+  "verification": {
+    "nine_origin_evaluation_verified_from_existing_manifest": true,
+    "m0_parity_verified_from_existing_manifest": true,
+    "focused_membership_test_evidence": "Existing test file reports 12 focused tests; rerun during reconciliation",
+    "python_compilation_evidence": "Existing implementation compiles; rerun during reconciliation",
+    "new_evaluation_performed": false,
+    "historical_source_files_modified": false
+  },
+  "notes": [
+    "Historical result labels remain unchanged.",
+    "M1-LAR-PW is the canonical name for the existing tail-sensitive F/M arm only.",
+    "This record does not reinterpret Gaussian, generalized-bell, log-coordinate, or log-RFM hybrid experiments."
+  ]
+}
