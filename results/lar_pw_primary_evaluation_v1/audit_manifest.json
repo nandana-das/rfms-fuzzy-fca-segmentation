@@ -1,0 +1,27 @@
+{
+  "record_type": "retained_results_audit",
+  "source": "results/fuzzy_tnorm_tail_ablation/multi_origin_metrics.csv",
+  "source_sha256": "988f538cc6ad0f5ea94ecc6f6f38d186a1c7aa3c682e22a11173f420c74fb2e5",
+  "created_utc": "2026-10-11T05:57:36.807017+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "historical_label_normalization": {
+    "M1": "M1-LAR-PW"
+  },
+  "n_paired_origins": 9,
+  "audit": {
+    "n_rows": 36,
+    "arms": [
+      "M0",
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "duplicate_keys": [],
+    "unexpected_origins": [],
+    "missing_or_mismatched_pairs": [],
+    "invalid_values": [],
+    "valid": true
+  },
+  "uncertainty_note": "No customer-level prediction vectors or paired bootstrap draws are retained; summaries are descriptive only."
+}
