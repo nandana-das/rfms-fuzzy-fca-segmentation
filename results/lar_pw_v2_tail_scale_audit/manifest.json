@@ -1,0 +1,23 @@
+{
+  "record_type": "tail_scale_reachability_audit",
+  "created_utc": "2026-10-11T06:11:01.719855+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "datasets": [
+    "Dunnhumby",
+    "Online Retail II"
+  ],
+  "origins": 9,
+  "folds": 45,
+  "dimensions": [
+    "F",
+    "M"
+  ],
+  "downstream_model_training": false,
+  "historical_fallback_rows": 0,
+  "historical_s_tail_equals_v2_rows": 90,
+  "source_hashes": {
+    "scripts/tail_memberships.py": "656c46f365499d9bf1bde602776169f9cb3450cde807d20e90eb8b1dbec39721",
+    "scripts/tail_memberships_v2.py": "9511d6462a7154a5845fa00ec0838d00f61298b6cc9a796f4c83164e2451598d"
+  }
+}
