@@ -54,7 +54,7 @@ Reading: M0 is higher than crisp RFM-FCA on every outcome on Dunnhumby and Onlin
 
 ## 3. Single-seed frozen ladder: M0 vs log-RFM and M0 vs GBM
 
-**Evidence level: single seed, frozen v1 primary study** (`results/baseline_ladder_rolling_origin/`, commit `7607e09`), as tabulated in the standalone Step 0 re-analysis `results/step0_direct_comparisons/` (commit `15a5c6d`). No other existing analysis covers these two references, so they remain single-seed.
+**Evidence level: single seed, frozen v1 primary study** (`results/baseline_ladder_rolling_origin/`, commit `7607e09`), as tabulated in the standalone Step 0 re-analysis `results/step0_direct_comparisons/` (commit `b76b13c`). No other existing analysis covers these two references, so they remain single-seed.
 
 What the ladder supports on its own: paired bootstrap per origin (B = 2,000), pooled by averaging independent per-origin draws; Holm over 27 tests per dataset; smallest attainable Holm p 0.0135. The ladder did not retain customer-level predictions, so it has no customer-clustered intervals of its own. Customer-clustered, five-seed evidence exists only for the M0 vs crisp and M0 vs spline comparisons in Section 2, from a separate refit analysis.
 
@@ -126,7 +126,7 @@ Reading: T carries predictive information without FCA (log+T and spline+T improv
 
 ### 4.3 FCA+T vs spline+T across two CV seeds
 
-**Evidence level: two-seed consistency.** Comparison chosen post hoc after seed 0; the seed-1 check followed a plan locked before the run (`docs/TEMPORAL_SECOND_SEED_PLAN.md`, commits `6d7ea83` → `675c45d`). Decision criteria were direction and practical magnitude, not p-values. Source `results/temporal_second_seed/`.
+**Evidence level: two-seed consistency.** Comparison chosen post hoc after seed 0; the seed-1 check followed a plan locked before the run (`docs/TEMPORAL_SECOND_SEED_PLAN.md`, commits `95fea61` → `0981678`). Decision criteria were direction and practical magnitude, not p-values. Source `results/temporal_second_seed/`.
 
 <!-- table:seed -->
 | Dataset | Metric | Δ seed 0 | Δ seed 1 | Origins same sign (seed 1) | Holm p seed 0 | Holm p seed 1 | Verdict |

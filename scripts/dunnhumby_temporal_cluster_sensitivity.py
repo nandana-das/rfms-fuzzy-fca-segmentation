@@ -5,7 +5,8 @@ The temporal ablation's pooled intervals average independent per-origin bootstra
 pooled cells (fuzzy_rfm_t - fuzzy_rfm) with one household resample applied jointly to all origins.
 
 Inputs: validated customer-level predictions from
-results/dunnhumby_matched_complexity_paired_inference/ (their per-origin metrics matched the
+results/dunnhumby_matched_complexity_paired_inference/customer_predictions.csv.gz (git-ignored;
+regenerate with scripts/dunnhumby_matched_complexity_paired_inference.py) (their per-origin metrics matched the
 cached temporal-ablation metrics exactly). No model is refit. This is a sensitivity check of an
 existing comparison, not a new test family; the original Holm p-values are reported alongside.
 """
@@ -37,6 +38,10 @@ def _metric(metric, y, p, w):
 
 
 def main() -> None:
+    if not PRED.exists():
+        raise SystemExit(f"{PRED} is not in Git (household-level data; see DATA_NOTE.md in that folder). "
+                         "Regenerate it from the raw Dunnhumby data with: "
+                         "python scripts/dunnhumby_matched_complexity_paired_inference.py")
     OUT.mkdir(parents=True, exist_ok=True)
     preds = pd.read_csv(PRED, dtype={"CustomerID": str})
     preds = preds[preds.arm.isin([ARM, REF])]

@@ -15,3 +15,7 @@ data/dunnhumby_raw/
 
 # CDNOW raw data (licence not stated; obtain from brucehardie.com, see docs/CDNOW_CONFIRMATION_PLAN.md)
 data/cdnow_raw/
+
+# Household-level Dunnhumby predictions: redistribution not yet cleared
+# (see results/dunnhumby_matched_complexity_paired_inference/DATA_NOTE.md)
+results/dunnhumby_matched_complexity_paired_inference/customer_predictions.csv.gz
