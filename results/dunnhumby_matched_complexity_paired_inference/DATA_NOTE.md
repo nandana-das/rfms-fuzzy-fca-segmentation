@@ -30,7 +30,8 @@ dunnhumby's Source Files page (https://www.dunnhumby.com/source-files/) presents
 classroom use and academic research; the Terms & Conditions (https://www.dunnhumby.com/terms-and-conditions/)
 limit website materials to research, personal, or non-commercial use and reserve other rights. Neither
 clearly covers public redistribution of derived, household-keyed features, holdout outcomes, or model
-predictions. Written clarification from dunnhumby is being sought.
+predictions. Redistribution permission has not been established; no further clarification is currently
+planned, and the household-level prediction file remains excluded from Git.
 
 - Permission granted in writing: record it here; the file can then be committed if wanted.
 - Until then (or if denied): keep it out of Git as above.
