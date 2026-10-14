@@ -18,7 +18,9 @@ Checks:
 - evidence-row IDs: unique, and every ID cited in the text exists;
 - provenance: originating commit = oldest commit touching the artifact, originating branch =
   first branch in lineage order (main, v1, v2, CDNOW) containing it, later modifications;
-- every referenced repository path exists;
+- every referenced repository path exists (results/, docs/, scripts/, tests/);
+- follow-up rows (1f): cited sources exist and are Git-tracked; every rendered delta, Holm p and
+  second-seed value matches its pooled source row; no non-finite values;
 - required wording: corrected H2, X1, N1 (including the isolated Kuznetsov result),
   dataset-specific v2-vs-spline claim, no pooled superiority claim, regeneration command.
 
@@ -48,7 +50,8 @@ def validate(t: str) -> tuple[list, dict]:
 
     num = lambda s: float(s.replace("+", ""))
     pred, stab = table("### 1b.", "### 1c."), table("### 1c.", "### 1d.")
-    rob, interp = table("### 1d.", "### 1e."), table("### 1e.", "## 2.")
+    rob, interp = table("### 1d.", "### 1e."), table("### 1e.", "### 1f.")
+    follow = table("### 1f.", "## 2.")
     lad = pd.read_csv("results/baseline_ladder_rolling_origin/paired_comparisons.csv"); lad = lad[lad.scope == "POOLED"]
     v2 = pd.read_csv("results/v2_hybrid/paired_comparisons.csv"); v2 = v2[v2.scope == "POOLED"]
     cd = pd.read_csv("results/cdnow_confirmation/comparisons.csv")
@@ -152,8 +155,107 @@ def validate(t: str) -> tuple[list, dict]:
         if not all(ok):
             problems.append(("interp", r.Dataset, r.Arm, ok))
 
+    # 2d. exploratory follow-up entries: scoped claims and direct source references
+    expected_followups = {"E1-TEMPORAL", "E2-NONFCA-T", "E3-SECOND-SEED", "E4-MATCHED-COMPLEXITY", "E5-LUKASIEWICZ"}
+    if set(follow.ID) != expected_followups:
+        problems.append(("follow-up IDs", sorted(set(follow.ID) ^ expected_followups)))
+    required_sources = {
+        "E1-TEMPORAL": ["results/temporal_rfm_fca_ablation/REPORT.md", "scripts/temporal_rfm_fca_ablation.py", "results/temporal_rfm_fca_ablation/CORRECTED_RUN_PROVENANCE.md"],
+        "E2-NONFCA-T": ["results/temporal_nonfca_baseline/REPORT.md", "scripts/temporal_nonfca_baseline.py"],
+        "E3-SECOND-SEED": ["docs/TEMPORAL_SECOND_SEED_PLAN.md", "scripts/temporal_second_seed_evaluate.py", "results/temporal_second_seed/SEED_REPLICATION.md", "results/temporal_second_seed/PLAN_LOCK.txt"],
+        "E4-MATCHED-COMPLEXITY": ["scripts/dunnhumby_matched_complexity_paired_inference.py", "results/dunnhumby_matched_complexity_paired_inference/REPORT.md", "results/dunnhumby_matched_complexity_paired_inference/paired_comparisons.csv"],
+        "E5-LUKASIEWICZ": ["scripts/lukasiewicz_tnorm_ablation.py", "tests/test_lukasiewicz_tnorm.py", "results/lukasiewicz_tnorm_ablation/REPORT.md", "results/lukasiewicz_tnorm_ablation/PROVENANCE.md"],
+    }
+    for _, r in follow.iterrows():
+        missing_sources = [p for p in required_sources.get(r.ID, []) if f"`{p}`" not in r["Source references"]]
+        if missing_sources:
+            problems.append(("follow-up source references", r.ID, missing_sources))
+        if not r["Required qualification"].strip():
+            problems.append(("follow-up qualification", r.ID))
+
+    # 2e. follow-up sources: every cited path exists and is tracked by Git
+    tracked = set(subprocess.run(["git", "ls-files"], capture_output=True, text=True).stdout.splitlines())
+    for _, r in follow.iterrows():
+        for pth in re.findall(r"`([^`]+)`", r["Source references"]):
+            if not os.path.exists(pth):
+                problems.append(("follow-up source missing", r.ID, pth))
+            elif pth not in tracked:
+                problems.append(("follow-up source untracked", r.ID, pth))
+
+    # 2f. follow-up numbers: each rendered "Δ x (Holm p y)", in order, against the pooled source row
+    fu_src = {
+        "temporal": "results/temporal_rfm_fca_ablation/paired_comparisons.csv",
+        "nonfca": "results/temporal_nonfca_baseline/paired_comparisons.csv",
+        "matched": "results/dunnhumby_matched_complexity_paired_inference/paired_comparisons.csv",
+        "luk": "results/lukasiewicz_tnorm_ablation/paired_comparisons.csv",
+    }
+    R2, DH = "Online Retail II", "Dunnhumby"
+    fu_expected = {
+        "E1-TEMPORAL": [("temporal", R2, "fuzzy_rfm_t - fuzzy_rfm", m) for m in ("auc", "spend_r2", "invoice_r2")]
+                       + [("temporal", DH, "fuzzy_rfm_t - fuzzy_rfm", "spend_r2"),
+                          ("temporal", R2, "fuzzy_rfm_t_l - fuzzy_rfm_t", "invoice_r2"),
+                          ("temporal", DH, "fuzzy_rfm_t_l - fuzzy_rfm_t", "spend_r2"),
+                          ("temporal", DH, "fuzzy_rfm_t_l - fuzzy_rfm_t", "invoice_r2")],
+        "E2-NONFCA-T": [("nonfca", R2, "log_rfm_t - log_rfm", "spend_r2"), ("nonfca", R2, "log_rfm_t - log_rfm", "invoice_r2")]
+                       + [("nonfca", R2, "spline_log_rfm_t - spline_log_rfm", m) for m in ("auc", "spend_r2", "invoice_r2")]
+                       + [("nonfca", DH, "log_rfm_t - log_rfm", "invoice_r2"),
+                          ("nonfca", DH, "spline_log_rfm_t - spline_log_rfm", "auc"),
+                          ("nonfca", DH, "spline_log_rfm_t - spline_log_rfm", "spend_r2")],
+        "E4-MATCHED-COMPLEXITY": [("matched", None, "fuzzy_rfm_t_matched - fuzzy_rfm", m) for m in ("auc", "spend_r2", "invoice_r2")]
+                       + [("matched", None, "fuzzy_rfm_t_stability_matched - fuzzy_rfm", m) for m in ("auc", "spend_r2", "invoice_r2")]
+                       + [("matched", None, "fuzzy_rfm_t_matched - fuzzy_rfm_t", "auc"),
+                          ("matched", None, "fuzzy_rfm_t_stability_matched - fuzzy_rfm_t", "auc")],
+        "E5-LUKASIEWICZ": [("luk", DH, "M4 - M0", "auc"), ("luk", R2, "M4 - M0", "auc"), ("luk", R2, "M2 - M0", "auc"),
+                           ("luk", R2, "M4 - M2", "auc"), ("luk", R2, "M4 - M2", "spend_r2")],
+    }
+    fu_frames = {k: pd.read_csv(v) for k, v in fu_src.items()}
+    rendered_pat = re.compile(r"Δ ([+-]?\d+\.\d+|nan) \(Holm p ([0-9.]+|nan)\)")
+    for _, r in follow.iterrows():
+        claim = r["Evidence claim"]
+        if re.search(r"\bnan\b", claim, re.I):
+            problems.append(("follow-up non-finite value", r.ID))
+        if r.ID not in fu_expected:
+            continue
+        shown = rendered_pat.findall(claim)
+        want = fu_expected[r.ID]
+        if len(shown) != len(want):
+            problems.append(("follow-up value count", r.ID, len(shown), len(want)))
+            continue
+        for (d_txt, p_txt), (src, ds, cmp, met) in zip(shown, want):
+            f = fu_frames[src]
+            q = f[(f.comparison == cmp) & (f.metric == met)]
+            if ds is not None:
+                q = q[q.dataset == ds]
+            if "scope" in f:
+                q = q[q.scope == "POOLED"]
+            if len(q) != 1:
+                problems.append(("follow-up source row", r.ID, src, ds, cmp, met, len(q)))
+                continue
+            counts["follow_fields"] = counts.get("follow_fields", 0) + 2
+            ok_d = d_txt != "nan" and abs(float(d_txt) - q.delta.iloc[0]) <= 5e-5
+            ok_p = p_txt != "nan" and abs(float(p_txt) - q.p_holm.iloc[0]) <= 5e-5
+            if not (ok_d and ok_p):
+                problems.append(("follow-up value", r.ID, src, ds, cmp, met, d_txt, p_txt))
+    sd = pd.read_csv("results/temporal_second_seed/seed_replication.csv")
+    e3 = follow[follow.ID == "E3-SECOND-SEED"]
+    if len(e3):
+        claim = e3["Evidence claim"].iloc[0]
+        parts = {R2: claim[claim.index(R2):claim.index(DH)], DH: claim[claim.index(DH):]} if R2 in claim and DH in claim else {}
+        for ds, seg in parts.items():
+            got = re.findall(r"(auc|spend_r2|invoice_r2): ([+-]\d+\.\d+) → ([+-]\d+\.\d+), ([^;)]+)", seg)
+            exp = sd[sd.dataset == ds]
+            if len(got) != len(exp):
+                problems.append(("second-seed value count", ds, len(got), len(exp)))
+            for met, d0, d1, verdict in got:
+                q = exp[exp.metric == met]
+                counts["follow_fields"] = counts.get("follow_fields", 0) + 3
+                if len(q) != 1 or abs(float(d0) - q.delta_seed0.iloc[0]) > 5e-5 or abs(float(d1) - q.delta_seed1.iloc[0]) > 5e-5                         or verdict.strip() != q.verdict.iloc[0]:
+                    problems.append(("second-seed value", ds, met, d0, d1, verdict))
+        if not parts:
+            problems.append(("second-seed datasets missing",))
+
     # 3. evidence-row references
-    all_ids = list(pred.ID) + list(stab.ID) + list(rob.ID)
+    all_ids = list(pred.ID) + list(stab.ID) + list(rob.ID) + list(follow.ID)
     if len(all_ids) != len(set(all_ids)):
         problems.append(("duplicate IDs",))
     cited = set(re.findall(r"\b(?:V1|V2|CD|QWB|QWA)-[A-Za-z0-9]+-[A-Za-z0-9_\-]+", t.split("### 1b.")[0] + t[t.index("## 3."):]))
@@ -180,7 +282,7 @@ def validate(t: str) -> tuple[list, dict]:
             problems.append(("provenance", path, commits, commit, branch))
 
     # 5. paths
-    paths = set(re.findall(r"`((?:results|docs|scripts)/[^`*]+?)`", t))
+    paths = set(re.findall(r"`((?:results|docs|scripts|tests)/[^`*]+?)`", t))
     for pth in paths:
         if not os.path.exists(pth):
             problems.append(("path missing", pth))
@@ -198,6 +300,12 @@ def validate(t: str) -> tuple[list, dict]:
         "robustness not a count": "never summarize them only as a count",
         "X2 never pooled": "Never pool the three datasets into one superiority claim",
         "narrative separate per dataset": "Hybrid vs spline, reported separately per dataset; never pooled",
+        "temporal FCA qualification": "does not by itself establish an FCA-specific temporal advantage",
+        "temporal non-FCA distinction": "Temporal information gains must be separated from evidence attributable specifically to FCA",
+        "second-seed limitation": "not independent replication or population-level generalization",
+        "matched-complexity limitation": "does not prove feature count alone caused the differences",
+        "matched-complexity non-equivalence": "does not establish causal equivalence",
+        "Lukasiewicz scope": "not continuous Łukasiewicz-based concept discovery",
     }
     for name, text in required.items():
         if text not in t:
@@ -207,7 +315,7 @@ def validate(t: str) -> tuple[list, dict]:
         problems.append(("equivalence table",))
 
     counts["rows"] = (len(pred), len(stab), len(prov), len(cited), len(paths), len(required))
-    counts["extra"] = (len(rob), len(interp))
+    counts["extra"] = (len(rob), len(interp), len(follow))
     return problems, counts
 
 
@@ -216,11 +324,12 @@ def main() -> int:
     text = MAP.read_text(encoding="utf-8")
     problems, counts = validate(text)
     n_pred, n_stab, n_prov, n_cited, n_paths, n_req = counts["rows"]
-    n_fields = sum(v for k, v in counts.items() if k not in ("stability", "rows", "extra", "interp") and not k.startswith("rob_"))
+    n_fields = sum(v for k, v in counts.items() if k not in ("stability", "rows", "extra", "interp", "follow_fields") and not k.startswith("rob_"))
     n_rob_fields = sum(v for k, v in counts.items() if k.startswith("rob_"))
     print(f"predictive rows {n_pred} ({n_fields} field checks), stability rows {n_stab}, provenance {n_prov}, "
           f"cited IDs {n_cited}, paths {n_paths}, required-wording checks {n_req}, robustness rows {counts['extra'][0]} "
-          f"({n_rob_fields} field checks), interpretability rows {counts['extra'][1]}")
+          f"({n_rob_fields} field checks), interpretability rows {counts['extra'][1]}, follow-up rows {counts['extra'][2]} "
+          f"({counts.get('follow_fields', 0)} field checks)")
     print("DISCREPANCIES:", problems if problems else 0)
     status = 1 if problems else 0
     if "--self-test" in sys.argv:

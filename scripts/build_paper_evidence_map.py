@@ -17,10 +17,14 @@ Provenance rules (applied from Git, never hand-entered):
                          whose history contains the originating commit.
 """
 import subprocess
+import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from evidence_lookup import qfmt, qrow, seedrow  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "docs" / "PAPER_EVIDENCE_MAP.md"
@@ -244,6 +248,83 @@ interp = pd.DataFrame([{"Dataset": r.dataset, "Arm": "crisp RFM-FCA" if r.arm ==
                         "C80": f"{r.C80_mean:.2f}", "Intent length": f"{r.intent_length_mean:.2f}", "Core load": f"{r.core_load_mean:.2f}",
                         "Overlap": f"{r.overlap_mean:.3f}"} for r in qc.itertuples()])
 
+# Exploratory follow-up evidence that is not part of the original v1/v2/CDNOW
+# predictive-row schema.  Values are read from the committed follow-up CSVs;
+# source paths are rendered explicitly so the claim-control document remains
+# traceable without treating every metric as a new headline claim.
+temporal = pd.read_csv(ROOT / "results/temporal_rfm_fca_ablation/paired_comparisons.csv")
+nonfca = pd.read_csv(ROOT / "results/temporal_nonfca_baseline/paired_comparisons.csv")
+seed = pd.read_csv(ROOT / "results/temporal_second_seed/seed_replication.csv")
+matched = pd.read_csv(ROOT / "results/dunnhumby_matched_complexity_paired_inference/paired_comparisons.csv")
+luk = pd.read_csv(ROOT / "results/lukasiewicz_tnorm_ablation/paired_comparisons.csv")
+METRIC_KEYS = ("auc", "spend_r2", "invoice_r2")
+
+
+T, NF, LK, MC = "temporal", "nonfca", "lukasiewicz", "matched"
+# expect = direction stated in the claim text (Holm p < 0.05); 'ns' = not significant.
+t_r2 = qrow(temporal, "fuzzy_rfm_t - fuzzy_rfm", "auc", "Online Retail II", expect="higher", source=T)
+t_r2_sp = qrow(temporal, "fuzzy_rfm_t - fuzzy_rfm", "spend_r2", "Online Retail II", expect="higher", source=T)
+t_r2_inv = qrow(temporal, "fuzzy_rfm_t - fuzzy_rfm", "invoice_r2", "Online Retail II", expect="higher", source=T)
+t_dh_sp = qrow(temporal, "fuzzy_rfm_t - fuzzy_rfm", "spend_r2", "Dunnhumby", expect="lower", source=T)
+t_l_r2_inv = qrow(temporal, "fuzzy_rfm_t_l - fuzzy_rfm_t", "invoice_r2", "Online Retail II", expect="higher", source=T)
+t_l_dh_sp = qrow(temporal, "fuzzy_rfm_t_l - fuzzy_rfm_t", "spend_r2", "Dunnhumby", expect="lower", source=T)
+t_l_dh_inv = qrow(temporal, "fuzzy_rfm_t_l - fuzzy_rfm_t", "invoice_r2", "Dunnhumby", expect="lower", source=T)
+n_r2_log_sp = qrow(nonfca, "log_rfm_t - log_rfm", "spend_r2", "Online Retail II", expect="higher", source=NF)
+n_r2_log_inv = qrow(nonfca, "log_rfm_t - log_rfm", "invoice_r2", "Online Retail II", expect="higher", source=NF)
+n_r2_spl_auc = qrow(nonfca, "spline_log_rfm_t - spline_log_rfm", "auc", "Online Retail II", expect="higher", source=NF)
+n_r2_spl_sp = qrow(nonfca, "spline_log_rfm_t - spline_log_rfm", "spend_r2", "Online Retail II", expect="higher", source=NF)
+n_r2_spl_inv = qrow(nonfca, "spline_log_rfm_t - spline_log_rfm", "invoice_r2", "Online Retail II", expect="higher", source=NF)
+n_dh_log_inv = qrow(nonfca, "log_rfm_t - log_rfm", "invoice_r2", "Dunnhumby", expect="higher", source=NF)
+n_dh_spl_auc = qrow(nonfca, "spline_log_rfm_t - spline_log_rfm", "auc", "Dunnhumby", expect="ns", source=NF)
+n_dh_spl_sp = qrow(nonfca, "spline_log_rfm_t - spline_log_rfm", "spend_r2", "Dunnhumby", expect="ns", source=NF)
+mc_fk = [qrow(matched, "fuzzy_rfm_t_matched - fuzzy_rfm", m, expect="ns", source=MC) for m in METRIC_KEYS]
+mc_st = [qrow(matched, "fuzzy_rfm_t_stability_matched - fuzzy_rfm", m, expect="ns", source=MC) for m in METRIC_KEYS]
+mc_fk_un = qrow(matched, "fuzzy_rfm_t_matched - fuzzy_rfm_t", "auc", expect="higher", source=MC)
+mc_st_un = qrow(matched, "fuzzy_rfm_t_stability_matched - fuzzy_rfm_t", "auc", expect="higher", source=MC)
+luk_dh_m4 = qrow(luk, "M4 - M0", "auc", "Dunnhumby", expect="lower", source=LK)
+luk_r2_m4 = qrow(luk, "M4 - M0", "auc", "Online Retail II", expect="higher", source=LK)
+luk_r2_m2 = qrow(luk, "M2 - M0", "auc", "Online Retail II", expect="higher", source=LK)
+luk_r2_m4_m2 = qrow(luk, "M4 - M2", "auc", "Online Retail II", expect="lower", source=LK)
+luk_r2_m4_m2_sp = qrow(luk, "M4 - M2", "spend_r2", "Online Retail II", expect="lower", source=LK)
+
+
+def seedline(dataset, metrics):
+    out = []
+    for metric in metrics:
+        r = seedrow(seed, dataset, metric, source="second_seed")
+        out.append(f"{metric}: {r.delta_seed0:+.4f} → {r.delta_seed1:+.4f}, {r.verdict}")
+    return "; ".join(out)
+
+
+FOLLOWUPS = [
+    {"ID": "E1-TEMPORAL", "Evidence claim":
+     f"Temporal FCA ablation: on Online Retail II, adding T to M0 gives {qfmt(t_r2)}, {qfmt(t_r2_sp)}, and {qfmt(t_r2_inv)}; on Dunnhumby it lowers Spend R² ({qfmt(t_dh_sp)}). Adding L after T gives {qfmt(t_l_r2_inv)} but lowers Dunnhumby Spend and Invoice R² ({qfmt(t_l_dh_sp)}; {qfmt(t_l_dh_inv)}).",
+     "Status": "single-seed exploratory", "Scope": "Online Retail II and Dunnhumby",
+     "Source references": "`results/temporal_rfm_fca_ablation/REPORT.md`; `results/temporal_rfm_fca_ablation/paired_comparisons.csv`; `scripts/temporal_rfm_fca_ablation.py`; `results/temporal_rfm_fca_ablation/CORRECTED_RUN_PROVENANCE.md`; `results/temporal_rfm_fca_ablation/PARITY_PROVENANCE_AUDIT.md`",
+     "Required qualification": "The corrected run is exploratory and does not by itself establish an FCA-specific temporal advantage; T and L effects are dataset- and outcome-dependent."},
+    {"ID": "E2-NONFCA-T", "Evidence claim":
+     f"Non-FCA temporal baselines show that T carries information without FCA: on Online Retail II log+T improves Spend R² ({qfmt(n_r2_log_sp)}) and Invoice R² ({qfmt(n_r2_log_inv)}), while spline+T improves AUC, Spend R² and Invoice R² ({qfmt(n_r2_spl_auc)}; {qfmt(n_r2_spl_sp)}; {qfmt(n_r2_spl_inv)}). On Dunnhumby log+T improves Invoice R² ({qfmt(n_dh_log_inv)}), while spline+T changes AUC and Spend R² without significance ({qfmt(n_dh_spl_auc)}; {qfmt(n_dh_spl_sp)}).",
+     "Status": "single-seed post hoc", "Scope": "Non-FCA log-RFM and spline-RFM baselines",
+     "Source references": "`results/temporal_nonfca_baseline/REPORT.md`; `results/temporal_nonfca_baseline/paired_comparisons.csv`; `scripts/temporal_nonfca_baseline.py`; `results/consolidated_evidence/CONSOLIDATED_RESULTS.md` §4.2",
+     "Required qualification": "Temporal information gains must be separated from evidence attributable specifically to FCA; the FCA+T versus spline+T comparison remains dataset-specific and seed-0 exploratory."},
+    {"ID": "E3-SECOND-SEED", "Evidence claim":
+     f"The locked second-seed check finds Online Retail II FCA+T versus spline+T consistency ({seedline('Online Retail II', ['auc', 'spend_r2', 'invoice_r2'])}) and Dunnhumby spline-direction consistency ({seedline('Dunnhumby', ['auc', 'spend_r2', 'invoice_r2'])}).",
+     "Status": "two-seed consistency, exploratory follow-up", "Scope": "Same datasets and customers; CV seeds 0 and 1",
+     "Source references": "`docs/TEMPORAL_SECOND_SEED_PLAN.md`; `scripts/temporal_second_seed_evaluate.py`; `results/temporal_second_seed/seed_replication.csv`; `results/temporal_second_seed/SEED_REPLICATION.md`; `results/temporal_second_seed/PLAN_LOCK.txt`; `results/temporal_second_seed/PLAN_LOCK_VERIFY.md`",
+     "Required qualification": "The second-seed plan was fixed before that evaluation, while the overall temporal follow-up was exploratory. Two seeds measure consistency across fold assignments on the same datasets, not independent replication or population-level generalization."},
+    {"ID": "E4-MATCHED-COMPLEXITY", "Evidence claim":
+     f"Dunnhumby matched-complexity inference reports no detectable difference from M0 for the first-K matched arm (AUC, Spend R², Invoice R²: {'; '.join(qfmt(r) for r in mc_fk)}) or the stability-ranked matched arm ({'; '.join(qfmt(r) for r in mc_st)}); both matched arms are higher than unpruned RFM+T on AUC ({qfmt(mc_fk_un)}; {qfmt(mc_st_un)}) in the reported post-hoc comparisons.",
+     "Status": "single-seed exploratory diagnostic; post hoc inference", "Scope": "Dunnhumby, four rolling origins",
+     "Source references": "`scripts/dunnhumby_matched_complexity.py`; `scripts/dunnhumby_stability_matched_complexity.py`; `scripts/dunnhumby_matched_complexity_paired_inference.py`; `results/dunnhumby_matched_complexity_paired_inference/REPORT.md`; `results/dunnhumby_matched_complexity_paired_inference/paired_comparisons.csv`; `results/dunnhumby_matched_complexity_paired_inference/validation.csv`; `results/dunnhumby_matched_complexity_paired_inference/DATA_NOTE.md`",
+     "Required qualification": "Matching changes concept composition as well as feature count; the result does not prove feature count alone caused the differences, does not establish causal equivalence, and inference does not account for model refitting or seed variation."},
+    {"ID": "E5-LUKASIEWICZ", "Evidence claim":
+     f"In the single-seed Łukasiewicz ablation, M4 is lower than M0 on Dunnhumby AUC ({qfmt(luk_dh_m4)}) and higher than M0 on Online Retail II AUC ({qfmt(luk_r2_m4)}); product is higher than M0 on Online Retail II AUC ({qfmt(luk_r2_m2)}) and other cells, while Łukasiewicz is lower than product on Online Retail II AUC ({qfmt(luk_r2_m4_m2)}) and Spend R² ({qfmt(luk_r2_m4_m2_sp)}). No operator improves uniformly.",
+     "Status": "single-seed exploratory", "Scope": "Existing threshold-mined and suppressed concepts on Online Retail II and Dunnhumby",
+     "Source references": "`scripts/lukasiewicz_tnorm_ablation.py`; `tests/test_lukasiewicz_tnorm.py`; `results/lukasiewicz_tnorm_ablation/REPORT.md`; `results/lukasiewicz_tnorm_ablation/PROVENANCE.md`; `results/lukasiewicz_tnorm_ablation/paired_comparisons.csv`; `results/consolidated_evidence/CONSOLIDATED_RESULTS.md` §6",
+     "Required qualification": "This changes only aggregation over existing Gödel-min threshold-mined and suppressed concepts; it is not continuous Łukasiewicz-based concept discovery."},
+]
+followups = pd.DataFrame(FOLLOWUPS)
+
 eq = pd.read_csv(ROOT / P["V2_EQ"]["path"])
 t7 = pd.read_csv(ROOT / P["T7"]["path"])
 ver = pd.read_csv(ROOT / P["CD_VER"]["path"])
@@ -321,6 +402,14 @@ Each row re-assesses a committed key comparison (K1 fuzzy − crisp; K2 fuzzy �
 Means over origins; outcome-free structural proxies, not measures of human interpretability.
 
 {md(interp)}
+
+### 1f. Exploratory temporal, complexity and aggregation follow-ups (generated)
+
+These entries extend the claim-control map without promoting every follow-up metric to a headline claim.
+Values are read from the cited committed CSVs; reports, scripts, plans and provenance records are included
+as direct source references.
+
+{md(followups)}
 
 ## 2. Artifact provenance
 
