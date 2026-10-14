@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "implementation_fingerprint": "c5a7c49940d247eec7f77114aa581366a50484470de8d0b2776d8b3622185d08",
+  "arms": [
+    "spline_log_rfm",
+    "fuzzy_rfm_fca",
+    "hybrid_fuzzy_fca",
+    "log_lrfm",
+    "spline_log_lrfm",
+    "crisp_lrfm_fca",
+    "fuzzy_lrfm_fca",
+    "hybrid_lrfm"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "entries": [
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 347",
+      "seed": 0,
+      "checkpoint": "run-547296cad27897579af11cc4.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 347",
+      "seed": 1,
+      "checkpoint": "run-24f662011186837be7a31cb5.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 347",
+      "seed": 2,
+      "checkpoint": "run-292977e90cfa94ec625f43fe.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 347",
+      "seed": 3,
+      "checkpoint": "run-59861a6bd1eed395423a2375.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 347",
+      "seed": 4,
+      "checkpoint": "run-de6899741db73c813ab2f5c7.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 438",
+      "seed": 0,
+      "checkpoint": "run-6e1f2c51872053f15150acd6.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 438",
+      "seed": 1,
+      "checkpoint": "run-f8015fdf3db5de5e86521d2a.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 438",
+      "seed": 2,
+      "checkpoint": "run-1d310f5fc52647c8a9b9bd9c.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 438",
+      "seed": 3,
+      "checkpoint": "run-9d842d2433cc835a4555df84.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 438",
+      "seed": 4,
+      "checkpoint": "run-eba1623e1d6ab87c01302ab7.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 529",
+      "seed": 0,
+      "checkpoint": "run-ad87036125d8d302e6b23772.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 529",
+      "seed": 1,
+      "checkpoint": "run-6de7ae1c6748fab04bafe6b1.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 529",
+      "seed": 2,
+      "checkpoint": "run-cfaaa94272caf263afcb5be3.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 529",
+      "seed": 3,
+      "checkpoint": "run-05644775c3f5b7d67e675404.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 529",
+      "seed": 4,
+      "checkpoint": "run-37d218efd38a6f9404c7dfbb.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 620",
+      "seed": 0,
+      "checkpoint": "run-67ac6f5127bc020f9fb424e9.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 620",
+      "seed": 1,
+      "checkpoint": "run-ada0042d5076d90eba19811e.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 620",
+      "seed": 2,
+      "checkpoint": "run-54d874a9053ba64c86d40820.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 620",
+      "seed": 3,
+      "checkpoint": "run-a12ff2c2a063c5dc9b584e6a.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Dunnhumby",
+      "origin": "day 620",
+      "seed": 4,
+      "checkpoint": "run-f9c91fcf690c22ee4743c773.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-09-10",
+      "seed": 0,
+      "checkpoint": "run-e3c013991e08ff2ddb49e178.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-09-10",
+      "seed": 1,
+      "checkpoint": "run-d62f8887a30b5cd3c76daa28.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-09-10",
+      "seed": 2,
+      "checkpoint": "run-4a17b6e56f06fb521fc796d1.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-09-10",
+      "seed": 3,
+      "checkpoint": "run-e5c68ef827dd25766dea601a.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-09-10",
+      "seed": 4,
+      "checkpoint": "run-d074c35233c1ba01162c3194.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-10",
+      "seed": 0,
+      "checkpoint": "run-88e9a96418a31e9503fe237e.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-10",
+      "seed": 1,
+      "checkpoint": "run-a722799e529be7fc0cdc3b56.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-10",
+      "seed": 2,
+      "checkpoint": "run-aa0a93c251ecb725a81bee24.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-10",
+      "seed": 3,
+      "checkpoint": "run-ba0e4089a08b04e28b740612.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-10",
+      "seed": 4,
+      "checkpoint": "run-6f574f28cc2446eacf41828d.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-03-11",
+      "seed": 0,
+      "checkpoint": "run-bf67e9da238ffa51505cd247.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-03-11",
+      "seed": 1,
+      "checkpoint": "run-e75ea5543dafea939543d58e.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-03-11",
+      "seed": 2,
+      "checkpoint": "run-94cf2357eefe5d9995898bef.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-03-11",
+      "seed": 3,
+      "checkpoint": "run-4dbc908621c76970ded5933b.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-03-11",
+      "seed": 4,
+      "checkpoint": "run-e5ee3caec626fd76ab2f8373.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-06-10",
+      "seed": 0,
+      "checkpoint": "run-1262ccadec5434775f9cc0f1.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-06-10",
+      "seed": 1,
+      "checkpoint": "run-8eb31666a2a3597b14149226.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-06-10",
+      "seed": 2,
+      "checkpoint": "run-4ff135d60ae94a2dab44e99d.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-06-10",
+      "seed": 3,
+      "checkpoint": "run-49ead5e6dfd22bdf9f3d5cc4.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-06-10",
+      "seed": 4,
+      "checkpoint": "run-ba0df9246487da238bbbda34.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-09-09",
+      "seed": 0,
+      "checkpoint": "run-dfac37bd58a1d7da13dd8f55.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-09-09",
+      "seed": 1,
+      "checkpoint": "run-57e28479f5bc202f7e606c28.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-09-09",
+      "seed": 2,
+      "checkpoint": "run-0195f58229a7a6edfa6cdff0.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-09-09",
+      "seed": 3,
+      "checkpoint": "run-323546e9e6c0eb7fabe9c6ef.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2011-09-09",
+      "seed": 4,
+      "checkpoint": "run-25d35738d869fbb945b454f5.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-09 (primary, 365d)",
+      "seed": 0,
+      "checkpoint": "run-ddf8bd99dd8186c2065506d9.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-09 (primary, 365d)",
+      "seed": 1,
+      "checkpoint": "run-01c7dd0ee30b8a4e928ef257.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-09 (primary, 365d)",
+      "seed": 2,
+      "checkpoint": "run-7ee510a6eafc182f9c1c535d.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-09 (primary, 365d)",
+      "seed": 3,
+      "checkpoint": "run-5dc0382b2bd16a3894550faa.csv",
+      "complete": true
+    },
+    {
+      "dataset": "Online Retail II",
+      "origin": "2010-12-09 (primary, 365d)",
+      "seed": 4,
+      "checkpoint": "run-93aaa5f4bb20e7ee9cd0ca70.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-09-30",
+      "seed": 0,
+      "checkpoint": "run-e04cb79ad12143cbcc33d83c.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-09-30",
+      "seed": 1,
+      "checkpoint": "run-98be43dd0ff218e6022d1ec6.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-09-30",
+      "seed": 2,
+      "checkpoint": "run-44b8da700341d472214821e8.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-09-30",
+      "seed": 3,
+      "checkpoint": "run-75bc371b0a1d0a9a78b32bbe.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-09-30",
+      "seed": 4,
+      "checkpoint": "run-25951fe253483077d444a4cd.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-12-31",
+      "seed": 0,
+      "checkpoint": "run-fa37abd62dd36837113daa80.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-12-31",
+      "seed": 1,
+      "checkpoint": "run-918500dd468bd4497ff47230.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-12-31",
+      "seed": 2,
+      "checkpoint": "run-88f056fa21b6021131dd0c3e.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-12-31",
+      "seed": 3,
+      "checkpoint": "run-8a6ded1114ee44e07bfd6405.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1997-12-31",
+      "seed": 4,
+      "checkpoint": "run-dc336fcfcf3151a0b5e21b2e.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1998-03-31",
+      "seed": 0,
+      "checkpoint": "run-3062cf454b994435cd584cd7.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1998-03-31",
+      "seed": 1,
+      "checkpoint": "run-ce353db4cde8fb00e61dfb18.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1998-03-31",
+      "seed": 2,
+      "checkpoint": "run-ffd262c253843d56c4d43421.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1998-03-31",
+      "seed": 3,
+      "checkpoint": "run-30854fb26bfead031dcb8b46.csv",
+      "complete": true
+    },
+    {
+      "dataset": "CDNOW",
+      "origin": "1998-03-31",
+      "seed": 4,
+      "checkpoint": "run-17d849b7c5985de54bda8e95.csv",
+      "complete": true
+    }
+  ]
+}

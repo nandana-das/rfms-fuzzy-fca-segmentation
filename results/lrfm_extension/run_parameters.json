@@ -1,0 +1,26 @@
+{
+  "exploratory": true,
+  "dims": [
+    "R",
+    "F",
+    "M",
+    "L"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "bootstrap_draws_per_seed": 10000,
+  "comparisons": [
+    "E1: fuzzy_lrfm_fca - crisp_lrfm_fca",
+    "E2: fuzzy_lrfm_fca - spline_log_lrfm",
+    "E3: hybrid_lrfm - spline_log_lrfm",
+    "E4: fuzzy_lrfm_fca - fuzzy_rfm_fca",
+    "E5: spline_log_lrfm - spline_log_rfm"
+  ],
+  "holm_tests_per_dataset": 15,
+  "holdout_days": 91
+}

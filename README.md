@@ -8,7 +8,7 @@ This repository extends the crisp RFM-FCA customer segmentation of **Rungruang e
 
 **Status (2026-10-09):** the v1 methodology and evidence are frozen after an internal audit; defects, changes and superseded results are listed in [docs/AUDIT_ERRATA.md](docs/AUDIT_ERRATA.md). An exploratory hybrid (v2), a confirmation on a third dataset (CDNOW) and limitation follow-ups were added afterwards, each under its own label. **Every manuscript claim must trace to a row of [docs/PAPER_EVIDENCE_MAP.md](docs/PAPER_EVIDENCE_MAP.md)**, which is generated from the result CSVs and checked by `scripts/validate_paper_evidence_map.py`. The pre-audit version of this README is kept in [docs/superseded_2026-10-08/README.md](docs/superseded_2026-10-08/README.md) and must not be cited.
 
-Scope: **RFM only**, on three retail datasets:
+Scope: **RFM and the exploratory LRFM extension**, on three retail datasets:
 - **Online Retail II**, the base paper's dataset;
 - **Dunnhumby "The Complete Journey"**, used as a reproduction;
 - **CDNOW** (Fader & Hardie), used as a confirmation dataset under an analysis plan committed before its analysis.
@@ -66,9 +66,25 @@ On the former branch `experiment/limitations-quick-wins` (tag `evidence/limitati
 - **Inference robustness:** the four key comparisons re-assessed with 5 CV fold seeds and a customer-clustered bootstrap across origins. Of 36 dataset-metric results, 5 are no longer significant (Online Retail II hybrid vs spline on AUC and Invoice R², Online Retail II hybrid vs v1 on AUC, CDNOW H1 AUC, CDNOW fuzzy vs spline AUC); none changes sign. Report these metric by metric, with the exact estimates in the evidence map.
 - **Interpretability proxies (descriptive):** fuzzy retains more concepts and, on two datasets, has longer intents and higher core load, but lower overlap and no larger C80. No claim of greater (or lesser) interpretability follows.
 
-## In progress
+## LRFM extension (exploratory)
 
-- **LRFM extension** (branch `experiment/lrfm-extension`): adds Length (days between first and last purchase) to RFM, with every baseline also receiving it. Only the analysis plan exists (`docs/LRFM_EXTENSION_PLAN.md` on that branch); results will be exploratory.
+The LRFM extension on branch `experiment/lrfm-extension` adds Length (days
+between first and last purchase) to RFM, with every baseline also receiving it.
+It is a separate exploratory analysis governed by
+[docs/LRFM_EXTENSION_PLAN.md](docs/LRFM_EXTENSION_PLAN.md). Its implementation,
+frozen checkpoints, outputs, and audit notes are:
+
+- [scripts/lrfm_extension.py](scripts/lrfm_extension.py);
+- [results/lrfm_extension/](results/lrfm_extension/);
+- [docs/LRFM_EXTENSION_RESULTS.md](docs/LRFM_EXTENSION_RESULTS.md);
+- [docs/LRFM_EXTENSION_EVIDENCE_TABLE_v1.md](docs/LRFM_EXTENSION_EVIDENCE_TABLE_v1.md);
+- [docs/LRFM_EXTENSION_AUDIT_v1.md](docs/LRFM_EXTENSION_AUDIT_v1.md).
+
+The extension remains exploratory and does not replace the frozen v1 evidence.
+The separate Online Retail II 365-day primary cohort is retained in the
+checkpoint and per-origin outputs but is not part of the five pooled rolling
+origins used for the paired cross-origin inference table. Realized bootstrap
+draws were not persisted; this limitation is documented in the audit note.
 
 ## Branches and tags
 
@@ -79,7 +95,7 @@ On the former branch `experiment/limitations-quick-wins` (tag `evidence/limitati
 | Tag `evidence/v2-hybrid` | Exploratory hybrid (v2) (former branch `experiment/v2-hybrid-fuzzy-fca`) |
 | Tag `evidence/cdnow-confirmation` | CDNOW confirmation and its verification (former branch `experiment/cdnow-confirmation`) |
 | Tag `evidence/limitations-quick-wins` | Limitation follow-ups and the paper evidence map (former branch `experiment/limitations-quick-wins`) |
-| Branch `experiment/lrfm-extension` | LRFM extension (in progress) |
+| Branch `experiment/lrfm-extension` | Exploratory LRFM extension, frozen checkpoints and results |
 | Tags `archive/canonical-kneedle-draft`, `archive/canonical-kneedle-full`, `archive/rfm-only-final` | Historical branches (superseded Kneedle/Kuznetsov work, pre-audit RFM-only cleanup), kept as tags for the audit trail |
 | Tag `archive/pre-cleanup-2026-10-09` | State before the invalidated experiments and `archive/` were removed (AUDIT_ERRATA §9) |
 
@@ -170,6 +186,14 @@ python scripts/qw_inference_robustness.py --aggregate
 python scripts/qw_interpretability_proxies.py
 ```
 
+The LRFM extension is resumable. A safe first run executes the guards and then
+fits any missing checkpoint runs; a subsequent run can use `--resume` to reuse
+validated checkpoints:
+
+```bash
+python scripts/lrfm_extension.py --resume
+```
+
 Regenerate and check the evidence map:
 
 ```bash
@@ -198,6 +222,7 @@ Data:
 | `scripts/final_evidence_tables.py` | Frozen evidence tables → `results/final_evidence/` |
 | `scripts/base_paper_comparison.py` | Base-paper method vs fuzzy → `results/base_paper_comparison/` |
 | `scripts/v2_hybrid_ladder.py`, `scripts/cdnow_confirmation.py`, `scripts/qw_*.py` | v2 hybrid, CDNOW confirmation and limitation follow-ups → `results/v2_hybrid/`, `results/cdnow_confirmation/`, `results/qw_*/` |
+| `scripts/lrfm_extension.py` | Exploratory LRFM extension with resumable checkpoints → `results/lrfm_extension/` |
 | `scripts/build_paper_evidence_map.py`, `scripts/validate_paper_evidence_map.py` | Generate and validate `docs/PAPER_EVIDENCE_MAP.md` (read-only with respect to results) |
 | `docs/` | Methodology, plans, results, framing, errata, evidence map; `docs/superseded_2026-10-08/` holds the pre-audit documents |
 
