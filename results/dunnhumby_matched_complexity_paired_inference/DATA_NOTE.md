@@ -7,21 +7,30 @@ Columns: `dataset, origin, fold, CustomerID, arm, repurchased, y_log_spend, y_lo
 pred_log_spend, pred_log_invoices`. `CustomerID` is dunnhumby's anonymised integer `household_key`.
 No names, addresses, or other direct identifiers.
 
-## Why it is kept in the repository (decision 2026-10-14)
+## Status (2026-10-14): kept locally, pending redistribution clarification
+
+The branch carrying this file is not pushed. Redistribution permission has not been established;
+anonymised keys and the existence of other public files do not settle it. Reasons it is currently
+kept on the local branch:
 
 - Needed for clean-checkout reproducibility: `scripts/dunnhumby_temporal_cluster_sensitivity.py` reads it,
   and paired inference in this folder was computed from it.
 - Regeneration needs the git-ignored raw Dunnhumby data and ~10 minutes:
   `python scripts/dunnhumby_matched_complexity_paired_inference.py` (validated 48/48 against cached
   metrics at tolerance 1e-15).
-- Household-level Dunnhumby derived data already exists in the public repository:
-  `data/processed/dunnhumby_rfm_features.csv` (all 2,500 households; R, F, M, purchase days, tenure),
-  on `main` since commit `07fadfe` (2026-10-01). This file adds holdout outcomes and model predictions
-  for the same keys.
 
-## Open question
+## Open question and plan
 
-dunnhumby's terms for redistributing household-level derived data were not verified: the Source Files
-page (https://www.dunnhumby.com/source-files/) lists the dataset for classroom and academic research use
-but shows no licence text. The question applies equally to `data/processed/dunnhumby_rfm_features.csv`.
-If the terms prohibit redistribution, both files should be removed from the repository and its history.
+dunnhumby's Source Files page (https://www.dunnhumby.com/source-files/) presents The Complete Journey for
+classroom use and academic research; the Terms & Conditions (https://www.dunnhumby.com/terms-and-conditions/)
+limit website materials to research, personal, or non-commercial use and reserve other rights. Neither
+clearly covers public redistribution of derived, household-keyed features, holdout outcomes, or model
+predictions. Written clarification from dunnhumby is being sought.
+
+- Permission granted in writing: record it here and push.
+- Permission unclear or denied: remove this file from the unpublished branch history (a local rewrite; it
+  does not touch `main`), have the sensitivity check regenerate it locally from the raw data, and keep the
+  aggregate results and regeneration instructions in Git.
+
+Separate issue: `data/processed/dunnhumby_rfm_features.csv` (household-level, public on `main` since
+`07fadfe`) needs its own assessment under the same terms; it is not evidence that this file may be published.
