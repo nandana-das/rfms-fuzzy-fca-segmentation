@@ -1,0 +1,21 @@
+{
+  "arms": [
+    "fuzzy_rfm",
+    "fuzzy_rfm_t",
+    "fuzzy_rfm_t_matched",
+    "fuzzy_rfm_t_stability_matched"
+  ],
+  "pairs": [
+    "fuzzy_rfm_t_matched - fuzzy_rfm",
+    "fuzzy_rfm_t_stability_matched - fuzzy_rfm",
+    "fuzzy_rfm_t_matched - fuzzy_rfm_t",
+    "fuzzy_rfm_t_stability_matched - fuzzy_rfm_t"
+  ],
+  "holm_family": "12 tests (4 pairs x 3 metrics)",
+  "validation_tolerance": 1e-15,
+  "bootstrap": "household-cluster, joint across origins",
+  "boot_n": 2000,
+  "boot_seed": 12345,
+  "cv_seed": 0,
+  "status": "post hoc"
+}

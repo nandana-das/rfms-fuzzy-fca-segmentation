@@ -1,0 +1,16 @@
+{
+  "dataset": "Dunnhumby",
+  "n_resamples": 50,
+  "resample_seed": 20261013,
+  "concept_identity": "exact canonical intent string",
+  "stability": "fraction of training-only resamples in which the base fold's mined concept survives reapplication of existing suppression",
+  "stability_scope": "conditional on the base fold's mined concept set, memberships, and support ordering; closure mining is not rerun per resample",
+  "ranking": [
+    "stability desc",
+    "base-fold support desc",
+    "intent_size asc",
+    "intent asc"
+  ],
+  "k": "same-fold cached M0 feature count",
+  "paired_inference": "unavailable because cached customer-level predictions were not retained"
+}

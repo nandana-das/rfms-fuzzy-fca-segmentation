@@ -1,0 +1,39 @@
+{
+  "arms": [
+    "fuzzy_rfm",
+    "fuzzy_rfm_t",
+    "fuzzy_rfm_t_l"
+  ],
+  "dims": {
+    "m0": [
+      "R",
+      "F",
+      "M"
+    ],
+    "t": [
+      "R",
+      "F",
+      "M",
+      "T",
+      "repeat_history"
+    ],
+    "t_l": [
+      "R",
+      "F",
+      "M",
+      "T",
+      "repeat_history",
+      "L"
+    ]
+  },
+  "horizon_days": 91,
+  "n_folds": 5,
+  "cv_seed": 0,
+  "boot_n": 2000,
+  "boot_seed": 12345,
+  "definitions": {
+    "T": "mean gaps between consecutive distinct observed purchase dates",
+    "L": "origin minus first observed purchase date",
+    "repeat_history": "at least two distinct observed purchase dates"
+  }
+}

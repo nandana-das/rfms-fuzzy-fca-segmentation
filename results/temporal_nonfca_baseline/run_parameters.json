@@ -1,0 +1,24 @@
+{
+  "arms": [
+    "log_rfm",
+    "spline_log_rfm",
+    "log_rfm_t",
+    "spline_log_rfm_t",
+    "fuzzy_rfm",
+    "fuzzy_rfm_t"
+  ],
+  "pairs": [
+    "fuzzy_rfm_t - log_rfm_t",
+    "fuzzy_rfm_t - spline_log_rfm_t",
+    "log_rfm_t - log_rfm",
+    "spline_log_rfm_t - spline_log_rfm"
+  ],
+  "holm_family": "12 pooled tests per dataset",
+  "t_imputation": "training-fold median",
+  "spline": "SplineTransformer(n_knots=5, degree=3, knots='quantile') on log1p",
+  "horizon_days": 91,
+  "n_folds": 5,
+  "cv_seed": 0,
+  "boot_n": 2000,
+  "boot_seed": 12345
+}

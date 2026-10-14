@@ -1,0 +1,13 @@
+dataset,origin,metric,matched_minus_m0,matched_minus_rfm_t,paired_ci,p_holm
+Dunnhumby,day 347,auc,0.0032502394796052325,0.007768050079083988,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 347,spend_r2,0.0011587123035956548,0.004186703629958544,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 347,invoice_r2,0.0038686744325328037,0.0019929173012616097,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 438,auc,0.005357277065875077,0.004197042576378207,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 438,spend_r2,-0.004857750209257827,-0.0027633999926341968,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 438,invoice_r2,-0.005771102057478994,-0.005288407604386869,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 529,auc,0.0003009748649284161,0.0039567183462533295,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 529,spend_r2,-0.00011128676591165565,0.002749287684866486,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 529,invoice_r2,0.0011290290047633045,-0.00016154427464987187,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 620,auc,-0.0009495387954422396,0.0038333232853037247,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 620,spend_r2,-0.0031771597188268164,0.002835731356383042,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions
+Dunnhumby,day 620,invoice_r2,-0.0005820417679744949,0.0018960773889571403,unavailable: cached M0/RFM+T customer predictions not retained,unavailable: no paired customer predictions

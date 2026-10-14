@@ -1,0 +1,301 @@
+dataset,origin,fold,arm,n_features
+Dunnhumby,day 347,0,log_rfm,3
+Dunnhumby,day 347,0,spline_log_rfm,21
+Dunnhumby,day 347,0,log_rfm_t,5
+Dunnhumby,day 347,0,spline_log_rfm_t,29
+Dunnhumby,day 347,0,fuzzy_rfm,91
+Dunnhumby,day 347,0,fuzzy_rfm_t,185
+Dunnhumby,day 347,1,log_rfm,3
+Dunnhumby,day 347,1,spline_log_rfm,21
+Dunnhumby,day 347,1,log_rfm_t,5
+Dunnhumby,day 347,1,spline_log_rfm_t,29
+Dunnhumby,day 347,1,fuzzy_rfm,87
+Dunnhumby,day 347,1,fuzzy_rfm_t,176
+Dunnhumby,day 347,2,log_rfm,3
+Dunnhumby,day 347,2,spline_log_rfm,21
+Dunnhumby,day 347,2,log_rfm_t,5
+Dunnhumby,day 347,2,spline_log_rfm_t,29
+Dunnhumby,day 347,2,fuzzy_rfm,95
+Dunnhumby,day 347,2,fuzzy_rfm_t,192
+Dunnhumby,day 347,3,log_rfm,3
+Dunnhumby,day 347,3,spline_log_rfm,21
+Dunnhumby,day 347,3,log_rfm_t,5
+Dunnhumby,day 347,3,spline_log_rfm_t,29
+Dunnhumby,day 347,3,fuzzy_rfm,88
+Dunnhumby,day 347,3,fuzzy_rfm_t,167
+Dunnhumby,day 347,4,log_rfm,3
+Dunnhumby,day 347,4,spline_log_rfm,21
+Dunnhumby,day 347,4,log_rfm_t,5
+Dunnhumby,day 347,4,spline_log_rfm_t,29
+Dunnhumby,day 347,4,fuzzy_rfm,89
+Dunnhumby,day 347,4,fuzzy_rfm_t,183
+Dunnhumby,day 438,0,log_rfm,3
+Dunnhumby,day 438,0,spline_log_rfm,21
+Dunnhumby,day 438,0,log_rfm_t,5
+Dunnhumby,day 438,0,spline_log_rfm_t,29
+Dunnhumby,day 438,0,fuzzy_rfm,93
+Dunnhumby,day 438,0,fuzzy_rfm_t,172
+Dunnhumby,day 438,1,log_rfm,3
+Dunnhumby,day 438,1,spline_log_rfm,21
+Dunnhumby,day 438,1,log_rfm_t,5
+Dunnhumby,day 438,1,spline_log_rfm_t,29
+Dunnhumby,day 438,1,fuzzy_rfm,91
+Dunnhumby,day 438,1,fuzzy_rfm_t,170
+Dunnhumby,day 438,2,log_rfm,3
+Dunnhumby,day 438,2,spline_log_rfm,21
+Dunnhumby,day 438,2,log_rfm_t,5
+Dunnhumby,day 438,2,spline_log_rfm_t,29
+Dunnhumby,day 438,2,fuzzy_rfm,97
+Dunnhumby,day 438,2,fuzzy_rfm_t,177
+Dunnhumby,day 438,3,log_rfm,3
+Dunnhumby,day 438,3,spline_log_rfm,21
+Dunnhumby,day 438,3,log_rfm_t,5
+Dunnhumby,day 438,3,spline_log_rfm_t,29
+Dunnhumby,day 438,3,fuzzy_rfm,93
+Dunnhumby,day 438,3,fuzzy_rfm_t,165
+Dunnhumby,day 438,4,log_rfm,3
+Dunnhumby,day 438,4,spline_log_rfm,21
+Dunnhumby,day 438,4,log_rfm_t,5
+Dunnhumby,day 438,4,spline_log_rfm_t,29
+Dunnhumby,day 438,4,fuzzy_rfm,95
+Dunnhumby,day 438,4,fuzzy_rfm_t,174
+Dunnhumby,day 529,0,log_rfm,3
+Dunnhumby,day 529,0,spline_log_rfm,21
+Dunnhumby,day 529,0,log_rfm_t,5
+Dunnhumby,day 529,0,spline_log_rfm_t,29
+Dunnhumby,day 529,0,fuzzy_rfm,88
+Dunnhumby,day 529,0,fuzzy_rfm_t,166
+Dunnhumby,day 529,1,log_rfm,3
+Dunnhumby,day 529,1,spline_log_rfm,21
+Dunnhumby,day 529,1,log_rfm_t,5
+Dunnhumby,day 529,1,spline_log_rfm_t,29
+Dunnhumby,day 529,1,fuzzy_rfm,88
+Dunnhumby,day 529,1,fuzzy_rfm_t,155
+Dunnhumby,day 529,2,log_rfm,3
+Dunnhumby,day 529,2,spline_log_rfm,21
+Dunnhumby,day 529,2,log_rfm_t,5
+Dunnhumby,day 529,2,spline_log_rfm_t,29
+Dunnhumby,day 529,2,fuzzy_rfm,92
+Dunnhumby,day 529,2,fuzzy_rfm_t,172
+Dunnhumby,day 529,3,log_rfm,3
+Dunnhumby,day 529,3,spline_log_rfm,21
+Dunnhumby,day 529,3,log_rfm_t,5
+Dunnhumby,day 529,3,spline_log_rfm_t,29
+Dunnhumby,day 529,3,fuzzy_rfm,90
+Dunnhumby,day 529,3,fuzzy_rfm_t,161
+Dunnhumby,day 529,4,log_rfm,3
+Dunnhumby,day 529,4,spline_log_rfm,21
+Dunnhumby,day 529,4,log_rfm_t,5
+Dunnhumby,day 529,4,spline_log_rfm_t,29
+Dunnhumby,day 529,4,fuzzy_rfm,89
+Dunnhumby,day 529,4,fuzzy_rfm_t,162
+Dunnhumby,day 620,0,log_rfm,3
+Dunnhumby,day 620,0,spline_log_rfm,21
+Dunnhumby,day 620,0,log_rfm_t,5
+Dunnhumby,day 620,0,spline_log_rfm_t,29
+Dunnhumby,day 620,0,fuzzy_rfm,89
+Dunnhumby,day 620,0,fuzzy_rfm_t,164
+Dunnhumby,day 620,1,log_rfm,3
+Dunnhumby,day 620,1,spline_log_rfm,21
+Dunnhumby,day 620,1,log_rfm_t,5
+Dunnhumby,day 620,1,spline_log_rfm_t,29
+Dunnhumby,day 620,1,fuzzy_rfm,96
+Dunnhumby,day 620,1,fuzzy_rfm_t,177
+Dunnhumby,day 620,2,log_rfm,3
+Dunnhumby,day 620,2,spline_log_rfm,21
+Dunnhumby,day 620,2,log_rfm_t,5
+Dunnhumby,day 620,2,spline_log_rfm_t,29
+Dunnhumby,day 620,2,fuzzy_rfm,94
+Dunnhumby,day 620,2,fuzzy_rfm_t,176
+Dunnhumby,day 620,3,log_rfm,3
+Dunnhumby,day 620,3,spline_log_rfm,21
+Dunnhumby,day 620,3,log_rfm_t,5
+Dunnhumby,day 620,3,spline_log_rfm_t,29
+Dunnhumby,day 620,3,fuzzy_rfm,96
+Dunnhumby,day 620,3,fuzzy_rfm_t,170
+Dunnhumby,day 620,4,log_rfm,3
+Dunnhumby,day 620,4,spline_log_rfm,21
+Dunnhumby,day 620,4,log_rfm_t,5
+Dunnhumby,day 620,4,spline_log_rfm_t,29
+Dunnhumby,day 620,4,fuzzy_rfm,91
+Dunnhumby,day 620,4,fuzzy_rfm_t,166
+Online Retail II,2010-09-10,0,log_rfm,3
+Online Retail II,2010-09-10,0,spline_log_rfm,21
+Online Retail II,2010-09-10,0,log_rfm_t,5
+Online Retail II,2010-09-10,0,spline_log_rfm_t,29
+Online Retail II,2010-09-10,0,fuzzy_rfm,68
+Online Retail II,2010-09-10,0,fuzzy_rfm_t,136
+Online Retail II,2010-09-10,1,log_rfm,3
+Online Retail II,2010-09-10,1,spline_log_rfm,21
+Online Retail II,2010-09-10,1,log_rfm_t,5
+Online Retail II,2010-09-10,1,spline_log_rfm_t,29
+Online Retail II,2010-09-10,1,fuzzy_rfm,68
+Online Retail II,2010-09-10,1,fuzzy_rfm_t,136
+Online Retail II,2010-09-10,2,log_rfm,3
+Online Retail II,2010-09-10,2,spline_log_rfm,21
+Online Retail II,2010-09-10,2,log_rfm_t,5
+Online Retail II,2010-09-10,2,spline_log_rfm_t,29
+Online Retail II,2010-09-10,2,fuzzy_rfm,67
+Online Retail II,2010-09-10,2,fuzzy_rfm_t,136
+Online Retail II,2010-09-10,3,log_rfm,3
+Online Retail II,2010-09-10,3,spline_log_rfm,21
+Online Retail II,2010-09-10,3,log_rfm_t,5
+Online Retail II,2010-09-10,3,spline_log_rfm_t,29
+Online Retail II,2010-09-10,3,fuzzy_rfm,70
+Online Retail II,2010-09-10,3,fuzzy_rfm_t,143
+Online Retail II,2010-09-10,4,log_rfm,3
+Online Retail II,2010-09-10,4,spline_log_rfm,21
+Online Retail II,2010-09-10,4,log_rfm_t,5
+Online Retail II,2010-09-10,4,spline_log_rfm_t,29
+Online Retail II,2010-09-10,4,fuzzy_rfm,67
+Online Retail II,2010-09-10,4,fuzzy_rfm_t,134
+Online Retail II,2010-12-10,0,log_rfm,3
+Online Retail II,2010-12-10,0,spline_log_rfm,21
+Online Retail II,2010-12-10,0,log_rfm_t,5
+Online Retail II,2010-12-10,0,spline_log_rfm_t,29
+Online Retail II,2010-12-10,0,fuzzy_rfm,76
+Online Retail II,2010-12-10,0,fuzzy_rfm_t,158
+Online Retail II,2010-12-10,1,log_rfm,3
+Online Retail II,2010-12-10,1,spline_log_rfm,21
+Online Retail II,2010-12-10,1,log_rfm_t,5
+Online Retail II,2010-12-10,1,spline_log_rfm_t,29
+Online Retail II,2010-12-10,1,fuzzy_rfm,81
+Online Retail II,2010-12-10,1,fuzzy_rfm_t,167
+Online Retail II,2010-12-10,2,log_rfm,3
+Online Retail II,2010-12-10,2,spline_log_rfm,21
+Online Retail II,2010-12-10,2,log_rfm_t,5
+Online Retail II,2010-12-10,2,spline_log_rfm_t,29
+Online Retail II,2010-12-10,2,fuzzy_rfm,78
+Online Retail II,2010-12-10,2,fuzzy_rfm_t,161
+Online Retail II,2010-12-10,3,log_rfm,3
+Online Retail II,2010-12-10,3,spline_log_rfm,21
+Online Retail II,2010-12-10,3,log_rfm_t,5
+Online Retail II,2010-12-10,3,spline_log_rfm_t,29
+Online Retail II,2010-12-10,3,fuzzy_rfm,76
+Online Retail II,2010-12-10,3,fuzzy_rfm_t,164
+Online Retail II,2010-12-10,4,log_rfm,3
+Online Retail II,2010-12-10,4,spline_log_rfm,21
+Online Retail II,2010-12-10,4,log_rfm_t,5
+Online Retail II,2010-12-10,4,spline_log_rfm_t,29
+Online Retail II,2010-12-10,4,fuzzy_rfm,78
+Online Retail II,2010-12-10,4,fuzzy_rfm_t,165
+Online Retail II,2011-03-11,0,log_rfm,3
+Online Retail II,2011-03-11,0,spline_log_rfm,21
+Online Retail II,2011-03-11,0,log_rfm_t,5
+Online Retail II,2011-03-11,0,spline_log_rfm_t,29
+Online Retail II,2011-03-11,0,fuzzy_rfm,77
+Online Retail II,2011-03-11,0,fuzzy_rfm_t,163
+Online Retail II,2011-03-11,1,log_rfm,3
+Online Retail II,2011-03-11,1,spline_log_rfm,21
+Online Retail II,2011-03-11,1,log_rfm_t,5
+Online Retail II,2011-03-11,1,spline_log_rfm_t,29
+Online Retail II,2011-03-11,1,fuzzy_rfm,80
+Online Retail II,2011-03-11,1,fuzzy_rfm_t,171
+Online Retail II,2011-03-11,2,log_rfm,3
+Online Retail II,2011-03-11,2,spline_log_rfm,21
+Online Retail II,2011-03-11,2,log_rfm_t,5
+Online Retail II,2011-03-11,2,spline_log_rfm_t,29
+Online Retail II,2011-03-11,2,fuzzy_rfm,80
+Online Retail II,2011-03-11,2,fuzzy_rfm_t,169
+Online Retail II,2011-03-11,3,log_rfm,3
+Online Retail II,2011-03-11,3,spline_log_rfm,21
+Online Retail II,2011-03-11,3,log_rfm_t,5
+Online Retail II,2011-03-11,3,spline_log_rfm_t,29
+Online Retail II,2011-03-11,3,fuzzy_rfm,80
+Online Retail II,2011-03-11,3,fuzzy_rfm_t,166
+Online Retail II,2011-03-11,4,log_rfm,3
+Online Retail II,2011-03-11,4,spline_log_rfm,21
+Online Retail II,2011-03-11,4,log_rfm_t,5
+Online Retail II,2011-03-11,4,spline_log_rfm_t,29
+Online Retail II,2011-03-11,4,fuzzy_rfm,78
+Online Retail II,2011-03-11,4,fuzzy_rfm_t,166
+Online Retail II,2011-06-10,0,log_rfm,3
+Online Retail II,2011-06-10,0,spline_log_rfm,21
+Online Retail II,2011-06-10,0,log_rfm_t,5
+Online Retail II,2011-06-10,0,spline_log_rfm_t,29
+Online Retail II,2011-06-10,0,fuzzy_rfm,82
+Online Retail II,2011-06-10,0,fuzzy_rfm_t,175
+Online Retail II,2011-06-10,1,log_rfm,3
+Online Retail II,2011-06-10,1,spline_log_rfm,21
+Online Retail II,2011-06-10,1,log_rfm_t,5
+Online Retail II,2011-06-10,1,spline_log_rfm_t,29
+Online Retail II,2011-06-10,1,fuzzy_rfm,76
+Online Retail II,2011-06-10,1,fuzzy_rfm_t,162
+Online Retail II,2011-06-10,2,log_rfm,3
+Online Retail II,2011-06-10,2,spline_log_rfm,21
+Online Retail II,2011-06-10,2,log_rfm_t,5
+Online Retail II,2011-06-10,2,spline_log_rfm_t,29
+Online Retail II,2011-06-10,2,fuzzy_rfm,82
+Online Retail II,2011-06-10,2,fuzzy_rfm_t,181
+Online Retail II,2011-06-10,3,log_rfm,3
+Online Retail II,2011-06-10,3,spline_log_rfm,21
+Online Retail II,2011-06-10,3,log_rfm_t,5
+Online Retail II,2011-06-10,3,spline_log_rfm_t,29
+Online Retail II,2011-06-10,3,fuzzy_rfm,85
+Online Retail II,2011-06-10,3,fuzzy_rfm_t,179
+Online Retail II,2011-06-10,4,log_rfm,3
+Online Retail II,2011-06-10,4,spline_log_rfm,21
+Online Retail II,2011-06-10,4,log_rfm_t,5
+Online Retail II,2011-06-10,4,spline_log_rfm_t,29
+Online Retail II,2011-06-10,4,fuzzy_rfm,80
+Online Retail II,2011-06-10,4,fuzzy_rfm_t,176
+Online Retail II,2011-09-09,0,log_rfm,3
+Online Retail II,2011-09-09,0,spline_log_rfm,21
+Online Retail II,2011-09-09,0,log_rfm_t,5
+Online Retail II,2011-09-09,0,spline_log_rfm_t,29
+Online Retail II,2011-09-09,0,fuzzy_rfm,80
+Online Retail II,2011-09-09,0,fuzzy_rfm_t,170
+Online Retail II,2011-09-09,1,log_rfm,3
+Online Retail II,2011-09-09,1,spline_log_rfm,21
+Online Retail II,2011-09-09,1,log_rfm_t,5
+Online Retail II,2011-09-09,1,spline_log_rfm_t,29
+Online Retail II,2011-09-09,1,fuzzy_rfm,77
+Online Retail II,2011-09-09,1,fuzzy_rfm_t,168
+Online Retail II,2011-09-09,2,log_rfm,3
+Online Retail II,2011-09-09,2,spline_log_rfm,21
+Online Retail II,2011-09-09,2,log_rfm_t,5
+Online Retail II,2011-09-09,2,spline_log_rfm_t,29
+Online Retail II,2011-09-09,2,fuzzy_rfm,78
+Online Retail II,2011-09-09,2,fuzzy_rfm_t,172
+Online Retail II,2011-09-09,3,log_rfm,3
+Online Retail II,2011-09-09,3,spline_log_rfm,21
+Online Retail II,2011-09-09,3,log_rfm_t,5
+Online Retail II,2011-09-09,3,spline_log_rfm_t,29
+Online Retail II,2011-09-09,3,fuzzy_rfm,73
+Online Retail II,2011-09-09,3,fuzzy_rfm_t,161
+Online Retail II,2011-09-09,4,log_rfm,3
+Online Retail II,2011-09-09,4,spline_log_rfm,21
+Online Retail II,2011-09-09,4,log_rfm_t,5
+Online Retail II,2011-09-09,4,spline_log_rfm_t,29
+Online Retail II,2011-09-09,4,fuzzy_rfm,75
+Online Retail II,2011-09-09,4,fuzzy_rfm_t,169
+Online Retail II,"2010-12-09 (primary, 365d)",0,log_rfm,3
+Online Retail II,"2010-12-09 (primary, 365d)",0,spline_log_rfm,21
+Online Retail II,"2010-12-09 (primary, 365d)",0,log_rfm_t,5
+Online Retail II,"2010-12-09 (primary, 365d)",0,spline_log_rfm_t,29
+Online Retail II,"2010-12-09 (primary, 365d)",0,fuzzy_rfm,78
+Online Retail II,"2010-12-09 (primary, 365d)",0,fuzzy_rfm_t,167
+Online Retail II,"2010-12-09 (primary, 365d)",1,log_rfm,3
+Online Retail II,"2010-12-09 (primary, 365d)",1,spline_log_rfm,21
+Online Retail II,"2010-12-09 (primary, 365d)",1,log_rfm_t,5
+Online Retail II,"2010-12-09 (primary, 365d)",1,spline_log_rfm_t,29
+Online Retail II,"2010-12-09 (primary, 365d)",1,fuzzy_rfm,78
+Online Retail II,"2010-12-09 (primary, 365d)",1,fuzzy_rfm_t,163
+Online Retail II,"2010-12-09 (primary, 365d)",2,log_rfm,3
+Online Retail II,"2010-12-09 (primary, 365d)",2,spline_log_rfm,21
+Online Retail II,"2010-12-09 (primary, 365d)",2,log_rfm_t,5
+Online Retail II,"2010-12-09 (primary, 365d)",2,spline_log_rfm_t,29
+Online Retail II,"2010-12-09 (primary, 365d)",2,fuzzy_rfm,77
+Online Retail II,"2010-12-09 (primary, 365d)",2,fuzzy_rfm_t,166
+Online Retail II,"2010-12-09 (primary, 365d)",3,log_rfm,3
+Online Retail II,"2010-12-09 (primary, 365d)",3,spline_log_rfm,21
+Online Retail II,"2010-12-09 (primary, 365d)",3,log_rfm_t,5
+Online Retail II,"2010-12-09 (primary, 365d)",3,spline_log_rfm_t,29
+Online Retail II,"2010-12-09 (primary, 365d)",3,fuzzy_rfm,80
+Online Retail II,"2010-12-09 (primary, 365d)",3,fuzzy_rfm_t,172
+Online Retail II,"2010-12-09 (primary, 365d)",4,log_rfm,3
+Online Retail II,"2010-12-09 (primary, 365d)",4,spline_log_rfm,21
+Online Retail II,"2010-12-09 (primary, 365d)",4,log_rfm_t,5
+Online Retail II,"2010-12-09 (primary, 365d)",4,spline_log_rfm_t,29
+Online Retail II,"2010-12-09 (primary, 365d)",4,fuzzy_rfm,79
+Online Retail II,"2010-12-09 (primary, 365d)",4,fuzzy_rfm_t,170

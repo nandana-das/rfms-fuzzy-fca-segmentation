@@ -1,0 +1,151 @@
+dataset,origin,fold,arm,n_candidates,n_features,n_distinct_columns,n_empty_core,n_temporal_levels,t_imputation_median,t_missing_train,t_missing_test
+Dunnhumby,day 347,0,fuzzy_rfm,493,91,91.0,0.0,,,,
+Dunnhumby,day 347,0,fuzzy_rfm_t,1480,185,,,"{'T': 5, 'repeat_history': 1}",8.965352449223417,33.0,6.0
+Dunnhumby,day 347,0,fuzzy_rfm_t_l,2134,338,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.965352449223417,33.0,6.0
+Dunnhumby,day 347,1,fuzzy_rfm,426,87,87.0,0.0,,,,
+Dunnhumby,day 347,1,fuzzy_rfm_t,1285,176,,,"{'T': 5, 'repeat_history': 1}",9.0,30.0,9.0
+Dunnhumby,day 347,1,fuzzy_rfm_t_l,1886,311,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.0,30.0,9.0
+Dunnhumby,day 347,2,fuzzy_rfm,502,95,95.0,0.0,,,,
+Dunnhumby,day 347,2,fuzzy_rfm_t,1503,192,,,"{'T': 5, 'repeat_history': 1}",9.125,31.0,8.0
+Dunnhumby,day 347,2,fuzzy_rfm_t_l,2163,334,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.125,31.0,8.0
+Dunnhumby,day 347,3,fuzzy_rfm,429,88,88.0,0.0,,,,
+Dunnhumby,day 347,3,fuzzy_rfm_t,1339,167,,,"{'T': 5, 'repeat_history': 1}",8.7380174291939,30.0,9.0
+Dunnhumby,day 347,3,fuzzy_rfm_t_l,1945,310,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.7380174291939,30.0,9.0
+Dunnhumby,day 347,4,fuzzy_rfm,484,89,89.0,0.0,,,,
+Dunnhumby,day 347,4,fuzzy_rfm_t,1432,183,,,"{'T': 5, 'repeat_history': 1}",8.888275862068966,32.0,7.0
+Dunnhumby,day 347,4,fuzzy_rfm_t_l,2083,328,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.888275862068966,32.0,7.0
+Dunnhumby,day 438,0,fuzzy_rfm,509,93,93.0,0.0,,,,
+Dunnhumby,day 438,0,fuzzy_rfm_t,1572,172,,,"{'T': 5, 'repeat_history': 1}",8.797727272727272,12.0,8.0
+Dunnhumby,day 438,0,fuzzy_rfm_t_l,2221,324,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.797727272727272,12.0,8.0
+Dunnhumby,day 438,1,fuzzy_rfm,501,91,91.0,0.0,,,,
+Dunnhumby,day 438,1,fuzzy_rfm_t,1514,170,,,"{'T': 5, 'repeat_history': 1}",9.170833333333334,18.0,2.0
+Dunnhumby,day 438,1,fuzzy_rfm_t_l,2162,314,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.170833333333334,18.0,2.0
+Dunnhumby,day 438,2,fuzzy_rfm,438,97,97.0,0.0,,,,
+Dunnhumby,day 438,2,fuzzy_rfm_t,1327,177,,,"{'T': 5, 'repeat_history': 1}",9.0,17.0,3.0
+Dunnhumby,day 438,2,fuzzy_rfm_t_l,1931,309,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.0,17.0,3.0
+Dunnhumby,day 438,3,fuzzy_rfm,432,93,93.0,0.0,,,,
+Dunnhumby,day 438,3,fuzzy_rfm_t,1295,165,,,"{'T': 5, 'repeat_history': 1}",9.18421052631579,16.0,4.0
+Dunnhumby,day 438,3,fuzzy_rfm_t_l,1906,296,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.18421052631579,16.0,4.0
+Dunnhumby,day 438,4,fuzzy_rfm,447,95,95.0,0.0,,,,
+Dunnhumby,day 438,4,fuzzy_rfm_t,1343,174,,,"{'T': 5, 'repeat_history': 1}",8.986486486486488,17.0,3.0
+Dunnhumby,day 438,4,fuzzy_rfm_t_l,1959,308,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.986486486486488,17.0,3.0
+Dunnhumby,day 529,0,fuzzy_rfm,479,88,88.0,0.0,,,,
+Dunnhumby,day 529,0,fuzzy_rfm_t,1446,166,,,"{'T': 5, 'repeat_history': 1}",9.0,10.0,3.0
+Dunnhumby,day 529,0,fuzzy_rfm_t_l,2068,305,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.0,10.0,3.0
+Dunnhumby,day 529,1,fuzzy_rfm,484,88,88.0,0.0,,,,
+Dunnhumby,day 529,1,fuzzy_rfm_t,1521,155,,,"{'T': 5, 'repeat_history': 1}",8.800481734243276,10.0,3.0
+Dunnhumby,day 529,1,fuzzy_rfm_t_l,2157,287,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.800481734243276,10.0,3.0
+Dunnhumby,day 529,2,fuzzy_rfm,494,92,92.0,0.0,,,,
+Dunnhumby,day 529,2,fuzzy_rfm_t,1518,172,,,"{'T': 5, 'repeat_history': 1}",8.927176431645151,10.0,3.0
+Dunnhumby,day 529,2,fuzzy_rfm_t_l,2150,312,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.927176431645151,10.0,3.0
+Dunnhumby,day 529,3,fuzzy_rfm,498,90,90.0,0.0,,,,
+Dunnhumby,day 529,3,fuzzy_rfm_t,1514,161,,,"{'T': 5, 'repeat_history': 1}",8.935476410730804,11.0,2.0
+Dunnhumby,day 529,3,fuzzy_rfm_t_l,2155,297,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.935476410730804,11.0,2.0
+Dunnhumby,day 529,4,fuzzy_rfm,502,89,89.0,0.0,,,,
+Dunnhumby,day 529,4,fuzzy_rfm_t,1496,162,,,"{'T': 5, 'repeat_history': 1}",9.223207547169812,11.0,2.0
+Dunnhumby,day 529,4,fuzzy_rfm_t_l,2147,309,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.223207547169812,11.0,2.0
+Dunnhumby,day 620,0,fuzzy_rfm,494,89,89.0,0.0,,,,
+Dunnhumby,day 620,0,fuzzy_rfm_t,1512,164,,,"{'T': 5, 'repeat_history': 1}",9.014705882352942,8.0,2.0
+Dunnhumby,day 620,0,fuzzy_rfm_t_l,2165,310,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.014705882352942,8.0,2.0
+Dunnhumby,day 620,1,fuzzy_rfm,494,96,96.0,0.0,,,,
+Dunnhumby,day 620,1,fuzzy_rfm_t,1512,177,,,"{'T': 5, 'repeat_history': 1}",9.26286594761171,7.0,3.0
+Dunnhumby,day 620,1,fuzzy_rfm_t_l,2160,318,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.26286594761171,7.0,3.0
+Dunnhumby,day 620,2,fuzzy_rfm,499,94,94.0,0.0,,,,
+Dunnhumby,day 620,2,fuzzy_rfm_t,1518,176,,,"{'T': 5, 'repeat_history': 1}",8.745689655172413,9.0,1.0
+Dunnhumby,day 620,2,fuzzy_rfm_t_l,2147,310,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.745689655172413,9.0,1.0
+Dunnhumby,day 620,3,fuzzy_rfm,497,96,96.0,0.0,,,,
+Dunnhumby,day 620,3,fuzzy_rfm_t,1543,170,,,"{'T': 5, 'repeat_history': 1}",8.96774193548387,6.0,4.0
+Dunnhumby,day 620,3,fuzzy_rfm_t_l,2188,311,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",8.96774193548387,6.0,4.0
+Dunnhumby,day 620,4,fuzzy_rfm,493,91,91.0,0.0,,,,
+Dunnhumby,day 620,4,fuzzy_rfm_t,1480,166,,,"{'T': 5, 'repeat_history': 1}",9.409301555776233,10.0,0.0
+Dunnhumby,day 620,4,fuzzy_rfm_t_l,2132,308,,,"{'T': 5, 'repeat_history': 1, 'L': 5}",9.409301555776233,10.0,0.0
+Online Retail II,2010-09-10,0,fuzzy_rfm,269,68,68.0,0.0,,,,
+Online Retail II,2010-09-10,0,fuzzy_rfm_t,778,136,,,"{'T': 4, 'repeat_history': 2}",46.5,1022.0,254.0
+Online Retail II,2010-09-10,0,fuzzy_rfm_t_l,1615,245,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",46.5,1022.0,254.0
+Online Retail II,2010-09-10,1,fuzzy_rfm,271,68,68.0,0.0,,,,
+Online Retail II,2010-09-10,1,fuzzy_rfm_t,776,136,,,"{'T': 4, 'repeat_history': 2}",46.0,1008.0,268.0
+Online Retail II,2010-09-10,1,fuzzy_rfm_t_l,1740,247,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",46.0,1008.0,268.0
+Online Retail II,2010-09-10,2,fuzzy_rfm,269,67,67.0,0.0,,,,
+Online Retail II,2010-09-10,2,fuzzy_rfm_t,778,136,,,"{'T': 4, 'repeat_history': 2}",46.225,1036.0,240.0
+Online Retail II,2010-09-10,2,fuzzy_rfm_t_l,1551,236,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",46.225,1036.0,240.0
+Online Retail II,2010-09-10,3,fuzzy_rfm,274,70,70.0,0.0,,,,
+Online Retail II,2010-09-10,3,fuzzy_rfm_t,795,143,,,"{'T': 4, 'repeat_history': 2}",45.70833333333333,1014.0,262.0
+Online Retail II,2010-09-10,3,fuzzy_rfm_t_l,1616,248,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",45.70833333333333,1014.0,262.0
+Online Retail II,2010-09-10,4,fuzzy_rfm,269,67,67.0,0.0,,,,
+Online Retail II,2010-09-10,4,fuzzy_rfm_t,787,134,,,"{'T': 4, 'repeat_history': 2}",46.0,1024.0,252.0
+Online Retail II,2010-09-10,4,fuzzy_rfm_t_l,1657,239,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",46.0,1024.0,252.0
+Online Retail II,2010-12-10,0,fuzzy_rfm,321,76,76.0,0.0,,,,
+Online Retail II,2010-12-10,0,fuzzy_rfm_t,939,158,,,"{'T': 4, 'repeat_history': 2}",51.08333333333333,1135.0,277.0
+Online Retail II,2010-12-10,0,fuzzy_rfm_t_l,1948,275,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",51.08333333333333,1135.0,277.0
+Online Retail II,2010-12-10,1,fuzzy_rfm,327,81,81.0,0.0,,,,
+Online Retail II,2010-12-10,1,fuzzy_rfm_t,963,167,,,"{'T': 4, 'repeat_history': 2}",52.5,1125.0,287.0
+Online Retail II,2010-12-10,1,fuzzy_rfm_t_l,1946,280,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",52.5,1125.0,287.0
+Online Retail II,2010-12-10,2,fuzzy_rfm,334,78,78.0,0.0,,,,
+Online Retail II,2010-12-10,2,fuzzy_rfm_t,968,161,,,"{'T': 4, 'repeat_history': 2}",52.285714285714285,1146.0,266.0
+Online Retail II,2010-12-10,2,fuzzy_rfm_t_l,1989,274,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",52.285714285714285,1146.0,266.0
+Online Retail II,2010-12-10,3,fuzzy_rfm,323,76,76.0,0.0,,,,
+Online Retail II,2010-12-10,3,fuzzy_rfm_t,937,164,,,"{'T': 4, 'repeat_history': 2}",51.6,1120.0,292.0
+Online Retail II,2010-12-10,3,fuzzy_rfm_t_l,1878,276,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",51.6,1120.0,292.0
+Online Retail II,2010-12-10,4,fuzzy_rfm,328,78,78.0,0.0,,,,
+Online Retail II,2010-12-10,4,fuzzy_rfm_t,975,165,,,"{'T': 4, 'repeat_history': 2}",51.8,1122.0,290.0
+Online Retail II,2010-12-10,4,fuzzy_rfm_t_l,1945,279,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",51.8,1122.0,290.0
+Online Retail II,2011-03-11,0,fuzzy_rfm,340,77,77.0,0.0,,,,
+Online Retail II,2011-03-11,0,fuzzy_rfm_t,996,163,,,"{'T': 4, 'repeat_history': 2}",56.857142857142854,1191.0,326.0
+Online Retail II,2011-03-11,0,fuzzy_rfm_t_l,1942,285,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",56.857142857142854,1191.0,326.0
+Online Retail II,2011-03-11,1,fuzzy_rfm,341,80,80.0,0.0,,,,
+Online Retail II,2011-03-11,1,fuzzy_rfm_t,1002,171,,,"{'T': 4, 'repeat_history': 2}",55.0,1217.0,300.0
+Online Retail II,2011-03-11,1,fuzzy_rfm_t_l,1977,303,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",55.0,1217.0,300.0
+Online Retail II,2011-03-11,2,fuzzy_rfm,341,80,80.0,0.0,,,,
+Online Retail II,2011-03-11,2,fuzzy_rfm_t,995,169,,,"{'T': 4, 'repeat_history': 2}",55.5,1197.0,320.0
+Online Retail II,2011-03-11,2,fuzzy_rfm_t_l,2024,296,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",55.5,1197.0,320.0
+Online Retail II,2011-03-11,3,fuzzy_rfm,352,80,80.0,0.0,,,,
+Online Retail II,2011-03-11,3,fuzzy_rfm_t,979,166,,,"{'T': 4, 'repeat_history': 2}",55.333333333333336,1234.0,283.0
+Online Retail II,2011-03-11,3,fuzzy_rfm_t_l,2002,290,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",55.333333333333336,1234.0,283.0
+Online Retail II,2011-03-11,4,fuzzy_rfm,340,78,78.0,0.0,,,,
+Online Retail II,2011-03-11,4,fuzzy_rfm_t,977,166,,,"{'T': 4, 'repeat_history': 2}",56.0,1229.0,288.0
+Online Retail II,2011-03-11,4,fuzzy_rfm_t_l,1954,287,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",56.0,1229.0,288.0
+Online Retail II,2011-06-10,0,fuzzy_rfm,368,82,82.0,0.0,,,,
+Online Retail II,2011-06-10,0,fuzzy_rfm_t,1066,175,,,"{'T': 4, 'repeat_history': 2}",62.70833333333333,1224.0,322.0
+Online Retail II,2011-06-10,0,fuzzy_rfm_t_l,2162,303,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",62.70833333333333,1224.0,322.0
+Online Retail II,2011-06-10,1,fuzzy_rfm,336,76,76.0,0.0,,,,
+Online Retail II,2011-06-10,1,fuzzy_rfm_t,1031,162,,,"{'T': 4, 'repeat_history': 2}",63.0,1262.0,284.0
+Online Retail II,2011-06-10,1,fuzzy_rfm_t_l,2137,275,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",63.0,1262.0,284.0
+Online Retail II,2011-06-10,2,fuzzy_rfm,370,82,82.0,0.0,,,,
+Online Retail II,2011-06-10,2,fuzzy_rfm_t,1088,181,,,"{'T': 4, 'repeat_history': 2}",63.0,1234.0,312.0
+Online Retail II,2011-06-10,2,fuzzy_rfm_t_l,2205,310,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",63.0,1234.0,312.0
+Online Retail II,2011-06-10,3,fuzzy_rfm,375,85,85.0,0.0,,,,
+Online Retail II,2011-06-10,3,fuzzy_rfm_t,1095,179,,,"{'T': 4, 'repeat_history': 2}",62.75,1230.0,316.0
+Online Retail II,2011-06-10,3,fuzzy_rfm_t_l,2199,311,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",62.75,1230.0,316.0
+Online Retail II,2011-06-10,4,fuzzy_rfm,370,80,80.0,0.0,,,,
+Online Retail II,2011-06-10,4,fuzzy_rfm_t,1083,176,,,"{'T': 4, 'repeat_history': 2}",63.0,1234.0,312.0
+Online Retail II,2011-06-10,4,fuzzy_rfm_t_l,2216,306,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",63.0,1234.0,312.0
+Online Retail II,2011-09-09,0,fuzzy_rfm,379,80,80.0,0.0,,,,
+Online Retail II,2011-09-09,0,fuzzy_rfm_t,1105,170,,,"{'T': 4, 'repeat_history': 2}",67.29166666666666,1258.0,314.0
+Online Retail II,2011-09-09,0,fuzzy_rfm_t_l,2257,302,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",67.29166666666666,1258.0,314.0
+Online Retail II,2011-09-09,1,fuzzy_rfm,375,77,77.0,0.0,,,,
+Online Retail II,2011-09-09,1,fuzzy_rfm_t,1100,168,,,"{'T': 4, 'repeat_history': 2}",67.5,1243.0,329.0
+Online Retail II,2011-09-09,1,fuzzy_rfm_t_l,2251,298,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",67.5,1243.0,329.0
+Online Retail II,2011-09-09,2,fuzzy_rfm,376,78,78.0,0.0,,,,
+Online Retail II,2011-09-09,2,fuzzy_rfm_t,1091,172,,,"{'T': 4, 'repeat_history': 2}",66.0,1261.0,311.0
+Online Retail II,2011-09-09,2,fuzzy_rfm_t_l,2254,296,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",66.0,1261.0,311.0
+Online Retail II,2011-09-09,3,fuzzy_rfm,364,73,73.0,0.0,,,,
+Online Retail II,2011-09-09,3,fuzzy_rfm_t,1090,161,,,"{'T': 4, 'repeat_history': 2}",65.875,1270.0,302.0
+Online Retail II,2011-09-09,3,fuzzy_rfm_t_l,2213,282,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",65.875,1270.0,302.0
+Online Retail II,2011-09-09,4,fuzzy_rfm,375,75,75.0,0.0,,,,
+Online Retail II,2011-09-09,4,fuzzy_rfm_t,1107,169,,,"{'T': 4, 'repeat_history': 2}",67.0,1256.0,316.0
+Online Retail II,2011-09-09,4,fuzzy_rfm_t_l,2222,294,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",67.0,1256.0,316.0
+Online Retail II,"2010-12-09 (primary, 365d)",0,fuzzy_rfm,328,78,78.0,0.0,,,,
+Online Retail II,"2010-12-09 (primary, 365d)",0,fuzzy_rfm_t,966,167,,,"{'T': 4, 'repeat_history': 2}",52.285714285714285,1122.0,293.0
+Online Retail II,"2010-12-09 (primary, 365d)",0,fuzzy_rfm_t_l,1967,281,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",52.285714285714285,1122.0,293.0
+Online Retail II,"2010-12-09 (primary, 365d)",1,fuzzy_rfm,330,78,78.0,0.0,,,,
+Online Retail II,"2010-12-09 (primary, 365d)",1,fuzzy_rfm_t,960,163,,,"{'T': 4, 'repeat_history': 2}",52.0,1153.0,262.0
+Online Retail II,"2010-12-09 (primary, 365d)",1,fuzzy_rfm_t_l,1889,284,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",52.0,1153.0,262.0
+Online Retail II,"2010-12-09 (primary, 365d)",2,fuzzy_rfm,331,77,77.0,0.0,,,,
+Online Retail II,"2010-12-09 (primary, 365d)",2,fuzzy_rfm_t,960,166,,,"{'T': 4, 'repeat_history': 2}",52.0,1138.0,277.0
+Online Retail II,"2010-12-09 (primary, 365d)",2,fuzzy_rfm_t_l,1937,284,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",52.0,1138.0,277.0
+Online Retail II,"2010-12-09 (primary, 365d)",3,fuzzy_rfm,331,80,80.0,0.0,,,,
+Online Retail II,"2010-12-09 (primary, 365d)",3,fuzzy_rfm_t,974,172,,,"{'T': 4, 'repeat_history': 2}",52.0,1124.0,291.0
+Online Retail II,"2010-12-09 (primary, 365d)",3,fuzzy_rfm_t_l,1985,290,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",52.0,1124.0,291.0
+Online Retail II,"2010-12-09 (primary, 365d)",4,fuzzy_rfm,331,79,79.0,0.0,,,,
+Online Retail II,"2010-12-09 (primary, 365d)",4,fuzzy_rfm_t,956,170,,,"{'T': 4, 'repeat_history': 2}",51.0,1123.0,292.0
+Online Retail II,"2010-12-09 (primary, 365d)",4,fuzzy_rfm_t_l,1943,285,,,"{'T': 4, 'repeat_history': 2, 'L': 5}",51.0,1123.0,292.0

@@ -1,0 +1,5 @@
+dataset,origin,pooled,n,arm,auc,spend_r2,invoice_r2
+Dunnhumby,day 347,True,2497,fuzzy_rfm_t_stability_matched,0.898759161487224,0.5511483607681769,0.627146736866865
+Dunnhumby,day 438,True,2498,fuzzy_rfm_t_stability_matched,0.8934533651497502,0.5439807016033013,0.6234831837389709
+Dunnhumby,day 529,True,2498,fuzzy_rfm_t_stability_matched,0.9010991699945188,0.5383898820960059,0.6182759474362247
+Dunnhumby,day 620,True,2499,fuzzy_rfm_t_stability_matched,0.8725809368782782,0.5136752799961479,0.6195241366644505

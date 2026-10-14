@@ -1,0 +1,16 @@
+{
+  "dataset": "Dunnhumby",
+  "origins": [
+    "day 347",
+    "day 438",
+    "day 529",
+    "day 620"
+  ],
+  "rule": "Run standard RFM+T mining and suppression, then retain first K post-suppression concepts, K = same-fold M0 feature count",
+  "selection_is_outcome_independent": true,
+  "selection_fit_scope": "training fold only",
+  "horizon_days": 91,
+  "n_folds": 5,
+  "cv_seed": 0,
+  "paired_inference": "not available because cached M0/RFM+T customer predictions are absent"
+}
