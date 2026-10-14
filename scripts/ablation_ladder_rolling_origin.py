@@ -112,11 +112,12 @@ def compute_customer_concept_memberships(
     Formula:
     - Gödel minimum t-norm: mu_C(i) = min_{b in B(I_C)} mu_b(i)
     - Algebraic Product t-norm: mu_C(i) = prod_{b in B(I_C)} mu_b(i)
+    - Lukasiewicz t-norm: mu_C(i) = max(0, sum_{b in B(I_C)} mu_b(i) - (|B(I_C)| - 1))
 
     where B(I_C) is the set of unique base score bands present in the intent I_C
     (e.g., intent 'R5@0.3 & R5@0.5 & M4@0.3' has base bands ['R5', 'M4']).
-    Empty intents evaluate to 1.0 (identity element of both t-norms).
-    Singleton base bands evaluate to mu_b(i) under both t-norms.
+    Empty intents evaluate to 1.0 (identity element of all three t-norms).
+    Singleton base bands evaluate to mu_b(i) under all three t-norms.
 
     Parameters
     ----------
@@ -125,13 +126,15 @@ def compute_customer_concept_memberships(
     band_memberships : pd.DataFrame
         Continuous band memberships (R1..R5, F1..F5, M1..M5).
     tnorm : str
-        Either 'godel_min' or 'product'.
+        Either 'godel_min', 'product', or 'lukasiewicz'.
 
     Returns
     -------
     np.ndarray
         Matrix of shape (N_customers, N_concepts).
     """
+    if tnorm not in {"godel_min", "product", "lukasiewicz"}:
+        raise ValueError(f"Unsupported t-norm: {tnorm}")
     n = len(band_memberships)
     k = len(concepts_df)
     mu_matrix = np.zeros((n, k), dtype=float)
@@ -160,6 +163,10 @@ def compute_customer_concept_memberships(
                     mu_matrix[:, c_idx] = np.min(sub_matrix, axis=1)
                 elif tnorm == "product":
                     mu_matrix[:, c_idx] = np.prod(sub_matrix, axis=1)
+                elif tnorm == "lukasiewicz":
+                    mu_matrix[:, c_idx] = np.maximum(
+                        0.0, np.sum(sub_matrix, axis=1) - (sub_matrix.shape[1] - 1)
+                    )
                 else:
                     raise ValueError(f"Unsupported t-norm: {tnorm}")
 
@@ -203,7 +210,7 @@ def build_fold_representations(
     features: dict[str, tuple[np.ndarray, np.ndarray]] = {}
     diag_rows: list[dict[str, object]] = []
 
-    need_m0_concepts = any(a in ("M0", "M2", "fuzzy_rfm_fca") for a in arms)
+    need_m0_concepts = any(a in ("M0", "M2", "M4", "fuzzy_rfm_fca") for a in arms)
     need_m1_concepts = any(a in ("M1", "M3") for a in arms)
 
     # -----------------------------------------------------------------------
@@ -252,6 +259,20 @@ def build_fold_representations(
                 "context_dims": 45,
                 "degenerate_error": None,
                 **_concept_info(kept_m0, X_tr_m2, len(raw_m0)),
+            })
+
+        if "M4" in arms:
+            X_tr_m4 = compute_customer_concept_memberships(kept_m0, mu_tr_m0, tnorm="lukasiewicz")
+            X_te_m4 = compute_customer_concept_memberships(kept_m0, mu_te_m0, tnorm="lukasiewicz")
+            features["M4"] = (X_tr_m4, X_te_m4)
+            diag_rows.append({
+                "arm": "M4",
+                "membership_type": "m0_piecewise_linear",
+                "tnorm": "lukasiewicz",
+                "membership_dims": 15,
+                "context_dims": 45,
+                "degenerate_error": None,
+                **_concept_info(kept_m0, X_tr_m4, len(raw_m0)),
             })
 
     # -----------------------------------------------------------------------

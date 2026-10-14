@@ -1,0 +1,151 @@
+dataset,origin,fold,n_train,n_test,arm,membership_type,tnorm,membership_dims,context_dims,degenerate_error,n_candidates,n_features,n_distinct_columns,n_empty_core
+Dunnhumby,day 347,0,1997,500,M0,m0_piecewise_linear,godel_min,15,45,,493,91,91,0
+Dunnhumby,day 347,0,1997,500,M2,m0_piecewise_linear,product,15,45,,493,91,91,5
+Dunnhumby,day 347,0,1997,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,493,91,87,5
+Dunnhumby,day 347,1,1997,500,M0,m0_piecewise_linear,godel_min,15,45,,426,87,87,0
+Dunnhumby,day 347,1,1997,500,M2,m0_piecewise_linear,product,15,45,,426,87,87,7
+Dunnhumby,day 347,1,1997,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,426,87,81,7
+Dunnhumby,day 347,2,1998,499,M0,m0_piecewise_linear,godel_min,15,45,,502,95,95,0
+Dunnhumby,day 347,2,1998,499,M2,m0_piecewise_linear,product,15,45,,502,95,95,9
+Dunnhumby,day 347,2,1998,499,M4,m0_piecewise_linear,lukasiewicz,15,45,,502,95,87,9
+Dunnhumby,day 347,3,1998,499,M0,m0_piecewise_linear,godel_min,15,45,,429,88,88,0
+Dunnhumby,day 347,3,1998,499,M2,m0_piecewise_linear,product,15,45,,429,88,88,8
+Dunnhumby,day 347,3,1998,499,M4,m0_piecewise_linear,lukasiewicz,15,45,,429,88,81,8
+Dunnhumby,day 347,4,1998,499,M0,m0_piecewise_linear,godel_min,15,45,,484,89,89,0
+Dunnhumby,day 347,4,1998,499,M2,m0_piecewise_linear,product,15,45,,484,89,89,3
+Dunnhumby,day 347,4,1998,499,M4,m0_piecewise_linear,lukasiewicz,15,45,,484,89,87,3
+Dunnhumby,day 438,0,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,509,93,93,0
+Dunnhumby,day 438,0,1998,500,M2,m0_piecewise_linear,product,15,45,,509,93,93,5
+Dunnhumby,day 438,0,1998,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,509,93,89,5
+Dunnhumby,day 438,1,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,501,91,91,0
+Dunnhumby,day 438,1,1998,500,M2,m0_piecewise_linear,product,15,45,,501,91,91,3
+Dunnhumby,day 438,1,1998,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,501,91,89,3
+Dunnhumby,day 438,2,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,438,97,97,0
+Dunnhumby,day 438,2,1998,500,M2,m0_piecewise_linear,product,15,45,,438,97,97,12
+Dunnhumby,day 438,2,1998,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,438,97,86,12
+Dunnhumby,day 438,3,1999,499,M0,m0_piecewise_linear,godel_min,15,45,,432,93,93,0
+Dunnhumby,day 438,3,1999,499,M2,m0_piecewise_linear,product,15,45,,432,93,93,10
+Dunnhumby,day 438,3,1999,499,M4,m0_piecewise_linear,lukasiewicz,15,45,,432,93,84,10
+Dunnhumby,day 438,4,1999,499,M0,m0_piecewise_linear,godel_min,15,45,,447,95,95,0
+Dunnhumby,day 438,4,1999,499,M2,m0_piecewise_linear,product,15,45,,447,95,95,14
+Dunnhumby,day 438,4,1999,499,M4,m0_piecewise_linear,lukasiewicz,15,45,,447,95,82,14
+Dunnhumby,day 529,0,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,479,88,88,0
+Dunnhumby,day 529,0,1998,500,M2,m0_piecewise_linear,product,15,45,,479,88,88,2
+Dunnhumby,day 529,0,1998,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,479,88,87,2
+Dunnhumby,day 529,1,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,484,88,88,0
+Dunnhumby,day 529,1,1998,500,M2,m0_piecewise_linear,product,15,45,,484,88,88,1
+Dunnhumby,day 529,1,1998,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,484,88,88,1
+Dunnhumby,day 529,2,1998,500,M0,m0_piecewise_linear,godel_min,15,45,,494,92,92,0
+Dunnhumby,day 529,2,1998,500,M2,m0_piecewise_linear,product,15,45,,494,92,92,6
+Dunnhumby,day 529,2,1998,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,494,92,87,6
+Dunnhumby,day 529,3,1999,499,M0,m0_piecewise_linear,godel_min,15,45,,498,90,90,0
+Dunnhumby,day 529,3,1999,499,M2,m0_piecewise_linear,product,15,45,,498,90,90,2
+Dunnhumby,day 529,3,1999,499,M4,m0_piecewise_linear,lukasiewicz,15,45,,498,90,89,2
+Dunnhumby,day 529,4,1999,499,M0,m0_piecewise_linear,godel_min,15,45,,502,89,89,0
+Dunnhumby,day 529,4,1999,499,M2,m0_piecewise_linear,product,15,45,,502,89,89,1
+Dunnhumby,day 529,4,1999,499,M4,m0_piecewise_linear,lukasiewicz,15,45,,502,89,89,1
+Dunnhumby,day 620,0,1999,500,M0,m0_piecewise_linear,godel_min,15,45,,494,89,89,0
+Dunnhumby,day 620,0,1999,500,M2,m0_piecewise_linear,product,15,45,,494,89,89,3
+Dunnhumby,day 620,0,1999,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,494,89,87,3
+Dunnhumby,day 620,1,1999,500,M0,m0_piecewise_linear,godel_min,15,45,,494,96,96,0
+Dunnhumby,day 620,1,1999,500,M2,m0_piecewise_linear,product,15,45,,494,96,96,10
+Dunnhumby,day 620,1,1999,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,494,96,87,10
+Dunnhumby,day 620,2,1999,500,M0,m0_piecewise_linear,godel_min,15,45,,499,94,94,0
+Dunnhumby,day 620,2,1999,500,M2,m0_piecewise_linear,product,15,45,,499,94,94,8
+Dunnhumby,day 620,2,1999,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,499,94,87,8
+Dunnhumby,day 620,3,1999,500,M0,m0_piecewise_linear,godel_min,15,45,,497,96,96,0
+Dunnhumby,day 620,3,1999,500,M2,m0_piecewise_linear,product,15,45,,497,96,96,9
+Dunnhumby,day 620,3,1999,500,M4,m0_piecewise_linear,lukasiewicz,15,45,,497,96,88,9
+Dunnhumby,day 620,4,2000,499,M0,m0_piecewise_linear,godel_min,15,45,,493,91,91,0
+Dunnhumby,day 620,4,2000,499,M2,m0_piecewise_linear,product,15,45,,493,91,91,4
+Dunnhumby,day 620,4,2000,499,M4,m0_piecewise_linear,lukasiewicz,15,45,,493,91,88,4
+Online Retail II,2010-09-10,0,2701,676,M0,m0_piecewise_linear,godel_min,15,45,,269,68,68,0
+Online Retail II,2010-09-10,0,2701,676,M2,m0_piecewise_linear,product,15,45,,269,68,68,3
+Online Retail II,2010-09-10,0,2701,676,M4,m0_piecewise_linear,lukasiewicz,15,45,,269,68,66,3
+Online Retail II,2010-09-10,1,2701,676,M0,m0_piecewise_linear,godel_min,15,45,,271,68,68,0
+Online Retail II,2010-09-10,1,2701,676,M2,m0_piecewise_linear,product,15,45,,271,68,68,1
+Online Retail II,2010-09-10,1,2701,676,M4,m0_piecewise_linear,lukasiewicz,15,45,,271,68,68,1
+Online Retail II,2010-09-10,2,2702,675,M0,m0_piecewise_linear,godel_min,15,45,,269,67,67,0
+Online Retail II,2010-09-10,2,2702,675,M2,m0_piecewise_linear,product,15,45,,269,67,67,3
+Online Retail II,2010-09-10,2,2702,675,M4,m0_piecewise_linear,lukasiewicz,15,45,,269,67,65,3
+Online Retail II,2010-09-10,3,2702,675,M0,m0_piecewise_linear,godel_min,15,45,,274,70,70,0
+Online Retail II,2010-09-10,3,2702,675,M2,m0_piecewise_linear,product,15,45,,274,70,70,5
+Online Retail II,2010-09-10,3,2702,675,M4,m0_piecewise_linear,lukasiewicz,15,45,,274,70,66,5
+Online Retail II,2010-09-10,4,2702,675,M0,m0_piecewise_linear,godel_min,15,45,,269,67,67,0
+Online Retail II,2010-09-10,4,2702,675,M2,m0_piecewise_linear,product,15,45,,269,67,67,3
+Online Retail II,2010-09-10,4,2702,675,M4,m0_piecewise_linear,lukasiewicz,15,45,,269,67,65,3
+Online Retail II,2010-12-10,0,3451,863,M0,m0_piecewise_linear,godel_min,15,45,,321,76,76,0
+Online Retail II,2010-12-10,0,3451,863,M2,m0_piecewise_linear,product,15,45,,321,76,76,4
+Online Retail II,2010-12-10,0,3451,863,M4,m0_piecewise_linear,lukasiewicz,15,45,,321,76,73,4
+Online Retail II,2010-12-10,1,3451,863,M0,m0_piecewise_linear,godel_min,15,45,,327,81,81,0
+Online Retail II,2010-12-10,1,3451,863,M2,m0_piecewise_linear,product,15,45,,327,81,81,5
+Online Retail II,2010-12-10,1,3451,863,M4,m0_piecewise_linear,lukasiewicz,15,45,,327,81,77,5
+Online Retail II,2010-12-10,2,3451,863,M0,m0_piecewise_linear,godel_min,15,45,,334,78,78,0
+Online Retail II,2010-12-10,2,3451,863,M2,m0_piecewise_linear,product,15,45,,334,78,78,6
+Online Retail II,2010-12-10,2,3451,863,M4,m0_piecewise_linear,lukasiewicz,15,45,,334,78,73,6
+Online Retail II,2010-12-10,3,3451,863,M0,m0_piecewise_linear,godel_min,15,45,,323,76,76,0
+Online Retail II,2010-12-10,3,3451,863,M2,m0_piecewise_linear,product,15,45,,323,76,76,4
+Online Retail II,2010-12-10,3,3451,863,M4,m0_piecewise_linear,lukasiewicz,15,45,,323,76,73,4
+Online Retail II,2010-12-10,4,3452,862,M0,m0_piecewise_linear,godel_min,15,45,,328,78,78,0
+Online Retail II,2010-12-10,4,3452,862,M2,m0_piecewise_linear,product,15,45,,328,78,78,4
+Online Retail II,2010-12-10,4,3452,862,M4,m0_piecewise_linear,lukasiewicz,15,45,,328,78,75,4
+Online Retail II,2011-03-11,0,3684,922,M0,m0_piecewise_linear,godel_min,15,45,,340,77,77,0
+Online Retail II,2011-03-11,0,3684,922,M2,m0_piecewise_linear,product,15,45,,340,77,77,3
+Online Retail II,2011-03-11,0,3684,922,M4,m0_piecewise_linear,lukasiewicz,15,45,,340,77,75,3
+Online Retail II,2011-03-11,1,3685,921,M0,m0_piecewise_linear,godel_min,15,45,,341,80,80,0
+Online Retail II,2011-03-11,1,3685,921,M2,m0_piecewise_linear,product,15,45,,341,80,80,5
+Online Retail II,2011-03-11,1,3685,921,M4,m0_piecewise_linear,lukasiewicz,15,45,,341,80,76,5
+Online Retail II,2011-03-11,2,3685,921,M0,m0_piecewise_linear,godel_min,15,45,,341,80,80,0
+Online Retail II,2011-03-11,2,3685,921,M2,m0_piecewise_linear,product,15,45,,341,80,80,7
+Online Retail II,2011-03-11,2,3685,921,M4,m0_piecewise_linear,lukasiewicz,15,45,,341,80,74,7
+Online Retail II,2011-03-11,3,3685,921,M0,m0_piecewise_linear,godel_min,15,45,,352,80,80,0
+Online Retail II,2011-03-11,3,3685,921,M2,m0_piecewise_linear,product,15,45,,352,80,80,8
+Online Retail II,2011-03-11,3,3685,921,M4,m0_piecewise_linear,lukasiewicz,15,45,,352,80,73,8
+Online Retail II,2011-03-11,4,3685,921,M0,m0_piecewise_linear,godel_min,15,45,,340,78,78,0
+Online Retail II,2011-03-11,4,3685,921,M2,m0_piecewise_linear,product,15,45,,340,78,78,4
+Online Retail II,2011-03-11,4,3685,921,M4,m0_piecewise_linear,lukasiewicz,15,45,,340,78,75,4
+Online Retail II,2011-06-10,0,3980,996,M0,m0_piecewise_linear,godel_min,15,45,,368,82,82,0
+Online Retail II,2011-06-10,0,3980,996,M2,m0_piecewise_linear,product,15,45,,368,82,82,7
+Online Retail II,2011-06-10,0,3980,996,M4,m0_piecewise_linear,lukasiewicz,15,45,,368,82,76,7
+Online Retail II,2011-06-10,1,3981,995,M0,m0_piecewise_linear,godel_min,15,45,,336,76,76,0
+Online Retail II,2011-06-10,1,3981,995,M2,m0_piecewise_linear,product,15,45,,336,76,76,4
+Online Retail II,2011-06-10,1,3981,995,M4,m0_piecewise_linear,lukasiewicz,15,45,,336,76,73,4
+Online Retail II,2011-06-10,2,3981,995,M0,m0_piecewise_linear,godel_min,15,45,,370,82,82,0
+Online Retail II,2011-06-10,2,3981,995,M2,m0_piecewise_linear,product,15,45,,370,82,82,6
+Online Retail II,2011-06-10,2,3981,995,M4,m0_piecewise_linear,lukasiewicz,15,45,,370,82,77,6
+Online Retail II,2011-06-10,3,3981,995,M0,m0_piecewise_linear,godel_min,15,45,,375,85,85,0
+Online Retail II,2011-06-10,3,3981,995,M2,m0_piecewise_linear,product,15,45,,375,85,85,7
+Online Retail II,2011-06-10,3,3981,995,M4,m0_piecewise_linear,lukasiewicz,15,45,,375,85,79,7
+Online Retail II,2011-06-10,4,3981,995,M0,m0_piecewise_linear,godel_min,15,45,,370,80,80,0
+Online Retail II,2011-06-10,4,3981,995,M2,m0_piecewise_linear,product,15,45,,370,80,80,4
+Online Retail II,2011-06-10,4,3981,995,M4,m0_piecewise_linear,lukasiewicz,15,45,,370,80,77,4
+Online Retail II,2011-09-09,0,4224,1057,M0,m0_piecewise_linear,godel_min,15,45,,379,80,80,0
+Online Retail II,2011-09-09,0,4224,1057,M2,m0_piecewise_linear,product,15,45,,379,80,80,6
+Online Retail II,2011-09-09,0,4224,1057,M4,m0_piecewise_linear,lukasiewicz,15,45,,379,80,75,6
+Online Retail II,2011-09-09,1,4225,1056,M0,m0_piecewise_linear,godel_min,15,45,,375,77,77,0
+Online Retail II,2011-09-09,1,4225,1056,M2,m0_piecewise_linear,product,15,45,,375,77,77,4
+Online Retail II,2011-09-09,1,4225,1056,M4,m0_piecewise_linear,lukasiewicz,15,45,,375,77,74,4
+Online Retail II,2011-09-09,2,4225,1056,M0,m0_piecewise_linear,godel_min,15,45,,376,78,78,0
+Online Retail II,2011-09-09,2,4225,1056,M2,m0_piecewise_linear,product,15,45,,376,78,78,6
+Online Retail II,2011-09-09,2,4225,1056,M4,m0_piecewise_linear,lukasiewicz,15,45,,376,78,73,6
+Online Retail II,2011-09-09,3,4225,1056,M0,m0_piecewise_linear,godel_min,15,45,,364,73,73,0
+Online Retail II,2011-09-09,3,4225,1056,M2,m0_piecewise_linear,product,15,45,,364,73,73,3
+Online Retail II,2011-09-09,3,4225,1056,M4,m0_piecewise_linear,lukasiewicz,15,45,,364,73,71,3
+Online Retail II,2011-09-09,4,4225,1056,M0,m0_piecewise_linear,godel_min,15,45,,375,75,75,0
+Online Retail II,2011-09-09,4,4225,1056,M2,m0_piecewise_linear,product,15,45,,375,75,75,3
+Online Retail II,2011-09-09,4,4225,1056,M4,m0_piecewise_linear,lukasiewicz,15,45,,375,75,73,3
+Online Retail II,"2010-12-09 (primary, 365d)",0,3449,863,M0,m0_piecewise_linear,godel_min,15,45,,328,78,78,0
+Online Retail II,"2010-12-09 (primary, 365d)",0,3449,863,M2,m0_piecewise_linear,product,15,45,,328,78,78,4
+Online Retail II,"2010-12-09 (primary, 365d)",0,3449,863,M4,m0_piecewise_linear,lukasiewicz,15,45,,328,78,75,4
+Online Retail II,"2010-12-09 (primary, 365d)",1,3449,863,M0,m0_piecewise_linear,godel_min,15,45,,330,78,78,0
+Online Retail II,"2010-12-09 (primary, 365d)",1,3449,863,M2,m0_piecewise_linear,product,15,45,,330,78,78,5
+Online Retail II,"2010-12-09 (primary, 365d)",1,3449,863,M4,m0_piecewise_linear,lukasiewicz,15,45,,330,78,74,5
+Online Retail II,"2010-12-09 (primary, 365d)",2,3450,862,M0,m0_piecewise_linear,godel_min,15,45,,331,77,77,0
+Online Retail II,"2010-12-09 (primary, 365d)",2,3450,862,M2,m0_piecewise_linear,product,15,45,,331,77,77,5
+Online Retail II,"2010-12-09 (primary, 365d)",2,3450,862,M4,m0_piecewise_linear,lukasiewicz,15,45,,331,77,73,5
+Online Retail II,"2010-12-09 (primary, 365d)",3,3450,862,M0,m0_piecewise_linear,godel_min,15,45,,331,80,80,0
+Online Retail II,"2010-12-09 (primary, 365d)",3,3450,862,M2,m0_piecewise_linear,product,15,45,,331,80,80,7
+Online Retail II,"2010-12-09 (primary, 365d)",3,3450,862,M4,m0_piecewise_linear,lukasiewicz,15,45,,331,80,74,7
+Online Retail II,"2010-12-09 (primary, 365d)",4,3450,862,M0,m0_piecewise_linear,godel_min,15,45,,331,79,79,0
+Online Retail II,"2010-12-09 (primary, 365d)",4,3450,862,M2,m0_piecewise_linear,product,15,45,,331,79,79,7
+Online Retail II,"2010-12-09 (primary, 365d)",4,3450,862,M4,m0_piecewise_linear,lukasiewicz,15,45,,331,79,73,7

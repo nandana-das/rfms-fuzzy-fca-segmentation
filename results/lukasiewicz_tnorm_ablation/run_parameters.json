@@ -1,0 +1,19 @@
+{
+  "arms": [
+    "M0",
+    "M2",
+    "M4"
+  ],
+  "tnorms": {
+    "M0": "min",
+    "M2": "product",
+    "M4": "lukasiewicz"
+  },
+  "formula": "max(0, sum(mu_b) - (n_attributes - 1))",
+  "concept_discovery": "existing threshold-scaled M0 concepts",
+  "horizon_days": 91,
+  "n_folds": 5,
+  "cv_seed": 0,
+  "boot_n": 2000,
+  "boot_seed": 12345
+}
